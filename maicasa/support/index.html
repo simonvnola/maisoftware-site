@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — Maicasa</title>
+<meta name="description" content="Get help with Maicasa. FAQs, troubleshooting, and contact support.">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --purple: #667eea; --purple-dark: #3d4a9e; --purple-deep: #1a1f3a;
+    --purple-light: #f0f2ff; --ink: #1a1f3a; --ink-soft: #4e5470;
+    --ink-muted: #9aa0c0; --border: rgba(102,126,234,0.13); --bg: #f8f9fe;
+  }
+  body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; }
+
+  nav {
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    height: 58px; display: flex; align-items: center;
+    padding: 0 32px; justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-dot {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(140deg, #8b9fef, #667eea, #764ba2);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 10px rgba(102,126,234,0.32);
+  }
+  .logo-word { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 300; color: var(--ink); letter-spacing: -0.01em; }
+  .nav-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; display: flex; align-items: center; gap: 6px; }
+  .nav-back:hover { color: var(--purple); }
+
+  main { max-width: 700px; margin: 0 auto; padding: 56px 24px 80px; }
+
+  .page-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 10px; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(28px, 5vw, 42px); font-weight: 300; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 10px; }
+  .intro { font-size: 15px; color: var(--ink-soft); margin-bottom: 44px; line-height: 1.7; font-weight: 300; }
+
+  .contact-card {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 18px; padding: 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px; flex-wrap: wrap; margin-bottom: 48px;
+  }
+  .contact-title { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 300; color: white; margin-bottom: 4px; }
+  .contact-sub { font-size: 13px; color: rgba(255,255,255,0.7); font-weight: 300; }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: white; color: var(--purple-dark);
+    padding: 11px 22px; border-radius: 999px;
+    font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap;
+  }
+  .contact-btn:hover { opacity: 0.9; }
+
+  h2 { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 300; color: var(--ink); margin-bottom: 18px; letter-spacing: -0.01em; }
+
+  .faq-list { display: flex; flex-direction: column; gap: 3px; margin-bottom: 48px; }
+  .faq-item { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .faq-q {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 17px 18px; font-size: 14px; font-weight: 500; color: var(--ink);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    gap: 14px; font-family: 'DM Sans', sans-serif;
+  }
+  .faq-q:hover { color: var(--purple); }
+  .faq-ico {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--purple-light);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s, transform 0.2s;
+  }
+  .faq-item.open .faq-ico { background: var(--purple); transform: rotate(45deg); }
+  .faq-item.open .faq-ico svg { stroke: white; }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.28s ease; }
+  .faq-a-in { padding: 0 18px 16px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.72; font-weight: 300; }
+  .faq-item.open .faq-a { max-height: 240px; }
+
+  .fix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-bottom: 48px; }
+  .fix-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 18px; }
+  .fix-title { font-size: 13.5px; font-weight: 500; color: var(--ink); margin-bottom: 7px; }
+  .fix-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.62; font-weight: 300; }
+
+  .pill-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 15px; border-radius: 999px;
+    font-size: 13px; font-weight: 400; text-decoration: none;
+    border: 1px solid var(--border); color: var(--purple); background: var(--purple-light);
+  }
+  .pill:hover { background: #e4e8ff; }
+
+  footer { background: #0f1118; color: rgba(255,255,255,0.35); padding: 30px 24px; text-align: center; }
+  .foot-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .foot-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; font-weight: 300; }
+  .foot-links a:hover { color: rgba(255,255,255,0.7); }
+  .foot-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/maicasa" class="logo">
+    <div class="logo-dot">
+      <svg width="13" height="12" viewBox="0 0 14 13" fill="none">
+        <path d="M7 1L13 6H11.5V12H8.5V8H5.5V12H2.5V6H1Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.9)" stroke-width="1.3" stroke-linejoin="round"/>
+        <path d="M4.5 9.5L6.5 11.5L10 7" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span class="logo-word">maicasa</span>
+  </a>
+  <a href="/maicasa" class="nav-back">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<main>
+  <div class="page-tag">Support</div>
+  <h1>How can we help?</h1>
+  <p class="intro">Check the FAQ below for quick answers. For anything else, email us — we usually respond within 24 hours on business days.</p>
+
+  <div class="contact-card">
+    <div>
+      <div class="contact-title">Email support</div>
+      <div class="contact-sub">info@maisoftware.app · Response within 24 hours</div>
+    </div>
+    <a href="mailto:info@maisoftware.app" class="contact-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Send an email
+    </a>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">Is Maicasa free?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Yes, Maicasa is free to download and use. A premium subscription with additional features is planned — you'll always be notified before any charges apply.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">Do I need an account?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">No account is required to get started. Your tasks are saved to your device. Account-based sync (to share tasks across devices or with a household) is on the roadmap.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">AI features aren't working — what should I check?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">AI features require an active internet connection. Check your mobile data or Wi-Fi, then close and reopen the app. If the issue persists, email us at info@maisoftware.app.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">How do I import a building inspection report?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Tap the AI tab and use the document upload button to select your PDF. Maicasa will read the report and automatically generate a prioritised task list from the findings.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">Does it work outside Australia?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Yes. Maicasa works anywhere in the world. The AI assistant understands local trade terminology, provides context-appropriate guidance, and the task management features work universally.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">Does it work for rental properties?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Yes. Maicasa works for homeowners, landlords, and tenants. Property manager features with multi-property portfolio management are in development.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">What data does Maicasa collect?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Maicasa stores your task list and property details. Photos or documents sent to the AI chat are processed by Anthropic's Claude API and are not stored by Maicasa. See our Privacy Policy for full details.</div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" onclick="tog(this)">How do I delete my data?
+        <div class="faq-ico"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+      </button>
+      <div class="faq-a"><div class="faq-a-in">Uninstalling the app removes locally stored data. Email info@maisoftware.app to request deletion of any data held on our servers — we'll respond within 30 days.</div></div>
+    </div>
+
+  </div>
+
+  <h2>Common fixes</h2>
+  <div class="fix-grid">
+    <div class="fix-card">
+      <div class="fix-title">App crashes on launch</div>
+      <div class="fix-desc">Force-close and reopen. If it persists, delete and reinstall — your tasks sync from the cloud.</div>
+    </div>
+    <div class="fix-card">
+      <div class="fix-title">Tasks not saving</div>
+      <div class="fix-desc">Check your internet connection. Maicasa syncs to a cloud database and requires a connection to save.</div>
+    </div>
+    <div class="fix-card">
+      <div class="fix-title">Voice input not working</div>
+      <div class="fix-desc">Go to Settings → Maicasa → Microphone and ensure access is allowed. Works best in quiet environments.</div>
+    </div>
+    <div class="fix-card">
+      <div class="fix-title">Photo not recognised</div>
+      <div class="fix-desc">Ensure the photo is clear and well-lit. Very large files may time out — try a lower-resolution version.</div>
+    </div>
+  </div>
+
+  <h2>Other links</h2>
+  <div class="pill-row">
+    <a href="/maicasa/privacy" class="pill">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Privacy Policy
+    </a>
+    <a href="mailto:info@maisoftware.app" class="pill">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email support
+    </a>
+    <a href="/maicasa" class="pill">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+      Maicasa home
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-links">
+    <a href="/maicasa">Maicasa</a>
+    <a href="/maicasa/support">Support</a>
+    <a href="/maicasa/privacy">Privacy</a>
+    <a href="mailto:info@maisoftware.app">Contact</a>
+  </div>
+  <p class="foot-copy">&copy; 2025 Mai Software. All rights reserved.</p>
+</footer>
+
+<script>
+  function tog(btn) {
+    const item = btn.closest('.faq-item');
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
