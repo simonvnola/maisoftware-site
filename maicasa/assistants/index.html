@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Assistant — Maicasa</title>
-<meta name="description" content="Connect Claude, ChatGPT or Gemini to Maicasa. Manage properties, tasks, quotes and buying research through natural conversation.">
-<meta property="og:title" content="AI Assistant for Home Management — Maicasa">
-<meta property="og:description" content="Connect Claude, ChatGPT or Gemini to Maicasa. Manage properties, tasks, quotes and buying research through natural conversation.">
+<title>Connect Claude or ChatGPT to Maicasa — AI Assistant</title>
+<meta name="description" content="Connect your AI assistant to Maicasa via MCP. Manage properties, tasks, quotes and buying research through natural conversation. Claude and ChatGPT supported.">
+<meta property="og:title" content="Connect Claude or ChatGPT to Maicasa — AI Assistant">
+<meta property="og:description" content="Connect your AI assistant to Maicasa via MCP. Manage properties, tasks, quotes and buying research through natural conversation. Claude and ChatGPT supported.">
 <meta property="og:image" content="/og-image.png">
 <meta property="og:url" content="https://maisoftware.app/maicasa/assistants">
 <link rel="canonical" href="https://maisoftware.app/maicasa/assistants">
@@ -99,6 +99,22 @@ footer{background:var(--purple-deep);padding:32px 20px;text-align:center}
 .foot-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s}
 .foot-links a:hover{color:rgba(255,255,255,0.8)}
 .foot-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+.assistant-label{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border-radius:999px;display:inline-block;margin-bottom:8px}
+.assistant-label.available{background:rgba(102,126,234,0.12);color:var(--purple-dark)}
+.assistant-label.soon{background:rgba(0,0,0,0.06);color:var(--ink-muted)}
+.assistant-desc{font-size:12px;color:var(--ink-soft);line-height:1.6;font-weight:300;margin-top:4px}
+.assistant-card.coming-soon{opacity:0.6;border:1.5px dashed rgba(102,126,234,0.25);pointer-events:none}
+.mcp{padding:64px 0;background:var(--surface)}
+.mcp-inner{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:600px){.mcp-inner{grid-template-columns:1fr 1fr;align-items:start}}
+.mcp-text{font-size:14px;color:var(--ink-soft);line-height:1.75;font-weight:300;margin-bottom:12px}
+.mcp-points{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.mcp-point{display:flex;align-items:flex-start;gap:12px}
+.mcp-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.08));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.mcp-point-text{font-size:13px;color:var(--ink-soft);line-height:1.6;font-weight:300;padding-top:9px}
+.mcp-explainer{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.mcp-explainer-title{font-family:"Fraunces",serif;font-size:18px;font-weight:300;color:var(--ink);margin-bottom:12px}
+
 </style>
 </head>
 <body>
@@ -133,7 +149,7 @@ footer{background:var(--purple-deep);padding:32px 20px;text-align:center}
     <div class="section-tag">How it works</div>
     <div class="section-title">Three steps to a smarter home</div>
     <div class="steps">
-      <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div><div class="step-num">Step 1</div><div class="step-title">Connect</div><div class="step-desc">Connect your preferred AI assistant — Claude, ChatGPT, or Gemini — to Maicasa in one tap from the app settings.</div></div>
+      <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div><div class="step-num">Step 1</div><div class="step-title">Connect</div><div class="step-desc">Connect Claude or ChatGPT to Maicasa in one tap from the app settings. More AI assistants coming soon.</div></div>
       <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="step-num">Step 2</div><div class="step-title">Ask</div><div class="step-desc">Ask questions about your properties, tasks, budget, or buying research. Tap the Ask AI button anywhere in the app to start a contextual conversation.</div></div>
       <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="step-num">Step 3</div><div class="step-title">Done</div><div class="step-desc">Your assistant saves tasks, quotes, and notes back to Maicasa automatically. Everything stays in one place.</div></div>
     </div>
@@ -157,6 +173,37 @@ footer{background:var(--purple-deep);padding:32px 20px;text-align:center}
   </div>
 </section>
 
+<section class="mcp" id="mcp">
+  <div class="container">
+    <div class="section-tag">How the connection works</div>
+    <div class="section-title">What is MCP?</div>
+    <div class="mcp-inner">
+      <div>
+        <p class="mcp-text">MCP (Model Context Protocol) is an open standard developed by Anthropic that lets AI assistants securely connect to apps and services.</p>
+        <p class="mcp-text">When you connect your AI assistant to Maicasa via MCP, your assistant can read your property data, tasks, and budget — and write back to Maicasa when you ask it to save something.</p>
+        <p class="mcp-text">Think of it like giving your AI assistant a secure key to your Maicasa account — one that you can revoke at any time, and that only works when you start a conversation.</p>
+        <div class="mcp-points">
+          <div class="mcp-point">
+            <div class="mcp-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="mcp-point-text">Your data is never shared without your permission</div>
+          </div>
+          <div class="mcp-point">
+            <div class="mcp-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+            <div class="mcp-point-text">Revoke access at any time from Maicasa settings</div>
+          </div>
+        </div>
+      </div>
+      <div class="mcp-explainer">
+        <div class="mcp-explainer-title">How it works in practice</div>
+        <p class="mcp-text">You open Claude.ai or ChatGPT and start a conversation. Your AI assistant connects to Maicasa in the background and retrieves the data relevant to your question — your properties, tasks, quotes, or budget.</p>
+        <p class="mcp-text">When you ask it to save something — a new task, a quote, a note — it writes that back to Maicasa directly. You see the change in the app immediately.</p>
+        <p class="mcp-text" style="margin-bottom:0;">The connection is only active during your conversation. When you close the chat, the connection closes too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <section class="tips" id="tips">
   <div class="container">
     <div class="section-tag">Tips and tricks</div>
@@ -179,9 +226,33 @@ footer{background:var(--purple-deep);padding:32px 20px;text-align:center}
     <div class="section-tag">Supported assistants</div>
     <div class="section-title">Works with the AI you already use</div>
     <div class="assistant-grid">
-      <div class="assistant-card"><div class="assistant-accent" style="background:#667eea;"></div><div class="assistant-name">Claude</div><div class="assistant-by">by Anthropic</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
-      <div class="assistant-card"><div class="assistant-accent" style="background:#10a37f;"></div><div class="assistant-name">ChatGPT</div><div class="assistant-by">by OpenAI</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
-      <div class="assistant-card"><div class="assistant-accent" style="background:#4285f4;"></div><div class="assistant-name">Gemini</div><div class="assistant-by">by Google</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
+
+      <div class="assistant-card">
+        <div class="assistant-label available">Available now</div>
+        <div class="assistant-accent" style="background:#667eea;"></div>
+        <div class="assistant-name">Claude</div>
+        <div class="assistant-by">by Anthropic</div>
+        <div class="assistant-desc">Connect via MCP in Claude.ai or the Claude desktop app. Full read and write access to your Maicasa data.</div>
+        <a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a>
+      </div>
+
+      <div class="assistant-card">
+        <div class="assistant-label available">Available now</div>
+        <div class="assistant-accent" style="background:#10a37f;"></div>
+        <div class="assistant-name">ChatGPT</div>
+        <div class="assistant-by">by OpenAI</div>
+        <div class="assistant-desc">Connect via the Maicasa GPT in the ChatGPT store. Full read and write access to your Maicasa data.</div>
+        <a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a>
+      </div>
+
+      <div class="assistant-card coming-soon">
+        <div class="assistant-label soon">Coming soon</div>
+        <div class="assistant-accent" style="background:#aaa;"></div>
+        <div class="assistant-name">More assistants</div>
+        <div class="assistant-by">Microsoft Copilot, Gemini &amp; others</div>
+        <div class="assistant-desc">Support for more AI assistants is coming soon as the MCP standard continues to be adopted across the industry.</div>
+      </div>
+
     </div>
   </div>
 </section>
