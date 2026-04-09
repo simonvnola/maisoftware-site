@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant — Maicasa</title>
+<meta name="description" content="Connect Claude, ChatGPT or Gemini to Maicasa. Manage properties, tasks, quotes and buying research through natural conversation.">
+<meta property="og:title" content="AI Assistant for Home Management — Maicasa">
+<meta property="og:description" content="Connect Claude, ChatGPT or Gemini to Maicasa. Manage properties, tasks, quotes and buying research through natural conversation.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:url" content="https://maisoftware.app/maicasa/assistants">
+<link rel="canonical" href="https://maisoftware.app/maicasa/assistants">
+<link rel="icon" href="/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--purple:#667eea;--purple-light:#f0f4ff;--purple-dark:#3d4a9e;--purple-deep:#1a1f3a;--ink:#1a1f3a;--ink-soft:#4a5280;--ink-muted:#9aa0c0;--border:rgba(102,126,234,0.12);--surface:#ffffff;--bg:#f0f4ff;--radius:14px}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:15px;line-height:1.6}
+.container{max-width:480px;margin:0 auto;padding:0 20px}
+@media(min-width:600px){.container{max-width:680px}}
+@media(min-width:900px){.container{max-width:860px}}
+nav{position:sticky;top:0;z-index:100;background:rgba(240,244,255,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:1px solid rgba(102,126,234,0.18);border-radius:999px;padding:7px 16px 7px 8px;box-shadow:0 2px 10px rgba(102,126,234,0.1);text-decoration:none}
+.logo-dot{width:26px;height:26px;border-radius:50%;background:linear-gradient(140deg,#8b9fef,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(102,126,234,0.4);flex-shrink:0}
+.logo-word{font-family:"Fraunces",serif;font-size:17px;font-weight:300;color:var(--ink);letter-spacing:-0.01em}
+.nav-dl{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:999px;font-size:13px;font-weight:500;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;box-shadow:0 3px 12px rgba(102,126,234,0.3)}
+.hero{padding:56px 0 48px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:5px 14px 5px 10px;font-size:12px;font-weight:500;color:var(--purple-dark);margin-bottom:28px}
+.badge-pip{width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2)}
+h1{font-family:"Fraunces",serif;font-size:clamp(32px,8vw,52px);font-weight:300;line-height:1.1;letter-spacing:-0.025em;color:var(--ink);margin-bottom:18px}
+.hero-sub{font-size:16px;color:var(--ink-soft);line-height:1.7;font-weight:300;max-width:440px;margin:0 auto 32px}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-size:14px;font-weight:500;background:linear-gradient(135deg,#667eea,#764ba2);color:white;text-decoration:none;box-shadow:0 4px 16px rgba(102,126,234,0.35);transition:opacity 0.2s,transform 0.15s}
+.btn-primary:hover{opacity:0.9}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;padding:13px 24px;border-radius:999px;font-size:14px;font-weight:500;background:var(--surface);color:var(--purple);border:1.5px solid var(--border);text-decoration:none;transition:background 0.2s}
+.btn-secondary:hover{background:#e8ecff}
+.hero-shape{margin:40px auto 0;width:100%;max-width:340px;height:180px;border-radius:20px;background:linear-gradient(135deg,rgba(102,126,234,0.1),rgba(118,75,162,0.07));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.hero-chat{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;padding:0 20px;width:100%}
+.chat-bubble{padding:10px 14px;border-radius:14px;font-size:13px;max-width:82%}
+.chat-user{background:linear-gradient(135deg,#667eea,#764ba2);color:white;align-self:flex-end;border-radius:14px 14px 4px 14px}
+.chat-ai{background:var(--surface);color:var(--ink);border:1px solid var(--border);align-self:flex-start;border-radius:14px 14px 14px 4px}
+.section-tag{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.section-tag::before{content:"";width:20px;height:1px;background:var(--purple)}
+.section-title{font-family:"Fraunces",serif;font-size:clamp(24px,5vw,36px);font-weight:300;line-height:1.15;letter-spacing:-0.02em;color:var(--ink);margin-bottom:36px}
+.how{padding:64px 0;background:var(--surface)}
+.steps{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 20px}
+.step-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(102,126,234,0.14),rgba(118,75,162,0.09));display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step-num{font-size:11px;font-weight:500;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:5px}
+.step-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.step-desc{font-size:13px;color:var(--ink-soft);line-height:1.65;font-weight:300}
+.caps{padding:64px 0}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:600px){.cap-grid{grid-template-columns:repeat(4,1fr)}}
+.cap-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 16px;transition:box-shadow 0.2s,transform 0.15s}
+.cap-card:hover{box-shadow:0 6px 24px rgba(102,126,234,0.1);transform:translateY(-2px)}
+.cap-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.08));display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.cap-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px}
+.cap-desc{font-size:12px;color:var(--ink-soft);line-height:1.6;font-weight:300}
+.tips{background:var(--purple-deep);padding:64px 0}
+.tips .section-tag{color:rgba(102,126,234,0.7)}
+.tips .section-tag::before{background:rgba(102,126,234,0.4)}
+.tips .section-title{color:white}
+.tips-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:600px){.tips-grid{grid-template-columns:1fr 1fr}}
+.tip-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+.tip-num{font-family:"Fraunces",serif;font-size:22px;font-weight:300;color:rgba(102,126,234,0.45);line-height:1;flex-shrink:0;min-width:26px}
+.tip-text{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.65;font-weight:300}
+.assistants{padding:64px 0;background:var(--surface)}
+.assistant-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.assistant-grid{grid-template-columns:repeat(3,1fr)}}
+.assistant-card{border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;display:flex;flex-direction:column;gap:5px;transition:box-shadow 0.2s}
+.assistant-card:hover{box-shadow:0 6px 24px rgba(0,0,0,0.07)}
+.assistant-accent{width:8px;height:8px;border-radius:50%;margin-bottom:4px}
+.assistant-name{font-size:16px;font-weight:500;color:var(--ink)}
+.assistant-by{font-size:12px;color:var(--ink-muted);font-weight:300}
+.assistant-link{font-size:13px;color:var(--purple);font-weight:500;text-decoration:none;margin-top:6px;display:inline-flex;align-items:center;gap:4px}
+.assistant-link:hover{text-decoration:underline}
+.security{padding:64px 0;background:var(--bg)}
+.security-inner{display:grid;grid-template-columns:1fr;gap:32px}
+@media(min-width:600px){.security-inner{grid-template-columns:1fr 1fr;align-items:start}}
+.security-title{font-family:"Fraunces",serif;font-size:22px;font-weight:300;color:var(--ink);margin-bottom:16px;letter-spacing:-0.01em}
+.security-text{font-size:14px;color:var(--ink-soft);line-height:1.72;font-weight:300;margin-bottom:10px}
+.trust-badges{display:flex;flex-direction:column;gap:10px}
+.trust-badge{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:15px 18px;display:flex;align-items:center;gap:14px}
+.trust-icon{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,rgba(102,126,234,0.12),rgba(118,75,162,0.08));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-label{font-size:14px;font-weight:500;color:var(--ink)}
+.final-cta{background:linear-gradient(135deg,#667eea,#764ba2);padding:72px 20px;text-align:center}
+.final-cta h2{font-family:"Fraunces",serif;font-size:clamp(24px,5vw,38px);font-weight:300;color:white;letter-spacing:-0.02em;margin-bottom:14px;line-height:1.15}
+.final-cta p{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:28px;font-weight:300}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--purple-dark);padding:14px 32px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.15);transition:opacity 0.2s}
+.btn-white:hover{opacity:0.92}
+.final-note{font-size:12px;color:rgba(255,255,255,0.45);margin-top:14px}
+footer{background:var(--purple-deep);padding:32px 20px;text-align:center}
+.foot-logo{display:flex;justify-content:center;margin-bottom:20px}
+.foot-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.foot-links a{font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;font-weight:300;transition:color 0.2s}
+.foot-links a:hover{color:rgba(255,255,255,0.8)}
+.foot-copy{font-size:11px;color:rgba(255,255,255,0.2)}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/maicasa" class="logo">
+    <div class="logo-dot"><svg width="13" height="12" viewBox="0 0 14 13" fill="none"><path d="M7 1L13 6H11.5V12H8.5V8H5.5V12H2.5V6H1Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.9)" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 9.5L6.5 11.5L10 7" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="logo-word">maicasa</span>
+  </a>
+  <a href="/maicasa" class="nav-dl">Download</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><div class="badge-pip"></div>AI Assistant</div>
+    <h1>Your home,<br>managed by AI</h1>
+    <p class="hero-sub">Connect your AI assistant to Maicasa and manage your properties, tasks, quotes, and buying research — all through natural conversation.</p>
+    <div class="hero-actions">
+      <a href="/maicasa" class="btn-primary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Maicasa</a>
+      <a href="#how" class="btn-secondary">Learn how it works <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></a>
+    </div>
+    <div class="hero-shape">
+      <div class="hero-chat">
+        <div class="chat-bubble chat-user">What needs doing at home this week?</div>
+        <div class="chat-bubble chat-ai">You have 3 high priority tasks — the roof inspection is overdue and 2 quotes are waiting for review.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="container">
+    <div class="section-tag">How it works</div>
+    <div class="section-title">Three steps to a smarter home</div>
+    <div class="steps">
+      <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div><div class="step-num">Step 1</div><div class="step-title">Connect</div><div class="step-desc">Connect your preferred AI assistant — Claude, ChatGPT, or Gemini — to Maicasa in one tap from the app settings.</div></div>
+      <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="step-num">Step 2</div><div class="step-title">Ask</div><div class="step-desc">Ask questions about your properties, tasks, budget, or buying research. Tap the Ask AI button anywhere in the app to start a contextual conversation.</div></div>
+      <div class="step-card"><div class="step-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="step-num">Step 3</div><div class="step-title">Done</div><div class="step-desc">Your assistant saves tasks, quotes, and notes back to Maicasa automatically. Everything stays in one place.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="caps" id="capabilities">
+  <div class="container">
+    <div class="section-tag">Capabilities</div>
+    <div class="section-title">What your assistant can do</div>
+    <div class="cap-grid">
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="cap-title">View your properties</div><div class="cap-desc">Ask about any property — address, features, maintenance history, and buyer research notes.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div class="cap-title">Manage tasks</div><div class="cap-desc">Add tasks, mark them complete, and ask what needs doing next. Changes save directly to Maicasa.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div class="cap-title">Check your budget</div><div class="cap-desc">Ask for a cost summary, upcoming expenses, or which tasks are the most expensive.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div class="cap-title">Save quotes</div><div class="cap-desc">Share a quote document and your assistant extracts the details and saves it to the right task.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="cap-title">Property research</div><div class="cap-desc">For properties you are researching to buy, your assistant pulls up inspection notes, comparable sales, and your goals.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="cap-title">Compare quotes</div><div class="cap-desc">Ask your assistant to compare quotes for a job — scope, value, and a clear recommendation.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="cap-title">Daily recommendations</div><div class="cap-desc">Ask what you should work on today — your assistant knows your priorities and due dates.</div></div>
+      <div class="cap-card"><div class="cap-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div class="cap-title">Maintenance advice</div><div class="cap-desc">Ask any home maintenance question with the context of your specific property.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="tips" id="tips">
+  <div class="container">
+    <div class="section-tag">Tips and tricks</div>
+    <div class="section-title">Get more from your assistant</div>
+    <div class="tips-grid">
+      <div class="tip-card"><div class="tip-num">1</div><div class="tip-text">Start with "What should I do at [property name] this week?" to get a prioritised action plan.</div></div>
+      <div class="tip-card"><div class="tip-num">2</div><div class="tip-text">Share a photo of a quote or invoice and ask your assistant to save it to the right task.</div></div>
+      <div class="tip-card"><div class="tip-num">3</div><div class="tip-text">Ask "What are my highest priority tasks?" for a ranked list of what needs doing.</div></div>
+      <div class="tip-card"><div class="tip-num">4</div><div class="tip-text">Use the Ask AI button in the booking wizard to compare providers for a specific job.</div></div>
+      <div class="tip-card"><div class="tip-num">5</div><div class="tip-text">Ask "How much have I spent on maintenance this year?" for a cost summary.</div></div>
+      <div class="tip-card"><div class="tip-num">6</div><div class="tip-text">Say "Add a task to [property] to [action]" and it will create the task with the right format.</div></div>
+      <div class="tip-card"><div class="tip-num">7</div><div class="tip-text">In the buyer journey, tap Ask AI to get negotiation advice tailored to the specific property.</div></div>
+      <div class="tip-card"><div class="tip-num">8</div><div class="tip-text">Ask "What quotes have I received for [task]?" to review saved quotes without opening the app.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="assistants" id="assistants">
+  <div class="container">
+    <div class="section-tag">Supported assistants</div>
+    <div class="section-title">Works with the AI you already use</div>
+    <div class="assistant-grid">
+      <div class="assistant-card"><div class="assistant-accent" style="background:#667eea;"></div><div class="assistant-name">Claude</div><div class="assistant-by">by Anthropic</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
+      <div class="assistant-card"><div class="assistant-accent" style="background:#10a37f;"></div><div class="assistant-name">ChatGPT</div><div class="assistant-by">by OpenAI</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
+      <div class="assistant-card"><div class="assistant-accent" style="background:#4285f4;"></div><div class="assistant-name">Gemini</div><div class="assistant-by">by Google</div><a href="/maicasa" class="assistant-link">Connect in app &#x2192;</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="security" id="security">
+  <div class="container">
+    <div class="section-tag">Privacy and security</div>
+    <div class="section-title">Your data, your control</div>
+    <div class="security-inner">
+      <div>
+        <p class="security-text">Your Maicasa data is only shared with your AI assistant when you start a conversation.</p>
+        <p class="security-text">Your assistant accesses your data through a secure connection — it cannot access your data at any other time.</p>
+        <p class="security-text">You can revoke access at any time in Maicasa settings.</p>
+      </div>
+      <div class="trust-badges">
+        <div class="trust-badge"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><div class="trust-label">End-to-end secure</div></div>
+        <div class="trust-badge"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="trust-label">You control access</div></div>
+        <div class="trust-badge"><div class="trust-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#667eea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div><div class="trust-label">Revoke anytime</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Ready to connect your AI assistant?</h2>
+  <p>Free to download. No account required to start.</p>
+  <a href="/maicasa" class="btn-white"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download Maicasa</a>
+  <p class="final-note">Available on iOS &#xB7; Android coming soon</p>
+</section>
+
+<footer>
+  <div class="foot-logo">
+    <a href="/maicasa" class="logo">
+      <div class="logo-dot"><svg width="13" height="12" viewBox="0 0 14 13" fill="none"><path d="M7 1L13 6H11.5V12H8.5V8H5.5V12H2.5V6H1Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.9)" stroke-width="1.3" stroke-linejoin="round"/><path d="M4.5 9.5L6.5 11.5L10 7" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="logo-word" style="color:white;">maicasa</span>
+    </a>
+  </div>
+  <div class="foot-links">
+    <a href="/maicasa">Home</a>
+    <a href="/maicasa/privacy">Privacy</a>
+    <a href="/maicasa/terms">Terms</a>
+    <a href="/maicasa/support">Support</a>
+    <a href="mailto:info@maisoftware.app">Contact</a>
+  </div>
+  <p class="foot-copy">&#x00A9; 2025 Mai Software. All rights reserved.</p>
+</footer>
+</body>
+</html>
