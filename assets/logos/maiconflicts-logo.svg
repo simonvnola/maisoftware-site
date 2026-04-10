@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="100" viewBox="0 0 280 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="ct">
+      <circle cx="52" cy="35" r="35" />
+    </clipPath>
+    <clipPath id="cl">
+      <circle cx="35" cy="65" r="35" />
+    </clipPath>
+    <clipPath id="cr">
+      <circle cx="69" cy="65" r="35" />
+    </clipPath>
+    <clipPath id="ctl">
+      <circle cx="35" cy="65" r="35" clip-path="url(#ct)" />
+    </clipPath>
+  </defs>
+
+  <!-- Base circles -->
+  <circle cx="52" cy="35" r="35" fill="rgba(26,58,107,0.06)" />
+  <circle cx="35" cy="65" r="35" fill="rgba(91,200,245,0.07)" />
+  <circle cx="69" cy="65" r="35" fill="rgba(201,168,76,0.07)" />
+
+  <!-- Pairwise intersections -->
+  <circle cx="35" cy="65" r="35" fill="rgba(91,200,245,0.22)" clip-path="url(#ct)" />
+  <circle cx="69" cy="65" r="35" fill="rgba(201,168,76,0.20)" clip-path="url(#ct)" />
+  <circle cx="69" cy="65" r="35" fill="rgba(26,58,107,0.08)" clip-path="url(#cl)" />
+
+  <!-- Triple intersection -->
+  <circle cx="69" cy="65" r="35" fill="rgba(26,58,107,0.28)" clip-path="url(#ctl)" />
+
+  <!-- Circle strokes -->
+  <circle cx="52" cy="35" r="35" fill="none" stroke="rgba(26,58,107,0.5)" stroke-width="1.8" />
+  <circle cx="35" cy="65" r="35" fill="none" stroke="#5BC8F5" stroke-width="1.8" />
+  <circle cx="69" cy="65" r="35" fill="none" stroke="#C9A84C" stroke-width="1.8" />
+
+  <!-- Wordmark -->
+  <text x="120" y="44" fill="#1a3a6b" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="200" letter-spacing="0.04em">mai</text>
+  <text x="178" y="44" fill="#1a3a6b" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" letter-spacing="-0.02em">conflicts</text>
+
+  <!-- Tagline -->
+  <text x="120" y="72" fill="#6B85AA" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="10" font-weight="500" letter-spacing="0.2em">COMPLIANCE · VISIBILITY · TRUST</text>
+</svg>
