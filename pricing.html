@@ -241,6 +241,41 @@
       line-height: 1.6;
     }
 
+    .value-callout {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      padding: 36px 28px;
+      border: 1px solid rgba(102,126,234,0.25);
+      background: rgba(102,126,234,0.07);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .value-callout h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+    }
+
+    .value-callout p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 580px;
+      margin: 0 auto 12px;
+    }
+
+    .value-callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      .value-callout { margin: 8px auto 64px; padding: 44px 40px; }
+      .value-callout h2 { font-size: 26px; }
+      .value-callout p { font-size: 15px; }
+    }
+
     .footer {
       text-align: center;
       padding: 24px 20px;
@@ -268,7 +303,7 @@
 
 <!-- Hero -->
 <div class="hero">
-  <h1>Simple, honest pricing</h1>
+  <h1>Simple Pricing tailored to your needs</h1>
   <p>Pay for what you use. Switch modules anytime on annual plans.</p>
 
   <div class="billing-toggle">
@@ -486,6 +521,13 @@
   On annual Home or Buyer plans — once you buy your property, transfer your
   remaining subscription to the Home module at no extra cost.
 </p>
+
+<!-- Value callout -->
+<section class="value-callout">
+  <h2>Save thousands — without losing peace of mind</h2>
+  <p>Home managers and buyers agents can cost tens of thousands of dollars. Maicasa gives you the same confidence that your home is in order and your property decisions are sound — for a few dollars a month.</p>
+  <p>Use Maicasa as a full replacement, or alongside professionals you already work with. Either way, every task, cost and decision stays organised in one place.</p>
+</section>
 
 <!-- Footer -->
 <div class="footer">
