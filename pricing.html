@@ -241,6 +241,99 @@
       line-height: 1.6;
     }
 
+    .value-callout {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      padding: 36px 28px;
+      border: 1px solid rgba(102,126,234,0.25);
+      background: rgba(102,126,234,0.07);
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .value-callout h2 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+    }
+
+    .value-callout p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 580px;
+      margin: 0 auto 12px;
+    }
+
+    .value-callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .compare-wrap {
+      margin: 24px -8px 4px;
+      overflow-x: auto;
+    }
+
+    .compare-table {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .compare-table thead th {
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.85);
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+
+    .compare-table tbody td {
+      text-align: center;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .compare-table th:first-child,
+    .compare-table tbody td:first-child {
+      text-align: left;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+
+    .compare-table th.col-maicasa,
+    .compare-table td.col-maicasa {
+      color: #a5b4fc;
+      font-weight: 600;
+    }
+
+    .compare-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .value-callout p.compare-cta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.62);
+      margin-top: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .value-callout { margin: 8px auto 64px; padding: 44px 40px; }
+      .value-callout h2 { font-size: 26px; }
+      .value-callout p { font-size: 15px; }
+      .compare-table { font-size: 14px; }
+      .compare-table th, .compare-table td { padding: 12px 14px; }
+    }
+
     .footer {
       text-align: center;
       padding: 24px 20px;
@@ -268,7 +361,7 @@
 
 <!-- Hero -->
 <div class="hero">
-  <h1>Simple, honest pricing</h1>
+  <h1>Simple Pricing tailored to your needs</h1>
   <p>Pay for what you use. Switch modules anytime on annual plans.</p>
 
   <div class="billing-toggle">
@@ -486,6 +579,89 @@
   On annual Home or Buyer plans — once you buy your property, transfer your
   remaining subscription to the Home module at no extra cost.
 </p>
+
+<!-- Value callout -->
+<section class="value-callout">
+  <h2>Save thousands — without losing peace of mind</h2>
+  <p>Home managers and buyers agents bring real expertise — and real bills. Maicasa gives you the same day-to-day confidence for a fraction of the cost, and works even better alongside the professionals you already trust.</p>
+
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Buyers agent</th>
+          <th>Home manager</th>
+          <th class="col-maicasa">Maicasa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Typical cost</td>
+          <td>$2k–$15k+ / purchase</td>
+          <td>$40k–$100k+ / year</td>
+          <td class="col-maicasa">From $8.99 / month</td>
+        </tr>
+        <tr>
+          <td>Property research &amp; analysis</td>
+          <td>✓</td>
+          <td>—</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Negotiates on your behalf</td>
+          <td>✓</td>
+          <td>—</td>
+          <td class="col-maicasa">—</td>
+        </tr>
+        <tr>
+          <td>Prioritised maintenance plan</td>
+          <td>—</td>
+          <td>✓</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Budget &amp; cost tracking</td>
+          <td>—</td>
+          <td>✓</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Identifies the right trade or provider</td>
+          <td>—</td>
+          <td>✓</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Finds providers to request quotes</td>
+          <td>—</td>
+          <td>✓</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Liaises with providers on your behalf</td>
+          <td>—</td>
+          <td>✓</td>
+          <td class="col-maicasa">Not yet</td>
+        </tr>
+        <tr>
+          <td>Inspection report import</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+        <tr>
+          <td>Always available</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="col-maicasa">✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="compare-cta">Better together. Pair Maicasa with your buyers agent or home manager and keep every task, cost and decision organised in one place — nothing slips through the cracks between meetings.</p>
+</section>
 
 <!-- Footer -->
 <div class="footer">
