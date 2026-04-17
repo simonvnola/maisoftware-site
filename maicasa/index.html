@@ -122,6 +122,13 @@
   .no { color: var(--ink-muted); }
   .partial { color: #b45309; }
 
+  .compare-table td.winner {
+    background: rgba(134,239,172,0.1);
+    border-left: 2px solid rgba(134,239,172,0.4);
+    font-weight: 500;
+    color: #15803d;
+  }
+
   .complement-note { margin-top: 16px; padding: 16px 20px; background: var(--purple-light); border: 1px solid rgba(102,126,234,0.2); border-radius: 12px; font-size: 13.5px; color: var(--purple-dark); line-height: 1.65; font-weight: 300; }
   .complement-note strong { font-weight: 500; }
 
@@ -303,55 +310,55 @@
   <!-- BUYERS AGENT -->
   <div class="compare-block">
     <div class="compare-block-title">Buying a property</div>
-    <div class="compare-block-sub">A human buyers agent typically charges 1.5–3% of the purchase price or a fixed fee of $10,000–$33,000 + GST. On a $2M property that's $30,000–$60,000. Maicasa gives you the research, organisation, and always-on guidance for a fraction of that.</div>
+    <div class="compare-block-sub">A buyers agent can cost in excess of $50,000. Maicasa gives you some of the buyers agent experience for only $8.99 per month.</div>
     <table class="compare-table">
       <thead>
         <tr>
           <th>What you need when buying</th>
-          <th>Human buyers agent<br><span style="font-weight:300;color:rgba(255,255,255,0.5);font-size:11px;">1.5–3% of purchase price or $10k–$33k fixed + GST</span></th>
-          <th class="highlight">Maicasa buyers agent<br><span style="font-weight:300;color:rgba(167,139,250,0.8);font-size:11px;">From $8.99/month</span></th>
+          <th>Human buyers agent</th>
+          <th class="highlight">Maicasa buyers agent</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Someone in the room negotiating at auction</td>
-          <td class="yes">They're there — this is their craft</td>
+          <td class="yes winner">They're there — this is their craft</td>
           <td class="no">Not this — Maicasa prepares you, your agent closes</td>
         </tr>
         <tr>
           <td>I don't know if this suburb is actually growing</td>
           <td class="yes">Deep local knowledge built over years</td>
-          <td class="yes">AI searches recent sales and price trends instantly</td>
+          <td class="yes winner">AI searches recent sales and price trends instantly</td>
         </tr>
         <tr>
           <td>I don't know what questions to ask the selling agent</td>
-          <td class="yes">Experience-based instinct</td>
+          <td class="yes winner">Experience-based instinct built over hundreds of deals</td>
           <td class="yes">Generates property-specific questions automatically</td>
         </tr>
         <tr>
           <td>I'm worried about flood risk at this address</td>
           <td class="partial">Varies — some agents check, many don't</td>
-          <td class="yes">Flood, fire, and coastal risk checked on every property</td>
+          <td class="yes winner">Flood, fire, and coastal risk checked on every property</td>
         </tr>
         <tr>
           <td>I'm looking at six properties and losing track</td>
           <td class="partial">Usually a spreadsheet or an email thread</td>
-          <td class="yes">7-stage journey tracker with notes and research per property</td>
+          <td class="yes winner">7-stage journey tracker with notes and research per property</td>
         </tr>
         <tr>
           <td>I need to understand the real cost to buy and hold</td>
           <td class="partial">Covered at a high level if you ask</td>
-          <td class="yes">Stamp duty, deposit, and first-year holding costs calculated</td>
+          <td class="yes winner">Stamp duty, deposit, and first-year holding costs calculated</td>
         </tr>
         <tr>
           <td>I can't remember what was said at our last meeting</td>
-          <td class="no">Notes live in their system, not yours</td>
+          <td class="yes winner">It's their job — they follow up and keep you on track</td>
           <td class="yes">Everything saved — research, reports, decisions, all in one place</td>
         </tr>
         <tr>
           <td>It's 11pm and I'm second-guessing a property</td>
           <td class="no">They're asleep</td>
-          <td class="yes">AI assistant is always on — ask anything, any time</td>
+          <td class="yes winner">AI assistant is always on — ask anything, any time</td>
         </tr>
       </tbody>
     </table>
@@ -363,60 +370,60 @@
   <!-- HOME MANAGER -->
   <div class="compare-block">
     <div class="compare-block-title">Managing your home</div>
-    <div class="compare-block-sub">A human home manager is a real person you pay a salary to oversee your property — scheduling trades, tracking maintenance, managing budgets. At $75k–$90k a year plus super, it's a significant commitment. Maicasa does the same organisational work for $8.99 a month.</div>
+    <div class="compare-block-sub">A full-time human home manager costs $75,000–$90,000 a year in salary plus super. Maicasa handles the organising, prioritising, and record-keeping for $8.99 a month.</div>
     <table class="compare-table">
       <thead>
         <tr>
-          <th>What managing a home actually involves</th>
-          <th>Human home manager<br><span style="font-weight:300;color:rgba(255,255,255,0.5);font-size:11px;">$75k–$90k salary + super per year</span></th>
-          <th class="highlight">Maicasa AI home manager<br><span style="font-weight:300;color:rgba(167,139,250,0.8);font-size:11px;">$8.99/month</span></th>
+          <th>What you need as a homeowner</th>
+          <th>Human home manager</th>
+          <th class="highlight">Maicasa home assistant</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Knowing what needs doing and when — across the whole property</td>
-          <td class="yes">Experienced managers build this picture over time</td>
-          <td class="yes">AI scans your property and builds a prioritised plan from day one</td>
+          <td>I need someone to coordinate trades on my behalf</td>
+          <td class="yes winner">They call, follow up, and hold tradies accountable</td>
+          <td class="no">Maicasa helps you manage it — you still make the calls</td>
         </tr>
         <tr>
-          <td>Keeping track of every job — what's done, what's pending, what's overdue</td>
-          <td class="yes">Their full-time job — but the records live with them, not you</td>
-          <td class="yes">Full task history always in your hands, not someone else's inbox</td>
+          <td>I don't know what needs doing or when</td>
+          <td class="yes winner">They know the property and its quirks inside out</td>
+          <td class="yes">AI prioritises every job by urgency, safety, and timing</td>
         </tr>
         <tr>
-          <td>Getting quotes and knowing if they're reasonable</td>
-          <td class="yes">They have tradie relationships and market knowledge</td>
-          <td class="yes">AI compares quotes and flags what looks out of range — no conflict of interest</td>
+          <td>I can't remember what's been done or when</td>
+          <td class="yes">They keep records — in their system</td>
+          <td class="yes winner">Full history in your account — not theirs, yours</td>
         </tr>
         <tr>
-          <td>Planning what to spend this year versus next year</td>
-          <td class="yes">A good manager plans ahead — but you're trusting their judgement</td>
-          <td class="yes">AI prioritises by urgency, safety risk, and budget impact — you stay in control</td>
+          <td>I need to know if a quote is reasonable</td>
+          <td class="yes winner">Trade experience helps them spot a bad quote immediately</td>
+          <td class="yes">AI compares quotes and flags what looks out of range</td>
         </tr>
         <tr>
-          <td>Turning a building inspection into an action plan</td>
-          <td class="yes">They'll read the report and coordinate the work</td>
-          <td class="yes">Upload the PDF — every finding becomes a tracked, prioritised task instantly</td>
+          <td>I have a building inspection and don't know where to start</td>
+          <td class="yes">They'll read it and make a plan</td>
+          <td class="yes winner">Upload the PDF — every finding becomes a tracked task instantly</td>
         </tr>
         <tr>
-          <td>Being available when something goes wrong at an inconvenient time</td>
-          <td class="partial">Business hours, mostly — emergencies aside</td>
-          <td class="yes">Always on — ask anything, get guidance, log the issue at any hour</td>
+          <td>I need help at 10pm when something looks wrong</td>
+          <td class="no">They're off the clock</td>
+          <td class="yes winner">AI assistant available any time — describe it, photograph it, get guidance</td>
         </tr>
         <tr>
-          <td>Knowing the full history of the property</td>
-          <td class="partial">Only what happened on their watch — and it leaves when they do</td>
-          <td class="yes">Complete maintenance history, forever — and it belongs to you</td>
+          <td>I want to plan maintenance spend for the year ahead</td>
+          <td class="yes winner">They know what's coming based on the property's age and condition</td>
+          <td class="yes">Budget planner with AI cost estimates across all upcoming jobs</td>
         </tr>
         <tr>
-          <td>Handling multiple properties without things falling through the cracks</td>
-          <td class="partial">Possible — but you're paying for each hour of their attention</td>
-          <td class="yes">Unlimited properties on the Bundle plan — same price</td>
+          <td>I need the full history when I sell or hand over</td>
+          <td class="no">It lives in their files, not yours</td>
+          <td class="yes winner">Complete maintenance record in your account, always accessible</td>
         </tr>
       </tbody>
     </table>
     <div class="complement-note">
-      <strong>Honest about what Maicasa doesn't do.</strong> Maicasa won't call the plumber for you, show up on site, or handle an emergency at 2am. It organises everything around the trades you book — so when you do pick up the phone, you already know exactly what to say.
+      <strong>Better together.</strong> If you have a property manager or building manager, use Maicasa to stay across what's happening between their updates. You'll always know the full picture — not just what they chose to tell you.
     </div>
   </div>
 
