@@ -6,25 +6,26 @@
 <title>ProBono — Give Your Professional Time</title>
 <meta name="description" content="Turn your skills into meaningful impact. ProBono makes it easy to give back through what you do best.">
 <link rel="icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink: #0f1118;
-  --ink-soft: #5a5f72;
-  --ink-muted: #9aa0b8;
+  --ink: #1a1f2e;
+  --ink-soft: #4a5166;
+  --ink-muted: #8891aa;
   --blue: #2563d4;
-  --green: #3db86a;
-  --blue-light: #eef3ff;
-  --green-light: #edfaf3;
-  --border: rgba(37,99,212,0.10);
-  --bg: #fafbff;
+  --green: #27a85a;
+  --blue-light: #e8f0fe;
+  --green-light: #e6f9ee;
+  --border: rgba(0,0,0,0.08);
+  --bg: #ffffff;
+  --card-bg: #f7f8fc;
 }
 
 body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
   color: var(--ink);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -43,7 +44,7 @@ nav {
 
 .nav-wordmark {
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -55,7 +56,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--ink-muted);
   text-decoration: none;
   transition: color 0.2s;
@@ -90,7 +91,7 @@ nav {
   align-items: center;
   gap: 7px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--green);
@@ -108,7 +109,7 @@ nav {
 
 .hero-title {
   font-size: clamp(36px, 6vw, 58px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin-bottom: 24px;
@@ -116,13 +117,13 @@ nav {
 }
 .hero-title em {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 200;
   color: var(--blue);
 }
 
 .hero-sub {
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.7;
   color: var(--ink-soft);
   max-width: 460px;
@@ -137,7 +138,7 @@ nav {
   color: white;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.05em;
   padding: 16px 34px;
   border-radius: 999px;
@@ -159,7 +160,7 @@ nav {
 .section-label {
   text-align: center;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-muted);
@@ -173,7 +174,7 @@ nav {
 }
 
 .step {
-  background: white;
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 28px 24px;
@@ -186,7 +187,7 @@ nav {
 
 .step-num {
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   letter-spacing: 0.12em;
   color: var(--ink-muted);
@@ -212,7 +213,7 @@ nav {
 
 .step-body {
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.65;
   color: var(--ink-muted);
 }
@@ -227,7 +228,7 @@ nav {
 
 .closing-text {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 300;
   font-style: italic;
   line-height: 1.5;
   color: var(--ink-soft);
@@ -235,7 +236,7 @@ nav {
 
 .closing-sub {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--ink-muted);
   margin-top: 16px;
 }
@@ -256,14 +257,14 @@ footer {
 .footer-copy {
   font-size: 11px;
   color: var(--ink-muted);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.05em;
 }
 
 .footer-link {
   font-size: 11px;
   color: var(--ink-muted);
-  font-weight: 400;
+  font-weight: 300;
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.2s;
@@ -276,6 +277,151 @@ footer {
   .closing { padding: 0 24px; margin-bottom: 64px; }
   footer { padding: 24px; }
   .steps { grid-template-columns: 1fr; }
+}
+
+/* ── Insight band ── */
+.insight {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  padding: 0 32px;
+}
+
+.insight-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .insight-card { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+  .insight { padding: 0 20px; }
+}
+
+.insight-label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 14px;
+}
+
+.insight-heading {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.insight-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.insight-stat {
+  background: #dce8fd;
+  border-radius: 18px;
+  padding: 32px 28px;
+  text-align: center;
+  min-width: 180px;
+}
+
+.insight-stat-number {
+  font-size: 56px;
+  font-weight: 200;
+  font-style: italic;
+  line-height: 1;
+  color: var(--blue);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+}
+
+.insight-stat-label {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+/* ── Story card ── */
+.story-wrap {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  padding: 0 32px;
+}
+@media (max-width: 600px) { .story-wrap { padding: 0 20px; } }
+
+.story-card {
+  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+  border-radius: 24px;
+  padding: 40px 44px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 600px) { .story-card { padding: 28px 24px; } }
+
+.story-card::before {
+  content: '\201C';
+  position: absolute;
+  top: -20px;
+  left: 32px;
+  font-size: 160px;
+  font-weight: 200;
+  font-style: italic;
+  opacity: 0.10;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.story-label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 20px;
+}
+
+.story-text {
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.story-impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.80);
+}
+
+.story-impact-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52b788;
+  flex-shrink: 0;
 }
 </style>
 </head>
@@ -295,16 +441,39 @@ footer {
   <div class="hero-icon">
     <img src="/assets/logos/Probono.png" alt="ProBono">
   </div>
-  <div class="hero-eyebrow">
-    <span class="hero-eyebrow-dot"></span>
-    Skills &amp; expertise
-  </div>
-  <h1 class="hero-title">Turn your skills into <em>meaningful</em> impact</h1>
-  <p class="hero-sub">Instead of donating money, contribute your time, expertise, and effort to causes that matter. Whatever you do best — ProBono makes it part of how you give back.</p>
+  <h1 class="hero-title">Don't you wish you could use your business skills to have a <em>meaningful impact?</em></h1>
+  <p class="hero-sub">Volunteer your time doing what you do best. Maximise the impact you can have for your chosen cause by pledging to donate what you earn in one hour per week, fortnight, or month to a good cause.</p>
   <a href="#" class="hero-cta">
     Start giving through your work
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
+</section>
+
+<!-- Why it works -->
+<section class="insight">
+  <div class="insight-card">
+    <div>
+      <p class="insight-label">Why it works</p>
+      <h2 class="insight-heading">Your professional hour is worth more than you think</h2>
+      <p class="insight-body">Volunteering your time directly — at a soup kitchen, or on a build project overseas — is a generous act. But for most professionals, donating an hour's earnings to an effective charity creates far more impact than spending that same hour volunteering in person.<br><br>A surgeon who donates an hour's pay can fund dozens of surgeries performed by local doctors at a fraction of the cost. The most powerful thing most of us can do isn't to show up with a paintbrush — it's to show up with a paycheck.</p>
+    </div>
+    <div class="insight-stat">
+      <div class="insight-stat-number">10×</div>
+      <div class="insight-stat-label">More impact when professionals donate earnings rather than time directly</div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="story-wrap">
+  <div class="story-card">
+    <p class="story-label">In practice</p>
+    <p class="story-text">Jenny starts her week by dedicating her first hour on a Monday morning to the Fred Hollows Foundation. By the end of the morning meeting, her single hour's salary has restored sight to three people through cataract surgery — without taking a single day off work.</p>
+    <span class="story-impact">
+      <span class="story-impact-dot"></span>
+      One hour &nbsp;·&nbsp; Three sight restorations &nbsp;·&nbsp; Zero time off work
+    </span>
+  </div>
 </section>
 
 <!-- How it works -->
@@ -384,4 +553,3 @@ footer {
 
 </body>
 </html>
-
