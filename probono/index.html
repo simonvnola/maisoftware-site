@@ -334,23 +334,27 @@ footer {
   min-width: 180px;
 }
 
-.insight-stat-number {
-  font-size: 56px;
-  font-weight: 200;
-  font-style: italic;
-  line-height: 1;
-  color: var(--blue);
-  letter-spacing: -0.03em;
-  margin-bottom: 10px;
-}
-
 .insight-stat-label {
-  font-size: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.insight-stat-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.insight-stat-links a {
+  font-size: 13px;
   font-weight: 300;
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 140px;
-  margin: 0 auto;
+  color: var(--blue);
+  text-decoration: none;
+  line-height: 1.4;
+  transition: opacity 0.2s;
+}
+.insight-stat-links a:hover {
+  opacity: 0.7;
 }
 
 /* ── Story card ── */
@@ -455,11 +459,15 @@ footer {
     <div>
       <p class="insight-label">Why it works</p>
       <h2 class="insight-heading">Your professional hour is worth more than you think</h2>
-      <p class="insight-body">Volunteering your time directly — at a soup kitchen, or on a build project overseas — is a generous act. But for most professionals, donating an hour's earnings to an effective charity creates far more impact than spending that same hour volunteering in person.<br><br>A surgeon who donates an hour's pay can fund dozens of surgeries performed by local doctors at a fraction of the cost. The most powerful thing most of us can do isn't to show up with a paintbrush — it's to show up with a paycheck.</p>
+      <p class="insight-body">Spending an hour volunteering in person is a generous act. But for most professionals, donating that hour's earnings to an effective charity creates far more measurable impact. This is the idea behind 'earning to give' — researched extensively by 80,000 Hours and the effective altruism community. GiveWell's cost-effectiveness analyses show how far a single dollar goes at the world's top charities. ProBono makes it easy to put this into practice.</p>
     </div>
     <div class="insight-stat">
-      <div class="insight-stat-number">10×</div>
-      <div class="insight-stat-label">More impact when professionals donate earnings rather than time directly</div>
+      <div class="insight-stat-label">The case for earning to give</div>
+      <div class="insight-stat-links">
+        <a href="https://80000hours.org/articles/earning-to-give/" target="_blank" rel="noopener">80,000 Hours — Earning to give →</a>
+        <a href="https://www.givewell.org/how-we-work/our-criteria/cost-effectiveness" target="_blank" rel="noopener">GiveWell — Cost effectiveness →</a>
+        <a href="https://www.effectivealtruism.org/articles/introduction-to-effective-altruism" target="_blank" rel="noopener">Effective Altruism — Introduction →</a>
+      </div>
     </div>
   </div>
 </section>
