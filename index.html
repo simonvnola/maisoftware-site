@@ -21,7 +21,9 @@
     align-items: center; justify-content: center;
     padding: 48px 24px; -webkit-font-smoothing: antialiased;
   }
-  .wordmark { font-size: 13px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 56px; }
+  .wordmark { font-size: 13px; font-weight: 300; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 28px; }
+  .intro { max-width: 520px; text-align: center; margin-bottom: 48px; font-weight: 300; color: var(--ink-soft); font-size: 17px; line-height: 1.55; letter-spacing: -0.005em; }
+  .intro em { font-style: italic; color: var(--ink); }
   .apps { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 380px; }
   .app-link {
     display: flex; align-items: center; gap: 16px; padding: 18px 20px;
@@ -49,6 +51,7 @@
 </head>
 <body>
 <div class="wordmark">Mai Software</div>
+<p class="intro">We build software that <em>solves real problems</em> and makes everyday life a little easier. By finding the gaps in what's out there — and filling them with care — we hope to make the world a slightly better place along the way.</p>
 <div class="apps">
   <a href="/maicasa" class="app-link">
     <div class="app-icon">
