@@ -379,6 +379,120 @@
   .footer-bottom a { color: var(--cream-mute); text-decoration: none; }
   .footer-bottom a:hover { color: var(--gold); }
 
+  /* SPOTLIGHT */
+  .spotlight {
+    padding: 40px 32px 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .spotlight-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, #331608 0%, #2A1208 60%, #1F0D05 100%);
+    border: 1px solid rgba(200, 160, 96, 0.18);
+    border-radius: 28px;
+    padding: 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .spotlight-inner::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    right: -10%;
+    width: 60%;
+    height: 140%;
+    background: radial-gradient(ellipse at center, rgba(200, 160, 96, 0.14), transparent 60%);
+    pointer-events: none;
+  }
+  .spotlight-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 6px 14px;
+    border: 1px solid rgba(200, 160, 96, 0.32);
+    border-radius: 999px;
+    margin-bottom: 26px;
+    position: relative;
+  }
+  .spotlight h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    max-width: 760px;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .spotlight h2 em { font-style: italic; color: var(--gold); }
+  .spotlight-lead {
+    font-size: 18px;
+    color: var(--cream-dim);
+    max-width: 640px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .scan-modes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+  .scan-mode {
+    background: rgba(28, 14, 6, 0.55);
+    border: 1px solid rgba(200, 160, 96, 0.18);
+    border-radius: 18px;
+    padding: 30px 26px;
+    transition: border-color 0.25s, transform 0.25s, background 0.25s;
+  }
+  .scan-mode:hover {
+    border-color: rgba(200, 160, 96, 0.45);
+    background: rgba(42, 18, 8, 0.85);
+    transform: translateY(-3px);
+  }
+  .scan-mode .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scan-mode .num::before {
+    content: "";
+    width: 6px; height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .scan-mode h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--cream);
+  }
+  .scan-mode p {
+    font-size: 14px;
+    color: var(--cream-dim);
+    line-height: 1.6;
+  }
+  .scan-mode.hero-mode {
+    background: linear-gradient(180deg, rgba(139, 26, 42, 0.28), rgba(28, 14, 6, 0.7));
+    border-color: rgba(200, 160, 96, 0.38);
+  }
+  .scan-mode .badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--gold);
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
     to { opacity: 1; transform: translateY(0); }
@@ -388,8 +502,9 @@
     nav.top { padding: 16px 24px; }
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 13px; }
-    .features, .pricing { grid-template-columns: 1fr; }
-    section { padding: 32px 24px 64px; }
+    .features, .pricing, .scan-modes { grid-template-columns: 1fr; }
+    section, .spotlight { padding: 32px 24px 64px; }
+    .spotlight-inner { padding: 48px 28px; border-radius: 22px; }
     footer { padding: 56px 24px 36px; }
     .footer-inner { flex-direction: column; }
   }
@@ -405,6 +520,7 @@
 <nav class="top">
   <a href="/maicellar/" class="logo">maicellar</a>
   <div class="nav-links">
+    <a href="#scanning">Scanning</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="/maicellar/support.html">Support</a>
@@ -433,6 +549,38 @@
   <span class="line"></span>
 </div>
 
+<section class="spotlight" id="scanning">
+  <div class="spotlight-inner">
+    <span class="spotlight-tag">AI Scanning</span>
+    <h2>One bottle, a whole shelf, or an <em>entire delivery</em> — in seconds.</h2>
+    <p class="spotlight-lead">MaiCellar's camera isn't just a label reader. Point it at a single bottle, a row of twelve, or the invoice that came with the case — everything gets recognised, enriched and filed into your cellar in one go.</p>
+    <div class="scan-modes">
+      <div class="scan-mode">
+        <div class="num">01</div>
+        <h4>Single bottle</h4>
+        <p>Aim at one label. Producer, cuvée, vintage, region and tasting notes fill in automatically — no typing, no guesswork.</p>
+      </div>
+      <div class="scan-mode hero-mode">
+        <span class="badge">New</span>
+        <div class="num">02</div>
+        <h4>Multi-bottle scan</h4>
+        <p>Frame an entire shelf or case. MaiCellar identifies every bottle in the shot at once and adds them all — dozens in a single tap.</p>
+      </div>
+      <div class="scan-mode">
+        <div class="num">03</div>
+        <h4>Invoice &amp; delivery</h4>
+        <p>Snap the invoice from your merchant. MaiCellar reads every line, matches each wine to its record, and logs the whole delivery in one go.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament">
+  <span class="line"></span>
+  <span class="diamond"></span>
+  <span class="line"></span>
+</div>
+
 <section id="features">
   <div class="section-inner">
     <div class="section-head">
@@ -445,7 +593,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="8" width="10" height="8" rx="1"/></svg>
         </div>
         <h3>AI Label Scanning</h3>
-        <p>Point your camera at any bottle. MaiCellar reads the label, enriches it with region, vintage and tasting notes, and files it instantly.</p>
+        <p>One bottle, a whole shelf, or the invoice from a delivery — all recognised and added in a single tap. No typing, no guesswork.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">
