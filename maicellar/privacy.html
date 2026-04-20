@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — MaiCellar</title>
+<meta name="description" content="How MaiCellar collects, uses, and protects your data. Operated by Mai Software.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #1C0E06;
+    --surface: #2A1208;
+    --gold: #C8A060;
+    --gold-dim: #8A6830;
+    --wine: #8B1A2A;
+    --cream: #F2E4C0;
+    --muted: #6A4828;
+    --cream-dim: rgba(242, 228, 192, 0.68);
+    --cream-mute: rgba(242, 228, 192, 0.46);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--cream);
+    line-height: 1.65;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.63 0 0 0 0 0.38 0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: overlay;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    line-height: 1.15;
+  }
+
+  /* NAV */
+  nav.top {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 48px;
+    background: rgba(28, 14, 6, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(200, 160, 96, 0.12);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .back-link {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+  .back-link:hover { color: var(--gold); }
+
+  /* HERO */
+  .page-hero {
+    padding: 160px 32px 64px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(139, 26, 42, 0.14), transparent 60%);
+    pointer-events: none;
+  }
+  .page-hero-inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+  }
+  h1.page-title {
+    font-size: clamp(44px, 7vw, 80px);
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  h1.page-title em { font-style: italic; color: var(--gold); font-weight: 400; }
+  .updated {
+    font-size: 14px;
+    color: var(--cream-mute);
+    letter-spacing: 0.02em;
+  }
+
+  /* ORNAMENT */
+  .ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 36px 0;
+    position: relative;
+    z-index: 2;
+  }
+  .ornament .line {
+    flex: 0 0 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+  }
+  .ornament .diamond {
+    width: 10px; height: 10px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 18px rgba(200, 160, 96, 0.4);
+  }
+
+  /* LAYOUT */
+  .policy-wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 24px 32px 96px;
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+
+  /* TOC */
+  .toc {
+    position: sticky;
+    top: 112px;
+    padding: 24px 0;
+    border-top: 1px solid rgba(200, 160, 96, 0.14);
+    border-bottom: 1px solid rgba(200, 160, 96, 0.14);
+  }
+  .toc-label {
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .toc ul { list-style: none; }
+  .toc li { margin: 0; }
+  .toc a {
+    display: block;
+    padding: 7px 0;
+    font-size: 14px;
+    color: var(--cream-dim);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s, padding-left 0.2s;
+    border-left: 1px solid transparent;
+    padding-left: 14px;
+    margin-left: -14px;
+  }
+  .toc a:hover {
+    color: var(--gold);
+    border-left-color: var(--gold);
+  }
+
+  /* CONTENT */
+  .policy-content {
+    max-width: 720px;
+  }
+  .policy-content section {
+    padding: 24px 0 40px;
+    border-bottom: 1px solid rgba(200, 160, 96, 0.08);
+  }
+  .policy-content section:last-child { border-bottom: none; }
+  .policy-content h2 {
+    font-size: clamp(28px, 3.4vw, 40px);
+    margin-bottom: 18px;
+    scroll-margin-top: 112px;
+  }
+  .policy-content h2 em { font-style: italic; color: var(--gold); }
+  .policy-content p {
+    font-size: 16px;
+    color: var(--cream-dim);
+    margin-bottom: 14px;
+  }
+  .policy-content p:last-child { margin-bottom: 0; }
+  .policy-content strong { color: var(--cream); font-weight: 500; }
+  .policy-content a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 160, 96, 0.35);
+    transition: border-color 0.2s;
+  }
+  .policy-content a:hover { border-bottom-color: var(--gold); }
+  .policy-content ul {
+    list-style: none;
+    margin: 10px 0 14px;
+  }
+  .policy-content li {
+    font-size: 16px;
+    color: var(--cream-dim);
+    padding: 8px 0 8px 22px;
+    position: relative;
+  }
+  .policy-content li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 16px;
+    width: 5px; height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+  .policy-content li strong { color: var(--cream); }
+  .contact-card {
+    margin-top: 6px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid rgba(200, 160, 96, 0.18);
+    border-radius: 14px;
+    font-size: 15px;
+    color: var(--cream-dim);
+    line-height: 1.8;
+  }
+  .contact-card strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 56px 48px 48px;
+    border-top: 1px solid rgba(200, 160, 96, 0.12);
+    position: relative;
+    z-index: 2;
+    background: #150A03;
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 13px;
+    color: var(--cream-mute);
+  }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .footer-links a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .policy-wrap {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 16px 24px 72px;
+    }
+    .toc {
+      position: static;
+      padding: 20px 0;
+    }
+    .toc ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px 18px;
+    }
+    .toc a { padding: 5px 0; margin-left: 0; padding-left: 0; border-left: none; }
+    .toc a:hover { padding-left: 0; border-left: none; }
+  }
+  @media (max-width: 560px) {
+    nav.top { padding: 16px 24px; }
+    .page-hero { padding: 132px 24px 48px; }
+    footer { padding: 48px 24px 36px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a href="/maicellar" class="logo">maicellar</a>
+  <a href="/maicellar" class="back-link">&larr; Back to home</a>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow">Legal</div>
+    <h1 class="page-title">Privacy <em>Policy</em></h1>
+    <div class="updated">Last updated 20 April 2026</div>
+  </div>
+</header>
+
+<div class="ornament">
+  <span class="line"></span>
+  <span class="diamond"></span>
+  <span class="line"></span>
+</div>
+
+<div class="policy-wrap">
+  <aside class="toc">
+    <div class="toc-label">Contents</div>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#data-we-collect">Data we collect</a></li>
+      <li><a href="#how-we-use-it">How we use it</a></li>
+      <li><a href="#data-sharing">Data sharing</a></li>
+      <li><a href="#ai-processing">AI processing</a></li>
+      <li><a href="#data-retention">Data retention</a></li>
+      <li><a href="#your-rights">Your rights</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </aside>
+
+  <main class="policy-content">
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>MaiCellar is built to manage your wine collection, not your data. We collect only what's needed to make the app work, and we never sell your information to anyone.</p>
+      <p>MaiCellar is operated by <strong>Mai Software</strong>, based in Australia. If anything in this policy is unclear, email <a href="mailto:privacy@maisoftware.app">privacy@maisoftware.app</a>.</p>
+    </section>
+
+    <section id="data-we-collect">
+      <h2>Data we collect</h2>
+      <ul>
+        <li><strong>Account.</strong> Your email address and authentication tokens from Apple or GitHub sign in. We do not collect your name, phone number, or postal address.</li>
+        <li><strong>Cellar data.</strong> Wine names, vintages, regions, varietals, producers, quantities, purchase prices, estimated values, tasting notes, ratings, personal notes, drink windows, serving information, and status updates with their dates.</li>
+        <li><strong>Images.</strong> Photos you scan are sent to Anthropic for AI processing. Neither we nor Anthropic store these images beyond the immediate processing of your request.</li>
+        <li><strong>Usage.</strong> The number of AI scans you have used and the date of your last pairing suggestion.</li>
+        <li><strong>What we do not collect.</strong> No device identifiers, no advertising IDs, and no location data.</li>
+      </ul>
+    </section>
+
+    <section id="how-we-use-it">
+      <h2>How we use it</h2>
+      <p>We use your data to operate your wine cellar, process AI scanning and pairing requests, manage your subscription, send notifications you have opted into, respond to support enquiries, and improve the accuracy of our AI features.</p>
+      <p>We do not run advertising, build behavioural profiles, or sell any data to third parties.</p>
+    </section>
+
+    <section id="data-sharing">
+      <h2>Data sharing</h2>
+      <p>We share data only with the providers we need to run the service:</p>
+      <ul>
+        <li><strong>Supabase</strong> &mdash; database and authentication, with servers in Australia and the USA.</li>
+        <li><strong>Anthropic</strong> &mdash; AI processing for label scanning and food pairing. Your data is not used to train their models.</li>
+        <li><strong>RevenueCat</strong> &mdash; subscription management, with payments processed by Apple.</li>
+      </ul>
+    </section>
+
+    <section id="ai-processing">
+      <h2>AI processing</h2>
+      <p>MaiCellar's AI features are powered by Claude, developed by Anthropic. Photos and text you submit are sent securely over HTTPS. Anthropic does not retain images sent through the API, and does not use them for model training.</p>
+      <p>If you prefer not to use AI features, every field in MaiCellar can be entered manually.</p>
+    </section>
+
+    <section id="data-retention">
+      <h2>Data retention</h2>
+      <p>We retain your data for as long as your account is active. If you delete your account, your data is deleted within 30 days.</p>
+      <p>You can request a full export of your cellar at any time by emailing <a href="mailto:support@maisoftware.app">support@maisoftware.app</a>.</p>
+    </section>
+
+    <section id="your-rights">
+      <h2>Your rights</h2>
+      <p>You have the right to access, correct, delete, port, or object to the processing of your personal data. Send requests to <a href="mailto:privacy@maisoftware.app">privacy@maisoftware.app</a> and we will respond within 30 days.</p>
+    </section>
+
+    <section id="security">
+      <h2>Security</h2>
+      <p>All data travels over HTTPS. Our database enforces Row Level Security so that each account can only read its own records. Authentication tokens are stored in the secure keychain on your device, and we never store your password.</p>
+    </section>
+
+    <section id="children">
+      <h2>Children</h2>
+      <p>MaiCellar is intended for users aged 18 and over. If we discover an account belonging to someone under 18, we delete it.</p>
+    </section>
+
+    <section id="changes">
+      <h2>Changes</h2>
+      <p>If we make material changes to this policy, we will notify you in the app or by email. Continued use of MaiCellar after a change means you accept the updated policy.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <strong>Mai Software</strong>
+        <a href="mailto:privacy@maisoftware.app">privacy@maisoftware.app</a><br>
+        <a href="https://maisoftware.app">maisoftware.app</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>&copy; 2026 Mai Software</div>
+    <div class="footer-links">
+      <a href="/maicellar">MaiCellar</a>
+      <a href="/maicellar/support.html">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
