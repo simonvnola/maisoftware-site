@@ -116,7 +116,7 @@
 
   .who { padding: 88px 24px; background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .who-inner { max-width: 1080px; margin: 0 auto; }
-  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 48px; }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 48px; max-width: 720px; margin-left: auto; margin-right: auto; }
   .who-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; transition: border-color 0.18s; }
   .who-card:hover { border-color: var(--clay-border); }
   .who-emoji-spot { width: 38px; height: 38px; border-radius: 10px; background: var(--clay-soft); display: flex; align-items: center; justify-content: center; color: var(--clay); margin-bottom: 14px; }
@@ -259,7 +259,6 @@
     <div class="trust-item">Owner-occupiers</div>
     <div class="trust-item">Landlords</div>
     <div class="trust-item">Investors</div>
-    <div class="trust-item">Tenants</div>
   </div>
 </section>
 
@@ -275,7 +274,8 @@
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg></div><div class="feat-title">Budget planner</div><div class="feat-desc">FY-aware recurring + contingency budget. AI estimates costs for upcoming jobs and warns you, gently, if you're heading over.</div></div>
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6" fill="currentColor"/><polyline points="21,15 16,10 5,21"/></svg></div><div class="feat-title">Photo recognition</div><div class="feat-desc">Snap a damp patch, a cracked tile, a leaky tap. AI identifies the issue, suggests the right trade, and creates a task with cost guidance.</div></div>
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="feat-title">Contents inventory</div><div class="feat-desc">Every appliance, fixture and fitting, photographed and tagged. Track current value, warranty, and whether it's depreciable for tax.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18z"/></svg></div><div class="feat-title">Trade guides &amp; quote tools</div><div class="feat-desc">Tap any task: get a step-by-step DIY guide, or the exact brief to hand a tradesperson. Compare quotes side-by-side and flag what's out of range.</div></div>
+    <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div><div class="feat-title">DIY guidance</div><div class="feat-desc">Step-by-step walkthroughs for jobs you can tackle yourself &mdash; tools needed, safety call-outs, time estimates and the warning signs that mean it's time to call a pro.</div></div>
+    <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18l-2 12a2 2 0 01-2 2H7a2 2 0 01-2-2L3 7z"/><path d="M8 7V5a4 4 0 018 0v2"/><path d="M9 12l2 2 4-4"/></svg></div><div class="feat-title">Trade briefs &amp; quote tools</div><div class="feat-desc">When DIY isn't right, get the exact brief to hand a tradesperson &mdash; what to ask for, what to watch out for, plus side-by-side quote comparison that flags out-of-range pricing.</div></div>
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="12" cy="11" r="1.6" fill="currentColor"/></svg></div><div class="feat-title">AI chat assistant</div><div class="feat-desc">Ask anything about your home &mdash; paste a maintenance list to import it, describe a problem, or get advice at 10pm when something looks wrong.</div></div>
   </div>
 </section>
@@ -284,11 +284,10 @@
   <div class="who-inner">
     <div class="section-tag">Who it's for</div>
     <div class="section-title">Built for every kind of homeowner</div>
-    <p class="section-lede">One app, three very different jobs. Maicasa adapts to whichever side of the front door you're standing on.</p>
+    <p class="section-lede">Whether it's the family home or a portfolio of investments, Maicasa adapts to whichever side of the front door you're standing on.</p>
     <div class="who-grid">
       <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="who-role">Owner-occupiers</div><div class="who-desc">Stop carrying the mental list. Maicasa knows what your house needs and when &mdash; even the boring seasonal stuff that never gets done.</div></div>
       <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6"/></svg></div><div class="who-role">Landlords &amp; investors</div><div class="who-desc">Manage maintenance and contents across multiple properties. EOFY-ready records for fixtures, fittings and depreciable plant.</div></div>
-      <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div><div class="who-role">Tenants</div><div class="who-desc">A clean record of every issue raised, every response, every photo. Free to use &mdash; your landlord's politeness, in writing.</div></div>
     </div>
   </div>
 </section>
