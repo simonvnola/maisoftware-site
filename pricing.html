@@ -3,130 +3,176 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maicasa — Plans & Pricing</title>
+  <title>Maicasa — Plans &amp; Pricing</title>
   <script src="https://js.stripe.com/v3/"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: -apple-system, "SF Pro Display", sans-serif;
-      background: #0f1128;
-      color: #fff;
-      min-height: 100vh;
+    :root {
+      --clay: #B85C3D;
+      --clay-dark: #8E4429;
+      --clay-deep: #5C2A18;
+      --clay-soft: rgba(184,92,61,0.14);
+      --clay-softer: rgba(184,92,61,0.06);
+      --clay-border: rgba(184,92,61,0.32);
+      --amber: #E9A85C;
+      --cream: #FAF6F0;
+      --cream-2: #F5EFE6;
+      --cream-3: #EFE7DB;
+      --white: #FFFFFF;
+      --ink: #2A2620;
+      --ink-soft: #7A7268;
+      --ink-muted: #9C9488;
+      --line: #EFE7DB;
+      --sage: #5C8A4F;
     }
 
+    body {
+      font-family: 'Inter', -apple-system, "SF Pro Display", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+
     .header {
-      padding: 24px 20px;
+      padding: 22px 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250,246,240,0.92);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
     }
+    .header a { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
 
     .logo-icon {
       width: 36px; height: 36px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(140deg, var(--clay), var(--clay-dark));
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(184,92,61,0.28);
     }
 
     .logo-text {
+      font-family: 'Fraunces', serif;
       font-size: 20px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--ink);
     }
 
     .hero {
       text-align: center;
-      padding: 48px 20px 32px;
+      padding: 64px 24px 40px;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
     .hero h1 {
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    .hero h1 em { font-style: italic; color: var(--clay); }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--ink-soft);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    .billing-toggle {
+      display: inline-flex;
+      background: var(--cream-2);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px;
       margin-bottom: 12px;
     }
 
-    .hero p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.6);
-      max-width: 400px;
-      margin: 0 auto 28px;
-      line-height: 1.6;
-    }
-
-    /* Billing toggle */
-    .billing-toggle {
-      display: inline-flex;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50px;
-      padding: 4px;
-      margin-bottom: 8px;
-    }
-
     .billing-toggle button {
-      padding: 8px 20px;
-      border-radius: 50px;
+      padding: 9px 22px;
+      border-radius: 999px;
       border: none;
       font-size: 14px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
-      font-family: inherit;
+      font-family: 'Inter', sans-serif;
     }
 
     .billing-toggle button.active {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
+      background: var(--clay);
+      color: var(--white);
+      box-shadow: 0 3px 10px rgba(184,92,61,0.25);
     }
 
     .billing-toggle button.inactive {
       background: transparent;
-      color: rgba(255,255,255,0.5);
+      color: var(--ink-soft);
     }
 
     .save-badge {
       display: inline-block;
-      padding: 4px 10px;
-      background: rgba(22,163,74,0.2);
-      border: 1px solid rgba(22,163,74,0.3);
-      border-radius: 20px;
+      padding: 5px 12px;
+      background: rgba(92,138,79,0.12);
+      border: 1px solid rgba(92,138,79,0.3);
+      border-radius: 999px;
       font-size: 12px;
       font-weight: 600;
-      color: #4ade80;
+      color: var(--sage);
       margin-bottom: 32px;
     }
 
-    /* Plans grid */
     .plans {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 16px;
+      gap: 18px;
       max-width: 420px;
       margin: 0 auto;
-      padding: 0 20px 48px;
+      padding: 0 24px 56px;
     }
 
     @media (min-width: 768px) {
       .plans {
         grid-template-columns: repeat(3, 1fr);
-        max-width: 900px;
+        max-width: 980px;
+        gap: 16px;
       }
     }
 
     .plan-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: 20px;
-      padding: 24px 20px;
+      padding: 28px 24px;
       position: relative;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
+    }
+
+    .plan-card:hover {
+      box-shadow: 0 10px 32px rgba(184,92,61,0.08);
+      transform: translateY(-2px);
     }
 
     .plan-card.featured {
-      border-color: rgba(102,126,234,0.5);
-      background: rgba(102,126,234,0.08);
+      border-color: var(--clay-border);
+      background: linear-gradient(180deg, var(--white) 0%, rgba(184,92,61,0.04) 100%);
+      box-shadow: 0 8px 24px rgba(184,92,61,0.10);
     }
 
     .featured-badge {
@@ -134,46 +180,54 @@
       top: -12px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 4px 14px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      border-radius: 20px;
+      padding: 5px 14px;
+      background: linear-gradient(135deg, var(--clay), var(--clay-dark));
+      color: var(--white);
+      border-radius: 999px;
       font-size: 11px;
       font-weight: 700;
       white-space: nowrap;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 12px rgba(184,92,61,0.3);
     }
 
     .plan-name {
-      font-size: 18px;
-      font-weight: 800;
-      margin-bottom: 4px;
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 400;
+      margin-bottom: 6px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
     }
 
     .plan-desc {
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 20px;
+      color: var(--ink-muted);
+      margin-bottom: 22px;
       line-height: 1.5;
     }
 
-    .plan-price {
-      margin-bottom: 20px;
-    }
+    .plan-price { margin-bottom: 22px; }
 
     .plan-price .amount {
-      font-size: 36px;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-family: 'Fraunces', serif;
+      font-size: 40px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--ink);
     }
 
     .plan-price .period {
       font-size: 14px;
-      color: rgba(255,255,255,0.5);
+      color: var(--ink-muted);
     }
 
     .plan-price .annual-note {
       font-size: 12px;
-      color: #4ade80;
+      color: var(--sage);
       margin-top: 4px;
+      font-weight: 600;
     }
 
     .features {
@@ -184,25 +238,25 @@
     .features li {
       display: flex;
       align-items: flex-start;
-      gap: 8px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 10px;
-      line-height: 1.5;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      margin-bottom: 11px;
+      line-height: 1.55;
     }
 
     .features li svg {
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 3px;
     }
 
     .ai-limits-note {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 20px;
+      color: var(--ink-muted);
+      margin-bottom: 22px;
       line-height: 1.5;
     }
 
@@ -212,55 +266,64 @@
       border-radius: 12px;
       border: none;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
-      font-family: inherit;
-      transition: opacity 0.2s;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.2s, background 0.2s, transform 0.12s;
     }
 
-    .subscribe-btn:hover { opacity: 0.9; }
+    .subscribe-btn:active { transform: scale(0.98); }
+    .subscribe-btn:hover { opacity: 0.92; }
     .subscribe-btn:disabled { opacity: 0.5; cursor: default; }
 
     .subscribe-btn.primary {
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
+      background: linear-gradient(135deg, var(--clay), var(--clay-dark));
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(184,92,61,0.28);
     }
 
     .subscribe-btn.secondary {
-      background: rgba(255,255,255,0.1);
-      color: #fff;
+      background: var(--cream-2);
+      color: var(--clay-dark);
+      border: 1px solid var(--clay-border);
     }
+    .subscribe-btn.secondary:hover { background: var(--clay-soft); }
 
     .transfer-note {
       text-align: center;
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      max-width: 420px;
-      margin: -32px auto 48px;
-      padding: 0 20px;
-      line-height: 1.6;
+      font-size: 13px;
+      color: var(--ink-muted);
+      max-width: 520px;
+      margin: -32px auto 56px;
+      padding: 0 24px;
+      line-height: 1.65;
     }
 
     .value-callout {
-      max-width: 720px;
-      margin: 0 auto 56px;
-      padding: 36px 28px;
-      border: 1px solid rgba(102,126,234,0.25);
-      background: rgba(102,126,234,0.07);
-      border-radius: 20px;
+      max-width: 760px;
+      margin: 0 auto 64px;
+      padding: 40px 32px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      border-radius: 22px;
       text-align: center;
+      box-shadow: 0 4px 24px rgba(184,92,61,0.05);
     }
 
     .value-callout h2 {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
+      font-family: 'Fraunces', serif;
+      font-size: clamp(24px, 3.5vw, 32px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--ink);
       margin-bottom: 14px;
+      line-height: 1.2;
     }
+    .value-callout h2 em { font-style: italic; color: var(--clay); }
 
     .value-callout p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      color: var(--ink-soft);
       line-height: 1.7;
       max-width: 580px;
       margin: 0 auto 12px;
@@ -271,13 +334,13 @@
     }
 
     .compare-wrap {
-      margin: 24px -8px 4px;
+      margin: 28px -8px 4px;
       overflow-x: auto;
     }
 
     .compare-table {
       width: 100%;
-      max-width: 640px;
+      max-width: 660px;
       margin: 0 auto;
       border-collapse: collapse;
       font-size: 13px;
@@ -286,33 +349,33 @@
 
     .compare-table th,
     .compare-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
     }
 
     .compare-table thead th {
       font-size: 12px;
       font-weight: 700;
-      color: rgba(255,255,255,0.85);
+      color: var(--ink);
       text-align: center;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
     }
 
     .compare-table tbody td {
       text-align: center;
-      color: rgba(255,255,255,0.65);
+      color: var(--ink-soft);
     }
 
     .compare-table th:first-child,
     .compare-table tbody td:first-child {
       text-align: left;
-      color: rgba(255,255,255,0.9);
+      color: var(--ink);
       font-weight: 500;
     }
 
     .compare-table th.col-maicasa,
     .compare-table td.col-maicasa {
-      color: #a5b4fc;
+      color: var(--clay-dark);
       font-weight: 600;
     }
 
@@ -321,47 +384,47 @@
     }
 
     .value-callout p.compare-cta {
-      font-size: 13px;
-      color: rgba(255,255,255,0.62);
-      margin-top: 18px;
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      margin-top: 20px;
+      line-height: 1.65;
     }
 
     @media (min-width: 768px) {
-      .value-callout { margin: 8px auto 64px; padding: 44px 40px; }
-      .value-callout h2 { font-size: 26px; }
-      .value-callout p { font-size: 15px; }
+      .value-callout { margin: 8px auto 72px; padding: 48px 44px; }
       .compare-table { font-size: 14px; }
-      .compare-table th, .compare-table td { padding: 12px 14px; }
+      .compare-table th, .compare-table td { padding: 13px 16px; }
     }
 
     .footer {
       text-align: center;
-      padding: 24px 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 12px;
-      color: rgba(255,255,255,0.3);
+      padding: 32px 24px;
+      border-top: 1px solid var(--line);
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      background: var(--cream-2);
     }
 
-    .footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer a { color: var(--ink-soft); text-decoration: none; }
+    .footer a:hover { color: var(--clay); }
   </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
-  <div class="logo-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-      stroke="#fff" stroke-width="2.5" stroke-linecap="round">
-      <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-      <polyline points="9 22 9 12 15 12 15 22"/>
-    </svg>
-  </div>
-  <span class="logo-text">maicasa</span>
+  <a href="/maicasa" aria-label="Maicasa home">
+    <div class="logo-icon">
+      <svg width="22" height="22" viewBox="0 0 104 104" aria-hidden="true">
+        <rect x="14" y="14" width="76" height="76" rx="14" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="6"/>
+        <path d="M52 34 L72 50 V70 A2 2 0 0 1 70 72 H58 V58 A2 2 0 0 0 56 56 H48 A2 2 0 0 0 46 58 V72 H34 A2 2 0 0 1 32 70 V50 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
+    <span class="logo-text">maicasa</span>
+  </a>
 </div>
 
-<!-- Hero -->
 <div class="hero">
-  <h1>Simple Pricing tailored to your needs</h1>
+  <h1>Simple pricing,<br><em>tailored</em> to your home.</h1>
   <p>Pay for what you use. Switch modules anytime on annual plans.</p>
 
   <div class="billing-toggle">
@@ -374,10 +437,8 @@
   </span>
 </div>
 
-<!-- Plans -->
 <div class="plans">
 
-  <!-- Home -->
   <div class="plan-card">
     <div class="plan-name">Home</div>
     <div class="plan-desc">AI-powered home maintenance for property owners</div>
@@ -391,58 +452,20 @@
       </div>
     </div>
     <ul class="features">
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        AI maintenance task diagnosis
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Property scan — finds issues automatically
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Budget and cost tracking
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Home contents inventory
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Claude and ChatGPT integration
-      </li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI maintenance task diagnosis</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Property scan — finds issues automatically</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Building inspection PDF import</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Budget and cost tracking</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Home contents inventory</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Claude, ChatGPT &amp; Gemini integration</li>
     </ul>
     <div class="ai-limits-note">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-        stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="16" x2="12" y2="12"/>
-        <line x1="12" y1="8" x2="12.01" y2="8"/>
-      </svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       Weekly AI usage limits apply
     </div>
-    <button class="subscribe-btn secondary" id="home-btn"
-      onclick="subscribe('home')">
-      Get started
-    </button>
+    <button class="subscribe-btn secondary" id="home-btn" onclick="subscribe('home')">Get started</button>
   </div>
 
-  <!-- Bundle (featured) -->
   <div class="plan-card featured">
     <div class="featured-badge">Most popular</div>
     <div class="plan-name">Bundle</div>
@@ -457,58 +480,19 @@
       </div>
     </div>
     <ul class="features">
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Everything in Home and Buyer
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        AI property research and analysis
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        7-stage buying journey tracker
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Purchase cost and yield calculator
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Unlimited properties
-      </li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Home and Buyer</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI property research and analysis</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>7-stage buying journey tracker</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Purchase cost and yield calculator</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited properties</li>
     </ul>
     <div class="ai-limits-note">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-        stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="16" x2="12" y2="12"/>
-        <line x1="12" y1="8" x2="12.01" y2="8"/>
-      </svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       Weekly AI usage limits apply
     </div>
-    <button class="subscribe-btn primary" id="bundle-btn"
-      onclick="subscribe('bundle')">
-      Get started
-    </button>
+    <button class="subscribe-btn primary" id="bundle-btn" onclick="subscribe('bundle')">Get started</button>
   </div>
 
-  <!-- Buyer -->
   <div class="plan-card">
     <div class="plan-name">Buyer</div>
     <div class="plan-desc">AI buyers agent for property research and purchase</div>
@@ -522,68 +506,27 @@
       </div>
     </div>
     <ul class="features">
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        AI property research and verdict
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Comparable sales and price analysis
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        7-stage buying journey tracker
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Stamp duty and cost calculator
-      </li>
-      <li>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-          stroke="#667eea" stroke-width="2.5" stroke-linecap="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-        Transfer to Home after purchase
-      </li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI property research and verdict</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Comparable sales and price analysis</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>7-stage buying journey tracker</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Stamp duty and cost calculator</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Transfer to Home after purchase</li>
     </ul>
     <div class="ai-limits-note">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-        stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="16" x2="12" y2="12"/>
-        <line x1="12" y1="8" x2="12.01" y2="8"/>
-      </svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
       Weekly AI usage limits apply
     </div>
-    <button class="subscribe-btn secondary" id="buyer-btn"
-      onclick="subscribe('buyer')">
-      Get started
-    </button>
+    <button class="subscribe-btn secondary" id="buyer-btn" onclick="subscribe('buyer')">Get started</button>
   </div>
 </div>
 
-<!-- Transfer note -->
 <p class="transfer-note">
-  On annual Home or Buyer plans — once you buy your property, transfer your
-  remaining subscription to the Home module at no extra cost.
+  On annual Home or Buyer plans — once you buy your property, transfer your remaining subscription to the Home module at no extra cost.
 </p>
 
-<!-- Value callout -->
 <section class="value-callout">
-  <h2>Save thousands — without losing peace of mind</h2>
-  <p>Home managers and buyers agents bring real expertise — and real bills. Maicasa gives you the same day-to-day confidence for a fraction of the cost, and works even better alongside the professionals you already trust.</p>
+  <h2>Save thousands &mdash; without losing <em>peace of mind</em></h2>
+  <p>Home managers and buyers agents bring real expertise &mdash; and real bills. Maicasa gives you the same day-to-day confidence for a fraction of the cost, and works even better alongside the professionals you already trust.</p>
 
   <div class="compare-wrap">
     <table class="compare-table">
@@ -598,74 +541,28 @@
       <tbody>
         <tr>
           <td>Typical cost</td>
-          <td>$2k–$15k+ / purchase</td>
-          <td>$40k–$100k+ / year</td>
+          <td>$2k&ndash;$15k+ / purchase</td>
+          <td>$40k&ndash;$100k+ / year</td>
           <td class="col-maicasa">From $8.99 / month</td>
         </tr>
-        <tr>
-          <td>Property research &amp; analysis</td>
-          <td>✓</td>
-          <td>—</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Negotiates on your behalf</td>
-          <td>✓</td>
-          <td>—</td>
-          <td class="col-maicasa">—</td>
-        </tr>
-        <tr>
-          <td>Prioritised maintenance plan</td>
-          <td>—</td>
-          <td>✓</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Budget &amp; cost tracking</td>
-          <td>—</td>
-          <td>✓</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Identifies the right trade or provider</td>
-          <td>—</td>
-          <td>✓</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Finds providers to request quotes</td>
-          <td>—</td>
-          <td>✓</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Liaises with providers on your behalf</td>
-          <td>—</td>
-          <td>✓</td>
-          <td class="col-maicasa">Not yet</td>
-        </tr>
-        <tr>
-          <td>Inspection report import</td>
-          <td>—</td>
-          <td>—</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
-        <tr>
-          <td>Always available</td>
-          <td>—</td>
-          <td>—</td>
-          <td class="col-maicasa">✓</td>
-        </tr>
+        <tr><td>Property research &amp; analysis</td><td>&check;</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Negotiates on your behalf</td><td>&check;</td><td>&mdash;</td><td class="col-maicasa">&mdash;</td></tr>
+        <tr><td>Prioritised maintenance plan</td><td>&mdash;</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Budget &amp; cost tracking</td><td>&mdash;</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Identifies the right trade or provider</td><td>&mdash;</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Finds providers to request quotes</td><td>&mdash;</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Liaises with providers on your behalf</td><td>&mdash;</td><td>&check;</td><td class="col-maicasa">Not yet</td></tr>
+        <tr><td>Inspection report import</td><td>&mdash;</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Always available</td><td>&mdash;</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
       </tbody>
     </table>
   </div>
 
-  <p class="compare-cta">Better together. Pair Maicasa with your buyers agent or home manager and keep every task, cost and decision organised in one place — nothing slips through the cracks between meetings.</p>
+  <p class="compare-cta">Better together. Pair Maicasa with your buyers agent or home manager and keep every task, cost and decision organised in one place &mdash; nothing slips through the cracks between meetings.</p>
 </section>
 
-<!-- Footer -->
 <div class="footer">
-  <p>© 2026 Mai Software · <a href="/privacy">Privacy Policy</a> · <a href="mailto:dev@maisoftware.app">Support</a></p>
+  <p>&copy; 2026 Mai Software &middot; <a href="/maicasa/privacy">Privacy Policy</a> &middot; <a href="mailto:dev@maisoftware.app">Support</a></p>
   <p style="margin-top:8px">Prices in AUD. Cancel anytime. Secure payments by Stripe.</p>
 </div>
 
@@ -688,14 +585,13 @@
     document.getElementById("btn-annual").className  = type === "annual"  ? "active" : "inactive";
     document.getElementById("save-badge").style.display = type === "annual" ? "inline-block" : "none";
 
-    // Update prices
     const prices = {
       home:   type === "monthly" ? "$8.99"  : "$8.25",
       buyer:  type === "monthly" ? "$8.99"  : "$8.25",
       bundle: type === "monthly" ? "$12.99" : "$11.67"
     };
 
-    const period = type === "monthly" ? "/ month" : "/ month";
+    const period = "/ month";
 
     ["home", "buyer", "bundle"].forEach(plan => {
       document.getElementById(`${plan}-price`).textContent = prices[plan];
@@ -712,7 +608,6 @@
 
     const price_id = PRICES[`${plan}_${billing}`];
 
-    // Get user_id from URL param if coming from app deep link
     const params = new URLSearchParams(window.location.search);
     const user_id = params.get("user_id") || "";
     const user_email = params.get("email") || "";
