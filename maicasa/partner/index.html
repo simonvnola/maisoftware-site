@@ -4,727 +4,372 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Program — Maicasa</title>
-<meta name="description" content="Join the Maicasa Partner Program. Give your clients a powerful home management tool — branded with your name, managed from your portal.">
+<meta name="description" content="The Maicasa Partner Program — give your clients a branded, AI-powered home manager from day one. Coming soon.">
 <link rel="icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #0d1117;
-    --ink-soft: #3d4455;
-    --ink-muted: #8890a8;
-    --gold: #c9a84c;
-    --gold-light: #f5ecd4;
-    --gold-pale: #fdf8ee;
-    --purple: #667eea;
-    --purple-light: #f0f2ff;
-    --border: rgba(201,168,76,0.2);
-    --border-soft: rgba(0,0,0,0.07);
-    --bg: #fafaf8;
-    --white: #ffffff;
+    --clay: #B85C3D;
+    --clay-dark: #8E4429;
+    --clay-deep: #5C2A18;
+    --clay-soft: rgba(184,92,61,0.14);
+    --clay-softer: rgba(184,92,61,0.06);
+    --clay-border: rgba(184,92,61,0.32);
+    --amber: #E9A85C;
+    --cream: #FAF6F0;
+    --cream-2: #F5EFE6;
+    --cream-3: #EFE7DB;
+    --white: #FFFFFF;
+    --ink: #2A2620;
+    --ink-soft: #7A7268;
+    --ink-muted: #9C9488;
+    --line: #EFE7DB;
   }
 
   html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  a { color: inherit; }
 
-  body {
-    font-family: 'DM Sans', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── NAV ── */
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(250,250,248,0.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border-soft);
-    height: 58px; display: flex; align-items: center;
-    padding: 0 40px; justify-content: space-between;
+    background: rgba(250,246,240,0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+    height: 62px; display: flex; align-items: center;
+    padding: 0 28px; justify-content: space-between;
   }
-
   .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .logo-dot {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: linear-gradient(140deg, #8b9fef, #667eea, #764ba2);
+  .logo-mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: linear-gradient(140deg, var(--clay), var(--clay-dark));
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 3px 10px rgba(102,126,234,0.32);
+    box-shadow: 0 4px 12px rgba(184,92,61,0.28);
   }
-  .logo-word { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: 0.01em; }
+  .logo-word { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
+  .nav-back { font-size: 14px; color: var(--ink-soft); text-decoration: none; display: flex; align-items: center; gap: 6px; font-weight: 500; }
+  .nav-back:hover { color: var(--clay); }
 
-  .nav-end { display: flex; align-items: center; gap: 16px; }
-  .nav-link { font-size: 13px; color: var(--ink-muted); text-decoration: none; transition: color 0.2s; }
-  .nav-link:hover { color: var(--ink); }
-
-  .btn-nav {
-    font-size: 13px; font-weight: 500; padding: 8px 18px;
-    border-radius: 6px; text-decoration: none; cursor: pointer;
-    border: 1.5px solid var(--gold); color: var(--gold);
-    background: transparent; font-family: 'DM Sans', sans-serif;
-    transition: background 0.18s, color 0.18s;
-  }
-  .btn-nav:hover { background: var(--gold); color: white; }
-
-  /* ── HERO ── */
   .hero {
-    max-width: 1100px; margin: 0 auto;
-    padding: 96px 40px 80px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 80px;
-    align-items: center;
+    max-width: 820px; margin: 0 auto;
+    padding: 80px 24px 48px;
+    text-align: center;
   }
 
-  .hero-tag {
+  .soon-pill {
     display: inline-flex; align-items: center; gap: 8px;
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 24px;
+    background: var(--clay-soft); border: 1px solid var(--clay-border);
+    border-radius: 999px; padding: 7px 16px 7px 12px;
+    font-size: 12px; font-weight: 600;
+    color: var(--clay-dark); margin-bottom: 28px; letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
-
-  .hero-tag-line {
-    width: 28px; height: 1px; background: var(--gold);
+  .soon-pill .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--clay);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.1); }
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(40px, 5vw, 62px);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5.5vw, 56px);
     font-weight: 300;
-    line-height: 1.08;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
     color: var(--ink);
     margin-bottom: 22px;
   }
-
-  h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
+  h1 em { font-style: italic; color: var(--clay); }
 
   .hero-sub {
-    font-size: 16px; font-weight: 300;
-    color: var(--ink-soft); line-height: 1.72;
-    max-width: 480px; margin-bottom: 36px;
+    font-size: clamp(16px, 1.7vw, 18px);
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto 40px;
   }
 
-  .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 28px; border-radius: 6px;
-    font-size: 14px; font-weight: 500;
-    background: var(--ink); color: white;
-    text-decoration: none; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: opacity 0.18s, transform 0.12s;
+  .hero-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px; padding: 13px 28px;
+    border-radius: 999px;
+    background: var(--clay); color: var(--white);
+    font-size: 15px; font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(184,92,61,0.32);
+    transition: opacity 0.18s, background 0.18s, transform 0.12s;
+    font-family: 'Inter', sans-serif;
+    border: none; cursor: pointer;
   }
-  .btn-primary:hover { opacity: 0.85; }
-  .btn-primary:active { transform: scale(0.98); }
+  .hero-cta:hover { background: var(--clay-dark); }
+  .hero-cta:active { transform: scale(0.98); }
 
-  .btn-secondary {
-    font-size: 14px; color: var(--ink-muted);
-    text-decoration: none; font-weight: 400;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    padding-bottom: 1px;
-  }
-  .btn-secondary:hover { color: var(--ink); border-color: var(--ink); }
-
-  /* ── PRICING CARD (hero right) ── */
-  .pricing-card {
-    background: var(--white);
-    border: 1px solid var(--border-soft);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+  .hero-footnote {
+    font-size: 13px; color: var(--ink-muted);
+    margin-top: 18px;
   }
 
-  .pricing-header {
-    background: var(--ink);
-    padding: 24px 28px;
-    display: flex; align-items: center; gap: 12px;
-  }
-
-  .pricing-header-logo {
-    width: 36px; height: 36px; border-radius: 50%;
-    background: linear-gradient(140deg, #8b9fef, #667eea, #764ba2);
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 3px 10px rgba(102,126,234,0.4);
-  }
-
-  .pricing-header-text { color: white; }
-  .pricing-header-title { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; }
-  .pricing-header-sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 1px; font-weight: 300; }
-
-  .pricing-body { padding: 24px 28px; }
-
-  .plan {
-    border: 1px solid var(--border-soft);
-    border-radius: 10px; padding: 18px 20px;
-    margin-bottom: 10px; cursor: pointer;
-    transition: border-color 0.18s, background 0.18s;
-    position: relative;
-  }
-
-  .plan:hover { border-color: var(--gold); }
-  .plan.selected { border-color: var(--gold); background: var(--gold-pale); }
-
-  .plan-badge {
-    position: absolute; top: -1px; right: 14px;
-    background: var(--gold); color: white;
-    font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
-    text-transform: uppercase; padding: 3px 8px;
-    border-radius: 0 0 6px 6px;
-  }
-
-  .plan-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-  .plan-name { font-size: 14px; font-weight: 500; color: var(--ink); }
-  .plan-price { text-align: right; }
-  .plan-amount { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--ink); }
-  .plan-period { font-size: 11px; color: var(--ink-muted); font-weight: 300; }
-  .plan-desc { font-size: 12px; color: var(--ink-muted); font-weight: 300; }
-
-  .pricing-divider { height: 1px; background: var(--border-soft); margin: 18px 0; }
-
-  .pricing-label { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 12px; }
-
-  .perks { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 20px; }
-  .perk { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--ink-soft); font-weight: 300; line-height: 1.5; }
-  .perk-dot { width: 16px; height: 16px; border-radius: 50%; background: var(--gold-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-
-  .btn-apply {
-    width: 100%; padding: 13px;
-    background: var(--ink); color: white;
-    border: none; border-radius: 8px;
-    font-size: 14px; font-weight: 500;
-    cursor: pointer; font-family: 'DM Sans', sans-serif;
-    transition: opacity 0.18s;
-    text-align: center; text-decoration: none;
-    display: block;
-  }
-  .btn-apply:hover { opacity: 0.82; }
-
-  .pricing-note { font-size: 11px; color: var(--ink-muted); text-align: center; margin-top: 10px; font-weight: 300; }
-
-  /* ── HOW IT WORKS ── */
-  .how {
-    background: var(--ink);
-    padding: 88px 40px;
-  }
-
-  .how-inner { max-width: 1000px; margin: 0 auto; }
-
-  .section-tag-light {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
-  }
-
-  .section-tag-light::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
-
-  .section-title-light {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 44px); font-weight: 500;
-    color: white; margin-bottom: 56px; line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2px;
-  }
-
-  .step {
-    padding: 32px 28px;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    background: rgba(255,255,255,0.03);
-  }
-
-  .step-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px; font-weight: 300;
-    color: rgba(201,168,76,0.25);
-    line-height: 1; margin-bottom: 16px;
-  }
-
-  .step-title { font-size: 15px; font-weight: 500; color: white; margin-bottom: 8px; }
-  .step-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; font-weight: 300; }
-
-  /* ── WHAT PARTNERS GET ── */
-  .benefits { max-width: 1000px; margin: 0 auto; padding: 88px 40px; }
-
+  /* What's coming */
+  .coming { max-width: 980px; margin: 0 auto; padding: 56px 24px 80px; }
   .section-tag {
-    font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    text-align: center; font-size: 11px; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--clay); margin-bottom: 14px;
   }
-  .section-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
-
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(28px, 4vw, 44px); font-weight: 500;
-    color: #ffffff; margin-bottom: 52px; line-height: 1.15;
-    letter-spacing: -0.01em;
+    font-family: 'Fraunces', serif;
+    text-align: center;
+    font-size: clamp(26px, 3.6vw, 36px);
+    font-weight: 300; letter-spacing: -0.02em;
+    color: var(--ink); margin-bottom: 18px; line-height: 1.2;
+  }
+  .section-title em { font-style: italic; color: var(--clay); }
+  .section-lede {
+    text-align: center; max-width: 600px; margin: 0 auto 48px;
+    font-size: 15.5px; color: var(--ink-soft); line-height: 1.7;
   }
 
-  .benefit-grid {
+  .plan-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 16px;
   }
-
-  .benefit-card {
-    background: var(--white); border: 1px solid var(--border-soft);
-    border-radius: 14px; padding: 28px 24px;
-    transition: box-shadow 0.2s, transform 0.15s;
+  .plan-card {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 18px; padding: 28px 24px;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+    position: relative;
   }
-  .benefit-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
-
-  .benefit-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: var(--gold-pale); border: 1px solid var(--border);
+  .plan-card:hover {
+    border-color: var(--clay-border);
+    box-shadow: 0 10px 32px rgba(184,92,61,0.08);
+    transform: translateY(-2px);
+  }
+  .plan-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--clay-soft);
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 16px; color: var(--clay);
   }
-
-  .benefit-title { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 7px; }
-  .benefit-desc { font-size: 13.5px; color: #3d4455; line-height: 1.65; font-weight: 400; }
-
-  /* ── FORM ── */
-  .form-section {
-    background: var(--gold-pale);
-    border-top: 1px solid var(--border);
-    padding: 88px 40px;
+  .plan-title {
+    font-size: 16px; font-weight: 600; color: var(--ink);
+    margin-bottom: 8px; letter-spacing: -0.01em;
   }
+  .plan-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
 
-  .form-inner { max-width: 640px; margin: 0 auto; }
-
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
+  /* Audience */
+  .audience {
+    background: var(--cream-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 72px 24px;
   }
-
-  .field { display: flex; flex-direction: column; gap: 6px; }
-  .field.full { grid-column: 1 / -1; }
-
-  label { font-size: 12px; font-weight: 500; color: var(--ink-soft); letter-spacing: 0.04em; text-transform: uppercase; }
-
-  input, select, textarea {
-    padding: 12px 14px;
-    border: 1px solid rgba(0,0,0,0.12);
-    border-radius: 8px;
-    font-size: 14px; font-weight: 300;
-    color: var(--ink);
-    background: white;
-    font-family: 'DM Sans', sans-serif;
-    transition: border-color 0.18s, box-shadow 0.18s;
-    outline: none;
-    width: 100%;
+  .audience-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+  .audience-list {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center; margin-top: 28px;
   }
-
-  input:focus, select:focus, textarea:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+  .audience-pill {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 999px; padding: 9px 18px;
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    transition: border-color 0.18s, color 0.18s;
   }
+  .audience-pill:hover { border-color: var(--clay-border); color: var(--clay-dark); }
 
-  textarea { resize: vertical; min-height: 90px; }
-
-  .form-submit {
-    width: 100%; padding: 14px;
-    background: var(--ink); color: white;
-    border: none; border-radius: 8px;
-    font-size: 15px; font-weight: 500;
-    cursor: pointer; font-family: 'DM Sans', sans-serif;
-    transition: opacity 0.18s, transform 0.12s;
-    margin-top: 8px;
-  }
-  .form-submit:hover { opacity: 0.85; }
-  .form-submit:active { transform: scale(0.99); }
-
-  .form-footnote { font-size: 12px; color: var(--ink-muted); text-align: center; margin-top: 12px; font-weight: 300; }
-
-  .success-msg {
-    display: none;
-    background: white; border: 1px solid var(--border);
-    border-radius: 12px; padding: 32px;
+  /* Notify form */
+  .notify {
+    max-width: 540px; margin: 0 auto; padding: 80px 24px;
     text-align: center;
   }
-  .success-msg.show { display: block; }
-  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 8px; }
-  .success-sub { font-size: 14px; color: var(--ink-soft); font-weight: 300; line-height: 1.65; }
-
-  /* ── FOOTER ── */
-  footer { background: #0d1117; color: rgba(255,255,255,0.35); padding: 32px 40px; text-align: center; }
-  .foot-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
-  .foot-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; font-weight: 300; }
-  .foot-links a:hover { color: rgba(255,255,255,0.7); }
-  .foot-copy { font-size: 11px; color: rgba(255,255,255,0.18); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
+  .notify-card {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: 22px; padding: 36px 32px;
+    box-shadow: 0 4px 24px rgba(184,92,61,0.05);
   }
-
-  .hero-left > * {
-    animation: fadeUp 0.6s ease both;
+  .notify-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; font-weight: 300;
+    letter-spacing: -0.015em; line-height: 1.2;
+    color: var(--ink); margin-bottom: 10px;
   }
-  .hero-left > *:nth-child(1) { animation-delay: 0.05s; }
-  .hero-left > *:nth-child(2) { animation-delay: 0.15s; }
-  .hero-left > *:nth-child(3) { animation-delay: 0.25s; }
-  .hero-left > *:nth-child(4) { animation-delay: 0.35s; }
+  .notify-card h3 em { font-style: italic; color: var(--clay); }
+  .notify-card p {
+    font-size: 14.5px; color: var(--ink-soft);
+    line-height: 1.65; margin-bottom: 22px;
+  }
+  .notify-form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .notify-form input {
+    flex: 1; min-width: 0;
+    padding: 12px 16px; border: 1px solid var(--line);
+    border-radius: 10px; font-size: 14.5px;
+    color: var(--ink); background: var(--cream);
+    font-family: inherit; outline: none;
+    transition: border-color 0.18s, box-shadow 0.18s;
+  }
+  .notify-form input:focus {
+    border-color: var(--clay); box-shadow: 0 0 0 3px var(--clay-soft);
+  }
+  .notify-form button {
+    padding: 12px 22px; border: none;
+    border-radius: 10px; font-size: 14.5px; font-weight: 600;
+    color: var(--white); background: var(--clay);
+    cursor: pointer; font-family: inherit;
+    transition: background 0.18s;
+  }
+  .notify-form button:hover { background: var(--clay-dark); }
+  .notify-foot {
+    font-size: 12.5px; color: var(--ink-muted); margin-top: 14px;
+  }
+  .notify-foot a { color: var(--clay); text-decoration: none; font-weight: 500; }
+  .notify-foot a:hover { color: var(--clay-dark); text-decoration: underline; }
 
-  .pricing-card { animation: fadeUp 0.6s 0.2s ease both; }
+  footer {
+    background: var(--ink); color: rgba(244,241,234,0.5);
+    padding: 36px 24px 28px; text-align: center;
+  }
+  .foot-links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .foot-links a { font-size: 13px; color: rgba(244,241,234,0.5); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+  .foot-links a:hover { color: rgba(244,241,234,0.9); }
+  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.28); }
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; gap: 48px; padding: 64px 24px 56px; }
-    .pricing-card { max-width: 420px; }
-    .how { padding: 64px 24px; }
-    .benefits { padding: 64px 24px; }
-    .form-section { padding: 64px 24px; }
-    .form-grid { grid-template-columns: 1fr; }
-    nav { padding: 0 24px; }
-    footer { padding: 32px 24px; }
+  @media (max-width: 560px) { nav { padding: 0 18px; } .hero { padding: 56px 20px 36px; } .notify-form { flex-direction: column; } .notify-form button { width: 100%; } }
+  body, html, h1, h2, h3, h4, h5, h6, p, a, button, input, select, textarea, label, span, div, li, td, th, strong, em {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="/maicasa" class="logo">
-    <div class="logo-dot">
-      <svg width="13" height="12" viewBox="0 0 14 13" fill="none">
-        <path d="M7 1L13 6H11.5V12H8.5V8H5.5V12H2.5V6H1Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.9)" stroke-width="1.3" stroke-linejoin="round"/>
-        <path d="M4.5 9.5L6.5 11.5L10 7" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <a href="/maicasa" class="logo" aria-label="Maicasa home">
+    <div class="logo-mark">
+      <svg width="34" height="34" viewBox="0 0 104 104" aria-hidden="true">
+        <rect x="14" y="14" width="76" height="76" rx="14" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="5"/>
+        <path d="M52 34 L72 50 V70 A2 2 0 0 1 70 72 H58 V58 A2 2 0 0 0 56 56 H48 A2 2 0 0 0 46 58 V72 H34 A2 2 0 0 1 32 70 V50 Z" fill="#FFFFFF"/>
       </svg>
     </div>
     <span class="logo-word">maicasa</span>
   </a>
-  <div class="nav-end">
-    <a href="/maicasa" class="nav-link">Home</a>
-    <a href="/maicasa/support" class="nav-link">Support</a>
-    <a href="#apply" class="btn-nav">Apply now</a>
-  </div>
+  <a href="/maicasa" class="nav-back">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
 </nav>
 
-<!-- HERO -->
-<section style="background: var(--bg); border-bottom: 1px solid var(--border-soft);">
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-tag">
-        <div class="hero-tag-line"></div>
-        Partner Program
-      </div>
-      <h1>Give your clients a home.<br><em>Give them the tools to keep it.</em></h1>
-      <p class="hero-sub">Maicasa Partners — mortgage brokers, buyer's agents, and property professionals — can set their clients up with a branded, AI-powered home management tool from day one. Your name in their app, your relationship protected.</p>
-      <div class="hero-actions">
-        <a href="#apply" class="btn-primary">Apply to become a partner</a>
-        <a href="#how" class="btn-secondary">See how it works</a>
-      </div>
+<section class="hero">
+  <div class="soon-pill">
+    <div class="dot"></div>
+    Coming soon
+  </div>
+  <h1>The Maicasa<br><em>Partner Program</em></h1>
+  <p class="hero-sub">A way for mortgage brokers, buyers agents, conveyancers and property managers to give their clients a branded, AI-powered home manager from day one &mdash; and stay in their pocket long after settlement.</p>
+  <a href="#notify" class="hero-cta">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Get notified at launch
+  </a>
+  <p class="hero-footnote">Expected launch: late 2026. No commitment to register interest.</p>
+</section>
+
+<section class="coming">
+  <div class="section-tag">What we're building</div>
+  <div class="section-title">A simple way to give your clients <em>more</em>.</div>
+  <p class="section-lede">Designed for property professionals who want to do more than send a bottle of wine after settlement &mdash; without the overhead of building anything yourself.</p>
+
+  <div class="plan-grid">
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="plan-title">A meaningful settlement gift</div>
+      <div class="plan-desc">Instead of a generic hamper, give clients a year of Maicasa. Practical, memorable and used every week.</div>
     </div>
 
-    <!-- Pricing card -->
-    <div class="pricing-card">
-      <div class="pricing-header">
-        <div class="pricing-header-logo">
-          <svg width="16" height="15" viewBox="0 0 14 13" fill="none">
-            <path d="M7 1L13 6H11.5V12H8.5V8H5.5V12H2.5V6H1Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.9)" stroke-width="1.3" stroke-linejoin="round"/>
-            <path d="M4.5 9.5L6.5 11.5L10 7" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="pricing-header-text">
-          <div class="pricing-header-title">Partner pricing</div>
-          <div class="pricing-header-sub">Per client · paid upfront</div>
-        </div>
-      </div>
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
+      <div class="plan-title">Your branding in their app</div>
+      <div class="plan-desc">Your logo on the loading screen, your contact details as their preferred broker or agent. One relationship, clearly visible.</div>
+    </div>
 
-      <div class="pricing-body">
-        <div class="plan selected" onclick="selectPlan(this)">
-          <div class="plan-badge">Best value</div>
-          <div class="plan-top">
-            <div class="plan-name">12 months</div>
-            <div class="plan-price">
-              <div class="plan-amount">$120</div>
-              <div class="plan-period">$10 / month</div>
-            </div>
-          </div>
-          <div class="plan-desc">Full year of access — ideal for post-settlement handover</div>
-        </div>
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div class="plan-title">A simple partner portal</div>
+      <div class="plan-desc">Add clients in under a minute. Track who's active, when subscriptions renew, and your portfolio at a glance.</div>
+    </div>
 
-        <div class="plan" onclick="selectPlan(this)">
-          <div class="plan-top">
-            <div class="plan-name">6 months</div>
-            <div class="plan-price">
-              <div class="plan-amount">$72</div>
-              <div class="plan-period">$12 / month</div>
-            </div>
-          </div>
-          <div class="plan-desc">Shorter commitment — good for clients still deciding</div>
-        </div>
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <div class="plan-title">Upload property documents</div>
+      <div class="plan-desc">Push inspection reports, strata records or building certificates straight into your client's Maicasa account &mdash; AI converts them into tasks.</div>
+    </div>
 
-        <div class="pricing-divider"></div>
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="plan-title">Stay top of mind</div>
+      <div class="plan-desc">When clients refinance, upgrade, or buy again &mdash; your name is already in their pocket. No marketing required.</div>
+    </div>
 
-        <div class="pricing-label">Every client gets</div>
-        <ul class="perks">
-          <li class="perk">
-            <div class="perk-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            Full Maicasa app access — AI task management, guides, budget planner
-          </li>
-          <li class="perk">
-            <div class="perk-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            Your branding on their app loading screen
-          </li>
-          <li class="perk">
-            <div class="perk-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            Your contact details as their preferred broker or agent
-          </li>
-          <li class="perk">
-            <div class="perk-dot"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            Free for them — you cover the cost
-          </li>
-        </ul>
-
-        <a href="#apply" class="btn-apply">Apply to become a partner</a>
-        <p class="pricing-note">Add clients one at a time or in bulk · No lock-in contract</p>
-      </div>
+    <div class="plan-card">
+      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+      <div class="plan-title">Pay-as-you-go pricing</div>
+      <div class="plan-desc">Per-client, paid upfront. No platform fees, no lock-in. We're still finalising tiers &mdash; expect roughly $10/client/month for the longest term.</div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="section-tag-light">How it works</div>
-    <div class="section-title-light">Simple for you.<br>Seamless for your clients.</div>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-title">Apply and get approved</div>
-        <div class="step-desc">Fill in the form below. You can start adding clients while your application is reviewed — approval is typically within 1 business day.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-title">Add a client</div>
-        <div class="step-desc">Enter their name and email in your partner portal. Choose 6 or 12 months and pay upfront via Stripe.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-title">They get an invitation</div>
-        <div class="step-desc">Your client receives an email with a download link. They log in with their email — access is already activated, no payment needed on their end.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-title">Your brand, in their home</div>
-        <div class="step-desc">Your name and logo appear on their app loading screen. As their preferred partner, your contact details replace the generic broker lookup — keeping you front of mind.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">05</div>
-        <div class="step-title">Upload property documents</div>
-        <div class="step-desc">From your portal, upload any property docs — inspection reports, strata records, building certificates. AI reads them and surfaces relevant tasks for the client.</div>
-      </div>
-      <div class="step">
-        <div class="step-num">06</div>
-        <div class="step-title">Manage your portfolio</div>
-        <div class="step-desc">See all your active clients, subscription status, and renewal dates in one dashboard. Add new clients as you settle them.</div>
-      </div>
+<section class="audience">
+  <div class="audience-inner">
+    <div class="section-tag">Who it's for</div>
+    <div class="section-title">If your clients buy property, <em>this is for you</em>.</div>
+    <div class="audience-list">
+      <div class="audience-pill">Mortgage brokers</div>
+      <div class="audience-pill">Buyers agents</div>
+      <div class="audience-pill">Conveyancers</div>
+      <div class="audience-pill">Property managers</div>
+      <div class="audience-pill">Building inspectors</div>
+      <div class="audience-pill">Real estate agents</div>
     </div>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="benefits" style="background:#0d1117;">
-  <div class="section-tag">Why partners choose Maicasa</div>
-  <div class="section-title">A meaningful gift.<br>A lasting connection.</div>
-  <div class="benefit-grid">
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      </div>
-      <div class="benefit-title">A standout settlement gift</div>
-      <div class="benefit-desc">Instead of a generic hamper, give your clients something they'll use every week. Maicasa is a practical, memorable way to start the relationship with their new home.</div>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-      </div>
-      <div class="benefit-title">Stay top of mind</div>
-      <div class="benefit-desc">Your name and logo are in their app from day one. When they're ready to refinance, upgrade, or buy again — you're already there.</div>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-      </div>
-      <div class="benefit-title">Your own portal</div>
-      <div class="benefit-desc">Manage all your clients from a single dashboard. See who's active, when subscriptions expire, and add new clients in under a minute.</div>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      </div>
-      <div class="benefit-title">Upload property documents</div>
-      <div class="benefit-desc">Share inspection reports, strata records, or any property documents directly to your client's property in Maicasa. AI reads them and creates relevant tasks automatically.</div>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <div class="benefit-title">Preferred partner status</div>
-      <div class="benefit-desc">Mortgage broker partners replace the generic broker search with their own contact details. Buyer's agents appear as the client's preferred agent. One relationship, clearly visible.</div>
-    </div>
-
-    <div class="benefit-card">
-      <div class="benefit-icon">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      </div>
-      <div class="benefit-title">No setup complexity</div>
-      <div class="benefit-desc">Add a client in under a minute — just their name and email. They receive an invite, download the app, and they're set up. No IT, no configuration, no friction.</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FORM -->
-<section class="form-section" id="apply">
-  <div class="form-inner">
-    <div class="section-tag">Apply now</div>
-    <div class="section-title" style="margin-bottom: 32px; color: var(--ink);">Become a Maicasa Partner</div>
-    <p style="font-size:15px;color:var(--ink-soft);font-weight:300;line-height:1.7;margin-bottom:36px;">Fill in your details below. You'll receive a confirmation email within 1 business day. You can start adding clients while your application is being reviewed.</p>
-
-    <div id="form-wrap">
-      <div class="form-grid">
-        <div class="field">
-          <label>First name</label>
-          <input type="text" id="fname" placeholder="Sarah" required>
-        </div>
-        <div class="field">
-          <label>Last name</label>
-          <input type="text" id="lname" placeholder="Johnson" required>
-        </div>
-        <div class="field">
-          <label>Business name</label>
-          <input type="text" id="bname" placeholder="Johnson Finance Group" required>
-        </div>
-        <div class="field">
-          <label>Role</label>
-          <select id="role">
-            <option value="">Select your role</option>
-            <option>Mortgage Broker</option>
-            <option>Buyer's Agent</option>
-            <option>Property Manager</option>
-            <option>Conveyancer</option>
-            <option>Other property professional</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="email" id="email" placeholder="sarah@johnsonfinance.com.au" required>
-        </div>
-        <div class="field">
-          <label>Phone</label>
-          <input type="tel" id="phone" placeholder="+61 4xx xxx xxx">
-        </div>
-        <div class="field">
-          <label>Approx. clients settled per year</label>
-          <select id="volume">
-            <option value="">Select a range</option>
-            <option>1–10</option>
-            <option>11–30</option>
-            <option>31–60</option>
-            <option>60+</option>
-          </select>
-        </div>
-        <div class="field">
-          <label>Preferred plan</label>
-          <select id="plan">
-            <option value="">Select a plan</option>
-            <option>12 months — $120 per client</option>
-            <option>6 months — $72 per client</option>
-            <option>Both — I'll decide per client</option>
-          </select>
-        </div>
-        <div class="field full">
-          <label>What would make this partnership great value for you? (optional)</label>
-          <textarea id="notes" placeholder="e.g. I work mainly with first home buyers in Melbourne..."></textarea>
-        </div>
-      </div>
-
-      <button class="form-submit" onclick="submitForm()">Submit application</button>
-      <p class="form-footnote">By submitting, you agree to our <a href="/maicasa/terms" style="color:var(--ink-soft);">Terms of Service</a> and <a href="/maicasa/privacy" style="color:var(--ink-soft);">Privacy Policy</a>.</p>
-    </div>
-
-    <div class="success-msg" id="success">
-      <div style="font-size:32px;margin-bottom:16px;">✓</div>
-      <div class="success-title">Application received</div>
-      <p class="success-sub">Thanks for applying to the Maicasa Partner Program. We'll review your application and be in touch within 1 business day at the email you provided.<br><br>Questions in the meantime? Email <a href="/cdn-cgi/l/email-protection#cfa6a1a9a08fa2aea6bca0a9bbb8aebdaae1aebfbf" style="color:var(--gold);"><span class="__cf_email__" data-cfemail="82ebece4edc2efe3ebf1ede4f6f5e3f0e7ace3f2f2">[email&#160;protected]</span></a></p>
-    </div>
+<section class="notify" id="notify">
+  <div class="notify-card">
+    <h3>Be first to know <em>when we launch</em></h3>
+    <p>Drop your email and we'll get in touch as soon as the partner portal opens for early access. No spam, no marketing, no commitment.</p>
+    <form class="notify-form" onsubmit="return notifyMe(event)">
+      <input type="email" id="notify-email" placeholder="you@yourbusiness.com.au" required>
+      <button type="submit">Notify me</button>
+    </form>
+    <p class="notify-foot">Or email <a href="mailto:partners@maisoftware.app">partners@maisoftware.app</a> directly to chat.</p>
   </div>
 </section>
 
 <footer>
   <div class="foot-links">
     <a href="/maicasa">Maicasa</a>
-    <a href="/maicasa/partner">Partner Program</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/maicasa/partner">Partners</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
-    <a href="/maicasa/terms">Terms</a>
-    <a href="/cdn-cgi/l/email-protection#abc2c5cdc4ebc6cac2d8c4cddfdccad9ce85cadbdb">Contact</a>
+    <a href="mailto:info@maisoftware.app">Contact</a>
   </div>
-  <p class="foot-copy">&copy; 2025 Mai Software. All rights reserved.</p>
+  <p class="foot-copy">&copy; 2026 Mai Software. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function selectPlan(el) {
-    document.querySelectorAll('.plan').forEach(p => p.classList.remove('selected'));
-    el.classList.add('selected');
-  }
-
-  function submitForm() {
-    const fname = document.getElementById('fname').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const bname = document.getElementById('bname').value.trim();
-
-    if (!fname || !email || !bname) {
-      alert('Please fill in your name, business name, and email to continue.');
-      return;
-    }
-
-    if (!email.includes('@')) {
+<script>
+  function notifyMe(e) {
+    e.preventDefault();
+    var email = document.getElementById('notify-email').value.trim();
+    if (!email || email.indexOf('@') === -1) {
       alert('Please enter a valid email address.');
-      return;
+      return false;
     }
-
-    const data = {
-      firstName: fname,
-      lastName: document.getElementById('lname').value.trim(),
-      businessName: bname,
-      role: document.getElementById('role').value,
-      email: email,
-      phone: document.getElementById('phone').value.trim(),
-      volume: document.getElementById('volume').value,
-      plan: document.getElementById('plan').value,
-      notes: document.getElementById('notes').value.trim(),
-      submittedAt: new Date().toISOString()
-    };
-
-    // Send to your email via mailto fallback for now
-    // Replace this with a fetch() to your backend or Formspree endpoint
-    const subject = encodeURIComponent('Maicasa Partner Application — ' + fname + ' ' + document.getElementById('lname').value.trim());
-    const body = encodeURIComponent(
-      'New partner application:\n\n' +
-      'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
-      'Business: ' + data.businessName + '\n' +
-      'Role: ' + data.role + '\n' +
-      'Email: ' + data.email + '\n' +
-      'Phone: ' + data.phone + '\n' +
-      'Clients/year: ' + data.volume + '\n' +
-      'Plan preference: ' + data.plan + '\n' +
+    var subject = encodeURIComponent('Maicasa Partner Program — early access interest');
+    var body = encodeURIComponent('Hi Maicasa team,\n\nPlease add me to the early-access list for the Partner Program.\n\nEmail: ' + email + '\n\nThanks!');
+    window.location.href = 'mailto:partners@maisoftware.app?subject=' + subject + '&body=' + body;
+    return false;
+  }
+</script>
+</body>
+</html>

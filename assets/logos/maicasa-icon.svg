@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 104" role="img" aria-label="Maicasa">
+  <defs>
+    <linearGradient id="maicasaG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B85C3D"/>
+      <stop offset="1" stop-color="#8E4429"/>
+    </linearGradient>
+  </defs>
+  <rect width="104" height="104" rx="22" fill="url(#maicasaG)"/>
+  <rect x="14" y="14" width="76" height="76" rx="14" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  <path d="M52 34 L72 50 V70 A2 2 0 0 1 70 72 H58 V58 A2 2 0 0 0 56 56 H48 A2 2 0 0 0 46 58 V72 H34 A2 2 0 0 1 32 70 V50 Z" fill="#FFFFFF"/>
+</svg>
