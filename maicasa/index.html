@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maicasa — Your home, finally under control</title>
-<meta name="description" content="The AI home manager for owners, landlords and buyers. Prioritise jobs, scan your property, plan your budget, track contents — and connect Claude or ChatGPT to your home data.">
+<meta name="description" content="The AI home manager for owners and landlords. Prioritise jobs, scan your property, plan your budget and track contents — in one app.">
 <meta property="og:title" content="Maicasa — Your home, finally under control">
-<meta property="og:description" content="AI-powered home maintenance, budget, contents and buyers agent — all in one app.">
+<meta property="og:description" content="AI-powered home maintenance, budget and contents — all in one app.">
 <meta property="og:url" content="https://maisoftware.app/maicasa">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico">
@@ -114,46 +114,17 @@
   .feat-link { font-size: 13px; font-weight: 600; color: var(--clay); text-decoration: none; }
   .feat-link:hover { color: var(--clay-dark); }
 
-  .journey { background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 88px 24px; }
-  .journey-inner { max-width: 1080px; margin: 0 auto; }
-  .j-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 48px; }
-  .j-step { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; position: relative; }
-  .j-num { font-family: 'Fraunces', serif; font-size: 13px; font-weight: 500; color: var(--clay); margin-bottom: 10px; letter-spacing: 0.04em; }
-  .j-name { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
-  .j-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
-
-  .who { padding: 88px 24px; }
+  .who { padding: 88px 24px; background: var(--cream-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .who-inner { max-width: 1080px; margin: 0 auto; }
-  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 48px; }
+  .who-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 48px; }
   .who-card { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; transition: border-color 0.18s; }
   .who-card:hover { border-color: var(--clay-border); }
   .who-emoji-spot { width: 38px; height: 38px; border-radius: 10px; background: var(--clay-soft); display: flex; align-items: center; justify-content: center; color: var(--clay); margin-bottom: 14px; }
   .who-role { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
   .who-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
 
-  .ai-band { background: var(--charcoal); color: rgba(244,241,234,0.92); padding: 88px 24px; }
-  .ai-inner { max-width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-  @media (max-width: 880px) { .ai-inner { grid-template-columns: 1fr; gap: 36px; } }
-  .ai-band .section-tag { color: var(--amber); text-align: left; }
-  @media (max-width: 880px) { .ai-band .section-tag { text-align: center; } }
-  .ai-band h2 { font-family: 'Fraunces', serif; font-size: clamp(28px, 3.6vw, 40px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 18px; color: #F4F1EA; }
-  .ai-band h2 em { font-style: italic; color: var(--amber); }
-  .ai-band p { font-size: 16px; line-height: 1.65; color: rgba(244,241,234,0.7); margin-bottom: 18px; }
-  .ai-band ul { list-style: none; margin: 22px 0 28px; padding: 0; }
-  .ai-band li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: rgba(244,241,234,0.85); }
-  .ai-band li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--amber); margin-top: 9px; flex-shrink: 0; }
-  .ai-mock { background: var(--charcoal-2); border-radius: 18px; border: 1px solid rgba(255,255,255,0.08); padding: 22px; box-shadow: 0 18px 50px rgba(0,0,0,0.4); }
-  .ai-msg { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
-  .ai-avatar { width: 26px; height: 26px; border-radius: 8px; flex-shrink: 0; background: linear-gradient(140deg, var(--amber), var(--clay)); display: flex; align-items: center; justify-content: center; }
-  .ai-bubble { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 13px; font-size: 13.5px; color: rgba(244,241,234,0.92); line-height: 1.55; max-width: 90%; }
-  .ai-bubble.me { background: rgba(233,168,92,0.12); border-color: rgba(233,168,92,0.22); margin-left: auto; }
-  .ai-msg.me { justify-content: flex-end; }
-  .ai-msg.me .ai-avatar { display: none; }
-  .ai-tool { font-size: 11px; color: var(--amber); margin-top: 8px; font-weight: 600; letter-spacing: 0.04em; }
-
   .compare-section { padding: 88px 24px; max-width: 1000px; margin: 0 auto; }
-  .compare-block { margin-bottom: 56px; }
-  .compare-block:last-child { margin-bottom: 0; }
+  .compare-block { margin-bottom: 0; }
   .compare-block-title { font-family: 'Fraunces', serif; font-size: clamp(22px, 2.8vw, 30px); font-weight: 300; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 8px; }
   .compare-block-sub { font-size: 14px; color: var(--ink-muted); margin-bottom: 24px; line-height: 1.6; }
   .compare-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 4px 24px rgba(184,92,61,0.05); }
@@ -213,7 +184,6 @@
   </a>
   <div class="nav-end">
     <a href="#features" class="nav-link">Features</a>
-    <a href="#buyers" class="nav-link">For buyers</a>
     <a href="/pricing" class="nav-link">Pricing</a>
     <a href="/maicasa/support" class="nav-link">Support</a>
     <a href="#download" class="btn btn-primary" style="padding:9px 18px;font-size:13px;">Download</a>
@@ -227,7 +197,7 @@
       AI home manager &middot; iOS &amp; Android
     </div>
     <h1>Your home.<br><em>Finally</em> under control.</h1>
-    <p class="hero-sub">Maicasa turns the chaos of owning, maintaining and buying a home into one clear, prioritised plan &mdash; with an AI assistant that already knows your property, your budget and what needs doing next.</p>
+    <p class="hero-sub">Maicasa turns the chaos of owning and maintaining a home into one clear, prioritised plan &mdash; with an AI assistant that already knows your property, your budget and what needs doing next.</p>
     <div class="hero-actions">
       <a href="#download" class="btn btn-primary" id="download">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.25-1.32-1.93-3.38-2.2-4.11-2.23-1.75-.18-3.42 1.03-4.31 1.03-.9 0-2.27-1-3.74-.97-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.94 1.38 2.07 2.94 3.54 2.88 1.42-.06 1.96-.92 3.68-.92 1.71 0 2.21.92 3.71.89 1.53-.03 2.5-1.41 3.44-2.79 1.08-1.6 1.53-3.15 1.56-3.23-.03-.02-3-1.15-3.03-4.55Zm-2.84-8.36c.78-.95 1.31-2.27 1.16-3.58-1.13.05-2.49.75-3.3 1.7-.72.84-1.36 2.18-1.19 3.47 1.26.1 2.55-.64 3.33-1.59Z"/></svg>
@@ -288,7 +258,6 @@
     <div class="trust-label">Built for</div>
     <div class="trust-item">Owner-occupiers</div>
     <div class="trust-item">Landlords</div>
-    <div class="trust-item">First-home buyers</div>
     <div class="trust-item">Investors</div>
     <div class="trust-item">Tenants</div>
   </div>
@@ -297,7 +266,7 @@
 <section class="features" id="features">
   <div class="section-tag">What Maicasa does</div>
   <div class="section-title">Everything your home needs.<br><em>Nothing</em> it doesn't.</div>
-  <p class="section-lede">Six tabs. One coherent picture of your property. Each one earns its place &mdash; and works the moment you open the app.</p>
+  <p class="section-lede">A few tabs. One coherent picture of your property. Each one earns its place &mdash; and works the moment you open the app.</p>
 
   <div class="feat-grid">
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div><div class="feat-title">Prioritised task list</div><div class="feat-desc">Every job ranked by safety, urgency, season and cost. Open the app, glance at <em>Now</em>, and know exactly what to act on first.</div></div>
@@ -308,47 +277,6 @@
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div><div class="feat-title">Contents inventory</div><div class="feat-desc">Every appliance, fixture and fitting, photographed and tagged. Track current value, warranty, and whether it's depreciable for tax.</div></div>
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.18z"/></svg></div><div class="feat-title">Trade guides &amp; quote tools</div><div class="feat-desc">Tap any task: get a step-by-step DIY guide, or the exact brief to hand a tradesperson. Compare quotes side-by-side and flag what's out of range.</div></div>
     <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="12" cy="11" r="1.6" fill="currentColor"/></svg></div><div class="feat-title">AI chat assistant</div><div class="feat-desc">Ask anything about your home &mdash; paste a maintenance list to import it, describe a problem, or get advice at 10pm when something looks wrong.</div></div>
-    <div class="feat-card"><div class="feat-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M8 8l4 8M16 8l-4 8"/></svg></div><div class="feat-title">Connect Claude &amp; ChatGPT</div><div class="feat-desc">Maicasa ships an MCP server. Connect Claude Desktop, ChatGPT or Gemini to your real property data &mdash; and let your favourite AI plan your home.<br><a href="/maicasa/assistants" class="feat-link">Learn how &#x2192;</a></div></div>
-  </div>
-</section>
-
-<section class="ai-band">
-  <div class="ai-inner">
-    <div>
-      <div class="section-tag">Bring your own AI</div>
-      <h2>Maicasa speaks <em>fluent</em> Claude, ChatGPT and Gemini.</h2>
-      <p>Every property, task, bill, quote and inventory item lives behind an MCP server you control. Plug in any modern AI assistant and ask it to do the heavy lifting &mdash; Maicasa keeps the data, the privacy boundary, and the audit trail.</p>
-      <ul>
-        <li>Add tasks, bills, inventory and properties through chat</li>
-        <li>Estimate costs, save quotes, generate inspection-ready briefs</li>
-        <li>Run property scans, set buyer preferences, score listings</li>
-        <li>Your data stays in your account &mdash; not training corpora</li>
-      </ul>
-      <a href="/maicasa/assistants" class="btn btn-outline" style="border-color:rgba(233,168,92,0.4);color:var(--amber);">Read the integration guide</a>
-    </div>
-    <div class="ai-mock" aria-hidden="true">
-      <div class="ai-msg me"><div class="ai-bubble me">Add a task for the dishwasher &mdash; it's leaving white streaks on the glassware.</div></div>
-      <div class="ai-msg"><div class="ai-avatar"><svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.95)"><path d="M12 2l1.8 6h6.2l-5 3.6L17 18l-5-3.7L7 18l2-6.4-5-3.6h6.2z"/></svg></div><div><div class="ai-bubble">Done &mdash; added &ldquo;Dishwasher: rinse aid + filter clean&rdquo; to your task list. Set as DIY, ~$12 in supplies, 20 min. Want me to add an annual recurring check?</div><div class="ai-tool">tool &middot; add_task &rarr; maicasa</div></div></div>
-      <div class="ai-msg me"><div class="ai-bubble me">Yes. And what's my Q2 maintenance spend looking like?</div></div>
-      <div class="ai-msg"><div class="ai-avatar"><svg width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.95)"><path d="M12 2l1.8 6h6.2l-5 3.6L17 18l-5-3.7L7 18l2-6.4-5-3.6h6.2z"/></svg></div><div><div class="ai-bubble">$1,420 of $2,000 budget used. The hot water service ($280) is the next planned spend &mdash; comfortably within contingency.</div><div class="ai-tool">tool &middot; get_budget &rarr; maicasa</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="journey" id="buyers">
-  <div class="journey-inner">
-    <div class="section-tag">Maicasa for buyers</div>
-    <div class="section-title">Buying a home? <em>Seven</em> stages, one assistant.</div>
-    <p class="section-lede">From the first weekend of open homes to settlement and beyond, Maicasa's Buyer module takes you through every stage &mdash; and rolls into your Home plan the day you get the keys.</p>
-    <div class="j-grid">
-      <div class="j-step"><div class="j-num">01 &middot; Discover</div><div class="j-name">Set your brief</div><div class="j-desc">Suburbs, budget, must-haves. Maicasa learns what you're really looking for.</div></div>
-      <div class="j-step"><div class="j-num">02 &middot; Research</div><div class="j-name">AI property scan</div><div class="j-desc">Listing facts, comparable sales, council zoning, flood/bushfire, school catchments.</div></div>
-      <div class="j-step"><div class="j-num">03 &middot; Shortlist</div><div class="j-name">Score &amp; rank</div><div class="j-desc">Tunable weights for what matters to you &mdash; not generic 5-star vibes.</div></div>
-      <div class="j-step"><div class="j-num">04 &middot; Inspect</div><div class="j-name">Open-home checklist</div><div class="j-desc">Photos, observations and red flags captured on-site, attached to the property.</div></div>
-      <div class="j-step"><div class="j-num">05 &middot; Decide</div><div class="j-name">Verdict &amp; offer</div><div class="j-desc">Stamp duty, ongoing costs, yield. AI verdict with the working shown.</div></div>
-      <div class="j-step"><div class="j-num">06 &middot; Settle</div><div class="j-name">Purchase costs</div><div class="j-desc">Track every cost from cooling-off to settlement in one ledger.</div></div>
-      <div class="j-step"><div class="j-num">07 &middot; Move in</div><div class="j-name">Hand-over to Home</div><div class="j-desc">Building inspection findings become tasks. Your buyer plan rolls into your home plan.</div></div>
-    </div>
   </div>
 </section>
 
@@ -356,11 +284,10 @@
   <div class="who-inner">
     <div class="section-tag">Who it's for</div>
     <div class="section-title">Built for every kind of homeowner</div>
-    <p class="section-lede">One app, four very different jobs. Maicasa adapts to whichever side of the front door you're standing on.</p>
+    <p class="section-lede">One app, three very different jobs. Maicasa adapts to whichever side of the front door you're standing on.</p>
     <div class="who-grid">
       <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div class="who-role">Owner-occupiers</div><div class="who-desc">Stop carrying the mental list. Maicasa knows what your house needs and when &mdash; even the boring seasonal stuff that never gets done.</div></div>
       <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V11l7-5 7 5v10M9 21v-6h6v6"/></svg></div><div class="who-role">Landlords &amp; investors</div><div class="who-desc">Manage maintenance and contents across multiple properties. EOFY-ready records for fixtures, fittings and depreciable plant.</div></div>
-      <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div class="who-role">Buyers in the market</div><div class="who-desc">Hunt, compare, score and decide. Then upload the building inspection and walk in with a plan, not a panic.</div></div>
       <div class="who-card"><div class="who-emoji-spot"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div><div class="who-role">Tenants</div><div class="who-desc">A clean record of every issue raised, every response, every photo. Free to use &mdash; your landlord's politeness, in writing.</div></div>
     </div>
   </div>
@@ -369,7 +296,7 @@
 <section class="compare-section">
   <div class="section-tag">How it fits together</div>
   <div class="section-title">Works alongside the people<br><em>you already trust</em></div>
-  <p class="section-lede">Maicasa doesn't replace your tradesperson, your buyers agent or your home manager. It makes sure nothing gets lost between meetings, calls and handovers &mdash; and keeps you informed enough to ask the right questions when it matters.</p>
+  <p class="section-lede">Maicasa doesn't replace your tradesperson or your home manager. It makes sure nothing gets lost between meetings, calls and handovers &mdash; and keeps you informed enough to ask the right questions when it matters.</p>
 
   <div class="compare-block">
     <div class="compare-block-title">Managing your home</div>
@@ -387,23 +314,6 @@
       </tbody>
     </table>
     <div class="complement-note"><strong>Better together.</strong> If you have a property manager, use Maicasa to stay across what's happening between their updates. You'll always have the full picture &mdash; not just what they chose to tell you.</div>
-  </div>
-
-  <div class="compare-block">
-    <div class="compare-block-title">Buying your next home</div>
-    <div class="compare-block-sub">A buyers agent typically charges $2,000&ndash;$15,000+ per purchase. Maicasa's Buyer module gives you the research, scoring and decision tools for $8.99 a month &mdash; and rolls into your Home plan the day you settle.</div>
-    <table class="compare-table">
-      <thead><tr><th>What you need as a buyer</th><th>Human buyers agent</th><th class="highlight">Maicasa Buyer</th></tr></thead>
-      <tbody>
-        <tr><td>Independent property research and analysis</td><td class="yes">Local knowledge they've spent years building</td><td class="yes winner">AI scan: facts, comparables, risks, council, schools &mdash; in 60 seconds</td></tr>
-        <tr><td>Negotiate and bid on my behalf</td><td class="yes winner">They turn up to the auction so you don't have to</td><td class="no">Maicasa preps you; you (or your agent) make the call</td></tr>
-        <tr><td>Score &amp; rank shortlisted properties</td><td class="yes">Their judgement, in their head</td><td class="yes winner">Tunable weights you control, scores you can re-run</td></tr>
-        <tr><td>Open-home inspection notes</td><td class="yes">They take notes for you</td><td class="yes winner">In-app checklist with photos, observations, red flags &mdash; saved per property</td></tr>
-        <tr><td>Stamp duty, ongoing costs &amp; yield</td><td class="yes">They run the numbers in a spreadsheet</td><td class="yes winner">Built-in calculators for every state, transparent working</td></tr>
-        <tr><td>Carry it through to actually owning the home</td><td class="no">Job done at settlement</td><td class="yes winner">Buyer rolls into Home &mdash; your plan continues without losing data</td></tr>
-      </tbody>
-    </table>
-    <div class="complement-note"><strong>Pair with your buyers agent.</strong> Use Maicasa to organise every shortlisted property, every inspection note and every cost calculation. Your agent does the dealmaking; Maicasa does the bookkeeping.</div>
   </div>
 </section>
 
@@ -429,9 +339,7 @@
   <p class="foot-by">A product by <a href="/">Mai Software</a></p>
   <div class="foot-links">
     <a href="#features">Features</a>
-    <a href="#buyers">For buyers</a>
     <a href="/pricing">Pricing</a>
-    <a href="/maicasa/assistants">Connect AI</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
     <a href="mailto:info@maisoftware.app">Contact</a>
