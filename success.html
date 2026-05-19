@@ -7,53 +7,68 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, sans-serif;
-      background: #0f1128;
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(233,168,92,0.18), transparent 50%),
+        linear-gradient(135deg, #C76845 0%, #B85C3D 45%, #8E4429 100%);
+      color: #FBF7F1;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 24px;
       text-align: center;
+      -webkit-font-smoothing: antialiased;
     }
     .card {
-      max-width: 380px;
+      max-width: 400px;
       width: 100%;
     }
     .icon {
-      width: 72px; height: 72px;
-      background: rgba(22,163,74,0.15);
-      border: 2px solid rgba(22,163,74,0.3);
+      width: 78px; height: 78px;
+      background: rgba(255,255,255,0.14);
+      border: 2px solid rgba(255,255,255,0.32);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 24px;
+      margin: 0 auto 28px;
+      backdrop-filter: blur(8px);
     }
-    h1 { font-size: 28px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
-    p { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.6; margin-bottom: 32px; }
+    h1 {
+      font-size: 32px; font-weight: 700; margin-bottom: 14px;
+      letter-spacing: -0.025em;
+    }
+    h1 em { font-style: italic; color: rgba(255,255,255,0.92); font-weight: 500; }
+    p {
+      font-size: 15.5px; color: rgba(255,255,255,0.85);
+      line-height: 1.65; margin-bottom: 32px;
+    }
     .btn {
       display: inline-block;
       padding: 14px 32px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      border-radius: 12px;
+      background: #FBF7F1;
+      color: #8E4429;
+      border-radius: 999px;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 600;
       text-decoration: none;
       font-family: inherit;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.20);
+      transition: transform 0.12s, background 0.18s;
+      letter-spacing: -0.005em;
     }
-    .sub { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.3); }
+    .btn:hover { background: #fff; transform: translateY(-1px); }
+    .sub { margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.55); }
   </style>
 </head>
 <body>
   <div class="card">
     <div class="icon">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-        stroke="#4ade80" stroke-width="2.5" stroke-linecap="round">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none"
+        stroke="#FBF7F1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="20 6 9 17 4 12"/>
       </svg>
     </div>
-    <h1>You're all set</h1>
+    <h1>You're <em>all set</em></h1>
     <p>Your Maicasa subscription is active. Open the app and sign in to access your new features.</p>
     <a href="https://apps.apple.com/app/maicasa" class="btn">Open Maicasa</a>
     <p class="sub">Questions? Email dev@maisoftware.app</p>
