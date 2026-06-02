@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maicasa — Fix it fast</title>
+<meta name="description" content="Describe any home problem and get an instant AI diagnosis and cost estimate.">
+<meta property="og:title" content="Maicasa — Fix it fast">
+<meta property="og:description" content="Describe any home problem and get an instant AI diagnosis and cost estimate.">
+<meta property="og:url" content="https://maisoftware.app/maicasa/clip">
+<meta name="apple-itunes-app" content="app-id=6499064518, app-clip-bundle-id=MYHX852Q3C.com.maicasa.homemanager.clip, app-clip-display=card">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1A1A1A;
+    --bg-2: #242424;
+    --amber: #E8A050;
+    --amber-dark: #C9863C;
+    --white: #FFFFFF;
+    --muted: rgba(255,255,255,0.62);
+    --muted-soft: rgba(255,255,255,0.42);
+    --line: rgba(255,255,255,0.10);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: rgba(232,160,80,0.3); }
+
+  /* Open-in banner */
+  .open-banner {
+    background: var(--bg-2);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .open-banner .ob-mark {
+    width: 40px; height: 40px; border-radius: 9px; flex-shrink: 0;
+    background: linear-gradient(140deg, var(--amber), var(--amber-dark));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 8px rgba(232,160,80,0.3);
+  }
+  .open-banner .ob-text { flex: 1; min-width: 0; }
+  .open-banner .ob-title { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; }
+  .open-banner .ob-sub { font-size: 11.5px; color: var(--muted-soft); }
+  .ob-btn {
+    flex-shrink: 0;
+    background: var(--amber);
+    color: var(--bg);
+    font-size: 13px; font-weight: 700;
+    padding: 9px 18px; border-radius: 999px;
+    letter-spacing: -0.005em;
+  }
+
+  /* Layout */
+  .wrap {
+    flex: 1;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 56px 26px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 56px;
+  }
+  .logo-mark {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(140deg, var(--amber), var(--amber-dark));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(232,160,80,0.32), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .logo-word {
+    font-size: 22px; font-weight: 600; letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(40px, 12vw, 56px);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    margin-bottom: 20px;
+  }
+  h1 em { font-style: normal; color: var(--amber); }
+
+  .sub {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 360px;
+    margin: 0 auto 44px;
+    letter-spacing: -0.005em;
+  }
+
+  /* Buttons */
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    width: 100%;
+    max-width: 340px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 9px; width: 100%;
+    padding: 16px 22px;
+    border-radius: 14px;
+    font-size: 16px; font-weight: 700;
+    cursor: pointer; border: none;
+    transition: transform 0.12s ease, background 0.18s ease, box-shadow 0.2s ease;
+    letter-spacing: -0.01em;
+    font-family: inherit;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-amber {
+    background: linear-gradient(135deg, var(--amber), var(--amber-dark));
+    color: var(--bg);
+    box-shadow: 0 6px 20px rgba(232,160,80,0.28), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .btn-amber:hover { box-shadow: 0 10px 28px rgba(232,160,80,0.36), inset 0 1px 0 rgba(255,255,255,0.24); }
+  .btn-store {
+    background: var(--bg-2);
+    color: var(--white);
+    border: 1px solid var(--line);
+  }
+  .btn-store:hover { background: #2e2e2e; }
+  .btn-store .store-label { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+  .btn-store .store-small { font-size: 10.5px; font-weight: 500; color: var(--muted); letter-spacing: 0.02em; }
+  .btn-store .store-big { font-size: 17px; font-weight: 700; }
+
+  .footnote {
+    margin-top: 36px;
+    font-size: 13px;
+    color: var(--muted-soft);
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 11.5px;
+    color: var(--muted-soft);
+    border-top: 1px solid var(--line);
+  }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Open in Maicasa banner -> deep links to the App Clip / App Store -->
+<a class="open-banner" href="https://maisoftware.app/maicasa/clip">
+  <div class="ob-mark">
+    <svg width="26" height="26" viewBox="0 0 104 104" aria-hidden="true">
+      <rect x="13" y="13" width="78" height="78" rx="15" fill="none" stroke="#1A1A1A" stroke-width="6"/>
+      <path d="M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z" fill="#1A1A1A"/>
+    </svg>
+  </div>
+  <div class="ob-text">
+    <div class="ob-title">Open in Maicasa</div>
+    <div class="ob-sub">Get your diagnosis in the app</div>
+  </div>
+  <span class="ob-btn">Open</span>
+</a>
+
+<main class="wrap">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg width="34" height="34" viewBox="0 0 104 104" aria-hidden="true">
+        <rect x="13" y="13" width="78" height="78" rx="15" fill="none" stroke="#1A1A1A" stroke-width="6"/>
+        <path d="M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z" fill="#1A1A1A"/>
+      </svg>
+    </div>
+    <span class="logo-word">maicasa</span>
+  </div>
+
+  <h1>Fix it <em>fast</em></h1>
+  <p class="sub">Describe any home problem and get an instant AI diagnosis and cost estimate.</p>
+
+  <div class="actions">
+    <a class="btn btn-amber" href="https://maisoftware.app/maicasa/clip">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      Open in Maicasa
+    </a>
+    <a class="btn btn-store" href="https://apps.apple.com/au/app/maicasa-home-manager/id6499064518">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.25-1.32-1.93-3.38-2.2-4.11-2.23-1.75-.18-3.42 1.03-4.31 1.03-.9 0-2.27-1-3.74-.97-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.94 1.38 2.07 2.94 3.54 2.88 1.42-.06 1.96-.92 3.68-.92 1.71 0 2.21.92 3.71.89 1.53-.03 2.5-1.41 3.44-2.79 1.08-1.6 1.53-3.15 1.56-3.23-.03-.02-3-1.15-3.03-4.55Zm-2.84-8.36c.78-.95 1.31-2.27 1.16-3.58-1.13.05-2.49.75-3.3 1.7-.72.84-1.36 2.18-1.19 3.47 1.26.1 2.55-.64 3.33-1.59Z"/></svg>
+      <span class="store-label">
+        <span class="store-small">Download on the</span>
+        <span class="store-big">App Store</span>
+      </span>
+    </a>
+  </div>
+
+  <p class="footnote">Free to try &middot; No account needed to start</p>
+</main>
+
+<footer>
+  &copy; 2026 Mai Software &middot; <a href="/maicasa">About Maicasa</a> &middot; <a href="/maicasa/privacy">Privacy</a>
+</footer>
+
+</body>
+</html>
