@@ -60,6 +60,9 @@
   .filter-count{font-size:0.8125rem;color:rgba(255,255,255,0.55)}
   .clear-btn{background:none;border:none;color:var(--gold-light);font-family:inherit;font-size:0.8125rem;cursor:pointer;text-decoration:underline;padding:0}
   .clear-btn:hover{color:var(--white)}
+  /* Collapsible filters: desktop shows the panel inline; the toggle is mobile-only. */
+  .filter-toggle{display:none}
+  .filter-panel{display:flex;flex-direction:column;gap:0.75rem}
 
   /* FEED */
   .feed-wrap{background:var(--off-white);border-top:1px solid var(--light-grey);padding:3rem 4rem 4rem;min-height:50vh}
@@ -160,8 +163,16 @@
     .hero p{font-size:1rem;margin-bottom:1.1rem}
     .hero-meta{font-size:0.8rem;gap:0.35rem 0.55rem}
 
-    /* Compact, horizontally scrollable filter strips so the sticky bar stays short */
-    .filter-bar{padding:0.7rem 1rem;gap:0.55rem}
+    /* Collapse filters behind a single toggle so the feed leads on small screens */
+    .filter-bar{padding:0.6rem 1rem;gap:0}
+    .filter-toggle{display:flex;align-items:center;gap:0.6rem;width:100%;font-family:inherit;font-size:0.9rem;font-weight:700;color:var(--white);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:0.6rem 0.9rem;cursor:pointer}
+    .ft-label{letter-spacing:0.02em}
+    .ft-badge{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);font-size:0.72rem;font-weight:700;border-radius:999px;padding:0.05rem 0.5rem;line-height:1.5}
+    .ft-meta{margin-left:auto;font-size:0.78rem;font-weight:400;color:rgba(255,255,255,0.55)}
+    .ft-caret{transition:transform 0.2s;color:var(--gold-light)}
+    .filter-bar.open .ft-caret{transform:rotate(180deg)}
+    .filter-panel{display:none;margin-top:0.7rem;gap:0.55rem}
+    .filter-bar.open .filter-panel{display:flex;max-height:62vh;overflow-y:auto}
     .filter-row{flex-direction:column;align-items:stretch;gap:0.4rem}
     .filter-label{padding-top:0;font-size:0.62rem}
     .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;scrollbar-width:none}
@@ -234,16 +245,24 @@
 
 <!-- FILTER BAR -->
 <div class="filter-bar" id="feed">
-  <div class="filter-row">
-    <div class="filter-label">Jurisdiction</div>
-    <div class="chips" id="jur-chips"></div>
-  </div>
-  <div class="filter-row">
-    <div class="filter-label">Conduct type</div>
-    <div class="chips" id="conduct-chips"></div>
-    <div class="filter-actions">
-      <span class="filter-count" id="filter-count"></span>
-      <button class="clear-btn" id="clear-btn" hidden>Clear filters</button>
+  <button class="filter-toggle" id="filter-toggle" type="button" aria-expanded="false" aria-controls="filter-panel">
+    <span class="ft-label">Filters</span>
+    <span class="ft-badge" id="ft-badge" hidden></span>
+    <span class="ft-meta" id="ft-meta"></span>
+    <span class="ft-caret" aria-hidden="true">&#9662;</span>
+  </button>
+  <div class="filter-panel" id="filter-panel">
+    <div class="filter-row">
+      <div class="filter-label">Jurisdiction</div>
+      <div class="chips" id="jur-chips"></div>
+    </div>
+    <div class="filter-row">
+      <div class="filter-label">Conduct type</div>
+      <div class="chips" id="conduct-chips"></div>
+      <div class="filter-actions">
+        <span class="filter-count" id="filter-count"></span>
+        <button class="clear-btn" id="clear-btn" hidden>Clear filters</button>
+      </div>
     </div>
   </div>
 </div>
@@ -329,6 +348,16 @@
   var $updated = document.getElementById('feed-updated');
   var $count = document.getElementById('filter-count');
   var $clear = document.getElementById('clear-btn');
+  var $bar = document.getElementById('feed');
+  var $toggle = document.getElementById('filter-toggle');
+  var $badge = document.getElementById('ft-badge');
+  var $meta = document.getElementById('ft-meta');
+
+  // Mobile: tapping "Filters" expands/collapses the panel.
+  $toggle.addEventListener('click', function () {
+    var open = $bar.classList.toggle('open');
+    $toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -431,6 +460,13 @@
     $count.textContent = active
       ? (filtered.length + ' of ' + state.items.length + ' shown')
       : (state.items.length ? state.items.length + ' items' : '');
+
+    // Mobile toggle: badge shows active filter count, meta shows the result tally.
+    if (active) { $badge.hidden = false; $badge.textContent = active; }
+    else { $badge.hidden = true; }
+    $meta.textContent = !state.items.length ? ''
+      : active ? (filtered.length + ' shown')
+      : (state.items.length + ' items');
 
     if (!state.items.length) {
       $cards.innerHTML = '<div class="empty-state">The feed has not been generated yet. The first weekly scan will populate it shortly &mdash; check back soon.</div>';
