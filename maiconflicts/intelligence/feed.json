@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-06-09T12:30:00.000Z",
+  "item_count": 8,
+  "items": [
+    {
+      "id": "story_doj_prediction_markets",
+      "title": "DOJ and CFTC charge Google engineer over prediction-market insider trading",
+      "summary": "US prosecutors and the CFTC brought parallel criminal and civil actions against a Google software engineer accused of using non-public \"Year in Search\" data to place winning bets on a prediction-market platform. Authorities allege he made roughly US$1.2 million. The case pushes insider-trading theory into event-contract markets.",
+      "url": "https://www.mofo.com/resources/insights/260601-doj-and-cftc-bring-parallel-insider-trading-actions",
+      "source": "US DOJ",
+      "jurisdiction": "US",
+      "published_at": "2026-05-27",
+      "conduct_types": ["INSIDER_TRADING", "MARKET_MANIPULATION"],
+      "relevance_score": 0.85,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_sfc_pegasus",
+      "title": "SFC: Hong Kong film producer convicted of insider dealing in Pegasus Entertainment",
+      "summary": "A Hong Kong film producer, Wong Pak Ming, was convicted at the Eastern Magistrates' Court of insider dealing in the shares of Pegasus Entertainment Holdings. The conviction continues the SFC's recent run of criminal market-misconduct prosecutions.",
+      "url": "https://www.charltonslaw.com/hong-kong-sfc-enforcement-roundup-may-2026/",
+      "source": "SFC",
+      "jurisdiction": "HK",
+      "published_at": "2026-05-22",
+      "conduct_types": ["INSIDER_TRADING"],
+      "relevance_score": 0.8,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_doximity_jorgensen",
+      "title": "Ex-Doximity revenue chief sentenced to 26 months for earnings insider trading",
+      "summary": "A former chief revenue officer of Doximity was sentenced to 26 months in prison for trading the company's stock and options ahead of its quarterly earnings while holding inside information. The Southern District of New York sentencing followed an earlier guilty plea.",
+      "url": "https://www.justice.gov/usao-sdny/pr/former-corporate-executive-sentenced-26-months-prison-insider-trading-scheme",
+      "source": "US DOJ",
+      "jurisdiction": "US",
+      "published_at": "2026-05-21",
+      "conduct_types": ["INSIDER_TRADING"],
+      "relevance_score": 0.78,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_finra_pictet_blueocean",
+      "title": "FINRA fines Pictet Overseas and Blue Ocean ATS over penny-stock AML controls",
+      "summary": "FINRA fined Pictet Overseas US$610,000 and Blue Ocean ATS US$550,000 for weak anti-money-laundering and supervisory controls around low-priced securities. Regulators found the firms failed to surveil for wash trades, spoofing and layering, leaving manipulation red flags undetected. Both settled without admitting or denying the findings.",
+      "url": "https://www.finra.org/media-center/newsreleases/2026/finra-fines-pictet-overseas-and-blue-ocean-ats-aml-and-supervisory",
+      "source": "FINRA",
+      "jurisdiction": "US",
+      "published_at": "2026-05-20",
+      "conduct_types": ["AML_FINANCIAL_CRIME", "MARKET_MANIPULATION", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.82,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_sec_lawfirm_ring",
+      "title": "SEC charges 21 in decade-long law-firm insider trading ring",
+      "summary": "The SEC charged 21 individuals over a scheme that traded on confidential deal information misappropriated from several global law firms, allegedly generating millions in illicit profit between 2018 and 2024. Regulators said the ring was organised by an M&A lawyer and an associate who fed tips to a trading network. The Market Abuse Unit is seeking disgorgement, interest and civil penalties.",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-44-sec-charges-21-individuals-alleged-wide-reaching-insider-trading-scheme",
+      "source": "SEC",
+      "jurisdiction": "US",
+      "published_at": "2026-05-07",
+      "conduct_types": ["INSIDER_TRADING", "INFORMATION_BARRIERS"],
+      "relevance_score": 0.92,
+      "relevant_excerpt": null,
+      "updates": [
+        {
+          "title": "DOJ files parallel criminal charges over the law-firm tipping ring",
+          "summary": "The US Attorney's Office for the District of Massachusetts announced criminal charges against all defendants in the same scheme, running alongside the SEC's civil action.",
+          "url": "https://www.washingtontimes.com/news/2026/may/7/sec-doj-charge-21-scheme-netted-millions-illicit-trading-profits/",
+          "source": "US DOJ",
+          "jurisdiction": "US",
+          "published_at": "2026-05-07",
+          "conduct_types": ["INSIDER_TRADING"],
+          "relevant_excerpt": null
+        }
+      ]
+    },
+    {
+      "id": "story_asic_bigun_evans",
+      "title": "ASIC: former Big Un CEO pleads guilty to communicating inside information",
+      "summary": "The former chief executive of collapsed ASX-listed technology company Big Un pleaded guilty in the Sydney District Court to communicating inside information to a shareholder in early 2017, concerning customer numbers and a $20 million funding arrangement. A sentencing hearing is set for August 2026.",
+      "url": "https://www.asic.gov.au/about-asic/news-centre/find-a-media-release/2026-releases/26-069mr-former-big-un-ceo-pleads-guilty-in-insider-trading-case/",
+      "source": "ASIC",
+      "jurisdiction": "AU",
+      "published_at": "2026-04-10",
+      "conduct_types": ["INSIDER_TRADING"],
+      "relevance_score": 0.8,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_finma_mbaer",
+      "title": "FINMA withdraws MBaer Merchant Bank licence over AML and sanctions failures",
+      "summary": "FINMA withdrew the licence of MBaer Merchant Bank after finding serious, systematic anti-money-laundering and sanctions-compliance shortcomings that let clients circumvent official asset freezes. The regulator opened proceedings against individuals potentially responsible and placed the bank into liquidation.",
+      "url": "https://www.finma.ch/en/news/2026/02/20260227-mm-mbaer-liquidation/",
+      "source": "FINMA",
+      "jurisdiction": "CH",
+      "published_at": "2026-02-27",
+      "conduct_types": ["AML_FINANCIAL_CRIME", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.74,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_fca_bidstack",
+      "title": "FCA fines two individuals £108,731 for Bidstack insider dealing",
+      "summary": "The FCA fined Dipesh Kerai and Bhavesh Hirani a combined £108,731 for insider dealing in Bidstack shares. Hirani, then interim CFO, passed inside information about a major video-game publisher deal to Kerai, who bought about 1.3 million shares before the announcement pushed the price up more than 125%. The trading was flagged through suspicious-transaction reports.",
+      "url": "https://www.fca.org.uk/news/press-releases/fca-fines-two-individuals-for-insider-dealing",
+      "source": "FCA",
+      "jurisdiction": "UK",
+      "published_at": "2026-02-10",
+      "conduct_types": ["INSIDER_TRADING", "INFORMATION_BARRIERS"],
+      "relevance_score": 0.79,
+      "relevant_excerpt": null,
+      "updates": []
+    }
+  ]
+}
