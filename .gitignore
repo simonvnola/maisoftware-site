@@ -4,3 +4,5 @@ files/
 *.mov
 *.mp4
 *.avi
+node_modules/
+.vercel
