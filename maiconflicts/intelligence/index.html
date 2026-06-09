@@ -20,6 +20,7 @@
     --text-primary: #1a1612;
     --text-secondary: #3d3830;
     --text-muted: #6b6460;
+    --nav-h: 80px;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
@@ -37,7 +38,7 @@
   .nav-cta:hover{background:linear-gradient(135deg,#f0d988 0%,var(--gold-light) 100%);box-shadow:0 4px 12px rgba(201,168,76,0.4)}
 
   /* HERO */
-  .hero{background:var(--navy);padding:9rem 4rem 4rem}
+  .hero{background:var(--navy);padding:calc(var(--nav-h) + 2.5rem) 4rem 4rem}
   .hero-content{max-width:760px}
   .hero-eyebrow{display:inline-block;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.4);color:var(--gold-light);padding:0.375rem 1rem;font-size:0.8125rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.75rem}
   .hero h1{font-family:'Calibri',sans-serif;font-size:clamp(2.25rem,4vw,3.5rem);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:1.25rem;letter-spacing:-0.01em}
@@ -48,7 +49,7 @@
   .hero-meta .sep{color:rgba(255,255,255,0.3)}
 
   /* FILTER BAR */
-  .filter-bar{position:sticky;top:0;z-index:90;background:var(--dark-grey);border-bottom:1px solid rgba(255,255,255,0.08);padding:1rem 4rem;display:flex;flex-direction:column;gap:0.75rem}
+  .filter-bar{position:sticky;top:var(--nav-h);z-index:90;background:var(--dark-grey);border-bottom:1px solid rgba(255,255,255,0.08);padding:1rem 4rem;display:flex;flex-direction:column;gap:0.75rem}
   .filter-row{display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
   .filter-label{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap;padding-top:0.45rem;min-width:104px}
   .chips{display:flex;flex-wrap:wrap;gap:0.5rem}
@@ -134,13 +135,61 @@
   @media(max-width:1024px){
     nav{padding:1rem 1.5rem}
     .nav-links{display:none}
-    .hero{padding:7.5rem 1.5rem 3rem}
+    .hero{padding:calc(var(--nav-h) + 1.75rem) 1.5rem 3rem}
     .filter-bar{padding:1rem 1.5rem}
     .filter-label{min-width:0}
     .filter-actions{margin-left:0;width:100%}
-    .feed-wrap,.subscribe,.cta-band{padding-left:1.5rem;padding-right:1.5rem}
+    .feed-wrap{padding:3rem 1.5rem 4rem}
+    .subscribe,.cta-band{padding-left:1.5rem;padding-right:1.5rem}
     footer{flex-direction:column;text-align:center;padding:2.5rem 1.5rem}
     .footer-copy{max-width:none}
+  }
+
+  /* Phones */
+  @media(max-width:600px){
+    :root{--nav-h:56px}
+    nav{padding:0.55rem 1rem}
+    .nav-logo{gap:0.5rem}
+    .nav-logo svg{width:32px;height:31px}
+    .logo-text{font-size:1.05rem}
+    .nav-cta{padding:0.4rem 0.7rem;font-size:0.72rem;border-radius:4px}
+
+    .hero{padding:calc(var(--nav-h) + 1.1rem) 1.15rem 2rem}
+    .hero h1{font-size:2.05rem;line-height:1.12;margin-bottom:1rem}
+    .hero-eyebrow{font-size:0.68rem;padding:0.3rem 0.7rem;margin-bottom:1.1rem}
+    .hero p{font-size:1rem;margin-bottom:1.1rem}
+    .hero-meta{font-size:0.8rem;gap:0.35rem 0.55rem}
+
+    /* Compact, horizontally scrollable filter strips so the sticky bar stays short */
+    .filter-bar{padding:0.7rem 1rem;gap:0.55rem}
+    .filter-row{flex-direction:column;align-items:stretch;gap:0.4rem}
+    .filter-label{padding-top:0;font-size:0.62rem}
+    .chips{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;scrollbar-width:none}
+    .chips::-webkit-scrollbar{display:none}
+    .chip-btn{flex:0 0 auto;font-size:0.8rem;padding:0.42rem 0.78rem}
+    .filter-actions{width:100%;justify-content:space-between;margin-left:0;padding-top:0}
+
+    .feed-wrap{padding:1.75rem 1rem 2.5rem}
+    .feed-updated{font-size:0.78rem;margin-bottom:1.1rem}
+    .cards{gap:1rem}
+    .card{padding:1.1rem 1.15rem}
+    .card-top{gap:0.45rem}
+    .src-badge{font-size:0.7rem}
+    .card-date{font-size:0.78rem}
+    .card h3{font-size:1.08rem}
+    .card p.summary{font-size:0.9rem}
+    .read-link{font-size:0.9rem}
+
+    .subscribe{padding:2.75rem 1.15rem}
+    .subscribe h2{font-size:1.5rem}
+    .subscribe p{font-size:0.95rem}
+    .sub-form .btn-primary{width:100%;text-align:center}
+
+    .cta-band{padding:3rem 1.15rem}
+    .cta-inner h2{font-size:1.5rem}
+    .cta-actions{flex-direction:column;align-items:stretch}
+    .cta-actions .btn-primary,.cta-actions .btn-outline{text-align:center}
+    .disclaimer{font-size:0.72rem;margin-top:1.75rem}
   }
 </style>
 </head>
