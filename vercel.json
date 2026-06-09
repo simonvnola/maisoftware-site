@@ -9,11 +9,5 @@
         }
       ]
     }
-  ],
-  "crons": [
-    {
-      "path": "/api/run-scan",
-      "schedule": "0 6 * * 1"
-    }
   ]
 }

@@ -106,16 +106,7 @@
   .subscribe-inner{max-width:640px;margin:0 auto;text-align:center}
   .subscribe h2{font-family:'Calibri',sans-serif;font-size:1.875rem;font-weight:700;color:var(--white);margin-bottom:0.75rem}
   .subscribe p{color:rgba(255,255,255,0.72);font-size:1rem;margin-bottom:1.75rem}
-  .sub-form{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
-  .sub-form input{flex:1;min-width:240px;max-width:360px;padding:0.85rem 1.1rem;font-family:inherit;font-size:1rem;border-radius:6px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.06);color:var(--white)}
-  .sub-form input::placeholder{color:rgba(255,255,255,0.5)}
-  .sub-form input:focus{outline:none;border-color:var(--gold)}
-  .sub-form button{background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 60%,#a8842e 100%);color:var(--navy);padding:0.85rem 1.75rem;font-family:inherit;font-size:1rem;font-weight:700;border:none;border-radius:6px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(201,168,76,0.35)}
-  .sub-form button:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,168,76,0.45)}
-  .sub-form button:disabled{opacity:0.6;cursor:default;transform:none}
-  .sub-msg{margin-top:1rem;font-size:0.9375rem;min-height:1.2rem}
-  .sub-msg.ok{color:#9ae6b4}
-  .sub-msg.err{color:#feb2b2}
+  .sub-form{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.75rem}
 
   /* CTA BAND */
   .cta-band{background:var(--off-white);border-top:1px solid var(--light-grey);padding:4.5rem 4rem}
@@ -220,12 +211,10 @@
 <section class="subscribe">
   <div class="subscribe-inner">
     <h2>Get the weekly digest</h2>
-    <form class="sub-form" id="sub-form" novalidate>
-      <input type="email" id="sub-email" placeholder="you@firm.com" autocomplete="email" aria-label="Email address" required>
-      <button type="submit" id="sub-btn">Subscribe &rarr;</button>
-    </form>
-    <p style="margin-top:1.5rem">Regulatory intelligence in your inbox, once a week. No spam.</p>
-    <div class="sub-msg" id="sub-msg" role="status" aria-live="polite"></div>
+    <p>Regulatory intelligence in your inbox, once a week. No spam.</p>
+    <div class="sub-form">
+      <a class="btn-primary" href="mailto:hello@maiconflicts.com.au?subject=Subscribe%20to%20the%20regulatory%20intelligence%20digest&amp;body=Please%20add%20me%20to%20the%20weekly%20regulatory%20intelligence%20digest.">Email us to subscribe &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -421,7 +410,9 @@
 
   function load() {
     showSkeleton();
-    fetch('/api/intelligence-feed')
+    // Fully static: the feed is a committed JSON file regenerated weekly by a
+    // scheduled Claude routine (see maiconflicts/intelligence/SCAN_ROUTINE.md).
+    fetch('feed.json', { cache: 'no-cache' })
       .then(function (r) { return r.json(); })
       .then(function (data) {
         state.items = (data && Array.isArray(data.items)) ? data.items : [];
@@ -436,46 +427,6 @@
         $cards.innerHTML = '<div class="error-state">The feed is temporarily unavailable. Please refresh in a moment.</div>';
       });
   }
-
-  // ----- subscribe -----
-  var $form = document.getElementById('sub-form');
-  var $email = document.getElementById('sub-email');
-  var $btn = document.getElementById('sub-btn');
-  var $msg = document.getElementById('sub-msg');
-
-  $form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var email = ($email.value || '').trim();
-    $msg.className = 'sub-msg';
-    $msg.textContent = '';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      $msg.className = 'sub-msg err';
-      $msg.textContent = 'Please enter a valid email address.';
-      return;
-    }
-    $btn.disabled = true;
-    fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email })
-    })
-      .then(function (r) { return r.json().then(function (b) { return { ok: r.ok, body: b }; }); })
-      .then(function (res) {
-        if (res.ok && res.body && res.body.success) {
-          $msg.className = 'sub-msg ok';
-          $msg.textContent = res.body.already_subscribed ? '✓ You’re already on the list.' : '✓ You’re subscribed.';
-          $form.reset();
-        } else {
-          $msg.className = 'sub-msg err';
-          $msg.textContent = (res.body && res.body.error) || 'Something went wrong. Please try again.';
-        }
-      })
-      .catch(function () {
-        $msg.className = 'sub-msg err';
-        $msg.textContent = 'Network error. Please try again.';
-      })
-      .then(function () { $btn.disabled = false; });
-  });
 
   load();
 })();
