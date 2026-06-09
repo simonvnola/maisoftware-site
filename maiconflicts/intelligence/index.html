@@ -410,9 +410,9 @@
 
   function load() {
     showSkeleton();
-    // Fully static: the feed is a committed JSON file regenerated weekly by a
-    // scheduled Claude routine (see maiconflicts/intelligence/SCAN_ROUTINE.md).
-    fetch('feed.json', { cache: 'no-cache' })
+    // Absolute path so it works whether or not the page URL has a trailing
+    // slash (a relative 'feed.json' resolves wrong on /maiconflicts/intelligence).
+    fetch('/maiconflicts/intelligence/feed.json', { cache: 'no-cache' })
       .then(function (r) { return r.json(); })
       .then(function (data) {
         state.items = (data && Array.isArray(data.items)) ? data.items : [];
