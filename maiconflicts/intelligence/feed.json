@@ -1,7 +1,51 @@
 {
-  "generated_at": "2026-06-09T12:30:00.000Z",
-  "item_count": 8,
+  "generated_at": "2026-06-11T09:00:00.000Z",
+  "item_count": 9,
   "items": [
+    {
+      "id": "story_kpmg_au_auditleak",
+      "title": "ASIC opens formal investigation into KPMG Australia partners over audit-tender data misuse",
+      "summary": "Australia's corporate regulator launched a formal investigation into three KPMG Australia audit partners over whistleblower claims that confidential client information was misused to win audit tenders. ASIC has issued compulsory notices and is examining partners including Paul Rogers and Eileen Hoggett, with allegations centring on Lendlease board papers said to have aided bids for Westpac and Dexus work. The federal government is reviewing its KPMG contracts and a parliamentary hearing is scheduled for 19 June.",
+      "url": "https://www.investing.com/news/stock-market-news/corporate-regulator-investigating-kpmg-australia-partners-over-audit-leak-scandal-4727818",
+      "source": "Regulatory News",
+      "jurisdiction": "AU",
+      "published_at": "2026-06-05",
+      "conduct_types": ["CONFLICTS_OF_INTEREST", "INFORMATION_BARRIERS", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.95,
+      "relevant_excerpt": null,
+      "updates": [
+        {
+          "title": "KPMG COO Eileen Hoggett stands down as ASIC widens audit-leak probe",
+          "summary": "KPMG Australia's chief operating officer stepped down from the role while remaining an audit partner, as regulatory scrutiny of the data-misuse allegations intensified.",
+          "url": "https://www.internationalaccountingbulletin.com/news/asic-probes-kpmg-australia-partners-over-client-data-usage/",
+          "source": "Regulatory News",
+          "jurisdiction": "AU",
+          "published_at": "2026-06-03",
+          "conduct_types": ["MISCONDUCT_GOVERNANCE", "CONFLICTS_OF_INTEREST"],
+          "relevant_excerpt": null
+        },
+        {
+          "title": "KPMG Australia issues statement on whistleblower investigation",
+          "summary": "KPMG Australia said its handling of a whistleblower's complaints about client-data sharing had fallen short of expectations, and engaged external advisers to review its whistleblower policies and processes.",
+          "url": "https://kpmg.com/au/en/media/media-releases/2026/05/investigation-into-whistleblower-allegations-29-may-2026.html",
+          "source": "Regulatory News",
+          "jurisdiction": "AU",
+          "published_at": "2026-05-29",
+          "conduct_types": ["MISCONDUCT_GOVERNANCE"],
+          "relevant_excerpt": null
+        },
+        {
+          "title": "KPMG Australia CEO and audit head resign over whistleblower handling",
+          "summary": "Chief executive Andrew Yates and audit and assurance managing partner Julian McPherson resigned after the firm's response to whistleblower allegations about confidential client data fell short of expectations.",
+          "url": "https://money.usnews.com/investing/news/articles/2026-05-28/kpmg-australia-says-ceo-and-audit-head-quit-over-whistleblower-investigation",
+          "source": "Regulatory News",
+          "jurisdiction": "AU",
+          "published_at": "2026-05-28",
+          "conduct_types": ["MISCONDUCT_GOVERNANCE", "CONFLICTS_OF_INTEREST"],
+          "relevant_excerpt": null
+        }
+      ]
+    },
     {
       "id": "story_doj_prediction_markets",
       "title": "DOJ and CFTC charge Google engineer over prediction-market insider trading",
