@@ -1,19 +1,42 @@
 {
-  "generated_at": "2026-06-11T09:00:00.000Z",
-  "item_count": 9,
+  "generated_at": "2026-06-16T14:30:00.000Z",
+  "item_count": 15,
   "items": [
     {
+      "id": "story_fca_fuenmayor",
+      "title": "FCA moves to fine BancTrust CEO £99,600 over undisclosed regulatory history",
+      "summary": "The FCA issued a Decision Notice proposing a £99,600 penalty on Carlos Ricardo Fuenmayor, chief executive of broker BancTrust, for negligently failing to tell the regulator about matters it expected to be told. These included a US FINRA investigation and 2019 sanction against him, and the freezing of his and his companies' Venezuelan accounts. Fuenmayor has referred the case to the Upper Tribunal, so the findings are not yet final.",
+      "url": "https://www.fca.org.uk/news/press-releases/fca-decides-fine-carlos-ricardo-fuenmayor-disclosure-failures",
+      "source": "FCA",
+      "jurisdiction": "UK",
+      "published_at": "2026-06-12",
+      "conduct_types": ["DISCLOSURE_FAILURE", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.85,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
       "id": "story_kpmg_au_auditleak",
-      "title": "ASIC opens formal investigation into KPMG Australia partners over audit-tender data misuse",
-      "summary": "Australia's corporate regulator launched a formal investigation into three KPMG Australia audit partners over whistleblower claims that confidential client information was misused to win audit tenders. ASIC has issued compulsory notices and is examining partners including Paul Rogers and Eileen Hoggett, with allegations centring on Lendlease board papers said to have aided bids for Westpac and Dexus work. The federal government is reviewing its KPMG contracts and a parliamentary hearing is scheduled for 19 June.",
-      "url": "https://www.investing.com/news/stock-market-news/corporate-regulator-investigating-kpmg-australia-partners-over-audit-leak-scandal-4727818",
+      "title": "KPMG audit-leak inquiry widens as law firms Ashurst and Allens are summoned to testify",
+      "summary": "Ahead of a 19 June parliamentary hearing into KPMG Australia's alleged misuse of confidential client data, the Joint Committee on Corporations and Financial Services called partners from law firms Ashurst and Allens to give evidence alongside Lendlease executives, ASIC and former KPMG figures. The firms are expected to resist questioning on legal-professional-privilege grounds, setting up a clash over the reach of parliamentary committees that some advisers say could ultimately reach the High Court. The hearing follows ASIC's formal investigation and a wave of senior KPMG resignations.",
+      "url": "https://www.thelawyermag.com/au/news/general/ashurst-allens-partners-called-to-appear-at-parliamentary-hearing-on-kpmg-audit-leaks-scandal/578387",
       "source": "Regulatory News",
       "jurisdiction": "AU",
-      "published_at": "2026-06-05",
+      "published_at": "2026-06-10",
       "conduct_types": ["CONFLICTS_OF_INTEREST", "INFORMATION_BARRIERS", "MISCONDUCT_GOVERNANCE"],
       "relevance_score": 0.95,
       "relevant_excerpt": null,
       "updates": [
+        {
+          "title": "ASIC opens formal investigation into KPMG Australia partners over audit-tender data misuse",
+          "summary": "Australia's corporate regulator launched a formal investigation into three KPMG Australia audit partners over whistleblower claims that confidential client information was misused to win audit tenders. ASIC issued compulsory notices and is examining partners including Paul Rogers and Eileen Hoggett, with allegations centring on Lendlease board papers said to have aided bids for Westpac and Dexus work.",
+          "url": "https://www.investing.com/news/stock-market-news/corporate-regulator-investigating-kpmg-australia-partners-over-audit-leak-scandal-4727818",
+          "source": "Regulatory News",
+          "jurisdiction": "AU",
+          "published_at": "2026-06-05",
+          "conduct_types": ["CONFLICTS_OF_INTEREST", "INFORMATION_BARRIERS", "MISCONDUCT_GOVERNANCE"],
+          "relevant_excerpt": null
+        },
         {
           "title": "KPMG COO Eileen Hoggett stands down as ASIC widens audit-leak probe",
           "summary": "KPMG Australia's chief operating officer stepped down from the role while remaining an audit partner, as regulatory scrutiny of the data-misuse allegations intensified.",
@@ -47,6 +70,106 @@
       ]
     },
     {
+      "id": "story_sfc_pegasus",
+      "title": "SFC: Hong Kong film producer Raymond Wong jailed five months for Pegasus insider dealing",
+      "summary": "A West Kowloon court sentenced film producer Raymond Wong Pak Ming to five months in prison for insider dealing in Pegasus Entertainment Holdings, following his conviction after a 16-day trial. He was fined about HK$99,720 — matching the profit his sister made trading on a 2017 tip about the pending sale of his controlling stake — and ordered to contribute roughly HK$374,000 to the SFC's investigation costs. The sentence caps one of the SFC's recent run of criminal market-misconduct cases.",
+      "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3356470/hong-kong-film-producer-raymond-wong-sentenced-5-months-insider-trading",
+      "source": "SFC",
+      "jurisdiction": "HK",
+      "published_at": "2026-06-09",
+      "conduct_types": ["INSIDER_TRADING"],
+      "relevance_score": 0.82,
+      "relevant_excerpt": null,
+      "updates": [
+        {
+          "title": "Hong Kong film producer convicted of insider dealing in Pegasus Entertainment",
+          "summary": "A Hong Kong film producer, Wong Pak Ming, was convicted at the Eastern Magistrates' Court of insider dealing in the shares of Pegasus Entertainment Holdings, continuing the SFC's recent run of criminal market-misconduct prosecutions.",
+          "url": "https://www.charltonslaw.com/hong-kong-sfc-enforcement-roundup-may-2026/",
+          "source": "SFC",
+          "jurisdiction": "HK",
+          "published_at": "2026-05-22",
+          "conduct_types": ["INSIDER_TRADING"],
+          "relevant_excerpt": null
+        }
+      ]
+    },
+    {
+      "id": "story_sec_foundations_rice",
+      "title": "SEC settles with Foundations Investment Advisors and ex-CEO over undisclosed conflicts",
+      "summary": "The SEC reached a settled order with Arizona registered investment adviser Foundations Investment Advisors and its former chief executive Bryon Rice over breaches of fiduciary duty. The regulator found the firm failed to disclose conflicts tied to products it recommended — including Rice's profit share in a sub-adviser and ETF expense-sharing arrangements — and that Rice made unpermitted personal trades in an ETF held in client portfolios, some timed to support its price. The parties agreed to pay about US$2.1 million in penalties, disgorgement and interest without admitting the findings.",
+      "url": "https://www.sec.gov/enforcement-litigation/administrative-proceedings/ia-6970-s",
+      "source": "SEC",
+      "jurisdiction": "US",
+      "published_at": "2026-06-08",
+      "conduct_types": ["CONFLICTS_OF_INTEREST", "PERSONAL_DEALING", "DISCLOSURE_FAILURE"],
+      "relevance_score": 0.9,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_fca_pugh_confiscation",
+      "title": "FCA secures £452,286 confiscation order against convicted Ponzi fraudster",
+      "summary": "The FCA obtained a confiscation order of £452,286 at Southwark Crown Court against Daniel Pugh, who is already serving seven and a half years for defrauding investors of about £1.3 million. Marketed on Facebook with promises of unrealistic trading returns, his scheme traded only a fraction of the money taken in and operated as a Ponzi. Pugh faces extra jail time if he does not pay within three months, with recovered funds going to compensate victims.",
+      "url": "https://www.fca.org.uk/news/press-releases/fca-secures-confiscation-order-against-ponzi-scheme-fraudster",
+      "source": "FCA",
+      "jurisdiction": "UK",
+      "published_at": "2026-06-08",
+      "conduct_types": ["AML_FINANCIAL_CRIME", "DISCLOSURE_FAILURE"],
+      "relevance_score": 0.6,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_sec_li_healthcare",
+      "title": "SEC and SDNY charge healthcare analyst with insider trading on wall-crossed deals",
+      "summary": "The SEC charged JianQing Li, a former analyst at a New York healthcare-focused investment adviser, with misusing material non-public information his employer received after being wall-crossed on client transactions. Prosecutors allege he traded ahead of announcements in at least a dozen healthcare companies between February 2024 and October 2025, making more than US$320,000. The US Attorney's Office for the Southern District of New York filed parallel criminal charges.",
+      "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-26561",
+      "source": "SEC",
+      "jurisdiction": "US",
+      "published_at": "2026-06-05",
+      "conduct_types": ["INSIDER_TRADING", "INFORMATION_BARRIERS", "PERSONAL_DEALING"],
+      "relevance_score": 0.9,
+      "relevant_excerpt": null,
+      "updates": [
+        {
+          "title": "DOJ files parallel criminal insider-trading charges against the analyst",
+          "summary": "The US Attorney's Office for the Southern District of New York announced criminal securities-fraud charges mirroring the SEC's civil case against the Manhattan-based investment analyst.",
+          "url": "https://www.justice.gov/usao-sdny/pr/manhattan-based-investment-analyst-charged-insider-trading",
+          "source": "US DOJ",
+          "jurisdiction": "US",
+          "published_at": "2026-06-05",
+          "conduct_types": ["INSIDER_TRADING"],
+          "relevant_excerpt": null
+        }
+      ]
+    },
+    {
+      "id": "story_fsa_moomoo",
+      "title": "Japan's SESC recommends penalties against Moomoo Securities over mislabelled products and AML lapses",
+      "summary": "Japan's Securities and Exchange Surveillance Commission recommended that the FSA take administrative action against online broker Moomoo Securities after an inspection. The firm wrongly marked dozens of US ETFs and ETNs as eligible for the tax-exempt NISA scheme and repeated the error even after becoming aware of it. Investigators also found the broker failed to assess or report suspicious activity for more than 1,500 rejected account applicants, having assumed anti-money-laundering duties did not apply to them.",
+      "url": "https://www.fsa.go.jp/sesc/news/c_2026/2026/20260605-2.html",
+      "source": "FSA",
+      "jurisdiction": "JP",
+      "published_at": "2026-06-05",
+      "conduct_types": ["AML_FINANCIAL_CRIME", "DISCLOSURE_FAILURE", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.8,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
+      "id": "story_finma_wendelspiess",
+      "title": "FINMA bans two executives and pulls Wendelspiess Partners' licence over conflicts and mis-selling",
+      "summary": "FINMA closed enforcement proceedings against Swiss portfolio manager Wendelspiess Partners and two responsible individuals, finding serious conduct breaches. The firm steered more than 400 mostly cautious, unsophisticated clients into an in-house foreign fund that later hit severe liquidity trouble, without adequate risk disclosure or suitability checks, and failed to disclose conflicts arising from personal ties within the firm. The regulator imposed long-term industry bans on the two individuals and is withdrawing the firm's licence; the ruling can still be appealed.",
+      "url": "https://www.finma.ch/en/news/2026/06/20260306-mm-wendelspiess/",
+      "source": "FINMA",
+      "jurisdiction": "CH",
+      "published_at": "2026-06-03",
+      "conduct_types": ["CONFLICTS_OF_INTEREST", "DISCLOSURE_FAILURE", "MISCONDUCT_GOVERNANCE"],
+      "relevance_score": 0.88,
+      "relevant_excerpt": null,
+      "updates": []
+    },
+    {
       "id": "story_doj_prediction_markets",
       "title": "DOJ and CFTC charge Google engineer over prediction-market insider trading",
       "summary": "US prosecutors and the CFTC brought parallel criminal and civil actions against a Google software engineer accused of using non-public \"Year in Search\" data to place winning bets on a prediction-market platform. Authorities allege he made roughly US$1.2 million. The case pushes insider-trading theory into event-contract markets.",
@@ -56,19 +179,6 @@
       "published_at": "2026-05-27",
       "conduct_types": ["INSIDER_TRADING", "MARKET_MANIPULATION"],
       "relevance_score": 0.85,
-      "relevant_excerpt": null,
-      "updates": []
-    },
-    {
-      "id": "story_sfc_pegasus",
-      "title": "SFC: Hong Kong film producer convicted of insider dealing in Pegasus Entertainment",
-      "summary": "A Hong Kong film producer, Wong Pak Ming, was convicted at the Eastern Magistrates' Court of insider dealing in the shares of Pegasus Entertainment Holdings. The conviction continues the SFC's recent run of criminal market-misconduct prosecutions.",
-      "url": "https://www.charltonslaw.com/hong-kong-sfc-enforcement-roundup-may-2026/",
-      "source": "SFC",
-      "jurisdiction": "HK",
-      "published_at": "2026-05-22",
-      "conduct_types": ["INSIDER_TRADING"],
-      "relevance_score": 0.8,
       "relevant_excerpt": null,
       "updates": []
     },
