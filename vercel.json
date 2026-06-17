@@ -1,4 +1,8 @@
 {
+  "redirects": [
+    { "source": "/maiconflicts",                       "destination": "/", "permanent": false },
+    { "source": "/maiconflicts/(.*)",                  "destination": "/", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
