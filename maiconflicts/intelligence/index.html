@@ -80,6 +80,9 @@
   .card h3{font-size:1.1875rem;font-weight:700;color:var(--text-primary);line-height:1.3;margin-bottom:0.6rem}
   .card p.summary{font-size:0.9375rem;line-height:1.65;color:var(--text-secondary);margin-bottom:0.85rem}
   .card .excerpt{font-size:0.875rem;font-style:italic;color:var(--text-muted);border-left:2px solid var(--light-grey);padding-left:0.75rem;margin-bottom:0.85rem}
+  .control-gap{display:flex;gap:0.6rem;align-items:baseline;flex-wrap:wrap;font-size:0.875rem;background:rgba(201,168,76,0.07);border-left:2px solid var(--gold);padding:0.5rem 0.75rem;margin-bottom:0.85rem;line-height:1.55}
+  .cg-label{font-size:0.68rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#7a6020;white-space:nowrap;flex-shrink:0}
+  .cg-text{color:var(--text-secondary)}
   .tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.9rem}
   .tag{font-size:0.6875rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.2rem 0.55rem;border-radius:3px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.3);color:#8a6d1f}
   .card-foot{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
@@ -433,6 +436,10 @@
     var excerpt = item.relevant_excerpt
       ? '<p class="excerpt">&ldquo;' + esc(item.relevant_excerpt) + '&rdquo;</p>' : '';
 
+    var controlGap = item.control_gap
+      ? '<div class="control-gap"><span class="cg-label">Control gap cited</span><span class="cg-text">' + esc(item.control_gap) + '</span></div>'
+      : '';
+
     var updates = '';
     if (item.updates && item.updates.length) {
       var lis = item.updates.map(function (u) {
@@ -454,6 +461,7 @@
       + '<h3>' + esc(item.title) + '</h3>'
       + (item.summary ? '<p class="summary">' + esc(item.summary) + '</p>' : '')
       + excerpt
+      + controlGap
       + (tags ? '<div class="tags">' + tags + '</div>' : '')
       + '<div class="card-foot">'
       + '<a class="read-link" href="' + esc(item.url) + '" target="_blank" rel="noopener noreferrer">Read full article &rarr;</a>'
