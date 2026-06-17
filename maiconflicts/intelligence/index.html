@@ -74,7 +74,7 @@
   .card:hover{box-shadow:0 6px 22px rgba(13,31,60,0.08);border-left-color:var(--gold)}
   .card-top{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.75rem}
   .src-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.75rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--navy);background:rgba(13,31,60,0.06);padding:0.25rem 0.6rem;border-radius:4px}
-  .src-badge .flag{font-size:0.95rem}
+  .flag-img{width:16px;height:12px;display:inline-block;vertical-align:middle;border-radius:1px;flex-shrink:0}
   .card-date{font-size:0.8125rem;color:var(--text-muted)}
   .card-jur{font-size:0.75rem;color:var(--text-muted);margin-left:auto}
   .card h3{font-size:1.1875rem;font-weight:700;color:var(--text-primary);line-height:1.3;margin-bottom:0.6rem}
@@ -315,18 +315,28 @@
   'use strict';
 
   var JURISDICTIONS = [
-    { code: 'AU', flag: '🇦🇺' },
-    { code: 'US', flag: '🇺🇸' },
-    { code: 'UK', flag: '🇬🇧' },
-    { code: 'SG', flag: '🇸🇬' },
-    { code: 'HK', flag: '🇭🇰' },
-    { code: 'EU', flag: '🇪🇺' },
-    { code: 'CA', flag: '🇨🇦' },
-    { code: 'JP', flag: '🇯🇵' },
-    { code: 'CH', flag: '🇨🇭' }
+    { code: 'AU' },
+    { code: 'US' },
+    { code: 'UK' },
+    { code: 'SG' },
+    { code: 'HK' },
+    { code: 'EU' },
+    { code: 'CA' },
+    { code: 'JP' },
+    { code: 'CH' }
   ];
-  var FLAG = {};
-  JURISDICTIONS.forEach(function (j) { FLAG[j.code] = j.flag; });
+
+  // ISO 3166-1 alpha-2 codes used by flagcdn.com (UK maps to GB)
+  var FLAG_CDN = { AU:'au', US:'us', UK:'gb', SG:'sg', HK:'hk', EU:'eu', CA:'ca', JP:'jp', CH:'ch' };
+
+  function flagImg(code) {
+    var c = FLAG_CDN[code];
+    if (!c) return '';
+    return '<img class="flag-img"'
+      + ' src="https://flagcdn.com/16x12/' + c + '.png"'
+      + ' srcset="https://flagcdn.com/32x24/' + c + '.png 2x"'
+      + ' width="16" height="12" alt="' + code + '">';
+  }
 
   var CONDUCT = [
     { code: 'INSIDER_TRADING', label: 'Insider trading' },
@@ -391,7 +401,7 @@
   }
 
   buildChips(document.getElementById('jur-chips'), JURISDICTIONS, state.jur,
-    function (j) { return '<span class="flag">' + j.flag + '</span> ' + j.code; });
+    function (j) { return flagImg(j.code) + ' ' + j.code; });
   buildChips(document.getElementById('conduct-chips'), CONDUCT, state.conduct,
     function (c) { return esc(c.label); });
 
@@ -415,7 +425,7 @@
 
   // ----- rendering -----
   function cardHtml(item) {
-    var flag = FLAG[item.jurisdiction] || '🌐';
+    var flag = flagImg(item.jurisdiction);
     var tags = (item.conduct_types || []).map(function (c) {
       return '<span class="tag">' + esc(CONDUCT_LABEL[c] || c) + '</span>';
     }).join('');
@@ -437,7 +447,7 @@
 
     return '<article class="card">'
       + '<div class="card-top">'
-      + '<span class="src-badge"><span class="flag">' + flag + '</span>' + esc(item.source) + '</span>'
+      + '<span class="src-badge">' + flag + esc(item.source) + '</span>'
       + '<span class="card-date">' + esc(fmtDate(item.published_at)) + '</span>'
       + '<span class="card-jur">' + esc(item.jurisdiction) + '</span>'
       + '</div>'
