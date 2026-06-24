@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MaiCellar — Your cellar, beautifully kept</title>
-<meta name="description" content="Scan labels, track your collection, and discover the perfect wine for every meal — powered by AI.">
+<title>MaiCellar — Your cellar and home bar, beautifully kept</title>
+<meta name="description" content="MaiCellar keeps your wine cellar and your home bar in one app — scan labels, track every bottle, find the wine for dinner, and see the cocktails you can make from the spirits you own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -32,7 +32,7 @@
     --shadow-card:    0 4px 24px rgba(0,0,0,0.32), 0 1px 0 rgba(212,171,106,0.06) inset;
     --shadow-elev:    0 24px 56px rgba(0,0,0,0.42), 0 1px 0 rgba(212,171,106,0.10) inset;
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
   body {
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     background:
@@ -722,6 +722,191 @@
     .btn { width: 100%; justify-content: center; }
     .cta-row { flex-direction: column; width: 100%; max-width: 320px; margin: 0 auto; }
   }
+
+  /* HOME BAR — MaiBar */
+  .bar-head { max-width: 1140px; margin: 0 auto 52px; }
+  .bar-head .section-tag-pill { margin-bottom: 20px; }
+  .bar-head h2 {
+    font-size: clamp(34px, 5vw, 58px);
+    letter-spacing: -0.025em; line-height: 1.08;
+    margin-bottom: 16px; max-width: 18ch;
+  }
+  .bar-head h2 em {
+    font-style: italic;
+    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .bar-head p { font-size: 15px; color: var(--cream-dim); line-height: 1.75; max-width: 600px; }
+
+  .bar-grid {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 22px; align-items: start;
+  }
+  .bar-panel {
+    background: linear-gradient(180deg, rgba(40, 18, 10, 0.5), var(--surface-glass));
+    border: 0.5px solid var(--hairline); border-radius: 20px;
+    padding: 32px 30px; box-shadow: var(--shadow-card);
+    position: relative; overflow: hidden;
+  }
+  .bar-panel-label {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 18px;
+  }
+  .bar-panel-label .ey {
+    font-size: 10.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-weight: 500;
+  }
+  .bar-count {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 11.5px; color: var(--cream-dim); letter-spacing: 0.02em;
+  }
+  .bar-bottles { display: flex; flex-wrap: wrap; gap: 8px; }
+  .bottle {
+    font-size: 12.5px; color: var(--cream-dim);
+    padding: 7px 13px; border-radius: 999px;
+    border: 0.5px solid var(--hairline-strong); background: rgba(28, 10, 4, 0.5);
+    letter-spacing: 0.01em;
+  }
+  .bottle.empty {
+    color: var(--cream-mute); border-style: dashed; border-color: var(--hairline);
+    text-decoration: line-through; text-decoration-color: var(--gold-muted);
+  }
+  .bottle.empty::after {
+    content: "empty"; margin-left: 8px; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-dim); text-decoration: none;
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+  }
+  .bar-rule { height: 0.5px; background: var(--hairline); border: 0; margin: 22px 0; }
+
+  .make-row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 14px;
+    padding: 12px 0; border-bottom: 0.5px solid var(--hairline);
+  }
+  .make-row:last-of-type { border-bottom: 0; }
+  .make-name {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+    font-size: 20px; font-weight: 500; color: var(--cream); letter-spacing: -0.01em;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .make-name::before {
+    content: ""; flex: none; width: 5px; height: 5px; background: var(--gold);
+    transform: rotate(45deg); box-shadow: 0 0 8px rgba(212, 171, 106, 0.4);
+  }
+  .make-uses {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 11px; color: var(--cream-dim); letter-spacing: 0.02em; text-align: right;
+  }
+  .make-row.locked .make-name { color: var(--cream-mute); }
+  .make-row.locked .make-name::before { background: var(--gold-muted); box-shadow: none; }
+  .make-row.locked .make-uses { color: var(--gold-dim); }
+  .make-sub { margin-top: 10px; font-size: 12.5px; color: var(--gold); line-height: 1.6; }
+  .make-sub .lbl {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-dim); margin-right: 8px;
+  }
+
+  .recipe-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .recipe-name {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+    font-size: 30px; font-weight: 500; color: var(--cream); letter-spacing: -0.02em; line-height: 1.05;
+  }
+  .recipe-kind {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dim); margin-top: 6px;
+  }
+  .stepper { display: flex; align-items: center; gap: 8px; flex: none; }
+  .step-btn {
+    width: 30px; height: 30px; flex: none; border-radius: 8px;
+    border: 0.5px solid var(--hairline-strong); background: rgba(28, 10, 4, 0.6);
+    color: var(--gold); font-size: 16px; line-height: 1; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .step-btn:hover { border-color: var(--gold); color: var(--gold-warm); background: rgba(212, 171, 106, 0.06); }
+  .step-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .serves {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 12px; color: var(--cream-dim); letter-spacing: 0.03em; min-width: 70px; text-align: center;
+  }
+  .serves b { color: var(--gold); font-weight: 500; }
+  .recipe-list { margin: 22px 0 0; }
+  .ing { display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 0.5px solid var(--hairline); }
+  .ing:last-child { border-bottom: 0; }
+  .amt {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 13px; font-weight: 500; color: var(--gold); letter-spacing: 0.01em;
+    min-width: 82px; text-align: right; flex: none;
+  }
+  .ing-name { font-size: 14px; color: var(--cream-dim); }
+  .recipe-method { margin-top: 16px; font-size: 13px; color: var(--cream-mute); line-height: 1.7; }
+  .recipe-foot {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    margin-top: 22px; padding-top: 18px; border-top: 0.5px solid var(--hairline);
+  }
+  .fav-btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 10px 16px; border-radius: 999px; cursor: pointer;
+    border: 0.5px solid var(--hairline-strong); background: transparent; color: var(--cream-dim);
+    font: inherit; font-size: 12px; letter-spacing: 0.03em;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .fav-btn svg { width: 15px; height: 15px; transition: fill 0.2s, stroke 0.2s; }
+  .fav-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .fav-btn[aria-pressed="true"] { color: var(--gold-warm); border-color: var(--hairline-gold); background: rgba(212, 171, 106, 0.06); }
+  .fav-btn[aria-pressed="true"] svg { fill: var(--wine-light); stroke: var(--wine-light); }
+  .recipe-foot .note {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 10px; color: var(--gold-dim); letter-spacing: 0.06em; text-align: right;
+  }
+
+  .bar-caption {
+    max-width: 760px; margin: 30px auto 0; text-align: center;
+    font-size: 13.5px; color: var(--cream-mute); line-height: 1.7;
+  }
+
+  .bar-notes {
+    max-width: 1140px; margin: 44px auto 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    border-top: 0.5px solid var(--hairline-strong);
+  }
+  .bar-note { padding: 26px 26px 6px; border-right: 0.5px solid var(--hairline); }
+  .bar-note:last-child { border-right: 0; }
+  .bar-note .lbl {
+    display: block; margin-bottom: 12px;
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
+  }
+  .bar-note h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
+    font-size: 21px; font-weight: 500; color: var(--cream); margin-bottom: 8px;
+  }
+  .bar-note p { font-size: 13.5px; color: var(--cream-dim); line-height: 1.7; }
+
+  /* focus + reduced motion (site-wide quality floor) */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+    html { scroll-behavior: auto !important; }
+    .eyebrow, h1.hero-title, .hero-sub, .cta-row { opacity: 1 !important; transform: none !important; }
+  }
+
+  @media (max-width: 880px) {
+    .bar-grid { grid-template-columns: 1fr; }
+    .bar-notes { grid-template-columns: 1fr; border-top: 0; }
+    .bar-note { border-right: 0; border-top: 0.5px solid var(--hairline); padding: 24px 0 4px; }
+  }
+  @media (max-width: 560px) {
+    .bar-panel { padding: 26px 22px; }
+    .make-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .make-uses { text-align: left; }
+    .recipe-foot { flex-direction: column; align-items: flex-start; }
+    .recipe-foot .note { text-align: left; }
+    .bar-head h2 { max-width: none; }
+  }
 </style>
 </head>
 <body>
@@ -731,6 +916,7 @@
   <div class="nav-links">
     <a href="#scanning">Scanning</a>
     <a href="#features">Features</a>
+    <a href="#homebar">Home bar</a>
     <a href="#pricing">Pricing</a>
     <a href="/maicellar/support.html">Support</a>
     <a href="/maicellar/privacy.html">Privacy</a>
@@ -741,7 +927,7 @@
   <div class="hero-inner">
     <div class="eyebrow">For every bottle worth remembering</div>
     <h1 class="hero-title">Your cellar, <em>beautifully kept</em></h1>
-    <p class="hero-sub">Scan labels, track your collection, and discover the perfect wine for every meal — powered by AI.</p>
+    <p class="hero-sub">Scan your labels, keep every bottle in order, and always know what to pour — the right wine for dinner, and the cocktails you can make from the spirits already on your shelf.</p>
     <div class="cta-row">
       <a href="https://apps.apple.com/us/app/maicellar/id6762577833" class="btn btn-primary">
         <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1 9.56c-.02-2.1 1.72-3.11 1.8-3.16-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.67 0-1.68-.75-2.77-.73-1.42.02-2.74.83-3.48 2.1-1.49 2.57-.38 6.38 1.07 8.47.71 1.02 1.55 2.17 2.64 2.13 1.06-.04 1.46-.69 2.74-.69 1.28 0 1.64.69 2.76.67 1.14-.02 1.86-1.04 2.56-2.06.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.22-.85-2.24-3.37z" fill="currentColor"/><path d="M11.02 3.41C11.6 2.71 11.99 1.75 11.88.78c-.83.03-1.84.55-2.44 1.24-.54.61-1.01 1.59-.89 2.54.93.07 1.89-.47 2.47-1.15z" fill="currentColor"/></svg>
@@ -850,6 +1036,114 @@
   <span class="line"></span>
 </div>
 
+<section id="homebar">
+  <div class="bar-head">
+    <span class="section-tag-pill">Home bar</span>
+    <h2>Your home bar, <em>after dark</em></h2>
+    <p>MaiCellar isn't only for wine. The same app — the MaiBar side — keeps your spirits, mixers and bitters, then turns the bottles on your shelf into drinks you can actually make tonight.</p>
+  </div>
+
+  <div class="bar-grid">
+    <div class="bar-panel">
+      <div class="bar-panel-label">
+        <span class="ey">Your bar</span>
+        <span class="bar-count">8 bottles</span>
+      </div>
+      <div class="bar-bottles">
+        <span class="bottle">Bourbon</span>
+        <span class="bottle">Gin</span>
+        <span class="bottle">Campari</span>
+        <span class="bottle">Sweet vermouth</span>
+        <span class="bottle">Angostura</span>
+        <span class="bottle">Lemon</span>
+        <span class="bottle">Sugar syrup</span>
+        <span class="bottle empty">Dry vermouth</span>
+      </div>
+
+      <hr class="bar-rule">
+
+      <div class="bar-panel-label">
+        <span class="ey">Pour tonight</span>
+        <span class="bar-count">3 ready</span>
+      </div>
+      <div class="bar-make">
+        <div class="make-row">
+          <span class="make-name">Old Fashioned</span>
+          <span class="make-uses">bourbon · bitters · sugar</span>
+        </div>
+        <div class="make-row">
+          <span class="make-name">Negroni</span>
+          <span class="make-uses">gin · campari · vermouth</span>
+        </div>
+        <div class="make-row">
+          <span class="make-name">Boulevardier</span>
+          <span class="make-uses">bourbon · campari · vermouth</span>
+        </div>
+        <div class="make-row locked">
+          <span class="make-name">Martini</span>
+          <span class="make-uses">needs dry vermouth</span>
+        </div>
+        <p class="make-sub"><span class="lbl">Sub</span>Out of dry vermouth — a dry fino sherry stands in, or use blanc.</p>
+      </div>
+    </div>
+
+    <div class="bar-panel recipe">
+      <div class="recipe-head">
+        <div>
+          <div class="recipe-name">Old Fashioned</div>
+          <div class="recipe-kind">Stirred · built on ice</div>
+        </div>
+        <div class="stepper">
+          <button class="step-btn" type="button" data-step="dec" aria-label="Fewer servings">&minus;</button>
+          <span class="serves" aria-live="polite">serves <b data-serves>2</b></span>
+          <button class="step-btn" type="button" data-step="inc" aria-label="More servings">+</button>
+        </div>
+      </div>
+
+      <div class="recipe-list">
+        <div class="ing"><span class="amt" data-per="60" data-unit="ml">120 ml</span><span class="ing-name">Bourbon</span></div>
+        <div class="ing"><span class="amt" data-per="2" data-unit="dashes">4 dashes</span><span class="ing-name">Angostura bitters</span></div>
+        <div class="ing"><span class="amt" data-per="1" data-unit="tsp">2 tsp</span><span class="ing-name">Sugar syrup</span></div>
+      </div>
+      <p class="recipe-method">Stir over ice until cold, strain over one large cube, and express an orange peel over the top.</p>
+
+      <div class="recipe-foot">
+        <button class="fav-btn" type="button" data-fav aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.6-7-9.4A3.6 3.6 0 0 1 12 6.9a3.6 3.6 0 0 1 7 3.7C19 15.4 12 20 12 20z"/></svg>
+          <span data-fav-label>Save to favourites</span>
+        </button>
+        <span class="note">scales with servings</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="bar-caption">MaiBar suggests drinks from the bottles you actually own — and quietly leaves out anything you've marked empty.</p>
+
+  <div class="bar-notes">
+    <div class="bar-note">
+      <span class="lbl">Scales</span>
+      <h4>Make one, or a round</h4>
+      <p>Set how many you're pouring and every measure recalculates together — millilitres, dashes and spoons all at once.</p>
+    </div>
+    <div class="bar-note">
+      <span class="lbl">Substitutes</span>
+      <h4>Work with what's open</h4>
+      <p>Short an ingredient? MaiCellar offers a sensible stand-in, so a recipe isn't off the table for one missing bottle.</p>
+    </div>
+    <div class="bar-note">
+      <span class="lbl">Favourites</span>
+      <h4>Keep your regulars</h4>
+      <p>Save the drinks you come back to and they're a tap away the next time the guests arrive.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ornament">
+  <span class="line"></span>
+  <span class="diamond"></span>
+  <span class="line"></span>
+</div>
+
 <section id="pricing">
   <div class="section-inner">
     <div class="section-head">
@@ -907,10 +1201,11 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">maicellar</div>
-      <div class="footer-tag">Your cellar, beautifully kept. Built with care by Mai Software.</div>
+      <div class="footer-tag">Your cellar and home bar, beautifully kept. Built with care by Mai Software.</div>
     </div>
     <div class="footer-links">
       <a href="#features">Features</a>
+      <a href="#homebar">Home bar</a>
       <a href="#pricing">Pricing</a>
       <a href="/maicellar/support.html">Support</a>
       <a href="/maicellar/privacy.html">Privacy</a>
@@ -922,6 +1217,47 @@
     <div><a href="mailto:support@maisoftware.app">support@maisoftware.app</a></div>
   </div>
 </footer>
+
+<script>
+(function () {
+  var sec = document.getElementById('homebar');
+  if (!sec) return;
+
+  // Servings stepper — scales every measure for the number of drinks you're making.
+  var dec = sec.querySelector('[data-step="dec"]');
+  var inc = sec.querySelector('[data-step="inc"]');
+  var out = sec.querySelector('[data-serves]');
+  var amounts = sec.querySelectorAll('[data-per]');
+  var MIN = 1, MAX = 8, n = 2;
+
+  function render() {
+    out.textContent = n;
+    amounts.forEach(function (el) {
+      var per = parseFloat(el.getAttribute('data-per'));
+      var unit = el.getAttribute('data-unit') || '';
+      var value = Math.round(per * n * 100) / 100;
+      el.textContent = unit ? value + ' ' + unit : String(value);
+    });
+    dec.disabled = n <= MIN;
+    inc.disabled = n >= MAX;
+  }
+
+  dec.addEventListener('click', function () { if (n > MIN) { n--; render(); } });
+  inc.addEventListener('click', function () { if (n < MAX) { n++; render(); } });
+  render();
+
+  // Favourites — keep the drinks you come back to.
+  var fav = sec.querySelector('[data-fav]');
+  if (fav) {
+    var label = fav.querySelector('[data-fav-label]');
+    fav.addEventListener('click', function () {
+      var saved = fav.getAttribute('aria-pressed') === 'true';
+      fav.setAttribute('aria-pressed', String(!saved));
+      label.textContent = saved ? 'Save to favourites' : 'Saved to favourites';
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
