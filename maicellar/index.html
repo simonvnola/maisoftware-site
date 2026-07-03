@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MaiCellar — Your cellar and home bar, beautifully kept</title>
 <meta name="description" content="MaiCellar keeps your wine cellar and your home bar in one app — scan labels, track every bottle, find the wine for dinner, and see the cocktails you can make from the spirits you own.">
+<link rel="canonical" href="https://maisoftware.app/maicellar">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MaiCellar — Your cellar and home bar, beautifully kept">
+<meta property="og:description" content="One app, two sides: the cellar book for your wine, and the home bar that turns the bottles you own into cocktails you can make tonight.">
+<meta property="og:url" content="https://maisoftware.app/maicellar">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6762577833">
+<meta name="theme-color" content="#160906">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23160906'/%3E%3Crect x='24' y='24' width='16' height='16' fill='%23D4AB6A' transform='rotate(45 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -301,63 +310,70 @@
     margin: 0 auto;
   }
 
-  /* FEATURES */
-  .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+  /* CELLAR BOOK */
+  .cellar-grid {
+    max-width: 1140px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 4.5vw, 64px); align-items: start;
   }
-  .feature {
-    background: var(--surface-glass);
-    border: 0.5px solid var(--hairline);
-    border-radius: 18px;
-    padding: 38px 32px;
-    box-shadow: var(--shadow-card);
-    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
+  .cellar-copy h2 {
+    font-size: clamp(34px, 5vw, 54px);
+    letter-spacing: -0.025em; line-height: 1.08;
+    margin: 20px 0 16px;
   }
-  .feature::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(212, 171, 106, 0.18), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .feature:hover {
-    border-color: var(--hairline-strong);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-elev);
-  }
-  .feature:hover::before { opacity: 1; }
-  .feature-icon {
-    width: 52px; height: 52px;
-    border-radius: 12px;
-    background: linear-gradient(140deg, rgba(212, 171, 106, 0.10), rgba(212, 171, 106, 0.03));
-    border: 0.5px solid var(--hairline-strong);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    color: var(--gold);
-    box-shadow: 0 0 24px rgba(212, 171, 106, 0.06) inset;
-  }
-  .feature-icon svg { width: 28px; height: 28px; }
-  .feature h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
+  .cellar-copy h2 em {
     font-style: italic;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: -0.015em;
-    margin-bottom: 11px;
-    color: var(--cream);
+    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .feature p {
-    font-size: 14px;
-    color: var(--cream-dim);
-    line-height: 1.75;
+  .cellar-copy > p { font-size: 15px; color: var(--cream-dim); line-height: 1.75; max-width: 44ch; }
+  .cellar-index { margin-top: 26px; }
+  .ci-row { padding: 16px 0; border-top: 0.5px solid var(--hairline); }
+  .ci-row:last-child { border-bottom: 0.5px solid var(--hairline); }
+  .ci-row h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic; font-size: 20px; font-weight: 500;
+    letter-spacing: -0.01em; color: var(--cream); margin-bottom: 4px;
+  }
+  .ci-row p { font-size: 13.5px; color: var(--cream-dim); line-height: 1.7; }
+
+  .cl-head {
+    display: grid; grid-template-columns: minmax(0, 1fr) 42px 92px 88px;
+    gap: 6px 16px; padding: 12px 0 10px;
+    border-bottom: 0.5px solid var(--hairline);
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  .cl-head span:not(:first-child) { text-align: right; }
+  .cl-row {
+    display: grid; grid-template-columns: minmax(0, 1fr) 42px 92px 88px;
+    gap: 4px 16px; align-items: baseline;
+    padding: 14px 0; border-bottom: 0.5px solid var(--hairline);
+  }
+  .cl-row .w {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic; font-size: 19px; font-weight: 500;
+    letter-spacing: -0.01em; color: var(--cream); line-height: 1.25;
+  }
+  .cl-row .m {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 12px; color: var(--cream-dim); white-space: nowrap; text-align: right;
+  }
+  .cl-row .m.win { color: var(--gold); }
+  .cellar-lines { margin-top: 4px; }
+  .cellar-line { display: flex; gap: 12px; align-items: baseline; padding: 12px 0 0; }
+  .cellar-line .lbl {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold-dim); flex: none; padding-top: 2px;
+  }
+  .cellar-line p { font-size: 13.5px; color: var(--cream-dim); line-height: 1.65; }
+  .cellar-line p b { color: var(--gold); font-weight: 500; }
+  .ledger-note {
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--gold-dim); margin-top: 12px; line-height: 1.8;
   }
 
   /* PRICING */
@@ -649,10 +665,11 @@
     box-shadow: var(--shadow-elev);
   }
   .scan-mode .num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.28em;
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 20px;
     display: flex;
@@ -711,11 +728,17 @@
     nav.top { padding: 16px 24px; }
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 13px; }
-    .features, .pricing, .scan-modes { grid-template-columns: 1fr; }
+    .pricing, .scan-modes, .cellar-grid { grid-template-columns: 1fr; }
     section, .spotlight { padding: 32px 24px 64px; }
     .spotlight-inner { padding: 48px 28px; border-radius: 22px; }
     footer { padding: 56px 24px 36px; }
     .footer-inner { flex-direction: column; }
+  }
+  @media (max-width: 560px) {
+    .cl-head { display: none; }
+    .cl-row { grid-template-columns: auto auto auto 1fr; gap: 2px 16px; }
+    .cl-row .w { grid-column: 1 / -1; }
+    .cl-row .m { text-align: left; }
   }
   @media (max-width: 560px) {
     .nav-links a:not(:last-child) { display: none; }
@@ -915,7 +938,7 @@
   <a href="/maicellar/" class="logo">maicellar</a>
   <div class="nav-links">
     <a href="#scanning">Scanning</a>
-    <a href="#features">Features</a>
+    <a href="#cellar">Cellar</a>
     <a href="#homebar">Home bar</a>
     <a href="#pricing">Pricing</a>
     <a href="/maicellar/support.html">Support</a>
@@ -933,7 +956,7 @@
         <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1 9.56c-.02-2.1 1.72-3.11 1.8-3.16-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.67 0-1.68-.75-2.77-.73-1.42.02-2.74.83-3.48 2.1-1.49 2.57-.38 6.38 1.07 8.47.71 1.02 1.55 2.17 2.64 2.13 1.06-.04 1.46-.69 2.74-.69 1.28 0 1.64.69 2.76.67 1.14-.02 1.86-1.04 2.56-2.06.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.22-.85-2.24-3.37z" fill="currentColor"/><path d="M11.02 3.41C11.6 2.71 11.99 1.75 11.88.78c-.83.03-1.84.55-2.44 1.24-.54.61-1.01 1.59-.89 2.54.93.07 1.89-.47 2.47-1.15z" fill="currentColor"/></svg>
         Download on App Store
       </a>
-      <a href="#features" class="btn btn-ghost">Explore features</a>
+      <a href="#cellar" class="btn btn-ghost">Explore the cellar</a>
     </div>
   </div>
 </header>
@@ -951,18 +974,18 @@
     <p class="spotlight-lead">MaiCellar's camera isn't just a label reader. Point it at a single bottle, a row of twelve, or the invoice that came with the case — everything gets recognised, enriched and filed into your cellar in one go.</p>
     <div class="scan-modes">
       <div class="scan-mode">
-        <div class="num">01</div>
+        <div class="num">one label</div>
         <h4>Single bottle</h4>
         <p>Aim at one label. Producer, cuvée, vintage, region and tasting notes fill in automatically — no typing, no guesswork.</p>
       </div>
       <div class="scan-mode hero-mode">
         <span class="badge">New</span>
-        <div class="num">02</div>
+        <div class="num">a whole shelf</div>
         <h4>Multi-bottle scan</h4>
         <p>Frame an entire shelf or case. MaiCellar identifies every bottle in the shot at once and adds them all — dozens in a single tap.</p>
       </div>
       <div class="scan-mode">
-        <div class="num">03</div>
+        <div class="num">the paperwork</div>
         <h4>Invoice &amp; delivery</h4>
         <p>Snap the invoice from your merchant. MaiCellar reads every line, matches each wine to its record, and logs the whole delivery in one go.</p>
       </div>
@@ -976,56 +999,70 @@
   <span class="line"></span>
 </div>
 
-<section id="features">
-  <div class="section-inner">
-    <div class="section-head">
-      <span class="section-tag-pill">Features</span>
-      <h2>A sommelier in your <em>pocket</em></h2>
-      <p>Every feature crafted to turn your wine collection into a living, breathing library.</p>
+<section id="cellar">
+  <div class="cellar-grid">
+    <div class="cellar-copy">
+      <span class="section-tag-pill">The cellar</span>
+      <h2>Every bottle, <em>remembered</em></h2>
+      <p>Scan a label once and MaiCellar keeps the story — which rack the bottle rests in, how many you have, what they're worth, and when each one will drink best.</p>
+      <div class="cellar-index">
+        <div class="ci-row">
+          <h4>Drink-window alerts</h4>
+          <p>A quiet nudge before a window closes, so nothing great gets forgotten at the back of the rack.</p>
+        </div>
+        <div class="ci-row">
+          <h4>Food pairing</h4>
+          <p>Tell MaiCellar what's for dinner and it points at the right bottle on your own rack — or the style to buy next time.</p>
+        </div>
+        <div class="ci-row">
+          <h4>Voice &amp; photo notes</h4>
+          <p>Speak a tasting note after the last glass, or snap a menu. It's filed against the right bottle, searchable later.</p>
+        </div>
+        <div class="ci-row">
+          <h4>Smart follow-ups</h4>
+          <p>Notes become suggestions: what to open tonight, what to buy next, which producers match the styles you love.</p>
+        </div>
+      </div>
     </div>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 1 2-2h2.5l1.5-2h6l1.5 2H19a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/><circle cx="12" cy="13" r="4"/></svg>
+    <div class="cellar-vis">
+      <div class="bar-panel">
+        <div class="bar-panel-label">
+          <span class="ey">The cellar book</span>
+          <span class="bar-count">142 bottles</span>
         </div>
-        <h3>AI Label Scanning</h3>
-        <p>One bottle, a whole shelf, or the invoice from a delivery — all recognised and added in a single tap. No typing, no guesswork.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v7a2 2 0 0 0 2 2v9"/><path d="M10 3v7"/><path d="M8 3v4"/><path d="M16 3c-1.5 0-3 1.5-3 4s1.5 4 3 4v10"/></svg>
+        <div class="cl-head">
+          <span>wine</span><span>qty</span><span>drink</span><span>est. value*</span>
         </div>
-        <h3>Food Pairing</h3>
-        <p>Tell MaiCellar what's for dinner and it suggests the best bottle from your cellar — or the style to reach for next time.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg>
+        <div class="cl-row">
+          <span class="w">2016 Barossa Shiraz</span>
+          <span class="m">&times;6</span>
+          <span class="m win">2024&ndash;2036</span>
+          <span class="m">$54/btl</span>
         </div>
-        <h3>Drink Windows</h3>
-        <p>Know when each bottle is at its peak. Gentle reminders before windows close, so nothing great gets forgotten at the back of the rack.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <div class="cl-row">
+          <span class="w">2021 Yarra Valley Chardonnay</span>
+          <span class="m">&times;3</span>
+          <span class="m win">2025&ndash;2028</span>
+          <span class="m">$38/btl</span>
         </div>
-        <h3>Full Cellar Management</h3>
-        <p>Locations, racks, quantities and values — all organised, searchable and beautiful. Find any bottle in seconds.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/><path d="M9 21h6"/></svg>
+        <div class="cl-row">
+          <span class="w">2019 Coonawarra Cabernet</span>
+          <span class="m">&times;2</span>
+          <span class="m win">2026&ndash;2040</span>
+          <span class="m">$46/btl</span>
         </div>
-        <h3>Voice &amp; Photo Input</h3>
-        <p>Speak a note after tasting, or snap a photo of a menu. MaiCellar turns messy moments into clean, searchable records.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 10a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>
+        <div class="cellar-lines">
+          <div class="cellar-line">
+            <span class="lbl">Pair</span>
+            <p>Slow-roasted lamb tonight &rarr; reach for the <b>2016 Barossa Shiraz</b>.</p>
+          </div>
+          <div class="cellar-line">
+            <span class="lbl">Note</span>
+            <p>&ldquo;Opened one for Dad's birthday — richer than last year. Decant an hour.&rdquo; <b>&middot; spoken, filed automatically</b></p>
+          </div>
         </div>
-        <h3>Smart Follow-ups</h3>
-        <p>Tasting notes evolve into suggestions: what to buy next, what to open tonight, and which producers match the styles you love.</p>
       </div>
+      <p class="ledger-note">Example records — not live data<br>*live value estimates are a Sommelier-plan feature</p>
     </div>
   </div>
 </section>
@@ -1187,7 +1224,7 @@
         <ul>
           <li>Everything in Cellar</li>
           <li>Advanced AI pairings</li>
-          <li>Cellar valuation &amp; reports</li>
+          <li>Real-time price &amp; value estimates</li>
           <li>Voice tasting journal</li>
           <li>Priority support</li>
         </ul>
@@ -1204,7 +1241,7 @@
       <div class="footer-tag">Your cellar and home bar, beautifully kept. Built with care by Mai Software.</div>
     </div>
     <div class="footer-links">
-      <a href="#features">Features</a>
+      <a href="#cellar">Cellar</a>
       <a href="#homebar">Home bar</a>
       <a href="#pricing">Pricing</a>
       <a href="/maicellar/support.html">Support</a>
