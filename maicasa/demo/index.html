@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Demo — Maicasa</title>
 <meta name="description" content="See Maicasa in action. Watch how to manage and action home maintenance tasks with AI-powered guidance.">
-<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://maisoftware.app/maicasa/demo">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Demo — Maicasa">
+<meta property="og:description" content="See Maicasa in action. Watch how to manage and action home maintenance tasks with AI-powered guidance.">
+<meta property="og:url" content="https://maisoftware.app/maicasa/demo">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6763749559">
+<meta name="theme-color" content="#B85C3D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 104'%3E%3Crect width='104' height='104' rx='24' fill='%23B85C3D'/%3E%3Cpath d='M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z' fill='%23FBF7F1'/%3E%3C/svg%3E">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -23,7 +31,7 @@
     --ink: #221F1A;
     --ink-2: #3D3631;
     --ink-soft: #756B5F;
-    --ink-muted: #9A9080;
+    --ink-muted: #7A7060;
     --line: #ECE3D4;
     --line-soft: #F4EDE2;
     --shadow-sm: 0 1px 2px rgba(60,40,20,0.04), 0 2px 6px rgba(60,40,20,0.04);
@@ -40,6 +48,12 @@
     line-height: 1.55;
   }
   a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.001ms !important; animation: none !important; }
+  }
   ::selection { background: var(--clay-soft); color: var(--clay-dark); }
 
   nav {
@@ -224,7 +238,7 @@
   .foot-links { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
   .foot-links a { font-size: 13px; color: rgba(244,241,234,0.55); text-decoration: none; font-weight: 500; transition: color 0.2s; }
   .foot-links a:hover { color: rgba(244,241,234,0.95); }
-  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.28); }
+  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.58); }
 
   @media (max-width: 560px) {
     .nav-end .nav-link { display: none; }
@@ -311,7 +325,7 @@
 
 <section class="cta">
   <h2>Ready to <em>try it yourself?</em></h2>
-  <p>Free to download. No account required to start.</p>
+  <p>Free to download and try.</p>
   <a href="/maicasa" class="btn-cream">Download Maicasa</a>
 </section>
 
@@ -321,7 +335,7 @@
     <a href="/maicasa/demo">Demo</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
-    <a href="mailto:info@maisoftware.app">Contact</a>
+    <a href="mailto:support@maisoftware.app">Contact</a>
   </div>
   <p class="foot-copy">&copy; 2026 Mai Software. All rights reserved.</p>
 </footer>

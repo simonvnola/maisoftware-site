@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Program — Maicasa</title>
 <meta name="description" content="The Maicasa Partner Program — give your clients a branded, AI-powered home manager from day one. $70/year or $40/6 months per client.">
-<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://maisoftware.app/maicasa/partner">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Partner Program — Maicasa">
+<meta property="og:description" content="Give your clients a branded, AI-powered home manager from day one. $70/year or $40/6 months per client. Coming soon.">
+<meta property="og:url" content="https://maisoftware.app/maicasa/partner">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6763749559">
+<meta name="theme-color" content="#B85C3D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 104'%3E%3Crect width='104' height='104' rx='24' fill='%23B85C3D'/%3E%3Cpath d='M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z' fill='%23FBF7F1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -27,7 +38,7 @@
     --ink: #221F1A;
     --ink-2: #3D3631;
     --ink-soft: #756B5F;
-    --ink-muted: #9A9080;
+    --ink-muted: #7A7060;
     --line: #ECE3D4;
     --line-soft: #F4EDE2;
     --shadow-sm: 0 1px 2px rgba(60,40,20,0.04), 0 2px 6px rgba(60,40,20,0.04);
@@ -44,6 +55,17 @@
   }
   a { color: inherit; }
   ::selection { background: var(--clay-soft); color: var(--clay-deep); }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .record {
+    font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+    letter-spacing: 0.01em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { transition-duration: 0.001ms !important; animation: none !important; }
+  }
 
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -196,8 +218,9 @@
     margin-bottom: 10px;
   }
   .price-figure {
-    font-size: 44px; font-weight: 700;
-    letter-spacing: -0.028em; color: var(--ink);
+    font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+    font-size: 40px; font-weight: 500;
+    letter-spacing: -0.025em; color: var(--ink);
     line-height: 1;
   }
   .price-period {
@@ -232,36 +255,20 @@
   }
   .price-footnote strong { color: var(--ink-2); font-weight: 600; }
 
-  /* Feature grid */
+  /* Feature index */
   .plan-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 14px;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 clamp(32px, 5vw, 72px);
+    text-align: left;
   }
-  .plan-card {
-    background: var(--white); border: 1px solid transparent;
-    border-radius: var(--radius-md); padding: 28px 26px;
-    box-shadow: var(--shadow-sm);
-    transition: border-color 0.18s, box-shadow 0.22s, transform 0.18s;
-    position: relative;
-  }
-  .plan-card:hover {
-    border-color: var(--clay-border);
-    box-shadow: var(--shadow-md);
-    transform: translateY(-3px);
-  }
-  .plan-icon {
-    width: 46px; height: 46px; border-radius: 13px;
-    background: linear-gradient(140deg, var(--clay-soft), rgba(184,92,61,0.08));
-    border: 1px solid var(--clay-border);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 18px; color: var(--clay);
-  }
+  .plan-card { padding: 20px 0; border-top: 1px solid var(--line); }
   .plan-title {
-    font-size: 16.5px; font-weight: 700; color: var(--ink);
-    margin-bottom: 8px; letter-spacing: -0.015em;
+    font-size: 15.5px; font-weight: 700; color: var(--ink);
+    margin-bottom: 5px; letter-spacing: -0.015em;
   }
   .plan-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+  @media (max-width: 880px) { .plan-grid { grid-template-columns: 1fr; } }
 
   /* Audience */
   .audience {
@@ -340,7 +347,7 @@
   .foot-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
   .foot-links a { font-size: 13px; color: rgba(244,241,234,0.55); text-decoration: none; font-weight: 500; transition: color 0.2s; }
   .foot-links a:hover { color: rgba(244,241,234,0.95); }
-  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.28); }
+  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.58); }
 
   @media (max-width: 560px) {
     nav { padding: 0 18px; }
@@ -396,7 +403,7 @@
         <span class="price-figure">$70</span>
         <span class="price-period">/ client / year</span>
       </div>
-      <div class="price-equiv">Just $5.83 per client, per month.</div>
+      <div class="price-equiv">Just <span class="record">$5.83</span> per client, per month.</div>
       <ul class="price-list">
         <li>Full Maicasa Home access for 12 months</li>
         <li>Your branding inside their app</li>
@@ -412,7 +419,7 @@
         <span class="price-figure">$40</span>
         <span class="price-period">/ client / 6 mo</span>
       </div>
-      <div class="price-equiv">$6.67 per client, per month.</div>
+      <div class="price-equiv"><span class="record">$6.67</span> per client, per month.</div>
       <ul class="price-list">
         <li>Full Maicasa Home access for 6 months</li>
         <li>Your branding inside their app</li>
@@ -432,39 +439,33 @@
 
   <div class="plan-grid">
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
       <div class="plan-title">A meaningful settlement gift</div>
       <div class="plan-desc">Instead of a generic hamper, give clients a year of Maicasa. Practical, memorable and used every week.</div>
     </div>
 
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></div>
       <div class="plan-title">Your branding in their app</div>
       <div class="plan-desc">Your logo on the loading screen, your contact details as their preferred broker or agent. One relationship, clearly visible.</div>
     </div>
 
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
       <div class="plan-title">A simple partner portal</div>
       <div class="plan-desc">Add clients in under a minute. Track who's active, when subscriptions renew, and your portfolio at a glance.</div>
     </div>
 
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
       <div class="plan-title">Upload property documents</div>
       <div class="plan-desc">Push inspection reports, strata records or building certificates straight into your client's Maicasa account &mdash; AI converts them into tasks.</div>
     </div>
 
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
       <div class="plan-title">Stay top of mind</div>
       <div class="plan-desc">When clients refinance, upgrade, or buy again &mdash; your name is already in their pocket. No marketing required.</div>
     </div>
 
     <div class="plan-card">
-      <div class="plan-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg></div>
       <div class="plan-title">Partner-only pricing</div>
-      <div class="plan-desc">$70/year or $40/6 months per client &mdash; paid upfront, no platform fees, no lock-in. Volume pricing for larger portfolios.</div>
+      <div class="plan-desc"><span class="record">$70/yr</span> or <span class="record">$40/6&nbsp;mo</span> per client &mdash; paid upfront, no platform fees, no lock-in. Volume pricing for larger portfolios.</div>
     </div>
   </div>
 </section>
@@ -503,7 +504,7 @@
     <a href="/maicasa/partner">Partners</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
-    <a href="mailto:info@maisoftware.app">Contact</a>
+    <a href="mailto:support@maisoftware.app">Contact</a>
   </div>
   <p class="foot-copy">&copy; 2026 Mai Software. All rights reserved.</p>
 </footer>

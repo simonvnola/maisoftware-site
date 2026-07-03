@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Support — Maicasa</title>
 <meta name="description" content="Get help with Maicasa. FAQs, troubleshooting, and contact support.">
-<link rel="icon" href="/favicon.ico">
+<link rel="canonical" href="https://maisoftware.app/maicasa/support">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Support — Maicasa">
+<meta property="og:description" content="Get help with Maicasa. FAQs, troubleshooting, and contact support.">
+<meta property="og:url" content="https://maisoftware.app/maicasa/support">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6763749559">
+<meta name="theme-color" content="#B85C3D">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 104'%3E%3Crect width='104' height='104' rx='24' fill='%23B85C3D'/%3E%3Cpath d='M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z' fill='%23FBF7F1'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -22,7 +33,7 @@
     --ink: #221F1A;
     --ink-2: #3D3631;
     --ink-soft: #756B5F;
-    --ink-muted: #9A9080;
+    --ink-muted: #7A7060;
     --line: #ECE3D4;
     --line-soft: #F4EDE2;
     --shadow-sm: 0 1px 2px rgba(60,40,20,0.04), 0 2px 6px rgba(60,40,20,0.04);
@@ -31,6 +42,16 @@
   body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--cream); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.55; }
   a { color: inherit; }
   ::selection { background: var(--clay-soft); color: var(--clay-dark); }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+  }
+  .record {
+    font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+    letter-spacing: 0.01em;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition-duration: 0.001ms !important; animation: none !important; }
+  }
 
   nav {
     background: rgba(251,247,241,0.85);
@@ -127,7 +148,7 @@
   .foot-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
   .foot-links a { font-size: 13px; color: rgba(244,241,234,0.55); text-decoration: none; font-weight: 500; transition: color 0.2s; }
   .foot-links a:hover { color: rgba(244,241,234,0.95); }
-  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.28); }
+  .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.58); }
 </style>
 </head>
 <body>
@@ -155,9 +176,9 @@
   <div class="contact-card">
     <div>
       <div class="contact-title">Email support</div>
-      <div class="contact-sub">info@maisoftware.app &middot; Response within 24 hours</div>
+      <div class="contact-sub">support@maisoftware.app &middot; Response within 24 hours</div>
     </div>
-    <a href="mailto:info@maisoftware.app" class="contact-btn">
+    <a href="mailto:support@maisoftware.app" class="contact-btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Send an email
     </a>
@@ -167,73 +188,73 @@
   <div class="faq-list">
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">Is Maicasa free?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">Is Maicasa free?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-a"><div class="faq-a-in">Yes &mdash; Maicasa is free to download and core features (manual task tracking, contents inventory) are free to use. AI features (property scan, photo recognition, AI chat, cost estimates, inspection PDF import) are part of the paid Home plan from $8.99/month.</div></div>
+      <div class="faq-a"><div class="faq-a-in">Yes &mdash; Maicasa is free to download and core features (manual task tracking, contents inventory) are free to use. AI features (property scan, photo recognition, AI chat, cost estimates, inspection PDF import) are part of the paid Home plan from <span class="record">$8.99</span>/month.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">Do I need an account?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">Do I need an account?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">You can use Maicasa as a guest to try it out. Creating an account lets you sync across devices, recover your data if you change phone, and access your subscription on a new install.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">AI features aren't working &mdash; what should I check?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">AI features aren't working &mdash; what should I check?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-a"><div class="faq-a-in">AI features require an active internet connection and a Home subscription. Check your mobile data or Wi-Fi, confirm your subscription is active under Settings &rarr; Subscription, then close and reopen the app. If the issue persists, email info@maisoftware.app.</div></div>
+      <div class="faq-a"><div class="faq-a-in">AI features require an active internet connection and a Home subscription. Check your mobile data or Wi-Fi, confirm your subscription is active under Settings &rarr; Subscription, then close and reopen the app. If the issue persists, email support@maisoftware.app.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">How does the property scan work?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">How does the property scan work?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">Add your property by address. Maicasa researches it across listing data, council records and climate risk databases, then generates a tailored maintenance plan with cost estimates based on your property's age, type and location. The full scan typically takes 30&ndash;60 seconds.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">Can I import a building inspection report?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">Can I import a building inspection report?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">Yes. From your property's task list, tap the upload icon and select your inspection PDF. Maicasa reads the report and converts every defect, recommendation and maintenance item into a tracked, prioritised task &mdash; typically in under a minute.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">Does it work outside Australia?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">Does it work outside Australia?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">The app is designed for Australian properties (council data, FY-aligned budgets, AUD costs). It will work in other regions but cost estimates and regulatory references won't be locally accurate &mdash; expanded country support is on the roadmap.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">How do I manage or cancel my subscription?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">How do I manage or cancel my subscription?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-a"><div class="faq-a-in">Subscriptions purchased in-app are managed through your Apple ID. On your iPhone: Settings &rarr; tap your name &rarr; Subscriptions &rarr; Maicasa. Web subscriptions are managed via the Stripe customer portal &mdash; email us if you need a portal link. You keep access until the end of the current billing period.</div></div>
+      <div class="faq-a"><div class="faq-a-in">Subscriptions are billed through the App Store and managed with your Apple ID. On your iPhone: Settings &rarr; tap your name &rarr; Subscriptions &rarr; Maicasa. You can cancel anytime and keep access until the end of the current billing period.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">Does it work for rental properties?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">Does it work for rental properties?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">Yes &mdash; landlords and investors can manage maintenance and contents across multiple properties from one account. Contents inventory tracks fixtures, fittings and depreciable plant separately so EOFY records are tidy.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">What data does Maicasa collect?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">What data does Maicasa collect?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
       <div class="faq-a"><div class="faq-a-in">Your property details, tasks, budgets and contents inventory. Photos and documents you share with the AI are processed by Anthropic's Claude API and not stored beyond the session. Full details in our <a href="/maicasa/privacy" style="color:var(--clay);font-weight:500;">Privacy Policy</a>.</div></div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q" onclick="tog(this)">How do I delete my data?
+      <button class="faq-q" aria-expanded="false" onclick="tog(this)">How do I delete my data?
         <div class="faq-ico"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
       </button>
-      <div class="faq-a"><div class="faq-a-in">Uninstalling the app removes locally stored data. To delete cloud-synced data, email info@maisoftware.app from your account address &mdash; we'll respond within 30 days.</div></div>
+      <div class="faq-a"><div class="faq-a-in">Uninstalling the app removes locally stored data. To delete cloud-synced data, email support@maisoftware.app from your account address &mdash; we'll respond within 30 days.</div></div>
     </div>
 
   </div>
@@ -268,7 +289,7 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
       Pricing
     </a>
-    <a href="mailto:info@maisoftware.app" class="pill">
+    <a href="mailto:support@maisoftware.app" class="pill">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email support
     </a>
@@ -285,7 +306,7 @@
     <a href="/pricing">Pricing</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
-    <a href="mailto:info@maisoftware.app">Contact</a>
+    <a href="mailto:support@maisoftware.app">Contact</a>
   </div>
   <p class="foot-copy">&copy; 2026 Mai Software. All rights reserved.</p>
 </footer>
@@ -294,8 +315,14 @@
   function tog(btn) {
     const item = btn.closest('.faq-item');
     const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-    if (!open) item.classList.add('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!open) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
   }
 </script>
 </body>
