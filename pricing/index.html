@@ -1,11 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Maicasa — Pricing</title>
-  <meta name="description" content="One simple plan for your home: $8.99 a month or $99 a year.">
-  <link rel="icon" href="/favicon.ico"/>
+  <meta name="description" content="One simple plan for your home: $8.99 a month or $99 a year. Free to try, billed through the App Store, cancel anytime.">
+  <link rel="canonical" href="https://maisoftware.app/pricing">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maicasa — Pricing">
+  <meta property="og:description" content="One simple plan for your home: $8.99 a month or $99 a year. Free to try, billed through the App Store, cancel anytime.">
+  <meta property="og:url" content="https://maisoftware.app/pricing">
+  <meta name="twitter:card" content="summary">
+  <meta name="apple-itunes-app" content="app-id=6763749559">
+  <meta name="theme-color" content="#B85C3D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 104 104'%3E%3Crect width='104' height='104' rx='24' fill='%23B85C3D'/%3E%3Cpath d='M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z' fill='%23FBF7F1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -24,10 +35,10 @@
       --ink: #221F1A;
       --ink-2: #3D3631;
       --ink-soft: #756B5F;
-      --ink-muted: #9A9080;
+      --ink-muted: #7A7060;
       --line: #ECE3D4;
       --line-soft: #F4EDE2;
-      --sage: #5C8A4F;
+      --sage: #3F6136;
       --shadow-sm: 0 1px 2px rgba(60,40,20,0.04), 0 2px 6px rgba(60,40,20,0.04);
       --shadow-md: 0 4px 16px rgba(60,40,20,0.06), 0 8px 32px rgba(184,92,61,0.06);
       --radius-md: 18px;
@@ -44,6 +55,16 @@
     }
     a { color: inherit; }
     ::selection { background: var(--clay-soft); color: var(--clay-deep); }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--clay); outline-offset: 3px; border-radius: 4px;
+    }
+    .record {
+      font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+      letter-spacing: 0.01em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.001ms !important; animation: none !important; }
+    }
 
     nav {
       padding: 0 28px;
@@ -122,7 +143,10 @@
     .plan-desc { font-size: 14.5px; color: var(--ink-muted); margin-bottom: 28px; line-height: 1.6; }
 
     .plan-price { margin-bottom: 28px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-    .plan-price .amount { font-size: 54px; font-weight: 700; letter-spacing: -0.032em; color: var(--ink); line-height: 1; }
+    .plan-price .amount {
+      font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+      font-size: 50px; font-weight: 500; letter-spacing: -0.03em; color: var(--ink); line-height: 1;
+    }
     .plan-price .period { font-size: 15px; color: var(--ink-muted); }
     .plan-annual-note { font-size: 13.5px; color: var(--sage); margin-top: -18px; margin-bottom: 26px; font-weight: 600; }
     .plan-annual-note.hidden { display: none; }
@@ -140,6 +164,8 @@
     }
 
     .subscribe-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none; text-align: center;
       width: 100%; padding: 16px;
       border-radius: 14px; border: none;
       font-size: 15px; font-weight: 600; cursor: pointer;
@@ -163,9 +189,9 @@
     .below-card-note a:hover { color: var(--clay-dark); text-decoration: underline; }
 
     .value-callout {
-      max-width: 780px; margin: 16px auto 72px; padding: 44px 36px;
+      max-width: 780px; margin: 16px auto 72px; padding: 44px 40px;
       border: 1px solid var(--line); background: var(--white);
-      border-radius: var(--radius-lg); text-align: center;
+      border-radius: var(--radius-lg); text-align: left;
       box-shadow: var(--shadow-sm);
     }
     .value-callout h2 {
@@ -176,14 +202,19 @@
     .value-callout h2 em { font-style: italic; color: var(--clay); font-weight: 500; }
     .value-callout p {
       font-size: 15px; color: var(--ink-soft); line-height: 1.7;
-      max-width: 600px; margin: 0 auto 12px;
+      max-width: 62ch; margin: 0 0 12px;
     }
     .value-callout p:last-child { margin-bottom: 0; }
 
     .compare-wrap { margin: 30px -8px 4px; overflow-x: auto; }
     .compare-table {
-      width: 100%; max-width: 600px; margin: 0 auto;
+      width: 100%; max-width: 640px; margin: 0;
       border-collapse: collapse; font-size: 13.5px; text-align: left;
+    }
+    .compare-note {
+      font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+      font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--ink-muted); margin-top: 14px;
     }
     .compare-table th, .compare-table td {
       padding: 14px 16px;
@@ -212,8 +243,8 @@
     .foot-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
     .foot-links a { font-size: 13px; color: rgba(244,241,234,0.55); text-decoration: none; font-weight: 500; transition: color 0.2s; }
     .foot-links a:hover { color: rgba(244,241,234,0.95); }
-    .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.32); }
-    .foot-copy + p { font-size: 11.5px; color: rgba(244,241,234,0.32); margin-top: 6px; }
+    .foot-copy { font-size: 11.5px; color: rgba(244,241,234,0.58); }
+    .foot-copy + p { font-size: 11.5px; color: rgba(244,241,234,0.58); margin-top: 6px; }
 
     @media (max-width: 560px) {
       nav { padding: 0 18px; }
@@ -244,7 +275,7 @@
 <section class="hero">
   <div class="page-tag">Pricing</div>
   <h1>One <em>simple</em> plan.<br>Everything your home needs.</h1>
-  <p>Free to download and try. The Home plan unlocks every AI feature &mdash; property scan, photo recognition, inspection PDF import, AI chat and cost estimates.</p>
+  <p>Free to download and try. The Home plan includes every AI feature &mdash; property scan, photo recognition, inspection PDF import, AI chat and cost estimates.</p>
 
   <div class="billing-toggle" role="tablist" aria-label="Billing period">
     <button type="button" class="active" id="btn-monthly" onclick="setBilling('monthly')">Monthly</button>
@@ -263,7 +294,7 @@
       <span class="amount" id="home-price">$8.99</span>
       <span class="period" id="home-period">/ month</span>
     </div>
-    <div class="plan-annual-note hidden" id="home-annual-note">$99 billed annually &mdash; save $8.88</div>
+    <div class="plan-annual-note hidden" id="home-annual-note"><span class="record">$99</span> billed annually &mdash; save <span class="record">$8.88</span></div>
 
     <ul class="features-list">
       <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#B85C3D" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Property scan &mdash; AI generates a full maintenance plan from your address</li>
@@ -281,15 +312,18 @@
       Fair-use weekly AI limits apply
     </div>
 
-    <button type="button" class="subscribe-btn" id="home-btn" onclick="subscribe('home')">Get started</button>
+    <a class="subscribe-btn" href="https://apps.apple.com/au/app/maicasa-home-manager/id6763749559">
+      <svg width="14" height="16" viewBox="0 0 16 18" fill="currentColor" aria-hidden="true"><path d="M13.1 9.56c-.02-2.1 1.72-3.11 1.8-3.16-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.67 0-1.68-.75-2.77-.73-1.42.02-2.74.83-3.48 2.1-1.49 2.57-.38 6.38 1.07 8.47.71 1.02 1.55 2.17 2.64 2.13 1.06-.04 1.46-.69 2.74-.69 1.28 0 1.64.69 2.76.67 1.14-.02 1.86-1.04 2.56-2.06.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.22-.85-2.24-3.37z"/><path d="M11.02 3.41C11.6 2.71 11.99 1.75 11.88.78c-.83.03-1.84.55-2.44 1.24-.54.61-1.01 1.59-.89 2.54.93.07 1.89-.47 2.47-1.15z"/></svg>
+      Download free &mdash; subscribe in the app
+    </a>
   </div>
 
-  <p class="below-card-note">Prices in AUD. Cancel anytime. Secure payments by Stripe. Already on iOS? Manage your subscription via the App Store. Questions? <a href="mailto:dev@maisoftware.app">Email us</a>.</p>
+  <p class="below-card-note">Prices in AUD. Subscriptions are billed through the App Store with your Apple ID &mdash; start, manage or cancel anytime in your App Store subscriptions. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
 </div>
 
 <section class="value-callout">
-  <h2>Save thousands &mdash; without losing <em>peace of mind</em></h2>
-  <p>A full-time human home manager costs $75,000&ndash;$90,000 a year in salary plus super. Maicasa handles the organising, prioritising and record-keeping for $8.99 a month &mdash; and works even better alongside the professionals you already trust.</p>
+  <h2>A different tool for a <em>different budget</em></h2>
+  <p>A dedicated human home manager is a salaried professional &mdash; think <span class="record">$75k&ndash;$90k</span> a year, and worth it if you can. Maicasa isn't a person and doesn't pretend to be. It covers the organising, prioritising and record-keeping side for <span class="record">$8.99</span> a month &mdash; and the table below is honest about where a human still wins.</p>
 
   <div class="compare-wrap">
     <table class="compare-table">
@@ -301,17 +335,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr><td>Typical cost</td><td>$75k&ndash;$90k+ / year</td><td class="col-maicasa">$8.99 / month</td></tr>
+        <tr><td>Typical cost</td><td><span class="record">$75k&ndash;$90k+/yr</span></td><td class="col-maicasa"><span class="record">$8.99/mo</span></td></tr>
+        <tr><td>Knows the property personally</td><td>&check;</td><td class="col-maicasa">&mdash;</td></tr>
+        <tr><td>Trade judgement from years on the tools</td><td>&check;</td><td class="col-maicasa">&mdash;</td></tr>
         <tr><td>Prioritised maintenance plan</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
         <tr><td>Budget &amp; cost tracking</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
         <tr><td>Identifies the right trade</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
         <tr><td>Quote review &amp; comparison</td><td>&check;</td><td class="col-maicasa">&check;</td></tr>
         <tr><td>Inspection report import</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
-        <tr><td>Always available</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
+        <tr><td>Available at 10pm</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
         <tr><td>Records you actually own</td><td>&mdash;</td><td class="col-maicasa">&check;</td></tr>
       </tbody>
     </table>
   </div>
+  <p class="compare-note">Illustrative comparison &mdash; a split of strengths, not a like-for-like substitute</p>
 
   <p class="compare-cta">Better together. Pair Maicasa with your home manager or property manager and keep every task, cost and decision organised in one place &mdash; nothing slips through the cracks between meetings.</p>
 </section>
@@ -323,81 +360,29 @@
     <a href="/maicasa/partner">Partners</a>
     <a href="/maicasa/support">Support</a>
     <a href="/maicasa/privacy">Privacy</a>
-    <a href="mailto:info@maisoftware.app">Contact</a>
+    <a href="mailto:support@maisoftware.app">Contact</a>
   </div>
   <p class="foot-copy">&copy; 2026 Mai Software</p>
-  <p>Prices in AUD. Cancel anytime. Secure payments by Stripe.</p>
+  <p>Prices in AUD. Subscriptions billed through the App Store. Cancel anytime.</p>
 </footer>
 
 <script>
-  var PRICES = {
-    home_monthly: "price_1TMfjo1idH11ZDtpPKAxK3Gw",
-    home_annual:  "price_1TMfko1idH11ZDtpzL4kGNlt"
-  };
-
-  var billing = "monthly";
-
   function setBilling(type) {
-    billing = type;
-
     document.getElementById("btn-monthly").className = type === "monthly" ? "active" : "inactive";
     document.getElementById("btn-annual").className  = type === "annual"  ? "active" : "inactive";
 
     var saveBadge = document.getElementById("save-badge");
-    if (type === "annual") {
-      saveBadge.classList.remove("hidden");
-    } else {
-      saveBadge.classList.add("hidden");
-    }
-
-    var price = type === "monthly" ? "$8.99" : "$8.25";
-    document.getElementById("home-price").textContent = price;
-    document.getElementById("home-period").textContent = "/ month";
-
     var note = document.getElementById("home-annual-note");
     if (type === "annual") {
+      saveBadge.classList.remove("hidden");
       note.classList.remove("hidden");
     } else {
+      saveBadge.classList.add("hidden");
       note.classList.add("hidden");
     }
-  }
 
-  function subscribe(plan) {
-    var btn = document.getElementById(plan + "-btn");
-    btn.disabled = true;
-    btn.textContent = "Redirecting...";
-
-    var price_id = PRICES[plan + "_" + billing];
-
-    var params = new URLSearchParams(window.location.search);
-    var user_id = params.get("user_id") || "";
-    var user_email = params.get("email") || "";
-
-    fetch("https://maicasa.vercel.app/api/stripe?action=checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        price_id: price_id,
-        user_id: user_id,
-        user_email: user_email,
-        success_url: "https://maisoftware.app/success?plan=" + plan,
-        cancel_url: "https://maisoftware.app/pricing"
-      })
-    })
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      if (data && data.url) {
-        window.location.href = data.url;
-      } else {
-        throw new Error("No checkout URL returned");
-      }
-    })
-    .catch(function (err) {
-      console.error(err);
-      btn.disabled = false;
-      btn.textContent = "Get started";
-      alert("Something went wrong starting checkout. Please try again, or email dev@maisoftware.app.");
-    });
+    document.getElementById("home-price").textContent = type === "monthly" ? "$8.99" : "$8.25";
+    document.getElementById("home-period").textContent = "/ month";
   }
 </script>
 </body>
