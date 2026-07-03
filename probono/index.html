@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ProBono — Give Your Professional Time</title>
-<meta name="description" content="Turn your skills into meaningful impact. ProBono makes it easy to give back through what you do best.">
-<link rel="icon" href="/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>ProBono — Pledge one working hour to charity</title>
+<meta name="description" content="Pledge the value of one working hour — weekly, fortnightly or monthly — to a cause you choose. ProBono reminds you when the day comes; you give directly, and the money never touches the app.">
+<link rel="canonical" href="https://maisoftware.app/probono">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ProBono — Pledge one working hour to charity">
+<meta property="og:description" content="A giving pledge, kept: one working hour's pay, on the rhythm you choose. ProBono reminds you; you give directly to the charity.">
+<meta property="og:url" content="https://maisoftware.app/probono">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6762084984">
+<meta name="theme-color" content="#0D6B5C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230D6B5C'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-style='italic' font-size='28' fill='%23FFFFFF' text-anchor='middle'%3E1h%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..600;1,8..60,400..600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --ink: #1a1f2e;
-  --ink-soft: #4a5166;
-  --ink-muted: #8891aa;
-  --blue: #2563d4;
-  --green: #27a85a;
-  --blue-light: #e8f0fe;
-  --green-light: #e6f9ee;
-  --border: rgba(0,0,0,0.08);
-  --bg: #ffffff;
-  --card-bg: #f7f8fc;
+  --ink: #16211D;
+  --ink-soft: #43544D;
+  --ink-muted: #64756D;
+  --teal: #0D6B5C;
+  --teal-deep: #0A5347;
+  --teal-bright: #12876F;
+  --wash: #E9F3F0;
+  --wash-border: rgba(13,107,92,0.20);
+  --border: rgba(22,33,29,0.10);
+  --card-bg: #F6FAF8;
 }
 
 body {
@@ -29,6 +39,16 @@ body {
   color: var(--ink);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+::selection { background: var(--wash); color: var(--teal-deep); }
+a:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+.mono {
+  font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace;
+  letter-spacing: 0.01em;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.001ms !important; animation: none !important; }
 }
 
 /* ── Nav ── */
@@ -37,7 +57,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 28px 48px;
-  max-width: 1100px;
+  max-width: 1060px;
   margin: 0 auto;
 }
 @media (max-width: 600px) { nav { padding: 20px 24px; } }
@@ -50,6 +70,7 @@ nav {
   color: var(--ink-muted);
   text-decoration: none;
 }
+.nav-wordmark:hover { color: var(--teal); }
 
 .nav-back {
   display: flex;
@@ -61,301 +82,224 @@ nav {
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-back:hover { color: var(--ink); }
+.nav-back:hover { color: var(--teal); }
 
 /* ── Hero ── */
 .hero {
-  max-width: 640px;
+  max-width: 1060px;
   margin: 0 auto;
-  padding: 64px 32px 80px;
-  text-align: center;
+  padding: 56px 48px 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; padding: 40px 24px 56px; gap: 36px; }
 }
 
 .hero-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 22px;
-  margin: 0 auto 36px;
+  width: 56px;
+  height: 56px;
+  border-radius: 15px;
+  margin-bottom: 26px;
   overflow: hidden;
-  box-shadow: 0 8px 28px rgba(37,99,212,0.15);
+  box-shadow: 0 6px 20px rgba(13,107,92,0.18);
 }
-.hero-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+.hero-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  gap: 8px;
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--green);
-  background: var(--green-light);
-  padding: 5px 15px;
+  color: var(--teal-deep);
+  background: var(--wash);
+  border: 1px solid var(--wash-border);
+  padding: 6px 14px;
   border-radius: 999px;
-  margin-bottom: 28px;
-}
-.hero-eyebrow-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-  opacity: 0.6;
+  margin-bottom: 24px;
 }
 
 .hero-title {
-  font-size: clamp(36px, 6vw, 58px);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.025em;
-  margin-bottom: 24px;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(38px, 5.4vw, 58px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
   color: var(--ink);
+  max-width: 14ch;
 }
 .hero-title em {
   font-style: italic;
-  font-weight: 200;
-  color: var(--blue);
+  font-weight: 450;
+  color: var(--teal);
 }
 
 .hero-sub {
-  font-size: 17px;
+  font-size: 16.5px;
   font-weight: 300;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--ink-soft);
-  max-width: 460px;
-  margin: 0 auto 44px;
+  max-width: 48ch;
+  margin-bottom: 36px;
 }
+.hero-sub strong { font-weight: 500; color: var(--ink); }
 
 .hero-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, var(--blue), var(--green));
+  background: var(--teal);
   color: white;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-  padding: 16px 34px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 15px 30px;
   border-radius: 999px;
-  box-shadow: 0 8px 24px rgba(37,99,212,0.25);
-  transition: box-shadow 0.2s, transform 0.15s;
+  box-shadow: 0 8px 24px rgba(13,107,92,0.28);
+  transition: box-shadow 0.2s, transform 0.15s, background 0.2s;
 }
 .hero-cta:hover {
-  box-shadow: 0 12px 32px rgba(37,99,212,0.35);
+  background: var(--teal-deep);
+  box-shadow: 0 12px 32px rgba(13,107,92,0.36);
   transform: translateY(-1px);
 }
-
-/* ── How it works ── */
-.how {
-  max-width: 860px;
-  margin: 0 auto 96px;
-  padding: 0 32px;
+.hero-note {
+  margin-top: 16px;
+  font-size: 12.5px;
+  color: var(--ink-muted);
 }
 
-.section-label {
-  text-align: center;
+/* pledge vignette */
+.pledge {
+  background: #fff;
+  border: 1px solid var(--wash-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 1px 0 rgba(13,107,92,0.08), 0 24px 48px -30px rgba(10,83,71,0.4);
+}
+.pledge .cap {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
   font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  padding: 18px 24px 12px;
+  border-bottom: 1px solid rgba(13,107,92,0.14);
+  display: flex; justify-content: space-between; gap: 10px;
+}
+.pledge-body { padding: 18px 24px 20px; }
+.pledge-line {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.pledge-line .amt {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 15px;
+  color: var(--teal);
+  font-weight: 500;
+}
+.pledge-sub { font-size: 13.5px; color: var(--ink-soft); font-weight: 300; }
+.pledge-foot {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 13px 24px;
+  background: var(--wash);
+  border-top: 1px solid rgba(13,107,92,0.14);
+}
+.pledge-foot .mark { font-size: 13px; font-weight: 500; color: var(--teal-deep); }
+.pledge-foot .direct {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.vignette-note {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 40px;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 12px;
-}
-
-.step {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 28px 24px;
-  transition: box-shadow 0.2s, transform 0.15s;
-}
-.step:hover {
-  box-shadow: 0 8px 28px rgba(37,99,212,0.08);
-  transform: translateY(-2px);
-}
-
-.step-num {
-  font-size: 11px;
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 0.12em;
-  color: var(--ink-muted);
-  margin-bottom: 16px;
-}
-
-.step-icon {
-  width: 38px; height: 38px;
-  border-radius: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.step-heading {
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 8px;
-  color: var(--ink);
-}
-
-.step-body {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.65;
-  color: var(--ink-muted);
-}
-
-/* ── Closing ── */
-.closing {
-  max-width: 560px;
-  margin: 0 auto 96px;
-  padding: 0 32px;
-  text-align: center;
-}
-
-.closing-text {
-  font-size: 24px;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.5;
-  color: var(--ink-soft);
-}
-
-.closing-sub {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--ink-muted);
-  margin-top: 16px;
-}
-
-/* ── Footer ── */
-footer {
-  border-top: 1px solid var(--border);
-  padding: 28px 48px;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.footer-copy {
-  font-size: 11px;
-  color: var(--ink-muted);
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
-.footer-link {
-  font-size: 11px;
-  color: var(--ink-muted);
-  font-weight: 300;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
-}
-.footer-link:hover { color: var(--ink); }
-
-@media (max-width: 600px) {
-  .hero { padding: 48px 24px 56px; }
-  .how { padding: 0 20px; margin-bottom: 64px; }
-  .closing { padding: 0 24px; margin-bottom: 64px; }
-  footer { padding: 24px; }
-  .steps { grid-template-columns: 1fr; }
+  margin-top: 12px;
 }
 
 /* ── Insight band ── */
 .insight {
   max-width: 760px;
-  margin: 0 auto 64px;
+  margin: 0 auto 56px;
   padding: 0 32px;
 }
-
 .insight-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 40px 44px;
+  border-radius: 20px;
+  padding: 36px 40px;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
 }
 @media (max-width: 640px) {
-  .insight-card { grid-template-columns: 1fr; padding: 28px 24px; gap: 24px; }
+  .insight-card { grid-template-columns: 1fr; padding: 26px 22px; gap: 22px; }
   .insight { padding: 0 20px; }
 }
-
 .insight-label {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
   font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-muted);
+  color: var(--teal);
   margin-bottom: 14px;
 }
-
 .insight-heading {
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 1.35;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 22px;
+  font-weight: 550;
+  line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
-
 .insight-body {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.75;
   color: var(--ink-soft);
 }
-
 .insight-stat {
-  background: #dce8fd;
-  border-radius: 18px;
-  padding: 32px 28px;
-  text-align: center;
-  min-width: 180px;
+  background: var(--wash);
+  border: 1px solid var(--wash-border);
+  border-radius: 14px;
+  padding: 26px 24px;
+  min-width: 200px;
 }
-
 .insight-stat-label {
   font-size: 13px;
   font-weight: 600;
   color: var(--ink);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-.insight-stat-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.insight-stat-links { display: flex; flex-direction: column; gap: 10px; }
 .insight-stat-links a {
   font-size: 13px;
-  font-weight: 300;
-  color: var(--blue);
+  font-weight: 400;
+  color: var(--teal-deep);
   text-decoration: none;
   line-height: 1.4;
-  transition: opacity 0.2s;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+  align-self: start;
 }
-.insight-stat-links a:hover {
-  opacity: 0.7;
-}
+.insight-stat-links a:hover { border-bottom-color: var(--teal); }
 
 /* ── Story card ── */
 .story-wrap {
@@ -364,68 +308,206 @@ footer {
   padding: 0 32px;
 }
 @media (max-width: 600px) { .story-wrap { padding: 0 20px; } }
-
 .story-card {
-  background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
-  border-radius: 24px;
-  padding: 40px 44px;
+  background: linear-gradient(135deg, #14382C 0%, #2d6a4f 100%);
+  border-radius: 20px;
+  padding: 38px 42px;
   color: white;
   position: relative;
   overflow: hidden;
 }
-@media (max-width: 600px) { .story-card { padding: 28px 24px; } }
-
+@media (max-width: 600px) { .story-card { padding: 26px 22px; } }
 .story-card::before {
   content: '\201C';
   position: absolute;
   top: -20px;
   left: 32px;
+  font-family: 'Source Serif 4', Georgia, serif;
   font-size: 160px;
-  font-weight: 200;
   font-style: italic;
   opacity: 0.10;
   line-height: 1;
   pointer-events: none;
 }
-
 .story-label {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
   font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.65);
   margin-bottom: 20px;
 }
-
 .story-text {
-  font-size: 18px;
-  font-weight: 300;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 18.5px;
+  font-weight: 400;
   font-style: italic;
   line-height: 1.7;
-  color: rgba(255,255,255,0.92);
-  margin-bottom: 24px;
+  color: rgba(255,255,255,0.94);
+  margin-bottom: 22px;
   position: relative;
 }
-
 .story-impact {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.22);
   border-radius: 999px;
   padding: 8px 18px;
-  font-size: 13px;
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.92);
+}
+.story-impact-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #74C69D;
+  flex-shrink: 0;
+}
+.story-source {
+  margin-top: 18px;
+  font-size: 12px;
   font-weight: 300;
-  color: rgba(255,255,255,0.80);
+  line-height: 1.7;
+  color: rgba(255,255,255,0.84);
+  position: relative;
+}
+.story-source a { color: rgba(255,255,255,0.95); }
+
+/* ── How it works ── */
+.how {
+  max-width: 760px;
+  margin: 0 auto 80px;
+  padding: 0 32px;
+}
+.section-label {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::after { content: ''; height: 1px; width: 44px; background: var(--wash-border); }
+.how-title {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 550;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+}
+.how-title em { font-style: italic; color: var(--teal); }
+
+.plist { border-top: 1px solid var(--border); }
+.pstep {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+.pstep-num {
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--teal);
+  padding-top: 3px;
+}
+.pstep-heading {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 5px;
+  color: var(--ink);
+}
+.pstep-body {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 56ch;
+}
+.pstep.design {
+  background: var(--wash);
+  border-radius: 14px;
+  border-bottom: 0;
+  padding: 22px 20px;
+  margin-top: 10px;
+  border: 1px solid var(--wash-border);
+}
+.pstep.design .pstep-body b { color: var(--teal-deep); font-weight: 600; }
+.design-tag {
+  display: inline-block;
+  font-family: 'Spline Sans Mono', ui-monospace, monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  background: #fff;
+  border: 1px solid var(--wash-border);
+  padding: 3px 9px;
+  border-radius: 999px;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 
-.story-impact-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #52b788;
-  flex-shrink: 0;
+/* ── Closing ── */
+.closing {
+  max-width: 560px;
+  margin: 0 auto 88px;
+  padding: 0 32px;
+  text-align: center;
+}
+.closing-text {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.closing-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  margin-top: 14px;
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 48px;
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+.footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.footer-link {
+  font-size: 11.5px;
+  color: var(--ink-muted);
+  font-weight: 300;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--teal); }
+
+@media (max-width: 600px) {
+  .how { padding: 0 20px; margin-bottom: 64px; }
+  .closing { padding: 0 24px; margin-bottom: 64px; }
+  footer { padding: 24px; }
+  .pstep { grid-template-columns: 32px minmax(0, 1fr); gap: 12px; }
 }
 </style>
 </head>
@@ -442,15 +524,33 @@ footer {
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-icon">
-    <img src="/assets/logos/Probono.png" alt="ProBono">
+  <div class="hero-copy">
+    <div class="hero-icon">
+      <img src="/assets/logos/Probono.png" alt="ProBono app icon">
+    </div>
+    <div class="hero-eyebrow">A pledge app — not a payment app</div>
+    <h1 class="hero-title">Give <em>one hour</em> of what you earn.</h1>
+    <p class="hero-sub">ProBono is a promise you make to yourself: the value of one working hour — <strong>each week, fortnight or month</strong> — to a cause you choose. It reminds you when the day comes and keeps your record straight. You give directly to the charity; the money never touches the app.</p>
+    <a href="https://apps.apple.com/au/app/probono/id6762084984" class="hero-cta">
+      <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1 9.56c-.02-2.1 1.72-3.11 1.8-3.16-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.67 0-1.68-.75-2.77-.73-1.42.02-2.74.83-3.48 2.1-1.49 2.57-.38 6.38 1.07 8.47.71 1.02 1.55 2.17 2.64 2.13 1.06-.04 1.46-.69 2.74-.69 1.28 0 1.64.69 2.76.67 1.14-.02 1.86-1.04 2.56-2.06.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.22-.85-2.24-3.37z" fill="currentColor"/><path d="M11.02 3.41C11.6 2.71 11.99 1.75 11.88.78c-.83.03-1.84.55-2.44 1.24-.54.61-1.01 1.59-.89 2.54.93.07 1.89-.47 2.47-1.15z" fill="currentColor"/></svg>
+      Download on App Store
+    </a>
+    <p class="hero-note">For iPhone</p>
   </div>
-  <h1 class="hero-title">Did you know your professional skills could have a <em>meaningful impact</em> for charity?</h1>
-  <p class="hero-sub">Volunteer your time doing what you do best. Maximise the impact you can have for your chosen cause by pledging to donate what you earn in one hour per week, fortnight, or month to a good cause.</p>
-  <a href="https://apps.apple.com/au/app/probono/id6762084984" class="hero-cta">
-    <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.1 9.56c-.02-2.1 1.72-3.11 1.8-3.16-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.67 0-1.68-.75-2.77-.73-1.42.02-2.74.83-3.48 2.1-1.49 2.57-.38 6.38 1.07 8.47.71 1.02 1.55 2.17 2.64 2.13 1.06-.04 1.46-.69 2.74-.69 1.28 0 1.64.69 2.76.67 1.14-.02 1.86-1.04 2.56-2.06.81-1.18 1.14-2.33 1.16-2.39-.03-.01-2.22-.85-2.24-3.37z" fill="currentColor"/><path d="M11.02 3.41C11.6 2.71 11.99 1.75 11.88.78c-.83.03-1.84.55-2.44 1.24-.54.61-1.01 1.59-.89 2.54.93.07 1.89-.47 2.47-1.15z" fill="currentColor"/></svg>
-    Download on App Store
-  </a>
+  <div class="hero-vis">
+    <div class="pledge">
+      <div class="cap"><span>Your pledge</span><span>1 hr · monthly</span></div>
+      <div class="pledge-body">
+        <p class="pledge-line">First Friday — set aside <span class="amt">1 hr's pay</span></p>
+        <p class="pledge-sub">A reminder to give this month's hour to the cause you chose.</p>
+      </div>
+      <div class="pledge-foot">
+        <span class="mark">Mark as given ✓</span>
+        <span class="direct">paid direct to the charity</span>
+      </div>
+    </div>
+    <p class="vignette-note">Example reminder — not live data</p>
+  </div>
 </section>
 
 <!-- Why it works -->
@@ -475,73 +575,60 @@ footer {
 <!-- Story -->
 <section class="story-wrap">
   <div class="story-card">
-    <p class="story-label">In practice</p>
-    <p class="story-text">Jenny starts her week by dedicating her first hour on a Monday morning to the Fred Hollows Foundation. By the end of the morning meeting, her single hour's salary has restored sight to three people through cataract surgery — without taking a single day off work.</p>
+    <p class="story-label">In practice — an illustration</p>
+    <p class="story-text">Jenny starts her week by pledging Monday's first hour to an eye-health charity. By the end of her morning meeting, that hour's pay could cover sight-restoring cataract surgery for up to three people — without taking a single day off work.</p>
     <span class="story-impact">
       <span class="story-impact-dot"></span>
-      One hour &nbsp;·&nbsp; Three sight restorations &nbsp;·&nbsp; Zero time off work
+      1 hr &nbsp;·&nbsp; up to 3 surgeries &nbsp;·&nbsp; 0 days off
     </span>
+    <p class="story-source">Jenny is illustrative; the arithmetic isn't. <a href="https://www.hollows.org/latest-news/how-fred-hollows-made-cataract-surgery-affordable/" target="_blank" rel="noopener">The Fred Hollows Foundation reports cataract surgery can cost as little as $25</a> in some countries. ProBono isn't affiliated with any charity — you give to them directly.</p>
   </div>
 </section>
 
 <!-- How it works -->
 <section class="how">
   <p class="section-label">How it works</p>
-  <div class="steps">
+  <h2 class="how-title">Five steps, and the money <em>never touches us</em></h2>
+  <div class="plist">
 
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-icon" style="background: var(--blue-light);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-        </svg>
+    <div class="pstep">
+      <div class="pstep-num">01</div>
+      <div>
+        <div class="pstep-heading">Make a pledge</div>
+        <div class="pstep-body">Decide how often you want to dedicate a working hour to charity — weekly, fortnightly, or monthly.</div>
       </div>
-      <div class="step-heading">Make a pledge</div>
-      <div class="step-body">Decide how often you want to dedicate a working hour to charity — weekly, fortnightly, or monthly.</div>
     </div>
 
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-icon" style="background: var(--green-light);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
+    <div class="pstep">
+      <div class="pstep-num">02</div>
+      <div>
+        <div class="pstep-heading">Choose your charity</div>
+        <div class="pstep-body">Select from recommended high-impact charities, or add your own favourite cause.</div>
       </div>
-      <div class="step-heading">Choose your charity</div>
-      <div class="step-body">Select from our recommended high-impact charities, or add your own favourite cause.</div>
     </div>
 
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-icon" style="background: var(--blue-light);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="10" y2="11"/><line x1="12" y1="11" x2="14" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="10" y2="15"/><line x1="12" y1="15" x2="14" y2="15"/><line x1="16" y1="15" x2="16" y2="15"/>
-        </svg>
+    <div class="pstep">
+      <div class="pstep-num">03</div>
+      <div>
+        <div class="pstep-heading">Set your hourly rate</div>
+        <div class="pstep-body">Use the built-in calculator or estimate your own hourly wage to work out what you'll set aside each cycle.</div>
       </div>
-      <div class="step-heading">Input your hourly rate</div>
-      <div class="step-body">Use the built-in calculator or estimate your own hourly wage to determine how much you'll pledge each cycle.</div>
     </div>
 
-    <div class="step">
-      <div class="step-num">04</div>
-      <div class="step-icon" style="background: var(--green-light);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-        </svg>
+    <div class="pstep">
+      <div class="pstep-num">04</div>
+      <div>
+        <div class="pstep-heading">Work like normal</div>
+        <div class="pstep-body">When your hour arrives you'll be notified. Work even better knowing this hour is for charity.</div>
       </div>
-      <div class="step-heading">Work like normal</div>
-      <div class="step-body">When your hour arrives you'll be notified. Work even better knowing this hour is for charity.</div>
     </div>
 
-    <div class="step">
-      <div class="step-num">05</div>
-      <div class="step-icon" style="background: var(--blue-light);">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-        </svg>
+    <div class="pstep design">
+      <div class="pstep-num">05</div>
+      <div>
+        <div class="pstep-heading">Give — directly <span class="design-tag">by design</span></div>
+        <div class="pstep-body">Make the donation you pledged, straight to the charity. ProBono reminds you and keeps your record — <b>it never handles the money</b>. Your giving stays between you and the cause.</div>
       </div>
-      <div class="step-heading">Donate</div>
-      <div class="step-body">Don't forget to make the donation you pledged. We'll remind you, but this bit is up to you.</div>
     </div>
 
   </div>
@@ -549,15 +636,18 @@ footer {
 
 <!-- Closing -->
 <section class="closing">
-  <p class="closing-text">No pressure. No complexity.<br>Just real impact.</p>
+  <p class="closing-text">No pressure. No complexity.<br>Just a promise, kept.</p>
   <p class="closing-sub">Simple, consistent, and part of your everyday life.</p>
 </section>
 
 <!-- Footer -->
 <footer>
-  <span class="footer-copy">&copy; 2025 Mai Software</span>
-  <a href="https://apps.apple.com/au/app/probono/id6762084984" class="footer-link">App Store</a>
-  <a href="/probono/privacy" class="footer-link">Privacy Policy</a>
+  <span class="footer-copy">&copy; 2026 Mai Software</span>
+  <div class="footer-links">
+    <a href="https://apps.apple.com/au/app/probono/id6762084984" class="footer-link">App Store</a>
+    <a href="/probono/privacy" class="footer-link">Privacy Policy</a>
+    <a href="mailto:support@maisoftware.app" class="footer-link">Support</a>
+  </div>
 </footer>
 
 </body>
