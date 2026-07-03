@@ -16,7 +16,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23160906'/%3E%3Crect x='24' y='24' width='16' height='16' fill='%23D4AB6A' transform='rotate(45 32 32)'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -67,9 +67,8 @@
     mix-blend-mode: overlay;
   }
   h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.025em;
     color: var(--cream);
     line-height: 1.12;
   }
@@ -92,10 +91,8 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 21px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     letter-spacing: -0.02em;
     color: var(--gold);
     text-decoration: none;
@@ -160,23 +157,17 @@
     background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
   }
   h1.hero-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-size: clamp(52px, 8.4vw, 104px);
-    font-weight: 300;
-    letter-spacing: -0.025em;
+    font-size: clamp(42px, 6.6vw, 80px);
+    font-weight: 650;
+    letter-spacing: -0.03em;
     margin-bottom: 30px;
     line-height: 1.04;
     opacity: 0;
     animation: fadeUp 0.9s 0.25s ease-out forwards;
   }
   h1.hero-title em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 400;
+    font-style: normal;
+    color: var(--gold);
   }
   .hero-sub {
     font-size: clamp(15px, 1.4vw, 18.5px);
@@ -295,13 +286,7 @@
     margin-bottom: 18px;
     line-height: 1.08;
   }
-  .section-head h2 em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  .section-head h2 em { font-style: normal; color: var(--gold); }
   .section-head p {
     font-size: 14.5px;
     color: var(--cream-dim);
@@ -321,18 +306,13 @@
     letter-spacing: -0.025em; line-height: 1.08;
     margin: 20px 0 16px;
   }
-  .cellar-copy h2 em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
+  .cellar-copy h2 em { font-style: normal; color: var(--gold); }
   .cellar-copy > p { font-size: 15px; color: var(--cream-dim); line-height: 1.75; max-width: 44ch; }
   .cellar-index { margin-top: 26px; }
   .ci-row { padding: 16px 0; border-top: 0.5px solid var(--hairline); }
   .ci-row:last-child { border-bottom: 0.5px solid var(--hairline); }
   .ci-row h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic; font-size: 20px; font-weight: 500;
+    font-size: 15.5px; font-weight: 600;
     letter-spacing: -0.01em; color: var(--cream); margin-bottom: 4px;
   }
   .ci-row p { font-size: 13.5px; color: var(--cream-dim); line-height: 1.7; }
@@ -352,9 +332,8 @@
     padding: 14px 0; border-bottom: 0.5px solid var(--hairline);
   }
   .cl-row .w {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic; font-size: 19px; font-weight: 500;
-    letter-spacing: -0.01em; color: var(--cream); line-height: 1.25;
+    font-size: 14.5px; font-weight: 500;
+    letter-spacing: -0.01em; color: var(--cream); line-height: 1.3;
   }
   .cl-row .m {
     font-family: 'DM Mono', ui-monospace, Menlo, monospace;
@@ -372,7 +351,7 @@
   .cellar-line p b { color: var(--gold); font-weight: 500; }
   .ledger-note {
     font-family: 'DM Mono', ui-monospace, Menlo, monospace;
-    font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.02em;
     color: var(--gold-dim); margin-top: 12px; line-height: 1.8;
   }
 
@@ -433,11 +412,9 @@
     box-shadow: 0 6px 18px rgba(212, 171, 106, 0.32);
   }
   .plan h3 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-size: 30px;
-    font-weight: 500;
-    letter-spacing: -0.022em;
+    font-size: 21px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
     margin-bottom: 6px;
     color: var(--cream);
   }
@@ -449,9 +426,9 @@
     font-weight: 500;
   }
   .plan .price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 64px;
-    font-weight: 400;
+    font-family: 'DM Mono', ui-monospace, Menlo, monospace;
+    font-size: 44px;
+    font-weight: 500;
     letter-spacing: -0.028em;
     color: var(--cream);
     line-height: 1;
@@ -519,9 +496,8 @@
     gap: 32px;
   }
   .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 700;
     color: var(--gold);
     font-weight: 600;
     letter-spacing: -0.02em;
@@ -630,13 +606,7 @@
     position: relative;
     line-height: 1.08;
   }
-  .spotlight h2 em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+  .spotlight h2 em { font-style: normal; color: var(--gold); }
   .spotlight-lead {
     font-size: 15.5px;
     color: var(--cream-dim);
@@ -684,10 +654,8 @@
     box-shadow: 0 0 10px rgba(212, 171, 106, 0.4);
   }
   .scan-mode h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-style: italic;
-    font-size: 23px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     letter-spacing: -0.015em;
     margin-bottom: 11px;
     color: var(--cream);
@@ -754,11 +722,7 @@
     letter-spacing: -0.025em; line-height: 1.08;
     margin-bottom: 16px; max-width: 18ch;
   }
-  .bar-head h2 em {
-    font-style: italic;
-    background: linear-gradient(135deg, var(--gold-warm) 0%, var(--gold) 60%, var(--gold-dim) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
+  .bar-head h2 em { font-style: normal; color: var(--gold); }
   .bar-head p { font-size: 15px; color: var(--cream-dim); line-height: 1.75; max-width: 600px; }
 
   .bar-grid {
@@ -805,8 +769,7 @@
   }
   .make-row:last-of-type { border-bottom: 0; }
   .make-name {
-    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
-    font-size: 20px; font-weight: 500; color: var(--cream); letter-spacing: -0.01em;
+    font-size: 15.5px; font-weight: 600; color: var(--cream); letter-spacing: -0.01em;
     display: flex; align-items: center; gap: 10px;
   }
   .make-name::before {
@@ -828,8 +791,7 @@
 
   .recipe-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
   .recipe-name {
-    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
-    font-size: 30px; font-weight: 500; color: var(--cream); letter-spacing: -0.02em; line-height: 1.05;
+    font-size: 21px; font-weight: 650; color: var(--cream); letter-spacing: -0.02em; line-height: 1.1;
   }
   .recipe-kind {
     font-family: 'DM Mono', ui-monospace, Menlo, monospace;
@@ -898,8 +860,7 @@
     font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
   }
   .bar-note h4 {
-    font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic;
-    font-size: 21px; font-weight: 500; color: var(--cream); margin-bottom: 8px;
+    font-size: 15.5px; font-weight: 600; color: var(--cream); margin-bottom: 8px;
   }
   .bar-note p { font-size: 13.5px; color: var(--cream-dim); line-height: 1.7; }
 
