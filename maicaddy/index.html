@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaiCaddy — The caddy for everything off the course</title>
+<meta name="description" content="MaiCaddy tracks the wear on your grips, gloves and wedge grooves from how much you actually play — and speaks up only when a club needs a hand. Local-first, no account, no tracking.">
+<link rel="canonical" href="https://maisoftware.app/maicaddy/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoftware.app/maicaddy/">
+<meta property="og:title" content="MaiCaddy — The caddy for everything off the course">
+<meta property="og:description" content="MaiCaddy tracks the wear on your grips, gloves and wedge grooves from how much you actually play — and speaks up only when a club needs a hand.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0B1E14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123020'/%3E%3Cline x1='36' y1='14' x2='36' y2='46' stroke='%23F3F2E7' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M36 14 L20 21 L36 28 Z' fill='%23A7C583'/%3E%3Cellipse cx='32' cy='48' rx='15' ry='4.5' fill='none' stroke='%23A7C583' stroke-width='2.5'/%3E%3Ccircle cx='24' cy='44' r='2.5' fill='%23F3F2E7'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #0B1E14; --ink2: #0F2B1D; --deep: #081810;
+    --panel: #123020; --card: #14351F;
+    --line: rgba(233,238,218,0.14); --line2: rgba(233,238,218,0.07);
+    --sage: #A7C583; --sage2: #8FAE6C; --pale: #CBD9B4;
+    --cream: #F3F2E7; --muted: #98AC88; --faint: #6C8064;
+    --amber: #D9A64E; --red: #D06657;
+    --paper: #EDEAD9; --paper2: #E4E0CB; --paperink: #17301F; --paperfaint: #6F7A5F;
+  }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--ink); font-family: 'DM Sans', system-ui, sans-serif; color: var(--cream); -webkit-font-smoothing: antialiased; }
+  .disp { font-family: 'Libre Caslon Display', Georgia, serif; font-weight: 400; }
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+  a { color: var(--sage); text-decoration: none; }
+  a:hover { color: var(--pale); }
+  .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--sage); }
+  .navlink { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--muted); text-transform: uppercase; }
+  .navlink:hover { color: var(--cream); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans'; font-size: 14px; font-weight: 600; padding: 13px 24px; border-radius: 3px; cursor: pointer; }
+  .btn-p { background: var(--sage); color: #0B1E14; }
+  .btn-p:hover { background: var(--pale); }
+  .btn-s { background: transparent; color: var(--cream); border: 1px solid var(--line); }
+  .btn-s:hover { border-color: var(--sage); color: var(--sage); }
+  .icon-mark { display: block; border-radius: 7px; }
+  @media (max-width: 880px) {
+    .g2 { grid-template-columns: 1fr !important; }
+    .hero-h1 { font-size: 52px !important; }
+    .navlinks-mid { display: none !important; }
+    .grid4 { grid-template-columns: 1fr 1fr !important; }
+    .grid4 > div { border-left: 0 !important; padding-left: 0 !important; padding-right: 16px !important; }
+  }
+  @media (max-width: 560px) {
+    .hero-h1 { font-size: 42px !important; }
+    .grid4 { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<div style="max-width:100%;overflow-x:hidden;">
+
+  <!-- ============ NAV ============ -->
+  <div style="position:sticky;top:0;z-index:50;background:rgba(11,30,20,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line2);">
+    <div style="max-width:1120px;margin:0 auto;height:70px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:11px;">
+        <svg class="icon-mark" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#123020"/><line x1="36" y1="14" x2="36" y2="46" stroke="#F3F2E7" stroke-width="3" stroke-linecap="round"/><path d="M36 14 L20 21 L36 28 Z" fill="#A7C583"/><ellipse cx="32" cy="48" rx="15" ry="4.5" fill="none" stroke="#A7C583" stroke-width="2.5"/><circle cx="24" cy="44" r="2.5" fill="#F3F2E7"/></svg>
+        <span class="disp" style="font-size:22px;letter-spacing:0.01em;color:var(--cream);">MaiCaddy</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:30px;">
+        <a href="#proshop" class="navlink navlinks-mid">Pro shop</a>
+        <a href="#does" class="navlink navlinks-mid">What it does</a>
+        <a href="#setup" class="navlink navlinks-mid">Set-up</a>
+        <a href="#access" class="btn btn-p" style="padding:9px 18px;font-size:13px;">Early access</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div style="max-width:1120px;margin:0 auto;padding:76px 40px 0;">
+    <div class="g2" style="display:grid;grid-template-columns:1.06fr 0.94fr;gap:48px;align-items:center;">
+      <div>
+        <div class="eyebrow" style="margin-bottom:26px;">Golf gear · looked after</div>
+        <h1 class="disp hero-h1" style="font-size:74px;line-height:1.0;letter-spacing:-0.015em;margin-bottom:26px;color:var(--cream);font-weight:400;">The caddy for<br>everything off<br>the course.</h1>
+        <p style="font-size:18px;line-height:1.7;color:var(--muted);font-weight:300;max-width:430px;margin-bottom:34px;">MaiCaddy tracks the wear on your grips, gloves and wedge grooves from how much you actually play — and speaks up only when a club needs a hand.</p>
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:38px;flex-wrap:wrap;">
+          <a href="#access" class="btn btn-p">Join the early access</a>
+          <a href="#does" class="btn btn-s">See what it does</a>
+        </div>
+        <div style="display:flex;gap:0;border-top:1px solid var(--line);padding-top:22px;max-width:460px;">
+          <div style="flex:1;"><div class="disp" style="font-size:26px;color:var(--cream);">3</div><div class="mono" style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-top:4px;">questions to<br>set up</div></div>
+          <div style="width:1px;background:var(--line);"></div>
+          <div style="flex:1;padding-left:22px;"><div class="disp" style="font-size:26px;color:var(--cream);">0</div><div class="mono" style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-top:4px;">ongoing<br>input</div></div>
+          <div style="width:1px;background:var(--line);"></div>
+          <div style="flex:1;padding-left:22px;"><div class="disp" style="font-size:26px;color:var(--cream);">100%</div><div class="mono" style="font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--faint);margin-top:4px;">on your<br>phone</div></div>
+        </div>
+      </div>
+
+      <!-- phone with my-bag screen -->
+      <div style="display:flex;justify-content:center;">
+        <div style="width:300px;background:#050F0A;border-radius:40px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.06);" role="img" aria-label="MaiCaddy — My bag screen">
+          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;padding:24px 20px 26px;">
+            <div class="mono" style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;">MY BAG · 14 CLUBS + 3 ITEMS</div>
+            <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
+              <span class="disp" style="font-size:26px;color:var(--cream);">The bag</span>
+              <span class="mono" style="font-size:11px;color:var(--sage);">$3,480</span>
+            </div>
+            <div class="mono" style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--faint);padding-bottom:12px;border-bottom:1px solid var(--line);">INSURED VALUE · UP TO DATE</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line2);">
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--cream);">Driver</div><div class="mono" style="font-size:9.5px;color:var(--faint);margin-top:2px;">GRIP 22% WORN</div></div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line2);">
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--cream);">7 iron</div><div class="mono" style="font-size:9.5px;color:var(--faint);margin-top:2px;">GRIP 82% · REGRIP DUE</div></div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line2);">
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--cream);">56° wedge</div><div class="mono" style="font-size:9.5px;color:var(--faint);margin-top:2px;">GROOVES LOSING BITE</div></div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;border-bottom:1px solid var(--line2);">
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--cream);">Glove</div><div class="mono" style="font-size:9.5px;color:var(--faint);margin-top:2px;">STRETCHED · REPLACE SOON</div></div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;"></span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 0;">
+              <div><div style="font-size:13.5px;font-weight:500;color:var(--cream);">Putter</div><div class="mono" style="font-size:9.5px;color:var(--faint);margin-top:2px;">ALL GOOD</div></div>
+              <span style="width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0;"></span>
+            </div>
+            <div style="margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px 14px;">
+              <div class="mono" style="font-size:9px;letter-spacing:0.16em;color:var(--sage);margin-bottom:4px;">NEXT UP</div>
+              <div style="font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5;">Regrip the 7-iron before the weekend round.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PRO SHOP ============ -->
+  <div id="proshop" style="max-width:1120px;margin:0 auto;padding:110px 40px 20px;">
+    <div class="g2" style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:center;">
+      <!-- phone with pro shop screen -->
+      <div style="display:flex;justify-content:center;">
+        <div style="width:300px;background:#050F0A;border-radius:40px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.06);" role="img" aria-label="MaiCaddy — Pro Shop screen">
+          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;padding:24px 20px 26px;">
+            <div class="mono" style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;">THE PRO SHOP</div>
+            <div class="disp" style="font-size:26px;color:var(--cream);margin-bottom:16px;">Needs a hand</div>
+            <div style="background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                <span style="font-size:13.5px;font-weight:500;color:var(--cream);">7 iron — regrip</span>
+                <span class="mono" style="font-size:9px;color:var(--amber);">DUE</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.55;margin-bottom:10px;">The grip has done roughly 40 rounds. A fresh one restores tack and confidence.</div>
+              <div class="mono" style="display:inline-block;font-size:9.5px;letter-spacing:0.1em;color:#0B1E14;background:var(--sage);border-radius:3px;padding:6px 10px;">FIND A PRO NEAR ME</div>
+            </div>
+            <div style="background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                <span style="font-size:13.5px;font-weight:500;color:var(--cream);">56° wedge — clean grooves</span>
+                <span class="mono" style="font-size:9px;color:var(--sage);">GUIDE</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.55;">A two-minute clean brings spin back. Step-by-step guide inside.</div>
+            </div>
+            <div style="background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+                <span style="font-size:13.5px;font-weight:500;color:var(--cream);">Glove — order a spare</span>
+                <span class="mono" style="font-size:9px;color:var(--red);">SOON</span>
+              </div>
+              <div style="font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.55;">Stretched past its best. About six rounds left in it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="mono" style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin-bottom:16px;">01 — THE PRO SHOP</div>
+        <h2 class="disp" style="font-size:44px;line-height:1.05;letter-spacing:-0.01em;margin-bottom:20px;font-weight:400;">A pro shop<br>in your pocket.</h2>
+        <p style="font-size:16px;line-height:1.7;color:var(--muted);font-weight:300;max-width:440px;margin-bottom:34px;">When something in your bag does need a hand, the Pro Shop tab knows what kind — and points you to the right care, not a storefront.</p>
+        <div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline;">
+            <span class="mono" style="font-size:11px;letter-spacing:0.1em;color:var(--sage);flex-shrink:0;width:44px;">CLN</span>
+            <div><h3 style="font-size:18px;font-weight:500;margin-bottom:5px;">Club cleaning</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Products and how-to guides for grooves, grips and faces.</p></div>
+          </div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline;">
+            <span class="mono" style="font-size:11px;letter-spacing:0.1em;color:var(--sage);flex-shrink:0;width:44px;">FIT</span>
+            <div><h3 style="font-size:18px;font-weight:500;margin-bottom:5px;">Club fitting</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Find a fitter near you when a club has never quite felt right.</p></div>
+          </div>
+          <div style="display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:baseline;">
+            <span class="mono" style="font-size:11px;letter-spacing:0.1em;color:var(--sage);flex-shrink:0;width:44px;">RPR</span>
+            <div><h3 style="font-size:18px;font-weight:500;margin-bottom:5px;">Club repair</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Shafts, hosels, grooves and loft/lie — sorted before they cost you shots.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHAT IT DOES ============ -->
+  <div id="does" style="max-width:1120px;margin:0 auto;padding:100px 40px 20px;">
+    <div class="mono" style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin-bottom:16px;">02 — WHAT IT DOES</div>
+    <h2 class="disp" style="font-size:44px;line-height:1.05;letter-spacing:-0.01em;max-width:640px;margin-bottom:52px;font-weight:400;">Five quiet jobs, running in the background of your golf.</h2>
+
+    <div>
+      <!-- row -->
+      <div class="g2" style="display:grid;grid-template-columns:56px 1fr 1.15fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline;">
+        <span class="disp" style="font-size:22px;color:var(--sage);">01</span>
+        <h3 style="font-size:21px;font-weight:500;color:var(--cream);">Reads your whole bag</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;">Clubs, glove, shoes and rangefinder in one top-down view — each with its own record, value and a live status dot.</p>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:56px 1fr 1.15fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline;">
+        <span class="disp" style="font-size:22px;color:var(--sage);">02</span>
+        <h3 style="font-size:21px;font-weight:500;color:var(--cream);">Estimates the wear for you</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;">Grips soften, gloves stretch, wedge grooves lose their bite. Rounds and range buckets both count — MaiCaddy does the counting.</p>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:56px 1fr 1.15fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline;">
+        <span class="disp" style="font-size:22px;color:var(--sage);">03</span>
+        <h3 style="font-size:21px;font-weight:500;color:var(--cream);">Nudges you sparingly</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;">A handful of reminders a year, only when a regrip or a fresh glove is genuinely due. Never a daily nag.</p>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:56px 1fr 1.15fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline;">
+        <span class="disp" style="font-size:22px;color:var(--sage);">04</span>
+        <h3 style="font-size:21px;font-weight:500;color:var(--cream);">Values it for insurance</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;">A running total of what your gear is worth, plus a plain-text record you can hand to your insurer in a tap.</p>
+      </div>
+      <div class="g2" style="display:grid;grid-template-columns:56px 1fr 1.15fr;gap:28px;padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:baseline;">
+        <span class="disp" style="font-size:22px;color:var(--sage);">05</span>
+        <h3 style="font-size:21px;font-weight:500;color:var(--cream);">Finds the right care</h3>
+        <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;">Replacement, cleaning, repairs, fitting and regripping — the care each club typically needs, surfaced when it needs it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SET-UP ============ -->
+  <div id="setup" style="background:var(--deep);border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);margin-top:100px;">
+    <div style="max-width:1120px;margin:0 auto;padding:90px 40px;">
+      <div class="g2" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px;align-items:start;">
+        <div>
+          <div class="mono" style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin-bottom:16px;">03 — SET-UP</div>
+          <h2 class="disp" style="font-size:42px;line-height:1.05;letter-spacing:-0.01em;margin-bottom:20px;font-weight:400;">Three questions.<br>Then nothing.</h2>
+          <p style="font-size:15px;line-height:1.7;color:var(--muted);font-weight:300;max-width:320px;">Answer them once and MaiCaddy works from day one — with zero ongoing input. Adjust anytime in Settings, or leave it be.</p>
+        </div>
+        <div>
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line);align-items:baseline;">
+            <span class="disp" style="font-size:34px;color:var(--sage);flex-shrink:0;width:44px;">1</span>
+            <div><h3 style="font-size:19px;font-weight:500;margin-bottom:6px;">How often do you play?</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">A few times a year, or most days — a rough answer is plenty.</p></div>
+          </div>
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line);align-items:baseline;">
+            <span class="disp" style="font-size:34px;color:var(--sage);flex-shrink:0;width:44px;">2</span>
+            <div><h3 style="font-size:19px;font-weight:500;margin-bottom:6px;">How much do you practise?</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Range balls wear grips, gloves and wedges too — so they count.</p></div>
+          </div>
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:baseline;">
+            <span class="disp" style="font-size:34px;color:var(--sage);flex-shrink:0;width:44px;">3</span>
+            <div><h3 style="font-size:19px;font-weight:500;margin-bottom:6px;">What's your game?</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">All-round, short-game grinder or driver-heavy — it biases what wears first.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <div style="max-width:1120px;margin:0 auto;padding:90px 40px 20px;">
+    <div class="mono" style="font-size:11px;letter-spacing:0.2em;color:var(--faint);margin-bottom:16px;">04 — WHO IT'S FOR</div>
+    <h2 class="disp" style="font-size:42px;line-height:1.05;letter-spacing:-0.01em;margin-bottom:44px;font-weight:400;">However you play the game.</h2>
+    <div class="grid4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+      <div style="padding:24px 22px 24px 0;border-top:1px solid var(--line);"><h3 style="font-size:17px;font-weight:500;margin-bottom:9px;">Weekend golfers</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Fresh grips and gloves without ever keeping a mental list.</p></div>
+      <div style="padding:24px 22px;border-top:1px solid var(--line);border-left:1px solid var(--line);"><h3 style="font-size:17px;font-weight:500;margin-bottom:9px;">Range grinders</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Every bucket counts toward wear — MaiCaddy tallies them all.</p></div>
+      <div style="padding:24px 22px;border-top:1px solid var(--line);border-left:1px solid var(--line);"><h3 style="font-size:17px;font-weight:500;margin-bottom:9px;">Gear collectors</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">A tidy, valued inventory — a ready-made insurance record.</p></div>
+      <div style="padding:24px 0 24px 22px;border-top:1px solid var(--line);border-left:1px solid var(--line);"><h3 style="font-size:17px;font-weight:500;margin-bottom:9px;">New to the game</h3><p style="font-size:14px;color:var(--muted);font-weight:300;line-height:1.6;">Just built your first bag? Start it off right, and learn what each club needs.</p></div>
+    </div>
+  </div>
+
+  <!-- ============ CTA ============ -->
+  <div id="access" style="max-width:1120px;margin:0 auto;padding:110px 40px 100px;">
+    <div class="g2" style="border:1px solid var(--line);border-radius:8px;padding:70px 48px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px;align-items:center;background:var(--ink2);">
+      <div>
+        <div class="mono" style="font-size:11px;letter-spacing:0.2em;color:var(--sage);margin-bottom:18px;">NOW IN EARLY ACCESS · TESTFLIGHT · iOS</div>
+        <h2 class="disp" style="font-size:48px;line-height:1.02;letter-spacing:-0.015em;margin-bottom:16px;font-weight:400;">Stop keeping a mental list. Let your caddy carry it.</h2>
+        <p style="font-size:15px;color:var(--muted);font-weight:300;">Free during early access. No account, no sign-up — your bag stays on your phone.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+        <a href="mailto:support@maisoftware.app?subject=MaiCaddy%20early%20access" class="btn btn-p" style="padding:15px 28px;font-size:15px;width:100%;justify-content:center;">Join the TestFlight</a>
+        <a href="#does" class="btn btn-s" style="padding:15px 28px;font-size:15px;width:100%;justify-content:center;">Take the 40-second tour</a>
+        <span class="mono" style="font-size:11px;color:var(--faint);margin-top:6px;letter-spacing:0.06em;">WORKS OFFLINE · LOCAL-FIRST · NO TRACKING</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div style="border-top:1px solid var(--line2);">
+    <div style="max-width:1120px;margin:0 auto;padding:38px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg class="icon-mark" width="24" height="24" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:6px;"><rect width="64" height="64" rx="14" fill="#123020"/><line x1="36" y1="14" x2="36" y2="46" stroke="#F3F2E7" stroke-width="3" stroke-linecap="round"/><path d="M36 14 L20 21 L36 28 Z" fill="#A7C583"/><ellipse cx="32" cy="48" rx="15" ry="4.5" fill="none" stroke="#A7C583" stroke-width="2.5"/><circle cx="24" cy="44" r="2.5" fill="#F3F2E7"/></svg>
+        <span class="disp" style="font-size:18px;color:var(--pale);">MaiCaddy</span>
+        <a href="/" class="mono" style="font-size:11px;color:var(--faint);letter-spacing:0.08em;margin-left:8px;">A MAI SOFTWARE PRODUCT</a>
+      </div>
+      <div style="display:flex;gap:26px;align-items:baseline;flex-wrap:wrap;">
+        <a href="#does" class="navlink">Features</a>
+        <a href="mailto:support@maisoftware.app" class="navlink">Support</a>
+        <a href="/maicaddy/privacy/" class="navlink">Privacy</a>
+        <span class="mono" style="font-size:12px;color:var(--faint);letter-spacing:0.06em;">© 2026</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
