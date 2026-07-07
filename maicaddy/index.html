@@ -13,9 +13,9 @@
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#0B1E14">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123020'/%3E%3Cline x1='36' y1='14' x2='36' y2='46' stroke='%23F3F2E7' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M36 14 L20 21 L36 28 Z' fill='%23A7C583'/%3E%3Cellipse cx='32' cy='48' rx='15' ry='4.5' fill='none' stroke='%23A7C583' stroke-width='2.5'/%3E%3Ccircle cx='24' cy='44' r='2.5' fill='%23F3F2E7'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/LibreCaslonDisplay-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/DMSans-normal-300-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -63,6 +63,7 @@
   <div style="position:sticky;top:0;z-index:50;background:rgba(11,30,20,0.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line2);">
     <div style="max-width:1120px;margin:0 auto;height:70px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;">
       <div style="display:flex;align-items:center;gap:11px;">
+        <img src="/maicaddy/assets/icon.png" alt="" style="display:none;width:30px;height:30px;border-radius:7px;" onload="this.style.display='block';this.nextElementSibling.style.display='none'">
         <svg class="icon-mark" width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#123020"/><line x1="36" y1="14" x2="36" y2="46" stroke="#F3F2E7" stroke-width="3" stroke-linecap="round"/><path d="M36 14 L20 21 L36 28 Z" fill="#A7C583"/><ellipse cx="32" cy="48" rx="15" ry="4.5" fill="none" stroke="#A7C583" stroke-width="2.5"/><circle cx="24" cy="44" r="2.5" fill="#F3F2E7"/></svg>
         <span class="disp" style="font-size:22px;letter-spacing:0.01em;color:var(--cream);">MaiCaddy</span>
       </div>
@@ -98,7 +99,9 @@
       <!-- phone with my-bag screen -->
       <div style="display:flex;justify-content:center;">
         <div style="width:300px;background:#050F0A;border-radius:40px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.06);" role="img" aria-label="MaiCaddy — My bag screen">
-          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;padding:24px 20px 26px;">
+          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;">
+            <img src="/maicaddy/assets/mybag.png" alt="" style="display:none;width:100%;height:auto;" onload="this.style.display='block';this.nextElementSibling.style.display='none'">
+            <div style="padding:24px 20px 26px;">
             <div class="mono" style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;">MY BAG · 14 CLUBS + 3 ITEMS</div>
             <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;">
               <span class="disp" style="font-size:26px;color:var(--cream);">The bag</span>
@@ -129,6 +132,7 @@
               <div class="mono" style="font-size:9px;letter-spacing:0.16em;color:var(--sage);margin-bottom:4px;">NEXT UP</div>
               <div style="font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.5;">Regrip the 7-iron before the weekend round.</div>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -141,7 +145,9 @@
       <!-- phone with pro shop screen -->
       <div style="display:flex;justify-content:center;">
         <div style="width:300px;background:#050F0A;border-radius:40px;padding:11px;box-shadow:0 30px 70px rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.06);" role="img" aria-label="MaiCaddy — Pro Shop screen">
-          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;padding:24px 20px 26px;">
+          <div style="background:var(--ink2);border-radius:30px;overflow:hidden;">
+            <img src="/maicaddy/assets/proshop.png" alt="" style="display:none;width:100%;height:auto;" onload="this.style.display='block';this.nextElementSibling.style.display='none'">
+            <div style="padding:24px 20px 26px;">
             <div class="mono" style="font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--faint);margin-bottom:6px;">THE PRO SHOP</div>
             <div class="disp" style="font-size:26px;color:var(--cream);margin-bottom:16px;">Needs a hand</div>
             <div style="background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;margin-bottom:12px;">
@@ -165,6 +171,7 @@
                 <span class="mono" style="font-size:9px;color:var(--red);">SOON</span>
               </div>
               <div style="font-size:11.5px;color:var(--muted);font-weight:300;line-height:1.55;">Stretched past its best. About six rounds left in it.</div>
+            </div>
             </div>
           </div>
         </div>
@@ -285,6 +292,7 @@
   <div style="border-top:1px solid var(--line2);">
     <div style="max-width:1120px;margin:0 auto;padding:38px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
       <div style="display:flex;align-items:center;gap:10px;">
+        <img src="/maicaddy/assets/icon.png" alt="" style="display:none;width:24px;height:24px;border-radius:6px;" onload="this.style.display='block';this.nextElementSibling.style.display='none'">
         <svg class="icon-mark" width="24" height="24" viewBox="0 0 64 64" aria-hidden="true" style="border-radius:6px;"><rect width="64" height="64" rx="14" fill="#123020"/><line x1="36" y1="14" x2="36" y2="46" stroke="#F3F2E7" stroke-width="3" stroke-linecap="round"/><path d="M36 14 L20 21 L36 28 Z" fill="#A7C583"/><ellipse cx="32" cy="48" rx="15" ry="4.5" fill="none" stroke="#A7C583" stroke-width="2.5"/><circle cx="24" cy="44" r="2.5" fill="#F3F2E7"/></svg>
         <span class="disp" style="font-size:18px;color:var(--pale);">MaiCaddy</span>
         <a href="/" class="mono" style="font-size:11px;color:var(--faint);letter-spacing:0.08em;margin-left:8px;">A MAI SOFTWARE PRODUCT</a>
