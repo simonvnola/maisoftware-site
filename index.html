@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mai Software — Maicasa, MaiCellar &amp; ProBono</title>
-<meta name="description" content="An independent Australian studio making three iPhone apps that keep good records: Maicasa for the home, MaiCellar for the cellar and bar, ProBono for the giving you've promised yourself.">
+<title>Mai Software — Maicasa, MaiCellar, ProBono &amp; MaiCaddy</title>
+<meta name="description" content="An independent Australian studio making four iPhone apps that keep good records: Maicasa for the home, MaiCellar for the cellar and bar, ProBono for the giving you've promised yourself, MaiCaddy for the golf bag.">
 <link rel="canonical" href="https://maisoftware.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maisoftware.app/">
-<meta property="og:title" content="Mai Software — Maicasa, MaiCellar &amp; ProBono">
-<meta property="og:description" content="An independent Australian studio making three iPhone apps that keep good records: the home, the cellar and bar, and the giving you've promised yourself.">
+<meta property="og:title" content="Mai Software — Maicasa, MaiCellar, ProBono &amp; MaiCaddy">
+<meta property="og:description" content="An independent Australian studio making four iPhone apps that keep good records: the home, the cellar and bar, the giving you've promised yourself, and the golf bag.">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#5638A8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235638A8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='36' fill='%23FAF9F6' text-anchor='middle'%3Em%3C/text%3E%3C/svg%3E">
@@ -40,6 +40,9 @@
     --gold:       #D4AB6A;
     --gold-dim:   #97783F;
     --cream:      #F4E7C4;
+    --fern:       #3E6B33;
+    --fern-deep:  #2E5226;
+    --fern-wash:  #EBF2E6;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   body {
@@ -234,8 +237,10 @@
   .entry.casa .no, .entry.casa .entry-links a:first-child, .entry.casa h2 em { color: var(--clay); }
   .entry.cellar .no, .entry.cellar .entry-links a:first-child, .entry.cellar h2 em { color: var(--gold-dim); }
   .entry.bono .no, .entry.bono .entry-links a:first-child, .entry.bono h2 em { color: var(--teal); }
+  .entry.caddy .no, .entry.caddy .entry-links a:first-child, .entry.caddy h2 em { color: var(--fern); }
   .entry.casa .entry-links a:first-child:hover { color: var(--clay-deep); }
   .entry.bono .entry-links a:first-child:hover { color: var(--teal-deep); }
+  .entry.caddy .entry-links a:first-child:hover { color: var(--fern-deep); }
 
   .vignette-note {
     font-family: 'Spline Sans Mono', ui-monospace, monospace;
@@ -389,6 +394,45 @@
     color: var(--teal);
   }
 
+  /* vignette: caddy bag check */
+  .bagcheck {
+    background: var(--card);
+    border: 1px solid rgba(62, 107, 51, 0.28);
+    border-radius: 14px;
+    padding: 22px 24px 8px;
+    box-shadow: 0 1px 0 rgba(62, 107, 51, 0.08), 0 20px 44px -30px rgba(46, 82, 38, 0.35);
+  }
+  .bagcheck .cap {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fern);
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(62, 107, 51, 0.18);
+    display: flex; justify-content: space-between; gap: 10px;
+  }
+  .gear {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 6px 18px;
+    align-items: baseline;
+    padding: 13px 0;
+    border-bottom: 1px dashed rgba(62, 107, 51, 0.18);
+    font-size: 14.5px;
+  }
+  .gear:last-of-type { border-bottom: 0; }
+  .gear .t { color: var(--ink); }
+  .gear .st, .gear .when {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 12.5px;
+    color: var(--fern-deep);
+    white-space: nowrap;
+  }
+  .gear .when { color: var(--ink-faint); }
+  .gear.done .t { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: rgba(62, 107, 51, 0.4); }
+  .gear.done .st { color: var(--ink-faint); }
+
   /* STUDIO NOTE */
   .studio {
     border-top: 1px solid var(--rule);
@@ -475,6 +519,7 @@
     <a href="/maicasa/">Maicasa</a>
     <a href="/maicellar/">MaiCellar</a>
     <a href="/probono/">ProBono</a>
+    <a href="/maicaddy/">MaiCaddy</a>
     <a href="/privacy/">Privacy</a>
   </div>
 </nav>
@@ -483,10 +528,10 @@
   <div>
     <p class="kicker">An independent Australian studio</p>
     <h1>Software for the things you <em>keep</em>.</h1>
-    <p class="hero-sub">Mai Software makes three iPhone apps, and each one is a careful record-keeper: <strong>the house</strong> and its upkeep, <strong>the cellar</strong> and the bar beside it, and <strong>the giving</strong> you've promised yourself.</p>
+    <p class="hero-sub">Mai Software makes four iPhone apps, and each one is a careful record-keeper: <strong>the house</strong> and its upkeep, <strong>the cellar</strong> and the bar beside it, <strong>the giving</strong> you've promised yourself, and <strong>the golf bag</strong> and its gear.</p>
   </div>
   <aside class="index-card" aria-label="App index">
-    <span class="lbl">The apps — three entries</span>
+    <span class="lbl">The apps — four entries</span>
     <a class="index-row" href="#maicasa">
       <span class="no">01</span>
       <span class="nm">Maicasa</span>
@@ -501,6 +546,11 @@
       <span class="no">03</span>
       <span class="nm">ProBono</span>
       <span class="what">giving</span>
+    </a>
+    <a class="index-row" href="#maicaddy">
+      <span class="no">04</span>
+      <span class="nm">MaiCaddy</span>
+      <span class="what">golf gear</span>
     </a>
   </aside>
 </header>
@@ -599,6 +649,40 @@
     </div>
   </article>
 
+  <article class="entry caddy" id="maicaddy">
+    <div class="entry-vis">
+      <div class="bagcheck">
+        <div class="cap"><span>Bag check — 14 clubs</span><span>wear</span></div>
+        <div class="gear">
+          <span class="t">Regrip the 7-iron — grip at 82%</span>
+          <span class="st">due now</span>
+          <span class="when">this week</span>
+        </div>
+        <div class="gear">
+          <span class="t">Glove stretching — order a spare</span>
+          <span class="st">soon</span>
+          <span class="when">~6 rounds</span>
+        </div>
+        <div class="gear done">
+          <span class="t">Clean the wedge grooves</span>
+          <span class="st">done</span>
+          <span class="when">Sun 5 Jul</span>
+        </div>
+      </div>
+      <p class="vignette-note">Example records — not live data</p>
+    </div>
+    <div class="entry-copy">
+      <p class="no">Entry 04 · MaiCaddy</p>
+      <h2>The golf bag, <em>looked after</em>.</h2>
+      <p>MaiCaddy tracks the wear on your grips, gloves and wedge grooves from how much you actually play — rounds and range buckets both count — and speaks up only when a club genuinely needs a hand.</p>
+      <p>It keeps each club's record and value too, so the whole bag doubles as a ready-made insurance list.</p>
+      <div class="entry-links">
+        <a href="/maicaddy/">Visit MaiCaddy</a>
+        <span class="store">Early access · TestFlight</span>
+      </div>
+    </div>
+  </article>
+
 </main>
 
 <section class="studio">
@@ -615,7 +699,7 @@
   <div class="foot-inner">
     <div class="foot-brand">
       <a class="wordmark" href="/">mai<span class="dot">·</span>software</a>
-      <p>Three record-keepers for iPhone, made in Australia.</p>
+      <p>Four record-keepers for iPhone, made in Australia.</p>
     </div>
     <div class="foot-cols">
       <div class="foot-col">
@@ -623,6 +707,7 @@
         <a href="/maicasa/">Maicasa</a>
         <a href="/maicellar/">MaiCellar</a>
         <a href="/probono/">ProBono</a>
+        <a href="/maicaddy/">MaiCaddy</a>
       </div>
       <div class="foot-col">
         <p class="h">App Store</p>
