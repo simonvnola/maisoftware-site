@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Portal — Maicasa</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --clay: #B85C3D;
+    --clay-light: #C76845;
+    --clay-dark: #8E4429;
+    --clay-soft: rgba(184,92,61,0.12);
+    --clay-border: rgba(184,92,61,0.28);
+    --cream: #FBF7F1;
+    --cream-2: #F4EDE2;
+    --white: #FFFFFF;
+    --ink: #221F1A;
+    --ink-2: #3D3631;
+    --ink-soft: #756B5F;
+    --ink-muted: #9A9080;
+    --line: #ECE3D4;
+    --line-soft: #F4EDE2;
+    --sage: #5C8A4F;
+    --brick: #B83A3A;
+    --shadow-sm: 0 1px 2px rgba(60,40,20,0.04), 0 2px 6px rgba(60,40,20,0.04);
+    --shadow-md: 0 4px 16px rgba(60,40,20,0.06), 0 8px 32px rgba(184,92,61,0.06);
+    --radius-lg: 24px;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--cream); color: var(--ink);
+    -webkit-font-smoothing: antialiased; line-height: 1.55;
+  }
+  a { color: var(--clay); }
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(251,247,241,0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(184,92,61,0.08);
+    height: 64px; display: flex; align-items: center;
+    padding: 0 28px; justify-content: space-between;
+  }
+  .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+  .logo-mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(140deg, var(--clay-light), var(--clay) 55%, var(--clay-dark));
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 14px rgba(184,92,61,0.32), inset 0 1px 0 rgba(255,255,255,0.18);
+  }
+  .logo-word { font-size: 19px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; }
+  .nav-tag { font-size: 13px; color: var(--ink-muted); font-weight: 500; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 28px 18px 70px; }
+  .card {
+    background: var(--white); border: 1px solid var(--line);
+    border-radius: var(--radius-lg); padding: 26px 24px;
+    margin-top: 18px; box-shadow: var(--shadow-sm);
+  }
+  h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 10px; }
+  p { font-size: 14px; color: var(--ink-soft); }
+  .muted { color: var(--ink-muted); font-size: 12.5px; }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 700; border-radius: 999px;
+    padding: 4px 12px; vertical-align: middle; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .badge-active { background: rgba(92,138,79,0.12); color: var(--sage); }
+  .badge-paused { background: rgba(184,58,58,0.10); color: var(--brick); }
+  .badge-pending { background: var(--cream-2); color: var(--ink-muted); }
+  .badge-signed { background: var(--clay-soft); color: var(--clay-dark); }
+  .badge-pro { background: rgba(92,138,79,0.12); color: var(--sage); }
+  .seats-row { display: flex; gap: 10px; margin-top: 14px; }
+  .seat-box {
+    flex: 1; background: var(--cream); border: 1px solid var(--line);
+    border-radius: 14px; padding: 14px 10px; text-align: center;
+  }
+  .seat-num { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  .seat-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); margin-top: 2px; }
+  label {
+    display: block; font-size: 11.5px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.10em; color: var(--ink-muted); margin: 16px 0 7px;
+  }
+  input, textarea {
+    width: 100%; padding: 12px 14px; border: 1px solid var(--line);
+    border-radius: 11px; font-size: 15px; color: var(--ink); background: var(--cream);
+    font-family: inherit; outline: none;
+    transition: border-color 0.18s, box-shadow 0.18s;
+  }
+  input:focus, textarea:focus { border-color: var(--clay); box-shadow: 0 0 0 3px var(--clay-soft); }
+  textarea { resize: vertical; min-height: 88px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; padding: 13px 24px; border-radius: 999px; border: none;
+    background: linear-gradient(135deg, var(--clay-light), var(--clay-dark));
+    color: var(--white); font-size: 14.5px; font-weight: 600; cursor: pointer;
+    font-family: inherit; margin-top: 16px;
+    box-shadow: 0 6px 18px rgba(184,92,61,0.30);
+    transition: transform 0.12s, box-shadow 0.2s;
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(184,92,61,0.38); }
+  .btn:disabled { opacity: 0.55; cursor: default; transform: none; }
+  .btn-ghost {
+    background: var(--cream-2); color: var(--ink-2); box-shadow: none;
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { box-shadow: var(--shadow-sm); }
+  .error { color: var(--brick); font-size: 13px; margin-top: 10px; }
+  .ok { color: var(--sage); font-size: 13px; margin-top: 10px; }
+  .banner { border-radius: 12px; padding: 13px 15px; font-size: 13.5px; margin-top: 18px; }
+  .banner-ok { background: rgba(92,138,79,0.08); border: 1px solid rgba(92,138,79,0.25); color: #43663A; }
+  .banner-warn { background: rgba(184,58,58,0.07); border: 1px solid rgba(184,58,58,0.25); color: #8E2D2D; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); text-align: left; padding: 6px 8px 6px 0; }
+  td { font-size: 14px; padding: 10px 8px 10px 0; border-top: 1px solid var(--line-soft); word-break: break-all; }
+  .invite-box {
+    background: var(--cream); border: 1px dashed var(--clay-border);
+    border-radius: 14px; padding: 15px; font-size: 13.5px; color: var(--ink-2);
+    margin-top: 10px; white-space: pre-wrap;
+  }
+  footer { text-align: center; padding: 26px; font-size: 12.5px; color: var(--ink-muted); }
+  #loading { text-align: center; padding: 70px 20px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/maicasa/partner" class="logo" aria-label="Maicasa partner program">
+    <div class="logo-mark">
+      <svg width="36" height="36" viewBox="0 0 104 104" aria-hidden="true">
+        <rect x="13" y="13" width="78" height="78" rx="15" fill="none" stroke="rgba(251,247,241,0.96)" stroke-width="5"/>
+        <path d="M52 30 L76 50 V72 A2 2 0 0 1 74 74 H60 V58 A2 2 0 0 0 58 56 H46 A2 2 0 0 0 44 58 V74 H30 A2 2 0 0 1 28 72 V50 Z" fill="#FBF7F1"/>
+      </svg>
+    </div>
+    <span class="logo-word">maicasa</span>
+  </a>
+  <span class="nav-tag">Partner Portal</span>
+</nav>
+
+<div class="wrap">
+  <div id="loading"><p class="muted">Loading your portal&hellip;</p></div>
+
+  <div id="invalid" style="display:none" class="card">
+    <h2>Invalid portal link</h2>
+    <p>This link doesn't match a partner account. Check you copied the full URL, or email <a href="mailto:partners@maisoftware.app">partners@maisoftware.app</a> from your signup address to have your link resent.</p>
+    <p style="margin-top:10px"><a href="/maicasa/partner">&larr; Back to the Partner Program</a></p>
+  </div>
+
+  <div id="portal" style="display:none">
+
+    <div class="banner banner-ok" id="paidBanner" style="display:none">
+      Payment received &mdash; thank you! If your seat count below hasn't updated yet, give it a few seconds and refresh.
+    </div>
+    <div class="banner banner-warn" id="pausedBanner" style="display:none">
+      Your account is awaiting payment. Clients you add won't be activated until payment completes &mdash; <a href="#" id="pausedBuyLink">complete payment</a>.
+    </div>
+
+    <!-- Status + seats -->
+    <div class="card">
+      <h2><span id="pName"></span> <span class="badge" id="statusBadge"></span></h2>
+      <p class="muted" id="pMeta"></p>
+      <div class="seats-row">
+        <div class="seat-box"><div class="seat-num" id="seatsPurchased">&ndash;</div><div class="seat-label">Seats bought</div></div>
+        <div class="seat-box"><div class="seat-num" id="seatsUsed">&ndash;</div><div class="seat-label">Assigned</div></div>
+        <div class="seat-box"><div class="seat-num" id="seatsRemaining">&ndash;</div><div class="seat-label">Available</div></div>
+      </div>
+      <button class="btn btn-ghost" id="buyBtn">Buy more seats</button>
+      <p class="error" id="buyError" style="display:none"></p>
+    </div>
+
+    <!-- Add clients -->
+    <div class="card">
+      <h2>Add clients</h2>
+      <p>Paste your clients' email addresses &mdash; one per line (or comma-separated). Each uses one seat. Their 12 months of Pro starts when they sign up, not now.</p>
+      <label for="emails">Client emails</label>
+      <textarea id="emails" placeholder="sam@example.com&#10;alex@example.com"></textarea>
+      <button class="btn" id="addBtn">Add clients</button>
+      <p class="error" id="addError" style="display:none"></p>
+      <p class="ok" id="addOk" style="display:none"></p>
+    </div>
+
+    <!-- Invite template -->
+    <div class="card">
+      <h2>Invite your clients</h2>
+      <p>Copy this into your usual client email or text. The only thing that matters: <strong>they sign up with the email you added above.</strong></p>
+      <div class="invite-box" id="inviteText"></div>
+      <button class="btn btn-ghost" id="copyBtn">Copy invite message</button>
+      <p class="ok" id="copyOk" style="display:none">Copied.</p>
+    </div>
+
+    <!-- Client list -->
+    <div class="card">
+      <h2>Your clients</h2>
+      <p class="muted" id="noClients" style="display:none">No clients added yet.</p>
+      <table id="clientTable" style="display:none">
+        <thead><tr><th>Email</th><th>Status</th></tr></thead>
+        <tbody id="clientRows"></tbody>
+      </table>
+    </div>
+
+    <!-- Branding -->
+    <div class="card">
+      <h2>Your co-branding</h2>
+      <p>Shown on your client's welcome screen: <em>"Brought to you by <span id="brandPreview"></span>"</em>.</p>
+      <label for="bDisplay">Your name</label>
+      <input id="bDisplay" type="text">
+      <label for="bBusiness">Business name</label>
+      <input id="bBusiness" type="text" placeholder="Optional">
+      <label for="bLogo">Logo URL (https, optional)</label>
+      <input id="bLogo" type="url" placeholder="https://&hellip;/logo.png">
+      <button class="btn btn-ghost" id="brandBtn">Save branding</button>
+      <p class="error" id="brandError" style="display:none"></p>
+      <p class="ok" id="brandOk" style="display:none">Saved.</p>
+    </div>
+
+    <div class="card">
+      <h2>Keep this link safe</h2>
+      <p>This page's URL is your key to the portal &mdash; bookmark it. Anyone with the link can manage your client list, so don't post it publicly. Lost it? Email <a href="mailto:partners@maisoftware.app">partners@maisoftware.app</a> from your signup address.</p>
+    </div>
+
+  </div>
+  <footer>Maicasa &middot; Partner support: <a href="mailto:partners@maisoftware.app">partners@maisoftware.app</a></footer>
+</div>
+
+<script>
+(function () {
+  var PORTAL_API = 'https://hxojdpiwwebwywpahgdx.supabase.co/functions/v1/partner-portal';
+  var SIGNUP_API = 'https://hxojdpiwwebwywpahgdx.supabase.co/functions/v1/partner-signup';
+  var qs = new URLSearchParams(location.search);
+  var token = qs.get('token') || '';
+  var state = null;
+
+  function el(id) { return document.getElementById(id); }
+
+  function inviteMessage() {
+    var p = state.partner;
+    var from = p.business_name || p.display_name;
+    return "Hi! As a thank-you, I've set you up with " + p.grant_months + " months of Maicasa Pro — the app that gives you a full maintenance plan, running costs and budget for your home.\n\n" +
+      "1. Download “Maicasa” from the App Store\n" +
+      "2. Create your account using THIS email address (the one I sent this to)\n\n" +
+      "That's it — Pro unlocks automatically, no card needed. Enjoy!\n\n— " + from;
+  }
+
+  function statusLabel(r) {
+    if (r.entitlement_granted) return '<span class="badge badge-pro">Pro active</span>';
+    if (r.status === 'activated') return '<span class="badge badge-signed">Signed up</span>';
+    return '<span class="badge badge-pending">Invited</span>';
+  }
+
+  function render() {
+    var p = state.partner;
+    el('loading').style.display = 'none';
+    el('portal').style.display = 'block';
+    el('pName').textContent = p.business_name || p.display_name;
+    el('pMeta').textContent = p.display_name + (p.business_name ? ' · ' + p.business_name : '') + ' · ' + (p.contact_email || '');
+    var badge = el('statusBadge');
+    if (p.status === 'active') { badge.className = 'badge badge-active'; badge.textContent = 'Active'; }
+    else { badge.className = 'badge badge-paused'; badge.textContent = 'Awaiting payment'; }
+    el('pausedBanner').style.display = p.status === 'active' ? 'none' : 'block';
+    el('seatsPurchased').textContent = p.seats_purchased;
+    el('seatsUsed').textContent = state.seats_used;
+    el('seatsRemaining').textContent = state.seats_remaining;
+    el('inviteText').textContent = inviteMessage();
+    el('brandPreview').textContent = p.display_name + (p.business_name ? ' from ' + p.business_name : '');
+    if (!el('bDisplay').value) el('bDisplay').value = p.display_name;
+    if (!el('bBusiness').value) el('bBusiness').value = p.business_name || '';
+    if (!el('bLogo').value) el('bLogo').value = p.logo_url || '';
+
+    var rows = el('clientRows');
+    rows.innerHTML = '';
+    if (!state.referrals.length) {
+      el('noClients').style.display = 'block';
+      el('clientTable').style.display = 'none';
+    } else {
+      el('noClients').style.display = 'none';
+      el('clientTable').style.display = 'table';
+      state.referrals.forEach(function (r) {
+        var tr = document.createElement('tr');
+        var td1 = document.createElement('td');
+        td1.textContent = r.client_email;
+        var td2 = document.createElement('td');
+        td2.innerHTML = statusLabel(r);
+        tr.appendChild(td1); tr.appendChild(td2);
+        rows.appendChild(tr);
+      });
+    }
+  }
+
+  function load() {
+    fetch(PORTAL_API + '?token=' + encodeURIComponent(token))
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        if (!res.ok) {
+          el('loading').style.display = 'none';
+          el('invalid').style.display = 'block';
+          return;
+        }
+        state = res.body;
+        render();
+      })
+      .catch(function () {
+        el('loading').innerHTML = '<p class="error">Couldn’t load the portal — check your connection and refresh.</p>';
+      });
+  }
+
+  if (!token) {
+    el('loading').style.display = 'none';
+    el('invalid').style.display = 'block';
+  } else {
+    if (qs.get('paid')) el('paidBanner').style.display = 'block';
+    load();
+  }
+
+  el('addBtn').addEventListener('click', function () {
+    var raw = el('emails').value.split(/[\n,;]+/).map(function (s) { return s.trim(); }).filter(Boolean);
+    el('addError').style.display = 'none';
+    el('addOk').style.display = 'none';
+    if (!raw.length) {
+      el('addError').textContent = 'Paste at least one email address.';
+      el('addError').style.display = 'block';
+      return;
+    }
+    el('addBtn').disabled = true;
+    fetch(PORTAL_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: token, action: 'add_clients', emails: raw })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        el('addBtn').disabled = false;
+        if (!res.ok) {
+          el('addError').textContent = res.body.error || 'Something went wrong.';
+          el('addError').style.display = 'block';
+          return;
+        }
+        state = res.body.state;
+        render();
+        el('emails').value = '';
+        var msg = 'Added ' + res.body.added + ' client' + (res.body.added === 1 ? '' : 's') + '.';
+        if (res.body.skipped && res.body.skipped.length) {
+          msg += ' Skipped (already referred): ' + res.body.skipped.join(', ');
+        }
+        el('addOk').textContent = msg;
+        el('addOk').style.display = 'block';
+      })
+      .catch(function () {
+        el('addBtn').disabled = false;
+        el('addError').textContent = 'Network error — please try again.';
+        el('addError').style.display = 'block';
+      });
+  });
+
+  function buySeats() {
+    var n = parseInt(prompt('How many extra client seats?', '10') || '0', 10);
+    if (!n || n < 1) return;
+    el('buyError').style.display = 'none';
+    fetch(SIGNUP_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ portal_token: token, seats: n })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        if (res.ok && res.body.checkout_url) { location.href = res.body.checkout_url; return; }
+        el('buyError').textContent = res.body.error || 'Could not start checkout.';
+        el('buyError').style.display = 'block';
+      })
+      .catch(function () {
+        el('buyError').textContent = 'Network error — please try again.';
+        el('buyError').style.display = 'block';
+      });
+  }
+  el('buyBtn').addEventListener('click', buySeats);
+  el('pausedBuyLink').addEventListener('click', function (e) { e.preventDefault(); buySeats(); });
+
+  el('copyBtn').addEventListener('click', function () {
+    navigator.clipboard.writeText(el('inviteText').textContent).then(function () {
+      el('copyOk').style.display = 'block';
+      setTimeout(function () { el('copyOk').style.display = 'none'; }, 2000);
+    });
+  });
+
+  el('brandBtn').addEventListener('click', function () {
+    el('brandError').style.display = 'none';
+    el('brandOk').style.display = 'none';
+    el('brandBtn').disabled = true;
+    fetch(PORTAL_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        token: token,
+        action: 'update_branding',
+        display_name: el('bDisplay').value,
+        business_name: el('bBusiness').value,
+        logo_url: el('bLogo').value
+      })
+    })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+      .then(function (res) {
+        el('brandBtn').disabled = false;
+        if (!res.ok) {
+          el('brandError').textContent = res.body.error || 'Something went wrong.';
+          el('brandError').style.display = 'block';
+          return;
+        }
+        state = res.body.state;
+        render();
+        el('brandOk').style.display = 'block';
+        setTimeout(function () { el('brandOk').style.display = 'none'; }, 2000);
+      })
+      .catch(function () {
+        el('brandBtn').disabled = false;
+        el('brandError').textContent = 'Network error — please try again.';
+        el('brandError').style.display = 'block';
+      });
+  });
+})();
+</script>
+</body>
+</html>
