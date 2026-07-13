@@ -42,6 +42,10 @@
     --fern:       #3E6B33;
     --fern-deep:  #2E5226;
     --fern-wash:  #EBF2E6;
+    --river:      #0E3A5D;
+    --river-deep: #0A2C46;
+    --buoy:       #FF5A1F;
+    --buoy-deep:  #E64A12;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   body {
@@ -456,6 +460,101 @@
   .studio a { color: var(--iris-deep); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; }
   .studio a:hover { border-bottom-color: var(--iris); }
 
+  /* ON THE WEB — Regatta HQ */
+  .web {
+    border-top: 1px solid var(--rule);
+    background:
+      radial-gradient(ellipse 70% 80% at 12% 0%, rgba(18, 73, 111, 0.55), transparent 60%),
+      linear-gradient(160deg, var(--river) 0%, var(--river-deep) 100%);
+    color: #EAF1F6;
+  }
+  .web-inner {
+    max-width: 1140px; margin: 0 auto;
+    padding: clamp(48px, 7vw, 84px) clamp(20px, 5vw, 56px);
+    display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: clamp(28px, 5vw, 64px); align-items: center;
+  }
+  .web .eyebrow {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--buoy);
+    display: flex; align-items: center; gap: 12px; margin-bottom: 22px;
+  }
+  .web .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--buoy); display: inline-block; }
+  .web h2 {
+    font-size: clamp(28px, 3.6vw, 42px); font-weight: 420; color: #fff; max-width: 15ch; margin-bottom: 16px;
+  }
+  .web h2 em { font-style: normal; color: var(--buoy); }
+  .web p { color: rgba(234, 241, 246, 0.9); max-width: 50ch; margin-bottom: 14px; }
+  .web p strong { color: #fff; font-weight: 600; }
+  .web-links { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 26px; align-items: baseline; }
+  .web-links a.visit {
+    font-size: 14.5px; font-weight: 500; text-decoration: none; color: #fff;
+    padding: 11px 20px; border-radius: 6px; background: var(--buoy);
+  }
+  .web-links a.visit:hover { background: var(--buoy-deep); }
+  .web-links .soon {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(234, 241, 246, 0.65);
+  }
+  /* lane-row vignette — Regatta HQ's signature device */
+  .lanes {
+    border: 1px solid rgba(234, 241, 246, 0.16);
+    border-radius: 14px; overflow: hidden;
+    background: rgba(0, 0, 0, 0.18);
+    box-shadow: 0 24px 48px -30px rgba(8, 24, 40, 0.7);
+  }
+  .lanes .cap {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    padding: 16px 20px 14px; border-bottom: 1px solid rgba(234, 241, 246, 0.12);
+  }
+  .lanes .cap .t {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(234, 241, 246, 0.8);
+  }
+  .lanes .cap .live {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #fff; background: var(--buoy); padding: 4px 10px; border-radius: 999px;
+  }
+  .lanes .cap .live .pulse {
+    width: 6px; height: 6px; border-radius: 50%; background: #fff;
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.7); animation: lanepulse 1.8s infinite;
+  }
+  @keyframes lanepulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
+    70% { box-shadow: 0 0 0 7px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  }
+  .lane {
+    display: grid; grid-template-columns: 30px minmax(0,1fr) auto auto;
+    gap: 5px 14px; align-items: baseline;
+    padding: 12px 20px; border-bottom: 1px solid rgba(234, 241, 246, 0.08);
+  }
+  .lane:last-of-type { border-bottom: 0; }
+  .lane .ln {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 12px; color: rgba(234, 241, 246, 0.5); text-align: center;
+  }
+  .lane .crew { color: #fff; font-size: 15px; }
+  .lane .time {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 13px; color: #EAF1F6; white-space: nowrap;
+  }
+  .lane .pl {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 12px; color: rgba(234, 241, 246, 0.55); white-space: nowrap;
+  }
+  .lane.lead .ln, .lane.lead .pl { color: var(--buoy); }
+  .lane.lead .time { color: #fff; font-weight: 500; }
+  .lanes .foot {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: rgba(234, 241, 246, 0.45); padding: 12px 20px;
+  }
+
   /* FOOTER */
   footer {
     border-top: 1px solid var(--rule);
@@ -498,6 +597,8 @@
     .entry-vis { order: 2; }
     .entry-copy { order: 1; }
     .studio-inner { grid-template-columns: 1fr; }
+    .web-inner { grid-template-columns: 1fr; }
+    .web-vis { order: 2; }
   }
   @media (max-width: 560px) {
     .top-links { display: none; }
@@ -519,6 +620,7 @@
     <a href="/maicellar/">MaiCellar</a>
     <a href="/probono/">ProBono</a>
     <a href="/maicaddy/">MaiCaddy</a>
+    <a href="/regattahq/">Regatta HQ</a>
     <a href="/privacy/">Privacy</a>
   </div>
 </nav>
@@ -694,6 +796,48 @@
   </div>
 </section>
 
+<section class="web" id="regattahq" aria-label="Regatta HQ">
+  <div class="web-inner">
+    <div class="web-copy">
+      <p class="eyebrow">Also from the studio · on the web</p>
+      <h2>Regatta<em>HQ</em> — race day, run properly.</h2>
+      <p>Our first app for the browser rather than the iPhone. <strong>Regatta HQ</strong> is a modern regatta manager for rowing clubs and associations: entries, the programme, the lane draw, results and live results, all in one place.</p>
+      <p>Built on the web so it runs on the phone at the finish line and the laptop in the tower — nothing to install. The app will be hosted right here when it's ready.</p>
+      <div class="web-links">
+        <a class="visit" href="/regattahq/">Visit Regatta HQ →</a>
+        <span class="soon">Launching soon</span>
+      </div>
+    </div>
+    <div class="web-vis">
+      <div class="lanes">
+        <div class="cap">
+          <span class="t">M1× · A Final · 2000m</span>
+          <span class="live"><span class="pulse"></span>Live</span>
+        </div>
+        <div class="lane lead">
+          <span class="ln">4</span>
+          <span class="crew">Riverside RC</span>
+          <span class="time">6:42.1</span>
+          <span class="pl">1st</span>
+        </div>
+        <div class="lane">
+          <span class="ln">3</span>
+          <span class="crew">Torrens RC</span>
+          <span class="time">6:44.8</span>
+          <span class="pl">+2.7</span>
+        </div>
+        <div class="lane">
+          <span class="ln">5</span>
+          <span class="crew">Harbour RC</span>
+          <span class="time">6:47.0</span>
+          <span class="pl">+4.9</span>
+        </div>
+        <div class="foot">Example race — not live data</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">
@@ -707,6 +851,7 @@
         <a href="/maicellar/">MaiCellar</a>
         <a href="/probono/">ProBono</a>
         <a href="/maicaddy/">MaiCaddy</a>
+        <a href="/regattahq/">Regatta HQ</a>
       </div>
       <div class="foot-col">
         <p class="h">App Store</p>
