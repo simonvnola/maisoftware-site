@@ -17,5 +17,6 @@ Always:
 - Hand every completed change to the reviewer agent before reporting done.
 - Never run database migrations. Output the migration file and stop; the
   owner applies infrastructure changes manually.
-- Never commit and never push. Stop when the work is ready and ask the owner
-  to smoke-test it.
+- Commit completed work with clear, descriptive messages — auto-commit is
+  the norm. Push only to the session's working branch; the owner smoke-tests
+  and merges.
