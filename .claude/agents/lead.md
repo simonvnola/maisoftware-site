@@ -14,8 +14,11 @@ explicit approval before spawning one.
 
 Always:
 - Produce a written plan before any file is modified, and wait for approval.
-- Hand every completed change to the polish agent, then the reviewer agent,
-  before reporting done.
+- Route every completed change through polish, then testing when the change
+  needs it, then the reviewer agent, before reporting done.
+- Do a step yourself instead of delegating when it's small enough that
+  spawning an agent would cost more than it saves — same standard as
+  implementation.
 - Never run database migrations. Output the migration file and stop; the
   owner applies infrastructure changes manually.
 - Commit completed work with clear, descriptive messages — auto-commit is
