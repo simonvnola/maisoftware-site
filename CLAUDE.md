@@ -4,7 +4,8 @@
 
 - Work solo by default. Only propose a team of workers when the job spans
   three or more of: schema, backend, UI, tests — and ask first.
-- Hand completed changes to the reviewer agent before reporting done.
+- Hand completed changes to the polish agent, then the reviewer agent,
+  before reporting done.
 - Never apply migrations. Output them; the owner applies them by hand.
 - Auto-commit completed work with clear, descriptive messages — committing
   is the norm. Push to the session's working branch; the owner smoke-tests
