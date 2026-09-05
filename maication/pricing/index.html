@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MaiCation — Pricing</title>
-<meta name="description" content="One plan for the whole household: A$24 a month or A$149 a year. 14 days free, no card to start. Payment by Stripe.">
+<meta name="description" content="One Trip Pass for the whole household: A$59 once, six months, nothing renewing. 14 days free, no card to start. Payment by Stripe.">
 <link rel="canonical" href="https://maisoftware.app/maication/pricing/">
 <meta name="theme-color" content="#265C5A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -34,10 +34,6 @@
   .hero h1 em { font-family: Georgia, 'Times New Roman', serif; font-style: italic; color: var(--teal); }
   .hero p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto; }
 
-  .toggle { display: inline-flex; background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 4px; margin: 28px auto 8px; }
-  .toggle button { font-family: inherit; font-size: 14px; font-weight: 500; padding: 9px 22px; border-radius: 999px; border: 0; background: transparent; color: var(--ink-soft); cursor: pointer; }
-  .toggle button[aria-pressed="true"] { background: var(--teal); color: #fff; }
-  .save { display: block; font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ok-fg); min-height: 20px; }
 
   .plan { background: var(--card); border: 1px solid var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); border-radius: 16px; padding: 32px; max-width: 480px; margin: 16px auto 0; }
   .plan .nm { font-size: 20px; font-weight: 500; }
@@ -82,33 +78,28 @@
 <main class="wrap">
   <section class="hero">
     <span class="mono">Pricing</span>
-    <h1>One plan, the <em>whole household</em>.</h1>
-    <p>Free for the first 14 days, no card needed. Then one subscription covers everyone in the family and every trip, from any browser.</p>
-    <div class="toggle" role="group" aria-label="Billing period">
-      <button type="button" id="btn-monthly" aria-pressed="false" onclick="setBilling('monthly')">Monthly</button>
-      <button type="button" id="btn-annual" aria-pressed="true" onclick="setBilling('annual')">Annual</button>
-    </div>
-    <span class="save" id="save-note">Half the monthly rate</span>
+    <h1>One pass, <em>one trip</em>. Nothing renews.</h1>
+    <p>Free for the first 14 days, no card needed. Then one payment covers everyone in the family for six months of planning and travelling, from any browser.</p>
   </section>
 
   <div class="plan">
-    <div class="nm">MaiCation Family</div>
-    <div class="desc">Everyone in the household, every trip.</div>
-    <div class="price"><span id="price">A$149</span> <small id="period">/ year</small></div>
-    <div class="note" id="note">A$12.42 a month, billed once a year</div>
+    <div class="nm">Trip Pass</div>
+    <div class="desc">Everyone in the household, six months, nothing to cancel.</div>
+    <div class="price">A$59 <small>once</small></div>
+    <div class="note">200 assistant questions for the household, everything else unlimited</div>
     <ul>
       <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The assistant: ask anything, hand it documents and links, approve what it proposes</li>
       <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The email reader: bookings found in your inbox and offered for review</li>
       <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Passport and insurance reading into the encrypted vault</li>
       <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The evening memo: tomorrow's bookings, the weather, holidays, advisories, when to leave</li>
       <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Flight disruption alerts for booked flights</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Trip sharing, the budget, the board and the vault stay yours whether or not you subscribe</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Trip sharing, the budget, the board and the vault stay yours with or without a pass</li>
     </ul>
-    <div class="fair"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Fair use: 120 assistant questions per person a month</div>
-    <a class="btn" id="subscribe" href="https://holiday.maisoftware.app/subscribe?plan=annual">Start free, then A$149 a year</a>
+    <div class="fair"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Another pass adds 200 questions and six more months</div>
+    <a class="btn" href="https://holiday.maisoftware.app/pass">Start free, then A$59 for the trip</a>
   </div>
 
-  <p class="below">Prices in AUD, GST included. Cancel anytime from Set up. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the plan has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
+  <p class="below">Price in AUD, GST included. One payment, nothing renewing. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the pass has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
 
   <section class="compare">
     <h2>What it replaces, and <em>what it doesn't</em></h2>
@@ -123,7 +114,7 @@
         <tr><td>The plan for the grandparents</td><td>Forward everything</td><td class="us">A shared page with the references removed</td></tr>
       </tbody>
     </table>
-    <p class="free">Without a subscription the board, budget, vault, sharing and exports keep working. Only the things that spend on your behalf pause.</p>
+    <p class="free">Without a pass the board, budget, vault, sharing and exports keep working. Only the things that spend on your behalf pause.</p>
   </section>
 </main>
 
@@ -132,24 +123,5 @@
   <p style="margin-top:12px;">&copy; 2026 Mai Software</p>
 </footer>
 
-<script>
-  var APP = "https://holiday.maisoftware.app/subscribe?plan=";
-  var PLANS = {
-    monthly: { price: "A$24", period: "/ month", note: "Billed monthly. Cancel from Set up any time.", cta: "Start free, then A$24 a month", save: "" },
-    annual:  { price: "A$149", period: "/ year", note: "A$12.42 a month, billed once a year", cta: "Start free, then A$149 a year", save: "Half the monthly rate" }
-  };
-  function setBilling(plan) {
-    var p = PLANS[plan];
-    document.getElementById("btn-monthly").setAttribute("aria-pressed", plan === "monthly");
-    document.getElementById("btn-annual").setAttribute("aria-pressed", plan === "annual");
-    document.getElementById("price").textContent = p.price;
-    document.getElementById("period").textContent = p.period;
-    document.getElementById("note").textContent = p.note;
-    document.getElementById("save-note").textContent = p.save;
-    var link = document.getElementById("subscribe");
-    link.textContent = p.cta;
-    link.href = APP + plan;
-  }
-</script>
 </body>
 </html>

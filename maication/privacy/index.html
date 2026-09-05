@@ -56,8 +56,8 @@
     <li><strong>Your household and trips</strong> — the people travelling, the places, the bookings, ideas, budget lines, notes and decisions you enter or approve, and the conversation with the assistant.</li>
     <li><strong>The vault</strong> — passports, visas, insurance and emergency contacts you choose to store, encrypted at rest with AES-256-GCM. Opening it needs a separate passphrase on top of your login; it locks after ten minutes; every access is logged for you to see.</li>
     <li><strong>Mailbox connection</strong> — if you connect a mailbox, the revocable app password you provide, stored encrypted. The scanner lists only sender, subject and date; reads a body only when the envelope already looks travel-related; stores only travel emails; and keeps nothing but an anonymous fingerprint of everything else so it is not looked at twice.</li>
-    <li><strong>Subscription state</strong> — your plan, its status and Stripe's identifiers for your customer and subscription. Never card details.</li>
-    <li><strong>Usage counts</strong> — how many assistant questions each person has asked, to apply the fair-use allowance.</li>
+    <li><strong>Passes</strong> — each Trip Pass you buy: when it runs, how many questions it includes, and Stripe's identifiers for the payment and your customer record. Never card details.</li>
+    <li><strong>Usage counts</strong> — how many assistant questions the household has asked, to count them against the pass.</li>
   </ul>
 
   <h2>Who processes it for us</h2>
@@ -65,7 +65,7 @@
     <li><strong>Supabase</strong> — hosts the database, in Sydney.</li>
     <li><strong>Vercel</strong> — runs the app, with its functions in Sydney.</li>
     <li><strong>Anthropic</strong> — runs the assistant (Claude). It receives the trip you're asking about, the question, and any document or screenshot you hand it. Vault contents are sent only for the one scan you request, and the result is shown to you before anything is saved. We do not use your data to train models, and Anthropic's API terms prohibit them from doing so.</li>
-    <li><strong>Stripe</strong> — takes payment on its own hosted page and manages the subscription. We never see your card.</li>
+    <li><strong>Stripe</strong> — takes payment on its own hosted page and emails the receipt. We never see your card.</li>
     <li><strong>Google Maps Platform</strong> — place search and street-level photos when you search for a hotel or restaurant; it receives the search text and the area, never your name.</li>
     <li><strong>Open-Meteo, Nager.Date, travel-advisory.info</strong> — the forecast, public holidays and travel advice for the evening memo. They receive a place name or country, nothing else.</li>
     <li><strong>OpenStreetMap Nominatim and OSRM</strong> — the "leave by" estimate in the memo. This is the one feature that sends a booking's street address to a third party: two addresses, the bed and the first stop, with no name, reference or date attached. It can be switched off per trip under Settings &amp; tools.</li>
@@ -86,7 +86,7 @@
     <li><strong>Delete a trip</strong> — from Settings &amp; tools; everything on it goes with it.</li>
     <li><strong>Disconnect a mailbox</strong> — from Set up; the stored app password is removed at once, and you can revoke it with your mail provider too.</li>
     <li><strong>Delete your account</strong> — email <a href="mailto:support@maisoftware.app">support@maisoftware.app</a> from the address on the account and we will remove the account, its household and everything in it within 14 days, and confirm when it is done.</li>
-    <li><strong>Cancel the subscription</strong> — from Set up → Your plan, through Stripe's customer portal. You keep access until the end of the period paid for, and everything you planned stays afterwards.</li>
+    <li><strong>Passes</strong> — a pass is one payment; there is nothing to cancel and nothing renews. Refunds: email us within 14 days of buying.</li>
   </ul>
 
   <h2>Cookies</h2>
