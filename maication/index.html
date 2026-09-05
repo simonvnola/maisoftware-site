@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaiCation — Family travel planning, from loose ideas to the day itself</title>
+<meta name="description" content="MaiCation plans a family trip the way families actually plan: a pile of ideas that hardens into bookings. An assistant that proposes and never acts alone, an email reader that finds your bookings, an encrypted vault for the passports, and a memo each evening for the day ahead. On the web, from any device. A$24 a month or A$149 a year, 14 days free.">
+<link rel="canonical" href="https://maisoftware.app/maication/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoftware.app/maication/">
+<meta property="og:title" content="MaiCation — Family travel planning, from loose ideas to the day itself">
+<meta property="og:description" content="An assistant that proposes and never acts alone, an email reader that finds your bookings, an encrypted vault, and a memo each evening for the day ahead. From any browser. 14 days free.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#265C5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/InstrumentSans-normal-400-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper:      #FAF7F2;
+    --card:       #FFFFFF;
+    --ink:        #1E293B;
+    --ink-soft:   #475569;
+    --ink-faint:  #7C8797;
+    --teal:       #265C5A;
+    --teal-2:     #2F6F6D;
+    --teal-deep:  #1E4A48;
+    --teal-wash:  #EEF6F5;
+    --teal-line:  #D5E9E7;
+    --rule:       rgba(30, 74, 72, 0.16);
+    --rule-soft:  rgba(30, 74, 72, 0.09);
+    --night:      #172554;
+    --night-2:    #3557D4;
+    --ok-bg:      #E5F3EC; --ok-fg: #166448;
+    --tent-bg:    #FDF1DF; --tent-fg: #8A5A13;
+    --res-bg:     #E9EEFB; --res-fg: #33518F;
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body {
+    font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  ::selection { background: var(--teal-wash); color: var(--teal-deep); }
+  h1, h2, h3 { font-family: 'Instrument Sans', system-ui, sans-serif; font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; }
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+  .mono { font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding-left: clamp(20px, 5vw, 56px); padding-right: clamp(20px, 5vw, 56px); }
+
+  /* NAV */
+  .top {
+    position: sticky; top: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 16px clamp(20px, 5vw, 56px);
+    background: rgba(250, 247, 242, 0.88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .brand .mk { width: 30px; height: 30px; border-radius: 9px; }
+  .brand .nm { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; color: var(--teal-deep); letter-spacing: -0.01em; }
+  .top-links { display: flex; gap: clamp(14px, 2.5vw, 26px); align-items: center; }
+  .top-links a { font-size: 13.5px; color: var(--ink-soft); text-decoration: none; }
+  .top-links a:hover { color: var(--teal); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 20px; border-radius: 10px; font-size: 14.5px; font-weight: 500; text-decoration: none;
+    border: 1px solid transparent; cursor: pointer; font-family: inherit;
+  }
+  .btn-teal { background: var(--teal); color: #fff; }
+  .btn-teal:hover { background: var(--teal-deep); }
+  .btn-line { border-color: var(--rule); color: var(--teal-deep); background: transparent; }
+  .btn-line:hover { background: var(--teal-wash); }
+  .top-links .btn { padding: 9px 16px; font-size: 13px; color: #fff; }
+
+  /* HERO */
+  .hero { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding-top: clamp(56px, 8vw, 100px); padding-bottom: clamp(40px, 6vw, 72px); }
+  .kicker { color: var(--teal); margin-bottom: 22px; display: flex; align-items: center; gap: 12px; }
+  .kicker::before { content: ""; width: 26px; height: 2px; background: var(--teal); }
+  .hero h1 { font-size: clamp(40px, 5.8vw, 68px); font-weight: 380; max-width: 13ch; margin-bottom: 24px; }
+  .hero h1 em { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; color: var(--teal); }
+  .hero-sub { font-size: clamp(16px, 1.5vw, 18px); color: var(--ink-soft); max-width: 50ch; }
+  .hero-sub strong { font-weight: 500; color: var(--ink); }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 28px; }
+  .hero-note { font-size: 13px; color: var(--ink-faint); }
+
+  /* memo vignette */
+  .memo {
+    border-radius: 16px; overflow: hidden; background: var(--card); border: 1px solid var(--teal-line);
+    box-shadow: 0 1px 0 var(--rule-soft), 0 24px 48px -30px rgba(30, 74, 72, 0.45);
+  }
+  .memo .day { background: linear-gradient(135deg, var(--night), var(--night-2) 70%, #6D83EF); color: #fff; padding: 20px 22px 18px; }
+  .memo .day .when { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .memo .day h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 26px; margin-top: 8px; color: #fff; }
+  .memo .day p { font-size: 13.5px; opacity: 0.92; margin-top: 8px; line-height: 1.55; }
+  .memo .day p b { font-weight: 600; }
+  .memo .row { display: grid; grid-template-columns: 58px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 12px 22px; border-top: 1px solid var(--rule-soft); font-size: 14px; }
+  .memo .row .t { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 12.5px; color: var(--teal); }
+  .memo .row .s { display: block; font-size: 12px; color: var(--ink-faint); }
+  .tag { display: inline-flex; align-items: center; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  .tag.ok { background: var(--ok-bg); color: var(--ok-fg); }
+  .tag.tent { background: var(--tent-bg); color: var(--tent-fg); }
+  .tag.res { background: var(--res-bg); color: var(--res-fg); }
+  .memo .foot { padding: 10px 22px 12px; font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); border-top: 1px solid var(--rule-soft); background: var(--paper); }
+
+  /* BAND */
+  .band { border-top: 1px solid var(--rule); padding: clamp(56px, 7vw, 96px) 0; }
+  .band-head { color: var(--teal); margin-bottom: 18px; }
+  .band h2 { font-size: clamp(28px, 3.6vw, 42px); font-weight: 400; max-width: 20ch; margin-bottom: 16px; }
+  .band h2 em { font-family: Georgia, 'Times New Roman', serif; font-style: italic; color: var(--teal); }
+  .band-lead { color: var(--ink-soft); max-width: 62ch; margin-bottom: 40px; }
+
+  /* differentiators */
+  .diff { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+  .cell { padding: 28px 28px 30px 0; border-bottom: 1px solid var(--rule-soft); }
+  .cell:nth-child(odd) { border-right: 1px solid var(--rule-soft); }
+  .cell:nth-child(even) { padding-left: 28px; padding-right: 0; }
+  .cell .n { color: var(--teal); margin-bottom: 12px; }
+  .cell h3 { font-size: 20px; font-weight: 450; margin-bottom: 8px; max-width: 24ch; }
+  .cell p { font-size: 14.5px; color: var(--ink-soft); max-width: 52ch; }
+  .cell p + p { margin-top: 8px; }
+
+  /* flow */
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 32px; }
+  .flow .step { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px; color: var(--ink-soft); background: #fff; }
+  .flow .step b { color: var(--teal-deep); font-weight: 500; }
+  .flow .arrow { color: var(--ink-faint); }
+
+  /* devices */
+  .devices { background: var(--teal-wash); }
+  .device-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+  .device { background: var(--card); border: 1px solid var(--teal-line); border-radius: 14px; padding: 22px 22px 20px; }
+  .device .mono { color: var(--teal); display: block; margin-bottom: 10px; }
+  .device h3 { font-size: 19px; font-weight: 450; margin-bottom: 8px; }
+  .device p { font-size: 14px; color: var(--ink-soft); }
+
+  /* pricing */
+  .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 760px; }
+  .plan { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 28px 28px 26px; display: flex; flex-direction: column; }
+  .plan.lead { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); }
+  .plan .nm { font-size: 14px; font-weight: 600; letter-spacing: 0.02em; color: var(--ink-soft); display: flex; justify-content: space-between; gap: 10px; }
+  .plan .nm .save { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ok-fg); background: var(--ok-bg); padding: 3px 8px; border-radius: 999px; }
+  .plan .price { font-family: Georgia, 'Times New Roman', serif; font-size: 46px; line-height: 1; margin-top: 14px; color: var(--ink); }
+  .plan .price small { font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: var(--ink-faint); }
+  .plan .per { font-size: 13px; color: var(--ink-faint); margin-top: 4px; min-height: 20px; }
+  .plan .btn { margin-top: 20px; }
+  .plan ul { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--ink-soft); }
+  .plan li { display: flex; gap: 10px; align-items: flex-start; }
+  .plan li svg { flex: none; margin-top: 5px; }
+  .fine { font-size: 13px; color: var(--ink-faint); max-width: 62ch; margin-top: 22px; line-height: 1.65; }
+
+  /* faq */
+  .faq { max-width: 760px; }
+  .faq details { border-top: 1px solid var(--rule-soft); padding: 16px 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .faq summary { cursor: pointer; font-size: 16.5px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--teal); font-size: 20px; line-height: 1; }
+  .faq details[open] summary::after { content: "–"; }
+  .faq p { font-size: 14.5px; color: var(--ink-soft); margin-top: 10px; max-width: 64ch; }
+
+  /* footer */
+  footer { border-top: 1px solid var(--rule); background: var(--paper); }
+  .foot-inner { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 40px; padding-bottom: 32px; font-size: 13.5px; color: var(--ink-faint); }
+  .foot-inner a { color: var(--ink-soft); text-decoration: none; margin-right: 18px; }
+  .foot-inner a:hover { color: var(--teal); }
+
+  @media (max-width: 880px) {
+    .hero { grid-template-columns: 1fr; }
+    .diff { grid-template-columns: 1fr; }
+    .cell, .cell:nth-child(even) { padding-left: 0; padding-right: 0; border-right: 0; }
+    .device-grid { grid-template-columns: 1fr; }
+    .plans { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .top-links a:not(.btn) { display: none; }
+    .memo .row { grid-template-columns: 52px minmax(0, 1fr); }
+    .memo .row .tag { grid-column: 2; justify-self: start; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="brand" href="/maication/" aria-label="MaiCation home">
+    <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#265C5A"/><path d="M14 38 50 24l-4 5-13 17-4-11-15-5z" fill="none" stroke="#FAF7F2" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    <span class="nm">MaiCation</span>
+  </a>
+  <div class="top-links">
+    <a href="#different">What's different</a>
+    <a href="#anywhere">Any device</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/">← mai·software</a>
+    <a class="btn btn-teal" href="https://holiday.maisoftware.app/signup">Start free</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div>
+    <p class="kicker mono">A web app from Mai Software · for families</p>
+    <h1>The trip, from <em>loose ideas</em> to the day itself.</h1>
+    <p class="hero-sub">A family trip starts as a pile of screenshots, reward-seat sightings and “what if we did Paris first?”. MaiCation lets it stay that way for as long as it needs to, then hardens it into bookings, <strong>without ever forcing it into a timeline before you're ready</strong>. An assistant that proposes and never acts on its own, an email reader that finds the bookings you already made, a vault for the passports, and a memo each evening for the day ahead.</p>
+    <div class="hero-cta">
+      <a class="btn btn-teal" href="https://holiday.maisoftware.app/signup">Start your 14 free days</a>
+      <a class="btn btn-line" href="#different">See what's different</a>
+      <span class="hero-note">No card to start · A$24 a month or A$149 a year</span>
+    </div>
+  </div>
+  <div class="memo" role="img" aria-label="Example of the evening memo for a day in Paris">
+    <div class="day">
+      <div class="when"><span>Sunday 14 September · Paris</span><span>24° / 15° · showers late</span></div>
+      <h3>The Louvre, then a slow afternoon.</h3>
+      <p>Timed entry at 09:00. From the hotel it's about 25 minutes on line 4, so <b>leave by about 08:35</b>. No public holiday in France today; travel advice at its normal level.</p>
+    </div>
+    <div class="row"><span class="t">08:35</span><span>Leave the hotel<span class="s">Line 4 · Saint-Placide → Louvre-Rivoli</span></span><span></span></div>
+    <div class="row"><span class="t">09:00</span><span>Musée du Louvre<span class="s">2 adults, 1 child · under-4 free · ref LVR-88213</span></span><span class="tag ok">Booked</span></div>
+    <div class="row"><span class="t">13:00</span><span>Lunch near Palais-Royal<span class="s">From a link you shared · not yet decided</span></span><span class="tag res">Idea</span></div>
+    <div class="row"><span class="t">Tonight</span><span>Hôtel Le Six<span class="s">Family suite · cot requested, not guaranteed</span></span><span class="tag tent">Held</span></div>
+    <div class="foot">Example memo — not live data</div>
+  </div>
+</header>
+
+<section class="band" id="different">
+  <div class="wrap">
+    <p class="band-head mono">What's different</p>
+    <h2>Built for how a family <em>actually</em> plans.</h2>
+    <p class="band-lead">Most trip planners want a finished itinerary on day one. Families don't have one. They have a fortnight of school holidays, a points balance, three tabs open on hotels and a booking confirmation somewhere in an inbox. MaiCation is built around that.</p>
+
+    <div class="diff">
+      <div class="cell">
+        <p class="n mono">01 · Flexible items</p>
+        <h3>Nothing is forced into a timeline.</h3>
+        <p>A flight, a hotel, a research note, a task and a budget line are all the same kind of thing, moving from <em>idea</em> through <em>held</em> to <em>booked</em>. Two options you can't decide between sit side by side with the cash, the points for the whole family, the taxes and the seats last seen, until one of them wins and the other quietly archives itself.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">02 · Observations, not prices</p>
+        <h3>Every price says when it was seen.</h3>
+        <p>A fare or a room rate is a snapshot with a date on it, and every screen says so. Nothing is ever presented as live availability, because on a family budget the difference between “A$2,950 observed 20 July” and “A$2,950” is the difference between a plan and a surprise.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">03 · The assistant proposes, you apply</p>
+        <h3>An assistant that can't spend your money.</h3>
+        <p>Ask it anything about the trip, hand it a booking PDF or a fare screenshot, paste a hotel link. It reads the trip through narrow, typed tools and can only <em>propose</em> a change; proposals wait in a queue with Apply and Reject. It says what came from your bookings, what came from the web and when it looked, and what is its own inference.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">04 · The email reader</p>
+        <h3>It finds the bookings you already made.</h3>
+        <p>Connect a mailbox with a revocable app password and it scans for confirmations itself, including the ones your partner forwarded from a personal address. Nothing reaches the itinerary until you confirm it in a review queue that shows the sentence each fact came from. Fare alerts and “complete your booking” emails are refused, with the reason.</p>
+        <p>One booking arriving four times, as confirmation, receipt, forward and TripIt's acknowledgement, merges onto one card. Contradictions are shown, never resolved for you.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">05 · The evening before</p>
+        <h3>A memo for tomorrow, at 6pm where you'll be.</h3>
+        <p>Once you're travelling the question becomes “what happens tomorrow, and what will they ask me for?”. The memo answers it: the day's bookings in order with their references, where tonight's bed is, the forecast, a public holiday or a raised travel advisory if there is one, and a <em>leave by</em> time worked back from the first booking's address. It emails itself at 6pm on the clock of the day it covers.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">06 · The vault</p>
+        <h3>Passports, from any browser, encrypted.</h3>
+        <p>Passports, visas, insurance and emergency contacts, encrypted at rest and behind a second passphrase on top of your login. Scan a passport and the machine-readable zone is parsed and checked against its own check digits, so the number and expiry are verified rather than guessed. It locks itself after ten minutes.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">07 · Sharing that redacts</p>
+        <h3>Share the plan, not the confirmation numbers.</h3>
+        <p>A shared page or an exported HTML file is built from a public view that never contains booking references, loyalty numbers, full names or contact details. Grandparents get the itinerary; nobody gets the passport numbers.</p>
+      </div>
+      <div class="cell">
+        <p class="n mono">08 · Works in the airport</p>
+        <h3>Saved on the device when the network isn't there.</h3>
+        <p>Every page you've opened is kept on the device and served back when roaming is off, with a plain banner saying you're looking at a saved copy. The budget keeps working offline too and replays its changes when you're back.</p>
+      </div>
+    </div>
+
+    <div class="flow" aria-label="How a trip moves">
+      <span class="step"><b>Idea</b></span><span class="arrow">→</span>
+      <span class="step">Researching</span><span class="arrow">→</span>
+      <span class="step">Comparing</span><span class="arrow">→</span>
+      <span class="step">Held</span><span class="arrow">→</span>
+      <span class="step"><b>Booked</b></span><span class="arrow">→</span>
+      <span class="step">The day itself</span>
+    </div>
+  </div>
+</section>
+
+<section class="band devices" id="anywhere">
+  <div class="wrap">
+    <p class="band-head mono">Any device</p>
+    <h2>The phone in the queue, the iPad on the couch, <em>the laptop at 10pm</em>.</h2>
+    <p class="band-lead">It runs in the browser, so there is nothing to install and nothing to keep in sync. Add it to a phone's home screen and it behaves like an app. Everyone in the family signs in to the same trip.</p>
+    <div class="device-grid">
+      <div class="device"><span class="mono">Phone</span><h3>The day, and the reference they're asking for.</h3><p>Tomorrow's memo, tonight's bed, the vault when the check-in desk wants a passport number, and alerts if a flight moves.</p></div>
+      <div class="device"><span class="mono">Tablet</span><h3>The board on one side, the assistant on the other.</h3><p>Drag a confirmation onto the chat and watch it file itself; compare two hotels without going back to the tabs they came from.</p></div>
+      <div class="device"><span class="mono">Computer</span><h3>The comparison, the budget, the decisions.</h3><p>Alternatives side by side, a balance-sheet budget with variance per line, and the decision log for when someone asks why you chose the Tuesday flight.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="pricing">
+  <div class="wrap">
+    <p class="band-head mono">Pricing</p>
+    <h2>One plan, the <em>whole household</em>.</h2>
+    <p class="band-lead">Everyone in the family, every trip, from any browser. Your first 14 days are free and need no card. Cancel whenever you like and keep everything you planned: the board, the budget, the vault and sharing keep working without a subscription; only the things that spend money on your behalf pause.</p>
+
+    <div class="plans">
+      <div class="plan lead">
+        <div class="nm"><span>Annual</span><span class="save">Half the monthly rate</span></div>
+        <div class="price">A$149 <small>/ year</small></div>
+        <div class="per">A$12.42 a month, billed once</div>
+        <a class="btn btn-teal" href="https://holiday.maisoftware.app/subscribe?plan=annual">Start free, then A$149 a year</a>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The assistant, with documents and web lookups</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The email reader and review queue</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Passport and insurance reading into the vault</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The evening memo with weather, holidays and advisories</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Flight disruption alerts</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <div class="nm"><span>Monthly</span></div>
+        <div class="price">A$24 <small>/ month</small></div>
+        <div class="per">For the months you're planning</div>
+        <a class="btn btn-line" href="https://holiday.maisoftware.app/subscribe?plan=monthly">Start free, then A$24 a month</a>
+        <ul>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Everything in the annual plan</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Cancel from Set up at any time</li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">Prices in Australian dollars, GST included. Payment is taken by Stripe on a hosted page; MaiCation never sees your card. Fair use: 120 assistant questions per person a month, which is more than planning a five-week trip took us, and there so nothing can run up a bill by accident. <a href="/maication/pricing/">The full pricing page</a> · <a href="/maication/privacy/">Privacy</a></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <p class="band-head mono">Questions</p>
+    <div class="faq">
+      <details>
+        <summary>Does it book anything for me?</summary>
+        <p>No, and by design. The assistant can prepare a search with your dates and party and hand you the live site, but it cannot make a booking or spend money. Every price it shows is a snapshot with its observation time, never a hold.</p>
+      </details>
+      <details>
+        <summary>What does the email reader actually read?</summary>
+        <p>It lists only sender, subject and date, reads a body only when the envelope already looks travel-related, stores only travel emails, and keeps nothing but an anonymous fingerprint of everything else so it isn't looked at twice. Every message it looked at is listed, with what it decided and why, and each decision can be overridden.</p>
+      </details>
+      <details>
+        <summary>Which AI does it use, and what does it see?</summary>
+        <p>The assistant runs on Claude, by Anthropic, server-side. It sees the trip you're asking about and the document you hand it, through narrow tools, and treats everything inside a document or a web page as data rather than instructions. Vault contents are never sent to it except the one scan you ask for, and that result is shown to you before anything is saved.</p>
+      </details>
+      <details>
+        <summary>Can grandparents see the plan?</summary>
+        <p>Yes, through a share link or an exported page, both built from a redacted view with no booking references, loyalty numbers, full names or contact details. People who are on the trip can be invited to edit it, and the household can add members who share the vault and the mailbox.</p>
+      </details>
+      <details>
+        <summary>What happens if I stop paying?</summary>
+        <p>Everything you planned stays and stays editable. The assistant, the email reader, document reading and the evening memo pause until a subscription is active again. Nothing is deleted.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>&copy; 2026 Mai Software · MaiCation runs at <a href="https://holiday.maisoftware.app">holiday.maisoftware.app</a></span>
+    <span><a href="/maication/pricing/">Pricing</a><a href="/maication/privacy/">Privacy</a><a href="mailto:support@maisoftware.app">Support</a><a href="/">Mai Software</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

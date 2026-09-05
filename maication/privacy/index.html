@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaiCation — Privacy Policy</title>
+<meta name="description" content="What MaiCation stores, what it sends to whom, and how to get it back or delete it.">
+<link rel="canonical" href="https://maisoftware.app/maication/privacy/">
+<meta name="theme-color" content="#265C5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --paper: #FAF7F2; --ink: #1E293B; --ink-soft: #475569; --ink-faint: #7C8797; --teal: #265C5A; --teal-deep: #1E4A48; --rule: rgba(30, 74, 72, 0.16); --rule-soft: rgba(30, 74, 72, 0.09); }
+  body { font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  a { color: var(--teal); }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 56px); border-bottom: 1px solid var(--rule-soft); }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; border-radius: 9px; }
+  .brand span { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; color: var(--teal-deep); }
+  nav .back { font-size: 13.5px; color: var(--ink-soft); text-decoration: none; }
+  main { max-width: 720px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 56px) 64px; }
+  .mono { font-family: 'Spline Sans Mono', ui-monospace, Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+  h1 { font-size: clamp(32px, 4.5vw, 44px); font-weight: 400; line-height: 1.1; letter-spacing: -0.015em; margin: 12px 0 8px; }
+  .updated { font-size: 13px; color: var(--ink-faint); margin-bottom: 36px; }
+  h2 { font-size: 21px; font-weight: 500; margin: 36px 0 10px; letter-spacing: -0.01em; }
+  p, li { color: var(--ink-soft); font-size: 15.5px; }
+  p + p { margin-top: 10px; }
+  ul { padding-left: 20px; margin-top: 8px; }
+  li { margin-bottom: 6px; }
+  li strong { color: var(--ink); font-weight: 500; }
+  footer { text-align: center; font-size: 13px; color: var(--ink-faint); padding: 32px 20px 40px; border-top: 1px solid var(--rule-soft); }
+  footer a { color: var(--ink-soft); text-decoration: none; margin: 0 9px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="/maication/" aria-label="MaiCation">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#265C5A"/><path d="M14 38 50 24l-4 5-13 17-4-11-15-5z" fill="none" stroke="#FAF7F2" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    <span>MaiCation</span>
+  </a>
+  <a class="back" href="/maication/">← Back</a>
+</nav>
+
+<main>
+  <span class="mono">Privacy policy</span>
+  <h1>What MaiCation keeps, and who sees it.</h1>
+  <p class="updated">Last updated 5 September 2026 · Applies to holiday.maisoftware.app</p>
+
+  <p>MaiCation is a travel planner for families, made by Mai Software, an independent studio in Australia. This page says plainly what the app stores, what it sends to other companies to do its job, and how to get your data back or have it deleted. If anything here is unclear, write to <a href="mailto:support@maisoftware.app">support@maisoftware.app</a>.</p>
+
+  <h2>What we store</h2>
+  <ul>
+    <li><strong>Your account</strong> — name, email address and a salted hash of your password. Never the password itself.</li>
+    <li><strong>Your household and trips</strong> — the people travelling, the places, the bookings, ideas, budget lines, notes and decisions you enter or approve, and the conversation with the assistant.</li>
+    <li><strong>The vault</strong> — passports, visas, insurance and emergency contacts you choose to store, encrypted at rest with AES-256-GCM. Opening it needs a separate passphrase on top of your login; it locks after ten minutes; every access is logged for you to see.</li>
+    <li><strong>Mailbox connection</strong> — if you connect a mailbox, the revocable app password you provide, stored encrypted. The scanner lists only sender, subject and date; reads a body only when the envelope already looks travel-related; stores only travel emails; and keeps nothing but an anonymous fingerprint of everything else so it is not looked at twice.</li>
+    <li><strong>Subscription state</strong> — your plan, its status and Stripe's identifiers for your customer and subscription. Never card details.</li>
+    <li><strong>Usage counts</strong> — how many assistant questions each person has asked, to apply the fair-use allowance.</li>
+  </ul>
+
+  <h2>Who processes it for us</h2>
+  <ul>
+    <li><strong>Supabase</strong> — hosts the database, in Sydney.</li>
+    <li><strong>Vercel</strong> — runs the app, with its functions in Sydney.</li>
+    <li><strong>Anthropic</strong> — runs the assistant (Claude). It receives the trip you're asking about, the question, and any document or screenshot you hand it. Vault contents are sent only for the one scan you request, and the result is shown to you before anything is saved. We do not use your data to train models, and Anthropic's API terms prohibit them from doing so.</li>
+    <li><strong>Stripe</strong> — takes payment on its own hosted page and manages the subscription. We never see your card.</li>
+    <li><strong>Google Maps Platform</strong> — place search and street-level photos when you search for a hotel or restaurant; it receives the search text and the area, never your name.</li>
+    <li><strong>Open-Meteo, Nager.Date, travel-advisory.info</strong> — the forecast, public holidays and travel advice for the evening memo. They receive a place name or country, nothing else.</li>
+    <li><strong>OpenStreetMap Nominatim and OSRM</strong> — the "leave by" estimate in the memo. This is the one feature that sends a booking's street address to a third party: two addresses, the bed and the first stop, with no name, reference or date attached. It can be switched off per trip under Settings &amp; tools.</li>
+    <li><strong>AviationStack</strong> — flight status for booked flights: a flight number and a date.</li>
+    <li><strong>Your own mail server</strong> — the evening memo is sent over SMTP with the app password you already provided, from your own address, or over a relay you configure.</li>
+  </ul>
+
+  <h2>What we don't do</h2>
+  <ul>
+    <li>No advertising, no analytics trackers, no selling or sharing of data with anyone not listed above.</li>
+    <li>Shared pages and exports are built from a redacted view with no booking references, loyalty numbers, full names or contact details.</li>
+    <li>Nothing inside a document, an email or a web page is treated as an instruction to the assistant.</li>
+  </ul>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Export</strong> — any trip can be exported as a standalone page at any time.</li>
+    <li><strong>Delete a trip</strong> — from Settings &amp; tools; everything on it goes with it.</li>
+    <li><strong>Disconnect a mailbox</strong> — from Set up; the stored app password is removed at once, and you can revoke it with your mail provider too.</li>
+    <li><strong>Delete your account</strong> — email <a href="mailto:support@maisoftware.app">support@maisoftware.app</a> from the address on the account and we will remove the account, its household and everything in it within 14 days, and confirm when it is done.</li>
+    <li><strong>Cancel the subscription</strong> — from Set up → Your plan, through Stripe's customer portal. You keep access until the end of the period paid for, and everything you planned stays afterwards.</li>
+  </ul>
+
+  <h2>Cookies</h2>
+  <p>One session cookie to keep you signed in (30 days if you ask to be remembered, otherwise until the browser closes), one short-lived cookie while the vault is unlocked, and nothing else. No third-party cookies.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes in a way that matters, the date above changes and the app says so on the Set up screen.</p>
+</main>
+
+<footer>
+  <a href="/maication/">MaiCation</a><a href="/maication/pricing/">Pricing</a><a href="/privacy/">All policies</a><a href="/">Mai Software</a>
+  <p style="margin-top:12px;">&copy; 2026 Mai Software</p>
+</footer>
+
+</body>
+</html>
