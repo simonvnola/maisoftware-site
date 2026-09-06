@@ -443,6 +443,13 @@
   .gear.done .t { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: rgba(62, 107, 51, 0.4); }
   .gear.done .st { color: var(--ink-faint); }
 
+  /* maication: a real screenshot rather than a vignette */
+  .entry-shot {
+    display: block; width: 100%; max-width: 280px; margin: 0 auto; height: auto;
+    border: 1px solid rgba(38, 92, 90, 0.28); border-radius: 22px;
+    box-shadow: 0 1px 0 rgba(38, 92, 90, 0.08), 0 20px 44px -30px rgba(30, 74, 72, 0.4);
+    -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent);
+  }
   /* vignette: maication memo */
   .memo {
     background: var(--card);
@@ -845,16 +852,8 @@
       </div>
     </div>
     <div class="entry-vis">
-      <div class="memo">
-        <div class="day">
-          <div class="cap"><span>Sun 14 Sep · Paris</span><span>24° / 15°</span></div>
-          <div class="h">The Louvre, then a slow afternoon.</div>
-          <p>Timed entry at 09:00 — about 25 minutes on line 4, so <b>leave by 08:35</b>.</p>
-        </div>
-        <div class="row"><span class="t">09:00</span><span>Musée du Louvre<span class="s">2 adults, 1 child · ref LVR-88213</span></span><span class="st">Booked</span></div>
-        <div class="row"><span class="t">Tonight</span><span>Hôtel Le Six<span class="s">Family suite · cot requested</span></span><span class="st held">Held</span></div>
-      </div>
-      <p class="vignette-note">Example memo — not live data</p>
+      <img class="entry-shot" src="/maication/assets/memo-phone-short.webp" width="780" height="1560" alt="MaiCation's day page on a phone: Monday 7 September in Paris, the apartment check-in with its reference, and the daily memo.">
+      <p class="vignette-note">The day page, on a phone</p>
     </div>
   </article>
 

@@ -30,7 +30,7 @@
   .wrap { max-width: 860px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
   .hero { text-align: center; padding: clamp(56px, 8vw, 88px) 0 32px; }
   .hero .mono { color: var(--teal); margin-bottom: 16px; display: block; }
-  .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; max-width: 18ch; margin: 0 auto 16px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 600; line-height: 1.08; letter-spacing: -0.015em; max-width: 18ch; margin: 0 auto 16px; }
   .hero h1 em { font-family: Georgia, 'Times New Roman', serif; font-style: italic; color: var(--teal); }
   .hero p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto; }
 
@@ -38,7 +38,7 @@
   .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 860px; margin: 16px auto 0; }
   .plan { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
   .plan.lead { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); }
-  .plan .tag { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ok-fg); background: var(--ok-bg); padding: 3px 8px; border-radius: 999px; align-self: flex-start; margin-bottom: 10px; }
+  .plan .tag { font-size: 12.5px; color: var(--ok-fg); background: var(--ok-bg); padding: 3px 9px; border-radius: 999px; align-self: flex-start; margin-bottom: 10px; }
   .plan .btn.line { background: transparent; color: var(--teal-deep); border: 1px solid var(--rule); }
   .plan .btn.line:hover { background: var(--teal-wash); }
   .refund { max-width: 860px; margin: 18px auto 0; padding: 18px 22px; border: 1px solid var(--teal-line); background: var(--teal-wash); border-radius: 14px; font-size: 14.5px; color: var(--teal-deep); }
@@ -59,7 +59,7 @@
   .below { text-align: center; font-size: 13px; color: var(--ink-faint); max-width: 56ch; margin: 22px auto 0; line-height: 1.7; }
 
   .compare { max-width: 760px; margin: 64px auto 0; background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 36px 32px; }
-  .compare h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 400; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 12px; }
+  .compare h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 12px; }
   .compare h2 em { font-family: Georgia, serif; font-style: italic; color: var(--teal); }
   .compare p { font-size: 14.5px; color: var(--ink-soft); max-width: 60ch; }
   table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 14px; }
@@ -86,8 +86,7 @@
 
 <main class="wrap">
   <section class="hero">
-    <span class="mono">Pricing</span>
-    <h1>Free for most families. <em>Nothing renews.</em></h1>
+    <h1>Free for most families. Nothing renews.</h1>
     <p>Every household gets the email reader, the vault, the board and 30 assistant questions every six months for nothing, after 14 days with no limits at all. A pass adds a trip's worth of questions, once.</p>
   </section>
 
@@ -154,7 +153,7 @@
   <p class="below">Prices in AUD, GST included. One payment, nothing renewing. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the pass has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
 
   <section class="compare">
-    <h2>What it replaces, and <em>what it doesn't</em></h2>
+    <h2>What it replaces, and what it doesn't</h2>
     <p>A travel agent's service fee for a family itinerary runs to a few hundred dollars per trip, and the plan lives in their system. MaiCation keeps the record in yours, and works alongside an agent when you use one.</p>
     <table>
       <thead><tr><th></th><th>A spreadsheet and an inbox</th><th class="us">MaiCation</th></tr></thead>
