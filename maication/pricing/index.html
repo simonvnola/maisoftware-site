@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MaiCation — Pricing</title>
-<meta name="description" content="One Trip Pass for the whole household: A$19 once, six months, nothing renewing. 14 days free, no card to start. Payment by Stripe.">
+<meta name="description" content="Free for most families: 30 assistant questions every six months, the email reader and the vault, or your own Claude through a connector. A Trip Pass is A$19 once for a trip's worth of questions, refunded if you book a stay through the app.">
 <link rel="canonical" href="https://maisoftware.app/maication/pricing/">
 <meta name="theme-color" content="#265C5A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -35,8 +35,17 @@
   .hero p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto; }
 
 
-  .plan { background: var(--card); border: 1px solid var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); border-radius: 16px; padding: 32px; max-width: 480px; margin: 16px auto 0; }
+  .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 860px; margin: 16px auto 0; }
+  .plan { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+  .plan.lead { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); }
+  .plan .tag { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ok-fg); background: var(--ok-bg); padding: 3px 8px; border-radius: 999px; align-self: flex-start; margin-bottom: 10px; }
+  .plan .btn.line { background: transparent; color: var(--teal-deep); border: 1px solid var(--rule); }
+  .plan .btn.line:hover { background: var(--teal-wash); }
+  .refund { max-width: 860px; margin: 18px auto 0; padding: 18px 22px; border: 1px solid var(--teal-line); background: var(--teal-wash); border-radius: 14px; font-size: 14.5px; color: var(--teal-deep); }
+  .refund b { font-weight: 600; }
+  @media (max-width: 720px) { .plans { grid-template-columns: 1fr; } }
   .plan .nm { font-size: 20px; font-weight: 500; }
+  .plan ul { flex: 1; }
   .plan .desc { font-size: 14px; color: var(--ink-faint); margin-top: 4px; }
   .plan .price { font-family: Georgia, 'Times New Roman', serif; font-size: 52px; line-height: 1; margin-top: 22px; }
   .plan .price small { font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: var(--ink-faint); }
@@ -78,28 +87,71 @@
 <main class="wrap">
   <section class="hero">
     <span class="mono">Pricing</span>
-    <h1>One pass, <em>one trip</em>. Nothing renews.</h1>
-    <p>Free for the first 14 days, no card needed. Then one payment covers everyone in the family for six months of planning and travelling, from any browser.</p>
+    <h1>Free for most families. <em>Nothing renews.</em></h1>
+    <p>Every household gets the email reader, the vault, the board and 30 assistant questions every six months for nothing, after 14 days with no limits at all. A pass adds a trip's worth of questions, once.</p>
   </section>
 
-  <div class="plan">
-    <div class="nm">Trip Pass</div>
-    <div class="desc">Everyone in the household, six months, nothing to cancel.</div>
-    <div class="price">A$19 <small>once</small></div>
-    <div class="note">100 assistant questions for the household, everything else unlimited</div>
-    <ul>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The assistant: ask anything, hand it documents and links, approve what it proposes</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The email reader: bookings found in your inbox and offered for review</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Passport and insurance reading into the encrypted vault</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The evening memo: tomorrow's bookings, the weather, holidays, advisories, when to leave</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Flight disruption alerts for booked flights</li>
-      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Trip sharing, the budget, the board and the vault stay yours with or without a pass</li>
-    </ul>
-    <div class="fair"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>Another pass adds 100 questions and six more months</div>
-    <a class="btn" href="https://holiday.maisoftware.app/pass">Start free, then A$19 for the trip</a>
+  <div class="plans">
+    <div class="plan">
+      <span class="tag">Free</span>
+      <div class="nm">Free</div>
+      <div class="desc">Everyone in the household, for as long as you like.</div>
+      <div class="price">A$0</div>
+      <div class="note">14 days with no limits, then 30 questions every six months</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The email reader: bookings found in your inbox and offered for review, unlimited</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The encrypted vault, the journey board, the budget, sharing and exports</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>30 assistant questions every six months, on Sonnet 5</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The evening memo and flight alerts for booked trips</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/signup">Start free</a>
+    </div>
+
+    <div class="plan">
+      <span class="tag">Also free</span>
+      <div class="nm">Your own Claude or ChatGPT</div>
+      <div class="desc">Plan with the subscription you already pay for.</div>
+      <div class="price">A$0 <small>from us</small></div>
+      <div class="note">No question limit on our side</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Connect Claude.ai or ChatGPT to your trip in a minute, from Set up</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The same bookings, ideas and budget; it proposes, you approve, like the built-in assistant</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Everything in Free stays free</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/settings/connected-apps">Connect an app</a>
+    </div>
+
+    <div class="plan lead">
+      <span class="tag">One trip</span>
+      <div class="nm">Trip Pass</div>
+      <div class="desc">A trip's worth of questions, once.</div>
+      <div class="price">A$19 <small>once</small></div>
+      <div class="note">100 more questions over six months, on Sonnet 5</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Ask anything about the trip, hand it documents and links, approve what it proposes</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Passport and insurance reading into the vault</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Stacks on the free 30 and on another pass; nothing to cancel</li>
+      </ul>
+      <a class="btn" href="https://holiday.maisoftware.app/pass">Start free, then A$19 for the trip</a>
+    </div>
+
+    <div class="plan">
+      <span class="tag">Deeper</span>
+      <div class="nm">Trip Pass Plus</div>
+      <div class="desc">The same pass with the assistant on Opus.</div>
+      <div class="price">A$49 <small>once</small></div>
+      <div class="note">100 questions over six months, on Opus 4.8</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Anthropic's deepest model for the comparisons where being wrong costs money</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Everything in the Trip Pass</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/pass">Start free, then A$49</a>
+    </div>
   </div>
 
-  <p class="below">Price in AUD, GST included. One payment, nothing renewing. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the pass has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
+  <p class="refund"><b>Book a stay through the app and the pass is on us.</b> The Booking.com and Expedia links the app fills in for you carry a referral tag, and we say so beside every one. If you book through one, your pass is refunded in full once the commission arrives; if you never bought one, you get one. The price you pay the hotel is the same either way, and the links are offered whether or not they pay.</p>
+
+  <p class="below">Prices in AUD, GST included. One payment, nothing renewing. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the pass has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
 
   <section class="compare">
     <h2>What it replaces, and <em>what it doesn't</em></h2>
@@ -114,7 +166,7 @@
         <tr><td>The plan for the grandparents</td><td>Forward everything</td><td class="us">A shared page with the references removed</td></tr>
       </tbody>
     </table>
-    <p class="free">Without a pass the board, budget, vault, sharing and exports keep working. Only the things that spend on your behalf pause.</p>
+    <p class="free">Without a pass the board, budget, vault, email reader, sharing and exports all keep working. Only the assistant waits for the next free questions.</p>
   </section>
 </main>
 

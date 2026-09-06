@@ -57,7 +57,8 @@
     <li><strong>The vault</strong> — passports, visas, insurance and emergency contacts you choose to store, encrypted at rest with AES-256-GCM. Opening it needs a separate passphrase on top of your login; it locks after ten minutes; every access is logged for you to see.</li>
     <li><strong>Mailbox connection</strong> — if you connect a mailbox, the revocable app password you provide, stored encrypted. The scanner lists only sender, subject and date; reads a body only when the envelope already looks travel-related; stores only travel emails; and keeps nothing but an anonymous fingerprint of everything else so it is not looked at twice.</li>
     <li><strong>Passes</strong> — each Trip Pass you buy: when it runs, how many questions it includes, and Stripe's identifiers for the payment and your customer record. Never card details.</li>
-    <li><strong>Usage counts</strong> — how many assistant questions the household has asked, to count them against the pass.</li>
+    <li><strong>Usage counts</strong> — how many assistant questions the household has asked, to count them against the free allowance and any pass.</li>
+    <li><strong>A referral label</strong> — the Booking.com and Expedia links the app fills in for you carry a short code derived from your household, so a commission those sites pay can be matched back to you and your pass refunded. It names nobody and contains nothing about you; it is the only thing about you that travels in those links.</li>
   </ul>
 
   <h2>Who processes it for us</h2>
@@ -65,7 +66,8 @@
     <li><strong>Supabase</strong> — hosts the database, in Sydney.</li>
     <li><strong>Vercel</strong> — runs the app, with its functions in Sydney.</li>
     <li><strong>Anthropic</strong> — runs the assistant (Claude). It receives the trip you're asking about, the question, and any document or screenshot you hand it. Vault contents are sent only for the one scan you request, and the result is shown to you before anything is saved. We do not use your data to train models, and Anthropic's API terms prohibit them from doing so.</li>
-    <li><strong>Stripe</strong> — takes payment on its own hosted page and emails the receipt. We never see your card.</li>
+    <li><strong>Stripe</strong> — takes payment on its own hosted page and emails the receipt, and pays a refund back to the same card. We never see your card.</li>
+    <li><strong>Booking.com and Expedia affiliate programmes</strong> — when you follow one of the app's links and book, they tell us the referral label, the date and the commission. They do not tell us who you are, and we do not tell them.</li>
     <li><strong>Google Maps Platform</strong> — place search and street-level photos when you search for a hotel or restaurant; it receives the search text and the area, never your name.</li>
     <li><strong>Open-Meteo, Nager.Date, travel-advisory.info</strong> — the forecast, public holidays and travel advice for the evening memo. They receive a place name or country, nothing else.</li>
     <li><strong>OpenStreetMap Nominatim and OSRM</strong> — the "leave by" estimate in the memo. This is the one feature that sends a booking's street address to a third party: two addresses, the bed and the first stop, with no name, reference or date attached. It can be switched off per trip under Settings &amp; tools.</li>
@@ -76,6 +78,7 @@
   <h2>What we don't do</h2>
   <ul>
     <li>No advertising, no analytics trackers, no selling or sharing of data with anyone not listed above.</li>
+    <li>A commission never changes which links you are shown, or the order of the prices. Every tagged link says it is one, beside the link.</li>
     <li>Shared pages and exports are built from a redacted view with no booking references, loyalty numbers, full names or contact details.</li>
     <li>Nothing inside a document, an email or a web page is treated as an instruction to the assistant.</li>
   </ul>
@@ -86,7 +89,8 @@
     <li><strong>Delete a trip</strong> — from Settings &amp; tools; everything on it goes with it.</li>
     <li><strong>Disconnect a mailbox</strong> — from Set up; the stored app password is removed at once, and you can revoke it with your mail provider too.</li>
     <li><strong>Delete your account</strong> — email <a href="mailto:support@maisoftware.app">support@maisoftware.app</a> from the address on the account and we will remove the account, its household and everything in it within 14 days, and confirm when it is done.</li>
-    <li><strong>Passes</strong> — a pass is one payment; there is nothing to cancel and nothing renews. Refunds: email us within 14 days of buying.</li>
+    <li><strong>Passes</strong> — a pass is one payment; there is nothing to cancel and nothing renews. Book a stay through one of the app's links and it is refunded once the commission arrives. Any other refund: email us within 14 days of buying.</li>
+    <li><strong>Connect your own assistant</strong> — Claude.ai or ChatGPT can read and propose to your trip through the connector under Set up → Connected apps, and you can revoke that there at any time. What you say to that assistant is between you and its provider.</li>
   </ul>
 
   <h2>Cookies</h2>
