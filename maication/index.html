@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaiCation — the family trip, planned in one place</title>
+<meta name="description" content="MaiCation keeps a family trip's ideas, bookings, budget and passports together, from the first idea to the morning you leave. It reads booking emails, drafts a memo for the day ahead, and has an assistant that suggests but never books. Runs in the browser. Free for most families.">
+<link rel="canonical" href="https://maisoftware.app/maication/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://maisoftware.app/maication/">
+<meta property="og:title" content="MaiCation — the family trip, planned in one place">
+<meta property="og:description" content="Ideas, bookings, budget and passports together. Reads booking emails, drafts a memo for the day ahead, and has an assistant that suggests but never books. Free for most families.">
+<meta property="og:image" content="https://maisoftware.app/maication/assets/trip.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#265C5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preload" href="/assets/fonts/InstrumentSans-normal-400-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper: #FAF7F2; --card: #FFFFFF;
+    --ink: #1E293B; --ink-soft: #475569; --ink-faint: #7C8797;
+    --teal: #265C5A; --teal-deep: #1E4A48; --teal-wash: #EEF6F5; --teal-line: #D5E9E7;
+    --rule: rgba(30, 74, 72, 0.16); --rule-soft: rgba(30, 74, 72, 0.09);
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body {
+    font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  h1, h2, h3 { line-height: 1.15; letter-spacing: -0.01em; font-weight: 600; }
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding-left: clamp(20px, 5vw, 48px); padding-right: clamp(20px, 5vw, 48px); }
+
+  nav.top {
+    position: sticky; top: 0; z-index: 40;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 14px clamp(20px, 5vw, 48px);
+    background: rgba(250, 247, 242, 0.9); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
+  .brand svg { width: 30px; height: 30px; border-radius: 9px; }
+  .brand span { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; color: var(--teal-deep); }
+  .links { display: flex; gap: clamp(14px, 2.5vw, 26px); align-items: center; }
+  .links a { font-size: 14.5px; color: var(--ink-soft); text-decoration: none; }
+  .links a:hover { color: var(--teal); }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 11px 20px; border-radius: 10px; font-size: 15px; font-weight: 500; text-decoration: none;
+    border: 1px solid transparent; cursor: pointer; font-family: inherit;
+  }
+  .btn.teal { background: var(--teal); color: #fff; }
+  .btn.teal:hover { background: var(--teal-deep); }
+  .btn.line { border-color: var(--rule); color: var(--teal-deep); background: transparent; }
+  .btn.line:hover { background: var(--teal-wash); }
+  .links .btn { padding: 9px 16px; font-size: 14px; color: #fff; }
+
+  .hero { padding-top: clamp(48px, 7vw, 88px); padding-bottom: 24px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); max-width: 16ch; }
+  .hero p { font-size: clamp(17px, 1.6vw, 20px); color: var(--ink-soft); max-width: 58ch; margin-top: 20px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 26px; }
+  .cta small { font-size: 14px; color: var(--ink-faint); }
+
+  .shot { margin-top: 40px; }
+  .shot img {
+    border: 1px solid var(--rule); border-radius: 12px; background: #fff;
+    box-shadow: 0 1px 0 var(--rule-soft), 0 24px 48px -32px rgba(30, 74, 72, 0.45);
+  }
+  .cap { font-size: 14px; color: var(--ink-faint); margin-top: 12px; }
+
+  section { padding: clamp(48px, 7vw, 88px) 0; border-top: 1px solid var(--rule); }
+  section h2 { font-size: clamp(26px, 3.4vw, 36px); max-width: 22ch; }
+  .lead { color: var(--ink-soft); max-width: 60ch; margin-top: 14px; }
+
+  .list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 48px; margin-top: 40px; }
+  .list h3 { font-size: 19px; margin-bottom: 6px; }
+  .list p { font-size: 16px; color: var(--ink-soft); max-width: 46ch; }
+
+  .pair { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; margin-top: 40px; }
+  .pair .phone img { border: 1px solid var(--rule); border-radius: 22px; box-shadow: 0 24px 48px -32px rgba(30, 74, 72, 0.45); }
+  .pair h3 { font-size: 22px; margin-bottom: 10px; }
+  .pair p { color: var(--ink-soft); max-width: 46ch; }
+  .pair p + p { margin-top: 12px; }
+
+  .studio { background: var(--teal-wash); }
+  .studio p { max-width: 62ch; }
+  .studio p + p { margin-top: 14px; }
+
+  table { width: 100%; max-width: 760px; border-collapse: collapse; margin-top: 28px; font-size: 16px; }
+  th, td { text-align: left; vertical-align: top; padding: 14px 12px 14px 0; border-bottom: 1px solid var(--rule-soft); }
+  th { font-weight: 600; width: 34%; }
+  td.price { white-space: nowrap; width: 18%; font-weight: 500; }
+  td { color: var(--ink-soft); }
+  tr:last-child th, tr:last-child td { border-bottom: 0; }
+  .fine { font-size: 14px; color: var(--ink-faint); max-width: 62ch; margin-top: 20px; }
+
+  .faq { max-width: 720px; margin-top: 28px; }
+  .faq details { border-top: 1px solid var(--rule-soft); padding: 16px 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--rule-soft); }
+  .faq summary { cursor: pointer; font-size: 17px; font-weight: 500; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--teal); font-size: 20px; line-height: 1; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq p { font-size: 16px; color: var(--ink-soft); margin-top: 10px; max-width: 62ch; }
+
+  footer { border-top: 1px solid var(--rule); }
+  .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-top: 36px; padding-bottom: 32px; font-size: 14px; color: var(--ink-faint); }
+  .foot a { color: var(--ink-soft); text-decoration: none; margin-right: 18px; }
+  .foot a:hover { color: var(--teal); }
+
+  @media (max-width: 760px) {
+    .list { grid-template-columns: 1fr; gap: 26px; }
+    .pair { grid-template-columns: 1fr; }
+    .pair .phone { max-width: 300px; }
+    th { width: auto; }
+  }
+  @media (max-width: 560px) {
+    .links a:not(.btn) { display: none; }
+    td.price { width: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="brand" href="/maication/" aria-label="MaiCation home">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#265C5A"/><path d="M14 38 50 24l-4 5-13 17-4-11-15-5z" fill="none" stroke="#FAF7F2" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    <span>MaiCation</span>
+  </a>
+  <div class="links">
+    <a href="#what">What it does</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/">Mai Software</a>
+    <a class="btn teal" href="https://holiday.maisoftware.app/signup">Start free</a>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <h1>The family trip, planned in one place.</h1>
+  <p>MaiCation keeps a trip's ideas, bookings, budget and passports together, from the first "what if we did Paris first?" to the morning you leave for the airport. It runs in the browser on a phone, an iPad or a laptop, and everyone in the family signs in to the same trip.</p>
+  <div class="cta">
+    <a class="btn teal" href="https://holiday.maisoftware.app/signup">Start free</a>
+    <a class="btn line" href="#pricing">What it costs</a>
+    <small>14 days with everything on, no card needed.</small>
+  </div>
+  <figure class="shot">
+    <img src="/maication/assets/trip.webp" width="1600" height="1010" alt="The trip page for Europe Trip 2026 on a laptop: a rail of sections down the left, a header with the cost so far and a timeline button, then the journey leg by leg with the booked option on each card." fetchpriority="high">
+    <figcaption class="cap">The trip page on a laptop. Every new account starts with this sample trip so there's something to poke at.</figcaption>
+  </figure>
+</header>
+
+<section id="what">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="lead">Most trip planners want a finished itinerary on day one. A family doesn't have one. It has school holidays, a points balance, three hotel tabs open and a confirmation email somewhere. MaiCation starts there.</p>
+    <div class="list">
+      <div>
+        <h3>Ideas first, bookings later</h3>
+        <p>A flight, a hotel, a note and a task are all the same kind of thing. They start as ideas, get shortlisted, held, then booked. Booking one option puts the others away.</p>
+      </div>
+      <div>
+        <h3>It reads your booking emails</h3>
+        <p>Connect a mailbox and confirmations are found and offered for review, including the ones your partner forwarded. Nothing goes on the itinerary until you say so.</p>
+      </div>
+      <div>
+        <h3>An assistant that suggests, never books</h3>
+        <p>Ask it about the trip, hand it a booking PDF or a fare screenshot. It proposes a change and you apply or reject it. It can't spend your money.</p>
+      </div>
+      <div>
+        <h3>A memo the evening before</h3>
+        <p>At 6pm, tomorrow's bookings with their references, where tonight's bed is, the forecast, and when to leave for the first thing.</p>
+      </div>
+      <div>
+        <h3>Every price says when it was seen</h3>
+        <p>A fare or a room rate is a snapshot with a date on it. Nothing is shown as live availability, because "A$2,950 seen 20 July" and "A$2,950" are different facts.</p>
+      </div>
+      <div>
+        <h3>A vault for the passports</h3>
+        <p>Passports, visas, insurance and emergency contacts, encrypted, behind a second passphrase. It locks itself after ten minutes.</p>
+      </div>
+      <div>
+        <h3>Share the plan, not the numbers</h3>
+        <p>A share link or an exported page has no booking references, loyalty numbers or passport details. The grandparents get the itinerary and nothing else.</p>
+      </div>
+      <div>
+        <h3>Works without a signal</h3>
+        <p>Pages you've opened are kept on the phone and shown when roaming is off, with a note saying so. The budget keeps working too.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>On the phone, once you're away</h2>
+    <div class="pair">
+      <div class="phone">
+        <img src="/maication/assets/memo-phone.webp" width="780" height="2128" alt="The day page for Monday 7 September on a phone: the time zone in use, the Paris apartment check-in with its reference, and the daily memo with what needs doing." loading="lazy">
+      </div>
+      <div>
+        <h3>The day page</h3>
+        <p>One screen per day. What's booked, in local time, with the reference the desk will ask for. Underneath, the memo that goes out the evening before: where you'll be, what's checking in, what still needs paying.</p>
+        <p>Passport and document numbers never appear in the memo. They stay in the vault behind its own passphrase.</p>
+        <p>Add the site to the phone's home screen and it behaves like an app. The same account works on the iPad on the couch and the laptop at 10pm.</p>
+      </div>
+    </div>
+    <figure class="shot">
+      <img src="/maication/assets/budget.webp" width="1600" height="938" alt="The budget page: a target per category as a lump sum or a nightly rate, with budgeted, booked, paid and variance under each." loading="lazy">
+      <figcaption class="cap">The budget. One sheet for the trip, a target per category, and booking confirmations tick themselves off as paid.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="studio">
+  <div class="wrap">
+    <h2>Who makes it</h2>
+    <p class="lead">MaiCation is made by Mai Software, an independent studio in Australia. We also make Maicasa, MaiCellar, ProBono and MaiCaddy for iPhone. The people who write the code answer the support mail, so if something is confusing or broken, write to <a href="mailto:support@maisoftware.app">support@maisoftware.app</a> and we'll fix it.</p>
+    <p class="lead">The assistant runs on Claude, made by Anthropic. It sees the trip you're asking about and the document you hand it, nothing else, and it treats what's inside a document or a web page as information rather than instructions.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>What it costs</h2>
+    <p class="lead">Most families won't pay anything. Every account gets the email reader, the vault, the board, the budget and 30 assistant questions every six months, after 14 days with no limits. A pass adds a trip's worth of questions, once. Nothing renews.</p>
+    <table>
+      <tbody>
+        <tr><th>Free</th><td class="price">A$0</td><td>Everything except the assistant, plus 30 questions every six months.</td></tr>
+        <tr><th>Your own Claude or ChatGPT</th><td class="price">A$0</td><td>Connect the subscription you already pay for. Same trip, no limit from us.</td></tr>
+        <tr><th>Trip Pass</th><td class="price">A$19 once</td><td>100 more questions over six months. Passport reading into the vault.</td></tr>
+        <tr><th>Trip Pass Plus</th><td class="price">A$49 once</td><td>The same, with the assistant on Anthropic's deepest model.</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Book a stay through one of the app's Booking.com or Expedia links and we refund the pass when the commission reaches us, which is six to eight weeks after the stay. Those links carry a referral tag and say so. The price you pay is the same either way. Prices in Australian dollars, GST included; payment by Stripe. <a href="/maication/pricing/">Full pricing</a> · <a href="/maication/privacy/">Privacy</a></p>
+    <div class="cta">
+      <a class="btn teal" href="https://holiday.maisoftware.app/signup">Start free</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Does it book anything for me?</summary>
+        <p>No. The assistant can set up a search with your dates and party and hand you the live site, but it can't make a booking or spend money. Every price it shows is a snapshot with its date, not a hold.</p>
+      </details>
+      <details>
+        <summary>What does the email reader actually read?</summary>
+        <p>It lists sender, subject and date, reads a body only when the message already looks like travel, and keeps only travel emails. Everything else leaves an anonymous fingerprint so it isn't looked at twice. Every decision is listed and you can override any of them.</p>
+      </details>
+      <details>
+        <summary>Can grandparents see the plan?</summary>
+        <p>Yes, through a share link or an exported page. Both are built from a view with no booking references, loyalty numbers, full names or contact details. People on the trip can be invited to edit it.</p>
+      </details>
+      <details>
+        <summary>What happens when the pass ends?</summary>
+        <p>Everything stays and stays editable. The email reader keeps working and the assistant goes back to the free 30 questions. Nothing is deleted and nothing renews.</p>
+      </details>
+      <details>
+        <summary>Can I use my own Claude or ChatGPT instead?</summary>
+        <p>Yes. In ChatGPT, add the MaiCation GPT and sign in from the chat. In Claude, add the connector from Set up. Your own assistant can read the trip, search stays and flights and propose changes for you to approve. Nothing runs on our side, so there's no charge from us.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>&copy; 2026 Mai Software. MaiCation runs at <a href="https://holiday.maisoftware.app">holiday.maisoftware.app</a></span>
+    <span><a href="/maication/pricing/">Pricing</a><a href="/maication/privacy/">Privacy</a><a href="mailto:support@maisoftware.app">Support</a><a href="/">Mai Software</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

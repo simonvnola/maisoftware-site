@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaiCation — Pricing</title>
+<meta name="description" content="Free for most families: 30 assistant questions every six months, the email reader and the vault, or your own Claude through a connector. A Trip Pass is A$19 once for a trip's worth of questions, refunded if you book a stay through the app.">
+<link rel="canonical" href="https://maisoftware.app/maication/pricing/">
+<meta name="theme-color" content="#265C5A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23265C5A'/%3E%3Cpath d='M14 38 50 24l-4 5-13 17-4-11-15-5z' fill='none' stroke='%23FAF7F2' stroke-width='3.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper: #FAF7F2; --card: #FFFFFF; --ink: #1E293B; --ink-soft: #475569; --ink-faint: #7C8797;
+    --teal: #265C5A; --teal-deep: #1E4A48; --teal-wash: #EEF6F5; --teal-line: #D5E9E7;
+    --rule: rgba(30, 74, 72, 0.16); --rule-soft: rgba(30, 74, 72, 0.09);
+    --ok-bg: #E5F3EC; --ok-fg: #166448;
+  }
+  body { font-family: 'Instrument Sans', system-ui, -apple-system, sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--teal); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+  nav { position: sticky; top: 0; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px clamp(20px, 5vw, 56px); background: rgba(250, 247, 242, 0.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule-soft); }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand svg { width: 30px; height: 30px; border-radius: 9px; }
+  .brand span { font-family: Georgia, 'Times New Roman', serif; font-size: 21px; color: var(--teal-deep); }
+  nav .back { font-size: 13.5px; color: var(--ink-soft); text-decoration: none; }
+  nav .back:hover { color: var(--teal); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); }
+  .hero { text-align: center; padding: clamp(56px, 8vw, 88px) 0 32px; }
+  .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 600; line-height: 1.08; letter-spacing: -0.015em; max-width: 18ch; margin: 0 auto 16px; }
+  .hero p { color: var(--ink-soft); max-width: 56ch; margin: 0 auto; }
+
+
+  .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 860px; margin: 16px auto 0; }
+  .plan { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+  .plan.lead { border-color: var(--teal); box-shadow: 0 0 0 1px var(--teal), 0 24px 48px -32px rgba(30, 74, 72, 0.45); }
+  .plan .tag { font-size: 12.5px; color: var(--ok-fg); background: var(--ok-bg); padding: 3px 9px; border-radius: 999px; align-self: flex-start; margin-bottom: 10px; }
+  .plan .btn.line { background: transparent; color: var(--teal-deep); border: 1px solid var(--rule); }
+  .plan .btn.line:hover { background: var(--teal-wash); }
+  .refund { max-width: 860px; margin: 18px auto 0; padding: 18px 22px; border: 1px solid var(--teal-line); background: var(--teal-wash); border-radius: 14px; font-size: 14.5px; color: var(--teal-deep); }
+  .refund b { font-weight: 600; }
+  @media (max-width: 720px) { .plans { grid-template-columns: 1fr; } }
+  .plan .nm { font-size: 20px; font-weight: 500; }
+  .plan ul { flex: 1; }
+  .plan .desc { font-size: 14px; color: var(--ink-faint); margin-top: 4px; }
+  .plan .price { font-family: Georgia, 'Times New Roman', serif; font-size: 52px; line-height: 1; margin-top: 22px; }
+  .plan .price small { font-family: 'Instrument Sans', sans-serif; font-size: 14px; color: var(--ink-faint); }
+  .plan .note { font-size: 13.5px; color: var(--ok-fg); margin-top: 8px; min-height: 22px; }
+  .plan ul { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--ink-soft); }
+  .plan li { display: flex; gap: 10px; align-items: flex-start; }
+  .plan li svg { flex: none; margin-top: 5px; }
+  .fair { display: flex; gap: 8px; align-items: center; font-size: 12.5px; color: var(--ink-faint); background: var(--paper); border: 1px solid var(--rule-soft); border-radius: 10px; padding: 10px 14px; margin-top: 22px; }
+  .btn { display: flex; align-items: center; justify-content: center; margin-top: 22px; height: 50px; border-radius: 12px; background: var(--teal); color: #fff; text-decoration: none; font-size: 15px; font-weight: 500; }
+  .btn:hover { background: var(--teal-deep); }
+  .below { text-align: center; font-size: 13px; color: var(--ink-faint); max-width: 56ch; margin: 22px auto 0; line-height: 1.7; }
+
+  .compare { max-width: 760px; margin: 64px auto 0; background: #fff; border: 1px solid var(--rule); border-radius: 16px; padding: 36px 32px; }
+  .compare h2 { font-size: clamp(24px, 3vw, 30px); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 12px; }
+  .compare p { font-size: 14.5px; color: var(--ink-soft); max-width: 60ch; }
+  table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 14px; }
+  th, td { padding: 12px 10px; border-bottom: 1px solid var(--rule-soft); text-align: left; vertical-align: top; }
+  th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-faint); font-weight: 500; }
+  th.us, td.us { color: var(--teal-deep); font-weight: 500; }
+  tr:last-child td { border-bottom: 0; }
+  .free { margin-top: 20px; font-size: 13.5px; color: var(--ink-soft); }
+  footer { text-align: center; font-size: 13px; color: var(--ink-faint); padding: 56px 20px 40px; }
+  footer a { color: var(--ink-soft); text-decoration: none; margin: 0 9px; }
+  footer a:hover { color: var(--teal); }
+  @media (max-width: 560px) { .plan { padding: 26px 22px; } .plan .price { font-size: 44px; } .compare { padding: 28px 20px; } th:nth-child(2), td:nth-child(2) { display: none; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="/maication/" aria-label="MaiCation">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#265C5A"/><path d="M14 38 50 24l-4 5-13 17-4-11-15-5z" fill="none" stroke="#FAF7F2" stroke-width="3.5" stroke-linejoin="round"/></svg>
+    <span>MaiCation</span>
+  </a>
+  <a class="back" href="/maication/">← Back</a>
+</nav>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>Free for most families. Nothing renews.</h1>
+    <p>Every household gets the email reader, the vault, the board and 30 assistant questions every six months for nothing, after 14 days with no limits at all. A pass adds a trip's worth of questions, once.</p>
+  </section>
+
+  <div class="plans">
+    <div class="plan">
+      <span class="tag">Free</span>
+      <div class="nm">Free</div>
+      <div class="desc">Everyone in the household, for as long as you like.</div>
+      <div class="price">A$0</div>
+      <div class="note">14 days with no limits, then 30 questions every six months</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The email reader: bookings found in your inbox and offered for review, unlimited</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The encrypted vault, the journey board, the budget, sharing and exports</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>30 assistant questions every six months, on Sonnet 5</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The evening memo and flight alerts for booked trips</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/signup">Start free</a>
+    </div>
+
+    <div class="plan">
+      <span class="tag">Also free</span>
+      <div class="nm">Your own Claude or ChatGPT</div>
+      <div class="desc">Plan with the subscription you already pay for.</div>
+      <div class="price">A$0 <small>from us</small></div>
+      <div class="note">No question limit on our side</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>In ChatGPT, add the MaiCation GPT and sign in from the chat; in Claude.ai, add the connector from Set up</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>The same bookings, ideas and budget; it proposes, you approve, like the built-in assistant</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Everything in Free stays free</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/settings/connected-apps">Connect an app</a>
+    </div>
+
+    <div class="plan lead">
+      <span class="tag">One trip</span>
+      <div class="nm">Trip Pass</div>
+      <div class="desc">A trip's worth of questions, once.</div>
+      <div class="price">A$19 <small>once</small></div>
+      <div class="note">100 more questions over six months, on Sonnet 5</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Ask anything about the trip, hand it documents and links, approve what it proposes</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Passport and insurance reading into the vault</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Stacks on the free 30 and on another pass; nothing to cancel</li>
+      </ul>
+      <a class="btn" href="https://holiday.maisoftware.app/pass">Start free, then A$19 for the trip</a>
+    </div>
+
+    <div class="plan">
+      <span class="tag">Deeper</span>
+      <div class="nm">Trip Pass Plus</div>
+      <div class="desc">The same pass with the assistant on Opus.</div>
+      <div class="price">A$49 <small>once</small></div>
+      <div class="note">100 questions over six months, on Opus 4.8</div>
+      <ul>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Anthropic's deepest model for the comparisons where being wrong costs money</li>
+      <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#265C5A" stroke-width="2.5" stroke-linecap="round"><path d="m5 12 4 4L19 6"/></svg>Everything in the Trip Pass</li>
+      </ul>
+      <a class="btn line" href="https://holiday.maisoftware.app/pass">Start free, then A$49</a>
+    </div>
+  </div>
+
+  <p class="refund"><b>Book a stay through the app and the pass is on us.</b> The Booking.com and Expedia links the app fills in for you carry a referral tag, and we say so beside every one. If you book through one, we refund your pass in full when the commission reaches us; if you never bought one, you get one. We check the reports monthly, and they arrive six to eight weeks after the stay. The price you pay the hotel is the same either way, and the links are offered whether or not they pay.</p>
+
+  <p class="below">Prices in AUD, GST included. One payment, nothing renewing. Secure payment by Stripe; MaiCation never sees your card. You'll make an account first so the pass has a household to belong to. Questions? <a href="mailto:support@maisoftware.app">Email us</a>.</p>
+
+  <section class="compare">
+    <h2>What it replaces, and what it doesn't</h2>
+    <p>A travel agent's service fee for a family itinerary runs to a few hundred dollars per trip, and the plan lives in their system. MaiCation keeps the record in yours, and works alongside an agent when you use one.</p>
+    <table>
+      <thead><tr><th></th><th>A spreadsheet and an inbox</th><th class="us">MaiCation</th></tr></thead>
+      <tbody>
+        <tr><td>Options compared with points, taxes and seats seen</td><td>By hand, and out of date by Friday</td><td class="us">Side by side, each with the date it was observed</td></tr>
+        <tr><td>Bookings gathered from email</td><td>Search, copy, paste</td><td class="us">Found, read and offered for review</td></tr>
+        <tr><td>Tomorrow's plan with references</td><td>Scroll through confirmations</td><td class="us">One memo at 6pm the evening before</td></tr>
+        <tr><td>Passports at the check-in desk</td><td>Photos in the camera roll</td><td class="us">Encrypted vault, second passphrase, auto-lock</td></tr>
+        <tr><td>The plan for the grandparents</td><td>Forward everything</td><td class="us">A shared page with the references removed</td></tr>
+      </tbody>
+    </table>
+    <p class="free">Without a pass the board, budget, vault, email reader, sharing and exports all keep working. Only the assistant waits for the next free questions.</p>
+  </section>
+</main>
+
+<footer>
+  <a href="/maication/">MaiCation</a><a href="/maication/privacy/">Privacy</a><a href="mailto:support@maisoftware.app">Support</a><a href="/">Mai Software</a>
+  <p style="margin-top:12px;">&copy; 2026 Mai Software</p>
+</footer>
+
+</body>
+</html>

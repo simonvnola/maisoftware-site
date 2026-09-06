@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mai Software — Maicasa, MaiCellar, ProBono &amp; MaiCaddy</title>
-<meta name="description" content="An independent Australian studio making four iPhone apps that keep good records: Maicasa for the home, MaiCellar for the cellar and bar, ProBono for the giving you've promised yourself, MaiCaddy for the golf bag.">
+<title>Mai Software — Maicasa, MaiCellar, ProBono, MaiCaddy &amp; MaiCation</title>
+<meta name="description" content="An independent Australian studio making apps that keep good records: Maicasa for the home, MaiCellar for the cellar and bar, ProBono for the giving you've promised yourself, MaiCaddy for the golf bag, and MaiCation for the family trip.">
 <link rel="canonical" href="https://maisoftware.app/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://maisoftware.app/">
-<meta property="og:title" content="Mai Software — Maicasa, MaiCellar, ProBono &amp; MaiCaddy">
-<meta property="og:description" content="An independent Australian studio making four iPhone apps that keep good records: the home, the cellar and bar, the giving you've promised yourself, and the golf bag.">
+<meta property="og:title" content="Mai Software — Maicasa, MaiCellar, ProBono, MaiCaddy &amp; MaiCation">
+<meta property="og:description" content="An independent Australian studio making apps that keep good records: the home, the cellar and bar, the giving you've promised yourself, the golf bag, and the family trip.">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#5638A8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235638A8'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-size='36' fill='%23FAF9F6' text-anchor='middle'%3Em%3C/text%3E%3C/svg%3E">
@@ -46,6 +46,11 @@
     --river-deep: #0A2C46;
     --buoy:       #FF5A1F;
     --buoy-deep:  #E64A12;
+    --lagoon:     #265C5A;
+    --lagoon-deep:#1E4A48;
+    --lagoon-wash:#EEF6F5;
+    --night:      #172554;
+    --night-2:    #3557D4;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
   body {
@@ -241,6 +246,8 @@
   .entry.cellar .no, .entry.cellar .entry-links a:first-child, .entry.cellar h2 em { color: var(--gold-dim); }
   .entry.bono .no, .entry.bono .entry-links a:first-child, .entry.bono h2 em { color: var(--teal); }
   .entry.caddy .no, .entry.caddy .entry-links a:first-child, .entry.caddy h2 em { color: var(--fern); }
+  .entry.cation .no, .entry.cation .entry-links a:first-child, .entry.cation h2 em { color: var(--lagoon); }
+  .entry.cation .entry-links a:first-child:hover { color: var(--lagoon-deep); }
   .entry.casa .entry-links a:first-child:hover { color: var(--clay-deep); }
   .entry.bono .entry-links a:first-child:hover { color: var(--teal-deep); }
   .entry.caddy .entry-links a:first-child:hover { color: var(--fern-deep); }
@@ -436,6 +443,48 @@
   .gear.done .t { color: var(--ink-faint); text-decoration: line-through; text-decoration-color: rgba(62, 107, 51, 0.4); }
   .gear.done .st { color: var(--ink-faint); }
 
+  /* maication: a real screenshot rather than a vignette */
+  .entry-shot {
+    display: block; width: 100%; max-width: 280px; margin: 0 auto; height: auto;
+    border: 1px solid rgba(38, 92, 90, 0.28); border-radius: 22px;
+    box-shadow: 0 1px 0 rgba(38, 92, 90, 0.08), 0 20px 44px -30px rgba(30, 74, 72, 0.4);
+    -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent);
+  }
+  /* vignette: maication memo */
+  .memo {
+    background: var(--card);
+    border: 1px solid rgba(38, 92, 90, 0.28);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 0 rgba(38, 92, 90, 0.08), 0 20px 44px -30px rgba(30, 74, 72, 0.4);
+  }
+  .memo .day {
+    background: linear-gradient(135deg, var(--night), var(--night-2) 70%, #6D83EF);
+    color: #fff; padding: 18px 22px 16px;
+  }
+  .memo .day .cap {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8;
+    display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  }
+  .memo .day .h {
+    font-family: 'Instrument Sans', system-ui, sans-serif; font-style: italic;
+    font-size: 21px; margin-top: 6px; letter-spacing: -0.01em;
+  }
+  .memo .day p { font-size: 13px; opacity: 0.9; margin-top: 6px; line-height: 1.5; }
+  .memo .day p b { font-weight: 600; }
+  .memo .row {
+    display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; gap: 10px; align-items: baseline;
+    padding: 11px 22px; border-top: 1px solid rgba(38, 92, 90, 0.12); font-size: 14px;
+  }
+  .memo .row .t { font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 12px; color: var(--lagoon); }
+  .memo .row .s { display: block; font-size: 12px; color: var(--ink-faint); }
+  .memo .row .st {
+    font-family: 'Spline Sans Mono', ui-monospace, monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 999px; background: #E5F3EC; color: #166448; white-space: nowrap;
+  }
+  .memo .row .st.held { background: #FDF1DF; color: #8A5A13; }
+
   /* STUDIO NOTE */
   .studio {
     border-top: 1px solid var(--rule);
@@ -620,6 +669,7 @@
     <a href="/maicellar/">MaiCellar</a>
     <a href="/probono/">ProBono</a>
     <a href="/maicaddy/">MaiCaddy</a>
+    <a href="/maication/">MaiCation</a>
     <a href="/regattahq/">Regatta HQ</a>
     <a href="/privacy/">Privacy</a>
   </div>
@@ -629,10 +679,10 @@
   <div>
     <p class="kicker">An independent Australian studio</p>
     <h1>Software for the things you <em>keep</em>.</h1>
-    <p class="hero-sub">Mai Software makes four iPhone apps, and each one is a careful record-keeper: <strong>the house</strong> and its upkeep, <strong>the cellar</strong> and the bar beside it, <strong>the giving</strong> you've promised yourself, and <strong>the golf bag</strong> and its gear.</p>
+    <p class="hero-sub">Mai Software makes careful record-keepers: four for iPhone and one for the browser. <strong>The house</strong> and its upkeep, <strong>the cellar</strong> and the bar beside it, <strong>the giving</strong> you've promised yourself, <strong>the golf bag</strong> and its gear, and <strong>the family trip</strong> from first idea to the day itself.</p>
   </div>
   <aside class="index-card" aria-label="App index">
-    <span class="lbl">The apps — four entries</span>
+    <span class="lbl">The apps — five entries</span>
     <a class="index-row" href="#maicasa">
       <span class="no">01</span>
       <span class="nm">Maicasa</span>
@@ -652,6 +702,11 @@
       <span class="no">04</span>
       <span class="nm">MaiCaddy</span>
       <span class="what">golf gear</span>
+    </a>
+    <a class="index-row" href="#maication">
+      <span class="no">05</span>
+      <span class="nm">MaiCation</span>
+      <span class="what">the family trip</span>
     </a>
   </aside>
 </header>
@@ -784,13 +839,31 @@
     </div>
   </article>
 
+  <article class="entry cation" id="maication">
+    <div class="entry-copy">
+      <p class="no">Entry 05 · MaiCation · on the web</p>
+      <h2>The family trip, from loose ideas to the day itself.</h2>
+      <p>MaiCation lets a trip stay a pile of ideas and reward-seat sightings for as long as it needs to, then hardens it into bookings. It reads the confirmation emails you already have, keeps the passports in an encrypted vault, and sends a memo the evening before saying what's happening next. The assistant can suggest changes, but it never books anything itself.</p>
+      <p>Every price says when it was seen. It runs in the browser, so there's nothing to install, and everyone in the family signs in to the same trip. Free for most families; a A$19 pass adds a trip's worth of questions, and a stay booked through the app refunds it once the commission comes through.</p>
+      <div class="entry-links">
+        <a href="/maication/">Visit MaiCation</a>
+        <a class="store" href="https://holiday.maisoftware.app/signup">Start free ↗</a>
+        <a class="store" href="/maication/pricing/">Pricing</a>
+      </div>
+    </div>
+    <div class="entry-vis">
+      <img class="entry-shot" src="/maication/assets/memo-phone-short.webp" width="780" height="1448" alt="MaiCation's day page on a phone: Monday 7 September in Paris, the apartment check-in with its reference, and the daily memo.">
+      <p class="vignette-note">The day page, on a phone</p>
+    </div>
+  </article>
+
 </main>
 
 <section class="studio">
   <div class="studio-inner">
     <h2>A small studio, <em>on purpose</em>.</h2>
     <div>
-      <p>Mai Software is an independent studio in Australia. We build small, careful apps for iPhone and maintain them ourselves — the same people who write the code answer the support mail.</p>
+      <p>Mai Software is an independent studio in Australia. We build small, careful apps — for iPhone, and now for the browser — and maintain them ourselves: the same people who write the code answer the support mail.</p>
       <p>If something's broken, confusing, or you wish it existed, write to <a href="mailto:support@maisoftware.app">support@maisoftware.app</a>.</p>
     </div>
   </div>
@@ -801,7 +874,7 @@
     <div class="web-copy">
       <p class="eyebrow">Also from the studio · on the web</p>
       <h2>Regatta<em>HQ</em> — race day, run properly.</h2>
-      <p>Our first app for the browser rather than the iPhone. <strong>Regatta HQ</strong> is a modern regatta manager for rowing clubs and associations: entries, the programme, the lane draw, results and live results, all in one place.</p>
+      <p>Also for the browser rather than the iPhone. <strong>Regatta HQ</strong> is a modern regatta manager for rowing clubs and associations: entries, the programme, the lane draw, results and live results, all in one place.</p>
       <p>Built on the web so it runs on the phone at the finish line and the laptop in the tower — nothing to install. The app will be hosted right here when it's ready.</p>
       <div class="web-links">
         <a class="visit" href="/regattahq/">Visit Regatta HQ →</a>
@@ -842,7 +915,7 @@
   <div class="foot-inner">
     <div class="foot-brand">
       <a class="wordmark" href="/">mai<span class="dot">·</span>software</a>
-      <p>Four record-keepers for iPhone, made in Australia.</p>
+      <p>Record-keepers for iPhone and the browser, made in Australia.</p>
     </div>
     <div class="foot-cols">
       <div class="foot-col">
@@ -851,6 +924,7 @@
         <a href="/maicellar/">MaiCellar</a>
         <a href="/probono/">ProBono</a>
         <a href="/maicaddy/">MaiCaddy</a>
+        <a href="/maication/">MaiCation</a>
         <a href="/regattahq/">Regatta HQ</a>
       </div>
       <div class="foot-col">
@@ -858,6 +932,11 @@
         <a href="https://apps.apple.com/au/app/maicasa-home-manager/id6763749559">Maicasa ↗</a>
         <a href="https://apps.apple.com/us/app/maicellar/id6762577833">MaiCellar ↗</a>
         <a href="https://apps.apple.com/au/app/probono/id6762084984">ProBono ↗</a>
+      </div>
+      <div class="foot-col">
+        <p class="h">On the web</p>
+        <a href="https://holiday.maisoftware.app">MaiCation ↗</a>
+        <a href="/maication/pricing/">Pricing</a>
       </div>
       <div class="foot-col">
         <p class="h">Studio</p>
