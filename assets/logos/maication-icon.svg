@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f7572"/>
+      <stop offset="1" stop-color="#1c4a48"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="url(#sky)"/>
+
+  <!-- sun, with a soft double glow -->
+  <circle cx="256" cy="238" r="132" fill="#f5c766" opacity="0.12"/>
+  <circle cx="256" cy="238" r="108" fill="#f5c766" opacity="0.18"/>
+  <circle cx="256" cy="238" r="86" fill="#f5c766"/>
+
+  <!-- sea: two waves, the sun setting behind the first -->
+  <path d="M -40 338 Q 24 310 88 338 T 216 338 T 344 338 T 472 338 T 600 338"
+        fill="none" stroke="#faf7f2" stroke-width="30" stroke-linecap="round"/>
+  <path d="M -104 408 Q -40 384 24 408 T 152 408 T 280 408 T 408 408 T 536 408 T 664 408"
+        fill="none" stroke="#faf7f2" stroke-width="24" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- small sailboat riding the first wave -->
+  <g transform="translate(378 306)">
+    <path d="M -2 -64 L -2 -10 L -40 -10 Z" fill="#faf7f2"/>
+    <path d="M 6 -46 L 6 -10 L 30 -10 Z" fill="#faf7f2" opacity="0.85"/>
+    <path d="M -46 -2 L 38 -2 Q 30 16 12 16 L -26 16 Q -40 16 -46 -2 Z" fill="#1c4a48"/>
+  </g>
+</svg>
