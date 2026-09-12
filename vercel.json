@@ -3,6 +3,9 @@
     { "source": "/maiconflicts",                       "destination": "/", "permanent": false },
     { "source": "/maiconflicts/(.*)",                  "destination": "/", "permanent": false }
   ],
+  "rewrites": [
+    { "source": "/guide",                              "destination": "/api/guide" }
+  ],
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
