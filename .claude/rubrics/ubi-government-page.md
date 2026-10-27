@@ -199,5 +199,8 @@ H2. Lowercase `/ubi/` paths reach the same pages (rewrite), and no redirect loop
 H3. No console errors or warnings on load or on interaction in Chromium.
 H4. Each page has `meta description`, `canonical`, and Open Graph title and
     description, and a favicon.
-H5. The git branch contains no files that do not belong (test screenshots,
-    backups, zip archives, node_modules).
+H5. The files this work adds to the branch (everything under /UBI/ and
+    .claude/) contain nothing that does not belong on a published site:
+    no templates with placeholder text, test screenshots, backups, zip
+    archives, build scripts or node_modules. Files that were already in the
+    repository before this work are out of scope.
