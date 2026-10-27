@@ -213,6 +213,7 @@ td.ctr, th.ctr { text-align: center; }
 .bw-chart img { display: block; width: 100%; min-width: 640px; max-width: 680px; height: auto; }
 figcaption.bw-figure-title { color: var(--bw-ink); font-size: 1rem; margin: 0 0 8px; }
 .bw-figure-source { font-size: 0.9rem; color: var(--bw-ink-2); margin: 8px 0 0; }
+.bw-figure-note { font-size: 0.9rem; font-weight: 700; margin: 8px 0 0; }
 .bw-figure-data { margin: 16px 0 0; }
 .bw-figure-data .bw-table-title { margin-top: 16px; }
 .bw-figure-data .bw-table-wrap { margin-bottom: 8px; }
