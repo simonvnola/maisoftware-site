@@ -202,5 +202,6 @@ H4. Each page has `meta description`, `canonical`, and Open Graph title and
 H5. The files this work adds to the branch (everything under /UBI/ and
     .claude/) contain nothing that does not belong on a published site:
     no templates with placeholder text, test screenshots, backups, zip
-    archives, build scripts or node_modules. Files that were already in the
-    repository before this work are out of scope.
+    archives, build scripts or node_modules; and .claude/ is excluded from
+    deployment (.vercelignore). Files that were already in the repository
+    before this work are out of scope.

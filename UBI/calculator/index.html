@@ -116,7 +116,7 @@ input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px 
 input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px var(--bw-focus), 0 0 0 7px var(--bw-ink); }
 input[type="range"]:disabled { opacity: 0.5; cursor: not-allowed; }
 details.help { margin: 8px 0 0; font-size: max(16px, 0.9rem); }
-details.help > p { margin: 8px 0 0; color: var(--bw-ink-2); max-width: 36em; }
+details.help > p { margin: 8px 0 0; color: var(--bw-ink-2); max-width: var(--bw-measure); }
 details.help b { color: var(--bw-ink); }
 
 /* Lever rail (detailed mode) */
@@ -159,8 +159,8 @@ details.grp .grp-link { font-size: max(16px, 0.9rem); margin: 0 0 16px; color: v
 .findings p { margin: 0; }
 .trig-list { list-style: none; padding: 0; margin: 0 0 24px; }
 .trig-list > li { margin: 0; }
-.note { color: var(--bw-ink-2); font-size: max(16px, 0.9rem); max-width: 36em; }
-.why, .hl-sub, .findings p, .proscons p, .bw-prose p, .bw-prose li, .ro .rs { max-width: 36em; }
+.note { color: var(--bw-ink-2); font-size: max(16px, 0.9rem); max-width: var(--bw-measure); }
+.why, .hl-sub, .findings p, .proscons p, .bw-prose p, .bw-prose li, .ro .rs { max-width: var(--bw-measure); }
 .why .lossword { color: var(--bw-bad); font-weight: 700; }
 table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 table .pos { color: var(--bw-good); } table .neg { color: var(--bw-bad); }
@@ -259,8 +259,29 @@ html.js .nojs-submit { display: none; }
   <p class="bw-lead">Use this calculator to see what the paper's basic income would mean for your household, and what it would cost the Commonwealth budget during the artificial intelligence (AI) transition. Every result is a modelled estimate from the paper's own model, run in your browser; it is not advice or a forecast.</p>
   <p class="bw-meta">Model of 21 October 2026 (Part F4). Dollar figures are A$ nominal; years are financial years, so 2028-29 runs from 1 July 2028 to 30 June 2029. Nothing you enter is stored or sent anywhere.</p>
   <noscript><div class="bw-warning"><span class="bw-warning-mark" aria-hidden="true">!</span><p><strong>JavaScript is needed to change the settings.</strong> The results below are for the paper's settings and the example household, computed when this page was built.</p></div></noscript>
-  <details class="bw-measure"><summary>Abbreviations used on this page</summary>
-    <p>ABS: Australian Bureau of Statistics. ACOSS: Australian Council of Social Service. AHURI: Australian Housing and Urban Research Institute. AIHW: Australian Institute of Health and Welfare. ATO: Australian Taxation Office. CPI: consumer price index. DSP: Disability Support Pension. DSS: Department of Social Services. FTB: Family Tax Benefit. GDP: gross domestic product. IGR: Intergenerational Report. LITO: low income tax offset. PBO: Parliamentary Budget Office. PC: Productivity Commission. PRRT: petroleum resource rent tax. UNSW: University of New South Wales. WPI: Wage Price Index.</p>
+  <details class="bw-abbr">
+    <summary>Abbreviations used on this page</summary>
+    <dl>
+      <dt>ABS</dt><dd>Australian Bureau of Statistics</dd>
+      <dt>ACOSS</dt><dd>Australian Council of Social Service</dd>
+      <dt>AHURI</dt><dd>Australian Housing and Urban Research Institute</dd>
+      <dt>AIHW</dt><dd>Australian Institute of Health and Welfare</dd>
+      <dt>ATO</dt><dd>Australian Taxation Office</dd>
+      <dt>CPI</dt><dd>consumer price index</dd>
+      <dt>DSP</dt><dd>Disability Support Pension</dd>
+      <dt>DSS</dt><dd>Department of Social Services</dd>
+      <dt>ECR</dt><dd>election commitment costing (a Parliamentary Budget Office costing reference)</dd>
+      <dt>FTB</dt><dd>Family Tax Benefit</dd>
+      <dt>GDP</dt><dd>gross domestic product</dd>
+      <dt>GST</dt><dd>goods and services tax</dd>
+      <dt>IGR</dt><dd>Intergenerational Report</dd>
+      <dt>LITO</dt><dd>low income tax offset</dd>
+      <dt>PBO</dt><dd>Parliamentary Budget Office</dd>
+      <dt>PC</dt><dd>Productivity Commission</dd>
+      <dt>PRRT</dt><dd>petroleum resource rent tax</dd>
+      <dt>UNSW</dt><dd>University of New South Wales</dd>
+      <dt>WPI</dt><dd>Wage Price Index</dd>
+    </dl>
   </details>
   <nav class="bw-contents" aria-label="On this page">
     <h2>On this page</h2>
