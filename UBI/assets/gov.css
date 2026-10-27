@@ -84,7 +84,7 @@ main { display: block; padding: 32px 0 64px; }
 /* Header */
 .bw-header { background: var(--bw-header); color: #fff; border-bottom: 8px solid var(--bw-accent); }
 .bw-header .bw-wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 16px; padding-bottom: 12px; }
-.bw-publisher { color: #fff; font-size: 0.85rem; letter-spacing: 0.02em; text-decoration: none; }
+.bw-publisher { color: #fff; font-size: 0.85rem; letter-spacing: 0.02em; text-decoration: none; display: inline-block; padding: 4px 0; }
 .bw-publisher:visited { color: #fff; }
 .bw-publisher:hover { text-decoration: underline; color: #fff; }
 .bw-service { color: #fff; font-weight: 700; font-size: 1.35rem; text-decoration: none; }
@@ -118,6 +118,7 @@ main { display: block; padding: 32px 0 64px; }
 .bw-contents ol, .bw-contents ul { list-style: none; padding: 0; margin: 0; }
 .bw-contents li { display: flex; align-items: baseline; gap: 8px; margin: 0 0 8px; }
 .bw-contents li a { display: inline-block; padding: 4px 0; }
+.bw-contents p a, p > a:only-child { padding: 4px 0; }
 .bw-contents li::before { content: "\2014"; flex: none; color: var(--bw-ink-2); }
 .bw-contents a[aria-current] { color: var(--bw-ink); font-weight: 700; text-decoration: none; }
 
