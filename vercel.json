@@ -9,20 +9,22 @@
       "source": "/maiconflicts/(.*)",
       "destination": "/",
       "permanent": false
+    },
+    {
+      "source": "/ubi",
+      "destination": "/UBI/",
+      "permanent": true
+    },
+    {
+      "source": "/ubi/(.*)",
+      "destination": "/UBI/$1",
+      "permanent": true
     }
   ],
   "rewrites": [
     {
       "source": "/guide",
       "destination": "/api/guide"
-    },
-    {
-      "source": "/ubi",
-      "destination": "/UBI/index.html"
-    },
-    {
-      "source": "/ubi/:path*",
-      "destination": "/UBI/:path*"
     }
   ],
   "headers": [

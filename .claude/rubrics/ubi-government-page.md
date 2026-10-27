@@ -194,8 +194,8 @@ G13. Error handling: out-of-range input is rejected with a plain message next
 H1. All three page types load with HTTP 200 from the deployed site (or a local
     static server that mirrors the Vercel layout), including `/UBI/`,
     `/UBI/paper/`, each chapter, `/UBI/calculator/` and every chart file.
-H2. Lowercase `/ubi/` paths reach the same pages (rewrite), and no redirect loop
-    exists.
+H2. Lowercase `/ubi/` paths reach the same pages (by rewrite or redirect), with
+    no redirect loop, verified on a deployment where possible.
 H3. No console errors or warnings on load or on interaction in Chromium.
 H4. Each page has `meta description`, `canonical`, and Open Graph title and
     description, and a favicon.
