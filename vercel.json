@@ -1,10 +1,29 @@
 {
   "redirects": [
-    { "source": "/maiconflicts",                       "destination": "/", "permanent": false },
-    { "source": "/maiconflicts/(.*)",                  "destination": "/", "permanent": false }
+    {
+      "source": "/maiconflicts",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/maiconflicts/(.*)",
+      "destination": "/",
+      "permanent": false
+    }
   ],
   "rewrites": [
-    { "source": "/guide",                              "destination": "/api/guide" }
+    {
+      "source": "/guide",
+      "destination": "/api/guide"
+    },
+    {
+      "source": "/ubi",
+      "destination": "/UBI/index.html"
+    },
+    {
+      "source": "/ubi/:path*",
+      "destination": "/UBI/:path*"
+    }
   ],
   "headers": [
     {
