@@ -196,6 +196,12 @@ summary { cursor: pointer; color: var(--bw-link); text-decoration: underline; fo
 summary:hover { color: var(--bw-link-hover); }
 details > :not(summary) { margin-top: 8px; }
 
+/* Question-and-answer list: one disclosure per statement */
+.bw-qa { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--bw-rule); max-width: var(--bw-measure); }
+.bw-qa:first-of-type { border-top: 1px solid var(--bw-rule); }
+.bw-qa summary { font-weight: 700; padding: 4px 0; }
+.bw-qa > p { margin: 12px 0 0; }
+
 /* Footer */
 .bw-footer { background: var(--bw-wash); border-top: 1px solid var(--bw-rule); color: var(--bw-ink); font-size: 0.9rem; margin-top: 48px; }
 .bw-footer .bw-wrap { padding-top: 32px; padding-bottom: 32px; }
