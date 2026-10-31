@@ -2836,7 +2836,7 @@ if (typeof module !== 'undefined') module.exports = BW;
       var st = roStatus(elm); if (!st) return;
       if (elm.closest('[hidden]')) return;
       if ((state.mode === 'simple' && elm.closest('.detailed-only')) || (state.mode === 'detailed' && elm.closest('.simple-only'))) return;
-      rows.push([elm.getAttribute('data-ro-label'), st.s + (elm.getAttribute('data-ro-prov') ? ', provisional' : ''), st.per && st.by.length ? 'Nothing within a choice; the paper gives one figure for each choice of: ' + st.by.join('; ').toLowerCase() : st.s === 'Fixed' || !st.by.length ? 'Nothing on this page' : cap(st.by.join('; '))]);
+      rows.push([elm.getAttribute('data-ro-label'), st.s + (elm.getAttribute('data-ro-prov') ? ', provisional' : ''), elm.getAttribute('data-ro-by') === 'design' ? 'Changes only with the Stage 1 design' : st.per && st.by.length ? 'Nothing within a choice; the paper gives one figure for each choice of: ' + st.by.join('; ').toLowerCase() : st.s === 'Fixed' || !st.by.length ? 'Nothing on this page' : cap(st.by.join('; '))]);
     });
     table(body, ['Figure', 'Status', 'What moves it'], rows, { text: true, stacked: true, caption: 'What moves each figure', hideCaption: true });
     // a long list of levers reads as a list, not a sentence
@@ -3215,6 +3215,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     var roH = $('#eco-readouts'); roH.innerHTML = '';
     function readoutEl(label, value, sub) { readout(label, value, sub); return roH.lastElementChild; }
     function readoutFixed(label, value, sub) { var e = readoutEl(label, value, sub); e.setAttribute('data-ro-kind', 'fixed'); return e; }
+    function readoutDesign(label, value, sub) { var e = readoutFixed(label, value, sub); e.setAttribute('data-ro-by', 'design'); return e; }
     function readout(label, value, sub, chip) {
       var d = mk('div', 'ro', null, roH); mk('p', 'rl', label, d); mk('p', 'rv', value, d); var s = mk('p', 'rs', cap(sub), d);
       ro(d, 'eco-ro-' + label.toLowerCase().replace(/[0-9]+/g, '').replace(/[^a-z]+/g, '-').replace(/^-+|-+$/g, ''), label, /^Household poverty/.test(label) ? 'interp' : null);
@@ -3243,7 +3244,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     else readout('Balance kept by the other taxes, peak', bn(O.balMax || 0), 'Surpluses reduce debt until the floor and child payment outgrow the taxes; a levy from ' + (s1.levy1 || 'no year to 2045-46') + '.');
     var nb = O.t100 ? O.t100.filter(function (x) { return x[0].indexOf('(' + ok + ')') === 0; })[0] : null;
     var AP = OB.appraisal[des], rg = function (x) { return bn(x[0]) + ' to ' + bn(x[1]); };
-    if (isP) prov(readoutEl('Net benefit, complete accounting, 2028-29', rg(AP.nb), 'First-year net benefit on the paper’s complete accounting for ' + DESIGN_SHORT[des] + ', against Part 1: ' + (AP.vsP1 ? bn(AP.vsP1[0], true) + ' to ' + bn(AP.vsP1[1], true) : 'the reference') + '. It breaks even at a weight of ' + nf1.format(AP.w[0]) + ' to ' + nf1.format(AP.w[1]) + ' on gains to households in poverty; with the Green Book’s standard weights it is ' + rg(AP.gb) + '. The paper’s figure at its settings.'));
+    if (isP) prov(readoutDesign('Net benefit, complete accounting, 2028-29', rg(AP.nb), 'First-year net benefit on the paper’s complete accounting for ' + DESIGN_SHORT[des] + ', against Part 1: ' + (AP.vsP1 ? bn(AP.vsP1[0], true) + ' to ' + bn(AP.vsP1[1], true) : 'the reference') + '. It breaks even at a weight of ' + nf1.format(AP.w[0]) + ' to ' + nf1.format(AP.w[1]) + ' on gains to households in poverty; with the Green Book’s standard weights it is ' + rg(AP.gb) + '. The paper’s figure at its settings.'));
     else if (nb) readoutFixed('Net benefit, complete accounting', rangeBn(nb[12]), 'Present value 2028-29 to 2045-46 at the paper’s settings, after the deadweight cost of the taxes and the behavioural costs. ' + (ok === 'none' ? 'The reference for the other options.' : 'Universality would need to be worth A$' + nb[13].replace(' to ', ' to A$') + ' per adult a year to match Stage 1 with no dividend.'));
     var pv = r.poverty, pz = pv.pens, hiRel = pz ? pv.rel[0] + pz[1].rel - pz[0].rel : pv.rel[0];
     if (isP) { var pr2 = OB.povRec075[des]; readout('Household poverty, Stage 1', nf1.format(pv.rel[0]) + '–' + pct(pr2), 'Relative line, from ' + pct(pv.base[0]) + ': the household model’s run for ' + DESIGN_SHORT[des] + ', and with full-rate pensioners’ other income 25% lower (closest to DSS data). Anchored line ' + pct(pv.anch[0]) + '; children ' + pct(pv.child[0]) + '. After housing costs; the model’s figures at the recommended settings, which do not move with the levers.'); }
@@ -3595,7 +3596,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     var nm = cap(DESIGN_SHORT[des]), f = function (x) { return x.first || 'none'; }, find = function (re) { return S.filter(function (x) { return re.test(x.case); })[0]; };
     var c = S[0], lo80 = find(/80% of the costings/), hi = find(/^High case/);
     mk('h4', null, nm + '’s levy under stress, with no dividend', host);
-    mk('p', 'why', 'At the recommended settings ' + nm + ' needs a levy from ' + f(c) + ' (' + bn(c.total) + ' to 2045-46, peaking at ' + pct(100 * c.peak_rate, 2) + ' of market income). If fuel and minerals revenue grew with GDP, from ' + f(hi) + ' (' + bn(hi.total) + '). If the five taxes yield 80% of their costings, from ' + f(lo80) + ', reaching ' + pct(100 * lo80.peak_rate, 2) + ' (' + bn(lo80.total) + ' to 2045-46). The taxes must yield ' + pct(OB.beYield[des], 1) + ' of their costings for no levy before 2044-45, against ' + pct(OB.beYield.p1, 1) + ' for Part 1. The option B model’s Table B15; provisional.', host);
+    mk('p', 'why', 'At the paper’s settings, ' + DESIGN_SHORT[des] + ' needs a levy from ' + f(c) + ' (' + bn(c.total) + ' to 2045-46, peaking at ' + pct(100 * c.peak_rate, 2) + ' of market income). If fuel and minerals revenue grew with GDP, from ' + f(hi) + ' (' + bn(hi.total) + '). If the five taxes yield 80% of their costings, from ' + f(lo80) + ', reaching ' + pct(100 * lo80.peak_rate, 2) + ' (' + bn(lo80.total) + ' to 2045-46). The taxes must yield ' + pct(OB.beYield[des], 1) + ' of their costings for no levy before 2044-45, against ' + pct(OB.beYield.p1, 1) + ' for Part 1. The option B model’s Table B15; provisional.', host);
     var det = mk('details', 'tview', null, host);
     mk('summary', null, 'All the stress cases (Table B15), with Part 1 for comparison', det);
     var w = mk('div', null, null, det);
