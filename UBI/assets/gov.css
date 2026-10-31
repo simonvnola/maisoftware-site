@@ -250,6 +250,7 @@ figcaption.bw-figure-title { color: var(--bw-ink); font-size: 1rem; margin: 0 0 
 .bw-body p, .bw-body li, .bw-body figcaption, .bw-inset, .bw-sources { overflow-wrap: anywhere; }
 .bw-sources li { margin-bottom: 12px; }
 
+@page { size: A4 portrait; margin: 10mm; }
 @media print {
   .bw-skip, .bw-nav, .bw-pager, .bw-footer, .bw-crumbs, .bw-contents, .bw-cols > aside { display: none !important; }
   .bw-header { background: none; color: var(--bw-ink); border-bottom: 2px solid var(--bw-ink); }
@@ -265,6 +266,12 @@ figcaption.bw-figure-title { color: var(--bw-ink); font-size: 1rem; margin: 0 0 
   /* Wide paper tables fit A4 portrait: no minimum widths, small type, cells wrap */
   .bw-table-wrap table, .bw-c4, .bw-c5, .bw-c6, .bw-c7, .bw-c8, .bw-c9, .bw-c10, .bw-c11, .bw-c12 { min-width: 0 !important; width: 100%; }
   .bw-table-wrap table { font-size: 7.5pt; }
-  .bw-table-wrap th, .bw-table-wrap td { min-width: 0 !important; white-space: normal !important; overflow-wrap: anywhere; padding: 2pt 4pt 2pt 0; line-height: 1.25; }
+  .bw-table-wrap th, .bw-table-wrap td { min-width: 0 !important; white-space: normal !important; overflow-wrap: normal; hyphens: auto; padding: 2pt 3pt 2pt 0; line-height: 1.25; }
+  .bw-table-wrap td.num, .bw-table-wrap th.num { hyphens: manual; }
+  .bw-table-wrap table.bw-c9, .bw-table-wrap table.bw-c10, .bw-table-wrap table.bw-c11 { font-size: 6.5pt; }
+  .bw-table-wrap table.bw-c12 { font-size: 6pt; }
+  .bw-table-wrap table.bw-c12 th, .bw-table-wrap table.bw-c12 td { padding-right: 2pt; }
+  .bw-table-wrap table.bw-c12 thead th { overflow-wrap: anywhere; }
+  .bw-wrap { padding-left: 0; padding-right: 0; max-width: none; }
   .bw-figure-data { display: none; }
 }
