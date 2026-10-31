@@ -100,6 +100,11 @@ main { display: block; padding: 32px 0 64px; }
 .bw-nav a:hover { text-decoration: underline; }
 .bw-nav a[aria-current="page"], .bw-nav a[aria-current="true"] { color: var(--bw-ink); border-bottom-color: var(--bw-accent); }
 
+/* Phase banner: the working-draft notice under the navigation on every page */
+.bw-phase { border-bottom: 1px solid var(--bw-rule); padding: 8px 0; font-size: 0.9rem; }
+.bw-phase p { margin: 0; max-width: none; }
+.bw-phase-tag { display: inline-block; margin-right: 8px; padding: 4px 8px; background: var(--bw-header); color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+
 /* Breadcrumbs */
 .bw-crumbs { margin: 16px 0 0; font-size: 0.9rem; }
 .bw-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }

@@ -28,6 +28,11 @@ A6. Contact route: a working way to write to the publisher (a mailto link or
     a contact page) in the footer of every page.
 A7. No secrets, tokens, local file paths or build-machine paths in any served
     file.
+A8. Every page carries the working-draft banner directly below the primary
+    navigation (the same markup on every page), saying the paper and calculator
+    are updated regularly and may change, with a link to what changed in the
+    latest revision; the paper's own front matter states its working-draft
+    status and revision date.
 
 ## B. Navigation and structure
 
