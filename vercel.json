@@ -19,6 +19,16 @@
       "source": "/ubi/(.*)",
       "destination": "/UBI/$1",
       "permanent": true
+    },
+    {
+      "source": "/UBI/paper/10-appendix",
+      "destination": "/UBI/paper/11-appendix/",
+      "permanent": true
+    },
+    {
+      "source": "/UBI/paper/10-appendix/(.*)",
+      "destination": "/UBI/paper/11-appendix/",
+      "permanent": true
     }
   ],
   "rewrites": [
