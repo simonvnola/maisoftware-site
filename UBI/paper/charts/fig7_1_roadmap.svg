@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="680" height="1400" viewBox="0 0 680 1400" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="680" height="1560" viewBox="0 0 680 1560" xmlns="http://www.w3.org/2000/svg" version="1.1">
  <defs>
   <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 1400 
-L 680 1400 
+   <path d="M 0 1560 
+L 680 1560 
 L 680 0 
 L 0 0 
 z
@@ -16,232 +16,232 @@ z
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 20.4 336 
-L 659.6 336 
-L 659.6 35 
-L 20.4 35 
+    <path d="M 20.4 360 
+L 659.6 360 
+L 659.6 60 
+L 20.4 60 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="line2d_1">
-    <path d="M 20.4 336 
-L 20.4 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 20.4 360 
+L 20.4 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_2">
-    <path d="M 91.940633 336 
-L 91.940633 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 91.940633 360 
+L 91.940633 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_3">
-    <path d="M 161.926034 336 
-L 161.926034 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 161.926034 360 
+L 161.926034 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_4">
-    <path d="M 232.689051 336 
-L 232.689051 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 232.689051 360 
+L 232.689051 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_5">
-    <path d="M 304.229684 336 
-L 304.229684 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 304.229684 360 
+L 304.229684 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_6">
-    <path d="M 375.770316 336 
-L 375.770316 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 375.770316 360 
+L 375.770316 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_7">
-    <path d="M 446.533333 336 
-L 446.533333 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 446.533333 360 
+L 446.533333 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_8">
-    <path d="M 517.29635 336 
-L 517.29635 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 517.29635 360 
+L 517.29635 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_9">
-    <path d="M 588.836983 336 
-L 588.836983 35 
-" clip-path="url(#p1abdba53a7)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 588.836983 360 
+L 588.836983 60 
+" clip-path="url(#p2de1139704)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="patch_3">
-    <path d="M 44.506083 90.274545 
-L 303.452068 90.274545 
-L 303.452068 67.289091 
-L 44.506083 67.289091 
+    <path d="M 44.506083 115.090909 
+L 303.452068 115.090909 
+L 303.452068 92.181818 
+L 44.506083 92.181818 
 z
-" clip-path="url(#p1abdba53a7)" style="fill: #505a5f"/>
+" clip-path="url(#p2de1139704)" style="fill: #505a5f"/>
    </g>
    <g id="patch_4">
-    <path d="M 232.689051 161.42 
-L 374.992701 161.42 
-L 374.992701 138.434545 
-L 232.689051 138.434545 
+    <path d="M 232.689051 186 
+L 374.992701 186 
+L 374.992701 163.090909 
+L 232.689051 163.090909 
 z
-" clip-path="url(#p1abdba53a7)" style="fill: #b35900"/>
+" clip-path="url(#p2de1139704)" style="fill: #b35900"/>
    </g>
    <g id="patch_5">
-    <path d="M 375.770316 232.565455 
-L 516.518735 232.565455 
-L 516.518735 209.58 
-L 375.770316 209.58 
+    <path d="M 375.770316 256.909091 
+L 516.518735 256.909091 
+L 516.518735 234 
+L 375.770316 234 
 z
-" clip-path="url(#p1abdba53a7)" style="fill: #00703c"/>
+" clip-path="url(#p2de1139704)" style="fill: #00703c"/>
    </g>
    <g id="patch_6">
-    <path d="M 517.29635 303.710909 
-L 5628.563504 303.710909 
-L 5628.563504 280.725455 
-L 517.29635 280.725455 
+    <path d="M 517.29635 327.818182 
+L 659.6 327.818182 
+L 659.6 304.909091 
+L 517.29635 304.909091 
 z
-" clip-path="url(#p1abdba53a7)" style="fill: #1d4ea0"/>
+" clip-path="url(#p2de1139704)" style="fill: #1d4ea0"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_10">
       <defs>
-       <path id="m8824fa4067" d="M 0 0 
+       <path id="mbbd6db7745" d="M 0 0 
 L 0 3.5 
 " style="stroke: #0b0c0c; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m8824fa4067" x="20.4" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="20.4" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(2.959688 354.178223)">1 Oct</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(3.8575 369.780762)">2026</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(2.959688 378.178223)">1 Oct</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(3.8575 393.780762)">2026</text>
      </g>
     </g>
     <g id="xtick_2">
      <g id="line2d_11">
       <g>
-       <use xlink:href="#m8824fa4067" x="91.940633" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="91.940633" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(75.71907 354.178223)">1 Jan</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(75.398133 369.780762)">2027</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(75.71907 378.178223)">1 Jan</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(75.398133 393.780762)">2027</text>
      </g>
     </g>
     <g id="xtick_3">
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m8824fa4067" x="161.926034" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="161.926034" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(144.479628 354.178223)">1 Apr</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(145.383534 369.780762)">2027</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(144.479628 378.178223)">1 Apr</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(145.383534 393.780762)">2027</text>
      </g>
     </g>
     <g id="xtick_4">
      <g id="line2d_13">
       <g>
-       <use xlink:href="#m8824fa4067" x="232.689051" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="232.689051" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(218.644989 354.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(216.146551 369.781777)">2027</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(218.644989 378.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(216.146551 393.781777)">2027</text>
      </g>
     </g>
     <g id="xtick_5">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m8824fa4067" x="304.229684" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="304.229684" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(286.789371 354.178223)">1 Oct</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(287.687184 369.780762)">2027</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(286.789371 378.178223)">1 Oct</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(287.687184 393.780762)">2027</text>
      </g>
     </g>
     <g id="xtick_6">
      <g id="line2d_15">
       <g>
-       <use xlink:href="#m8824fa4067" x="375.770316" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="375.770316" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(359.548754 354.178223)">1 Jan</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(359.227816 369.780762)">2028</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(359.548754 378.178223)">1 Jan</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(359.227816 393.780762)">2028</text>
      </g>
     </g>
     <g id="xtick_7">
      <g id="line2d_16">
       <g>
-       <use xlink:href="#m8824fa4067" x="446.533333" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="446.533333" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_7">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(429.086927 354.178223)">1 Apr</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(429.990833 369.780762)">2028</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(429.086927 378.178223)">1 Apr</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(429.990833 393.780762)">2028</text>
      </g>
     </g>
     <g id="xtick_8">
      <g id="line2d_17">
       <g>
-       <use xlink:href="#m8824fa4067" x="517.29635" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="517.29635" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_8">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(503.252288 354.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(500.75385 369.781777)">2028</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(503.252288 378.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(500.75385 393.781777)">2028</text>
      </g>
     </g>
     <g id="xtick_9">
      <g id="line2d_18">
       <g>
-       <use xlink:href="#m8824fa4067" x="588.836983" y="336" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="588.836983" y="360" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_9">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(571.39667 354.178223)">1 Oct</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(572.294483 369.780762)">2028</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(571.39667 378.178223)">1 Oct</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(572.294483 393.780762)">2028</text>
      </g>
     </g>
    </g>
    <g id="matplotlib.axis_2"/>
    <g id="patch_7">
-    <path d="M 20.4 336 
-L 659.6 336 
+    <path d="M 20.4 360 
+L 659.6 360 
 " style="fill: none; stroke: #0b0c0c; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_10">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="59.240589" transform="rotate(-0 20.4 59.240589)">0. Inquiry and consultation</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="84.14968" transform="rotate(-0 20.4 84.14968)">0. Inquiry and consultation</text>
    </g>
    <g id="text_11">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="103.983423" transform="rotate(-0 20.4 103.983423)">Owner: Joint select committee; Treasury; DSS</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="128.78706" transform="rotate(-0 20.4 128.78706)">Owner: Joint select committee; Treasury; DSS</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="130.386044" transform="rotate(-0 20.4 130.386044)">1. Legislation</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="155.058771" transform="rotate(-0 20.4 155.058771)">1. Legislation</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="175.128878" transform="rotate(-0 20.4 175.128878)">Owner: Treasurer; Minister for Social Services</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="199.696151" transform="rotate(-0 20.4 199.696151)">Owner: Treasurer; Minister for Social Services</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="201.531499" transform="rotate(-0 20.4 201.531499)">2. Build and test</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="225.967862" transform="rotate(-0 20.4 225.967862)">2. Build and test</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="246.274332" transform="rotate(-0 20.4 246.274332)">Owner: Services Australia; ATO; PBO; JSA</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="270.605241" transform="rotate(-0 20.4 270.605241)">Owner: Services Australia; ATO; PBO; JSA</text>
    </g>
    <g id="text_16">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="272.676953" transform="rotate(-0 20.4 272.676953)">3. Stage 1: floor, child payment, any Part 2 dividend (until a stage is triggered)</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="296.876953" transform="rotate(-0 20.4 296.876953)">3. Stage 1 (P*): floor, child payment, Rent Assistance +75%</text>
    </g>
    <g id="text_17">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="317.419787" transform="rotate(-0 20.4 317.419787)">Owner: DSS; Services Australia; ATO; Treasurer</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="341.514332" transform="rotate(-0 20.4 341.514332)">Owner: DSS; Services Australia; ATO; Treasurer</text>
    </g>
    <g id="text_18">
-    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="29" transform="rotate(-0 20.4 29)">A. Set-up, November 2026 to June 2028</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="54" transform="rotate(-0 20.4 54)">A. Set-up, November 2026 to June 2028</text>
    </g>
    <g id="line2d_19">
     <defs>
-     <path id="m39c50fa619" d="M 0 9 
+     <path id="m3105f4cdc6" d="M 0 9 
 C 2.386828 9 4.676219 8.051703 6.363961 6.363961 
 C 8.051703 4.676219 9 2.386828 9 0 
 C 9 -2.386828 8.051703 -4.676219 6.363961 -6.363961 
@@ -253,397 +253,489 @@ C -4.676219 8.051703 -2.386828 9 0 9
 z
 " style="stroke: #ffffff; stroke-width: 1.5"/>
     </defs>
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="303.452068" y="78.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="208.582968" y="103.636364" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_20">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="280.123601" y="149.927273" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="280.123601" y="103.636364" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_21">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="374.992701" y="149.927273" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="303.452068" y="103.636364" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_22">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="445.755718" y="221.072727" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="374.992701" y="174.545455" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_23">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="493.190268" y="221.072727" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="445.755718" y="245.454545" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_24">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="516.518735" y="213.958182" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="493.190268" y="245.454545" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="line2d_25">
-    <g clip-path="url(#p1abdba53a7)">
-     <use xlink:href="#m39c50fa619" x="517.29635" y="292.218182" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="516.518735" y="245.454545" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_26">
+    <g clip-path="url(#p2de1139704)">
+     <use xlink:href="#m3105f4cdc6" x="517.29635" y="316.363636" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
     </g>
    </g>
    <g id="text_19">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="303.452068" y="82.158771" transform="rotate(-0 303.452068 82.158771)">2</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="208.582968" y="107.013317" transform="rotate(-0 208.582968 107.013317)">1</text>
    </g>
    <g id="text_20">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="280.123601" y="153.304226" transform="rotate(-0 280.123601 153.304226)">1</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="280.123601" y="107.013317" transform="rotate(-0 280.123601 107.013317)">2</text>
    </g>
    <g id="text_21">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="374.992701" y="153.304226" transform="rotate(-0 374.992701 153.304226)">3</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="303.452068" y="107.013317" transform="rotate(-0 303.452068 107.013317)">3</text>
    </g>
    <g id="text_22">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="445.755718" y="224.44968" transform="rotate(-0 445.755718 224.44968)">4</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="374.992701" y="177.922408" transform="rotate(-0 374.992701 177.922408)">4</text>
    </g>
    <g id="text_23">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="493.190268" y="224.44968" transform="rotate(-0 493.190268 224.44968)">5</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="445.755718" y="248.831499" transform="rotate(-0 445.755718 248.831499)">5</text>
    </g>
    <g id="text_24">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="516.518735" y="217.335135" transform="rotate(-0 516.518735 217.335135)">6</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="493.190268" y="248.831499" transform="rotate(-0 493.190268 248.831499)">6</text>
    </g>
    <g id="text_25">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="517.29635" y="295.595135" transform="rotate(-0 517.29635 295.595135)">7</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="516.518735" y="248.831499" transform="rotate(-0 516.518735 248.831499)">7</text>
+   </g>
+   <g id="text_26">
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="517.29635" y="319.740589" transform="rotate(-0 517.29635 319.740589)">8</text>
    </g>
   </g>
   <g id="axes_2">
    <g id="patch_8">
-    <path d="M 20.4 763 
-L 659.6 763 
-L 659.6 462 
-L 20.4 462 
+    <path d="M 20.4 810 
+L 659.6 810 
+L 659.6 440 
+L 20.4 440 
 z
 " style="fill: #ffffff"/>
    </g>
-   <g id="line2d_26">
-    <path d="M 23.290128 763 
-L 23.290128 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
-   </g>
    <g id="line2d_27">
-    <path d="M 93.616579 763 
-L 93.616579 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 37.540769 810 
+L 37.540769 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_28">
-    <path d="M 164.039367 763 
-L 164.039367 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 106.292206 810 
+L 106.292206 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_29">
-    <path d="M 234.365818 763 
-L 234.365818 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 175.137822 810 
+L 175.137822 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_30">
-    <path d="M 304.788606 763 
-L 304.788606 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 243.889259 810 
+L 243.889259 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_31">
-    <path d="M 375.115057 763 
-L 375.115057 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 312.734875 810 
+L 312.734875 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_32">
-    <path d="M 445.537845 763 
-L 445.537845 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 381.486312 810 
+L 381.486312 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_33">
-    <path d="M 515.864295 763 
-L 515.864295 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 450.331929 810 
+L 450.331929 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_34">
-    <path d="M 586.287084 763 
-L 586.287084 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 519.083365 810 
+L 519.083365 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="line2d_35">
-    <path d="M 656.613534 763 
-L 656.613534 462 
-" clip-path="url(#p6c095f13dc)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+    <path d="M 587.928982 810 
+L 587.928982 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_36">
+    <path d="M 656.680418 810 
+L 656.680418 440 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #b1b4b6; stroke-width: 0.8; stroke-linecap: square"/>
    </g>
    <g id="patch_9">
-    <path d="M 23.290128 517.274545 
-L 656.517197 517.274545 
-L 656.517197 494.289091 
-L 23.290128 494.289091 
+    <path d="M 37.540769 494.955882 
+L 656.586238 494.955882 
+L 656.586238 472.102941 
+L 37.540769 472.102941 
 z
-" clip-path="url(#p6c095f13dc)" style="fill: #1d4ea0"/>
+" clip-path="url(#pef7fea247f)" style="fill: #1d4ea0"/>
    </g>
    <g id="patch_10">
-    <path d="M 128.779804 588.42 
-L 155.176307 588.42 
-L 155.176307 565.434545 
-L 128.779804 565.434545 
+    <path d="M 71.916487 565.691176 
+L 140.573744 565.691176 
+L 140.573744 542.838235 
+L 71.916487 542.838235 
 z
-" clip-path="url(#p6c095f13dc)" style="fill: #a4280d"/>
+" clip-path="url(#pef7fea247f)" style="fill: #4c2c92"/>
    </g>
    <g id="patch_11">
-    <path d="M 164.039367 659.565455 
-L 339.855494 659.565455 
-L 339.855494 636.58 
-L 164.039367 636.58 
+    <path d="M 37.446589 636.426471 
+L 553.364903 636.426471 
+L 553.364903 613.573529 
+L 37.446589 613.573529 
 z
-" clip-path="url(#p6c095f13dc)" style="fill: #4c2c92"/>
+" clip-path="url(#pef7fea247f)" style="fill: #0b6d75"/>
    </g>
    <g id="patch_12">
-    <path d="M 339.951831 730.710909 
-L 656.517197 730.710909 
-L 656.517197 707.725455 
-L 339.951831 707.725455 
+    <path d="M 71.916487 707.161765 
+L 656.586238 707.161765 
+L 656.586238 684.308824 
+L 71.916487 684.308824 
 z
-" clip-path="url(#p6c095f13dc)" style="fill: #0b6d75"/>
+" clip-path="url(#pef7fea247f)" style="fill: #a4280d"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 175.137822 777.897059 
+L 656.586238 777.897059 
+L 656.586238 755.044118 
+L 175.137822 755.044118 
+L 175.137822 777.897059 
+z
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #0b0c0c; stroke-width: 1.5; stroke-linejoin: miter"/>
    </g>
    <g id="matplotlib.axis_3">
     <g id="xtick_10">
-     <g id="line2d_36">
-      <g>
-       <use xlink:href="#m8824fa4067" x="23.290128" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
-      </g>
-     </g>
-     <g id="text_26">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(9.246066 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(6.747628 796.781777)">2028</text>
-     </g>
-    </g>
-    <g id="xtick_11">
      <g id="line2d_37">
       <g>
-       <use xlink:href="#m8824fa4067" x="93.616579" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="37.540769" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_27">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(79.572516 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(77.074079 796.781777)">2030</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(23.496707 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(20.998269 843.781777)">2028</text>
      </g>
     </g>
-    <g id="xtick_12">
+    <g id="xtick_11">
      <g id="line2d_38">
       <g>
-       <use xlink:href="#m8824fa4067" x="164.039367" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="106.292206" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_28">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(149.995304 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(147.496867 796.781777)">2032</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(92.248143 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(89.749706 843.781777)">2030</text>
      </g>
     </g>
-    <g id="xtick_13">
+    <g id="xtick_12">
      <g id="line2d_39">
       <g>
-       <use xlink:href="#m8824fa4067" x="234.365818" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="175.137822" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_29">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(220.321755 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(217.823318 796.781777)">2034</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(161.09376 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(158.595322 843.781777)">2032</text>
      </g>
     </g>
-    <g id="xtick_14">
+    <g id="xtick_13">
      <g id="line2d_40">
       <g>
-       <use xlink:href="#m8824fa4067" x="304.788606" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="243.889259" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_30">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(290.744543 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(288.246106 796.781777)">2036</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(229.845196 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(227.346759 843.781777)">2034</text>
      </g>
     </g>
-    <g id="xtick_15">
+    <g id="xtick_14">
      <g id="line2d_41">
       <g>
-       <use xlink:href="#m8824fa4067" x="375.115057" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="312.734875" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_31">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(361.070994 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(358.572557 796.781777)">2038</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(298.690813 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(296.192375 843.781777)">2036</text>
      </g>
     </g>
-    <g id="xtick_16">
+    <g id="xtick_15">
      <g id="line2d_42">
       <g>
-       <use xlink:href="#m8824fa4067" x="445.537845" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="381.486312" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_32">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(431.493782 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(428.995345 796.781777)">2040</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(367.44225 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(364.943812 843.781777)">2038</text>
      </g>
     </g>
-    <g id="xtick_17">
+    <g id="xtick_16">
      <g id="line2d_43">
       <g>
-       <use xlink:href="#m8824fa4067" x="515.864295" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="450.331929" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_33">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(501.820233 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(499.321795 796.781777)">2042</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(436.287866 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(433.789429 843.781777)">2040</text>
      </g>
     </g>
-    <g id="xtick_18">
+    <g id="xtick_17">
      <g id="line2d_44">
       <g>
-       <use xlink:href="#m8824fa4067" x="586.287084" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="519.083365" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_34">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(572.243021 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(569.744584 796.781777)">2044</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(505.039303 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(502.540865 843.781777)">2042</text>
      </g>
     </g>
-    <g id="xtick_19">
+    <g id="xtick_18">
      <g id="line2d_45">
       <g>
-       <use xlink:href="#m8824fa4067" x="656.613534" y="763" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+       <use xlink:href="#mbbd6db7745" x="587.928982" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_35">
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(642.569472 781.179238)">1 Jul</text>
-      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(640.071034 796.781777)">2046</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(573.884919 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(571.386482 843.781777)">2044</text>
      </g>
     </g>
-    <g id="text_36">
-     <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0c0c" x="340" y="815.084063" transform="rotate(-0 340 815.084063)">Ticks mark the start of financial years (1 July)</text>
+    <g id="xtick_19">
+     <g id="line2d_46">
+      <g>
+       <use xlink:href="#mbbd6db7745" x="656.680418" y="810" style="fill: #0b0c0c; stroke: #0b0c0c; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(642.636356 828.179238)">1 Jul</text>
+      <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #0b0c0c" transform="translate(640.137918 843.781777)">2046</text>
+     </g>
+    </g>
+    <g id="text_37">
+     <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #0b0c0c" x="340" y="862.084063" transform="rotate(-0 340 862.084063)">Ticks mark the start of financial years (1 July). White marks on the PBO bar: each yearly certificate.</text>
     </g>
    </g>
    <g id="matplotlib.axis_4"/>
-   <g id="patch_13">
-    <path d="M 20.4 763 
-L 659.6 763 
-" style="fill: none; stroke: #0b0c0c; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
-   </g>
-   <g id="text_37">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #505a5f" x="659.6" y="452.856953" transform="rotate(-0 659.6 452.856953)">Stage 2 and 3 bars start only if the gate is passed</text>
-   </g>
-   <g id="text_38">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="486.240589" transform="rotate(-0 20.4 486.240589)">3. Stage 1: floor, child payment, any Part 2 dividend (until a stage is triggered)</text>
-   </g>
-   <g id="text_39">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="530.983423" transform="rotate(-0 20.4 530.983423)">Owner: DSS; Services Australia; ATO; Treasurer</text>
-   </g>
-   <g id="text_40">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="557.386044" transform="rotate(-0 20.4 557.386044)">4. Stage 2 decision (only if the need test is met)</text>
-   </g>
-   <g id="text_41">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="602.128878" transform="rotate(-0 20.4 602.128878)">Owner: PBO; JSA; ABS; Parliament</text>
-   </g>
-   <g id="text_42">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="628.531499" transform="rotate(-0 20.4 628.531499)">5. Stage 2 Basic Income (if triggered)</text>
-   </g>
-   <g id="text_43">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="673.273317" transform="rotate(-0 20.4 673.273317)">Owner: Treasury; DSS; ATO</text>
-   </g>
-   <g id="text_44">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="699.676953" transform="rotate(-0 20.4 699.676953)">6. Stage 3 authority (no rate; needs a later Act and certificate)</text>
-   </g>
-   <g id="text_45">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="744.419787" transform="rotate(-0 20.4 744.419787)">Owner: Treasury; DSS; Parliament</text>
-   </g>
-   <g id="text_46">
-    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="456" transform="rotate(-0 20.4 456)">B. Stages 1 to 3, July 2028 to 2045-46</text>
-   </g>
-   <g id="line2d_46">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="23.290128" y="505.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
-   </g>
    <g id="line2d_47">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="93.520241" y="505.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 106.198026 707.161765 
+L 106.198026 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_48">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="128.683466" y="505.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 140.573744 707.161765 
+L 140.573744 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_49">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="146.409586" y="498.667273" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 175.043642 707.161765 
+L 175.043642 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_50">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="199.106255" y="505.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 209.419361 707.161765 
+L 209.419361 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_51">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="304.692268" y="505.781818" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 243.795079 707.161765 
+L 243.795079 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_52">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="155.176307" y="576.927273" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 278.170797 707.161765 
+L 278.170797 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_53">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="331.088772" y="648.072727" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 312.640695 707.161765 
+L 312.640695 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_54">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="480.604732" y="719.218182" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 347.016414 707.161765 
+L 347.016414 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_55">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="515.767958" y="719.218182" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 381.392132 707.161765 
+L 381.392132 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
    </g>
    <g id="line2d_56">
-    <g clip-path="url(#p6c095f13dc)">
-     <use xlink:href="#m39c50fa619" x="550.931183" y="719.218182" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
-    </g>
+    <path d="M 415.76785 707.161765 
+L 415.76785 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_57">
+    <path d="M 450.237749 707.161765 
+L 450.237749 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_58">
+    <path d="M 484.613467 707.161765 
+L 484.613467 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_59">
+    <path d="M 518.989185 707.161765 
+L 518.989185 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_60">
+    <path d="M 553.364903 707.161765 
+L 553.364903 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_61">
+    <path d="M 587.834802 707.161765 
+L 587.834802 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_62">
+    <path d="M 622.21052 707.161765 
+L 622.21052 684.308824 
+" clip-path="url(#pef7fea247f)" style="fill: none; stroke: #ffffff; stroke-width: 1.5; stroke-linecap: square"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 20.4 810 
+L 659.6 810 
+" style="fill: none; stroke: #0b0c0c; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="464.082835" transform="rotate(-0 20.4 464.082835)">3. Stage 1 (P*): floor, child payment, Rent Assistance +75%</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="508.642675" transform="rotate(-0 20.4 508.642675)">Owner: DSS; Services Australia; ATO; Treasurer</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="534.81813" transform="rotate(-0 20.4 534.81813)">4. Randomised trial with the work-effort cap</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="579.377969" transform="rotate(-0 20.4 579.377969)">Owner: DSS; independent evaluator</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="605.553424" transform="rotate(-0 20.4 605.553424)">5. AI need test: quarterly reporting (lapses unless renewed)</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="650.112247" transform="rotate(-0 20.4 650.112247)">Owner: JSA; ABS</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="676.288718" transform="rotate(-0 20.4 676.288718)">6. PBO certificate of the five taxes, every year</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="720.847541" transform="rotate(-0 20.4 720.847541)">Owner: PBO</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="747.024012" transform="rotate(-0 20.4 747.024012)">Any universal payment: a later Act, only after all three tests</text>
    </g>
    <g id="text_47">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="23.290128" y="509.158771" transform="rotate(-0 23.290128 509.158771)">7</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #505a5f" x="20.4" y="791.583851" transform="rotate(-0 20.4 791.583851)">Owner: Parliament; not scheduled</text>
    </g>
    <g id="text_48">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="93.520241" y="509.158771" transform="rotate(-0 93.520241 509.158771)">8</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="20.4" y="434" transform="rotate(-0 20.4 434)">B. Stage 1 and the pathway's tests, July 2028 to 2045-46</text>
+   </g>
+   <g id="line2d_63">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="37.540769" y="483.529412" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_64">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="106.198026" y="483.529412" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_65">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="140.573744" y="483.529412" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_66">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="312.640695" y="483.529412" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_67">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="484.613467" y="483.529412" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_68">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="71.822307" y="554.264706" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_69">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="157.902873" y="554.264706" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_70">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="553.364903" y="625" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_71">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="89.151437" y="695.735294" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
+   </g>
+   <g id="line2d_72">
+    <g clip-path="url(#pef7fea247f)">
+     <use xlink:href="#m3105f4cdc6" x="175.137822" y="766.470588" style="fill: #0b0c0c; stroke: #ffffff; stroke-width: 1.5"/>
+    </g>
    </g>
    <g id="text_49">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="128.683466" y="509.158771" transform="rotate(-0 128.683466 509.158771)">9</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="37.540769" y="486.906365" transform="rotate(-0 37.540769 486.906365)">8</text>
    </g>
    <g id="text_50">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="146.409586" y="502.044226" transform="rotate(-0 146.409586 502.044226)">10</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="106.198026" y="486.906365" transform="rotate(-0 106.198026 486.906365)">11</text>
    </g>
    <g id="text_51">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="199.106255" y="509.158771" transform="rotate(-0 199.106255 509.158771)">12</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="140.573744" y="486.906365" transform="rotate(-0 140.573744 486.906365)">12</text>
    </g>
    <g id="text_52">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="304.692268" y="509.158771" transform="rotate(-0 304.692268 509.158771)">13</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="312.640695" y="486.906365" transform="rotate(-0 312.640695 486.906365)">15</text>
    </g>
    <g id="text_53">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="155.176307" y="580.304226" transform="rotate(-0 155.176307 580.304226)">11</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="484.613467" y="486.906365" transform="rotate(-0 484.613467 486.906365)">16</text>
    </g>
    <g id="text_54">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="331.088772" y="651.44968" transform="rotate(-0 331.088772 651.44968)">14</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="71.822307" y="557.641659" transform="rotate(-0 71.822307 557.641659)">9</text>
    </g>
    <g id="text_55">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="480.604732" y="722.595135" transform="rotate(-0 480.604732 722.595135)">15</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="157.902873" y="557.641659" transform="rotate(-0 157.902873 557.641659)">13</text>
    </g>
    <g id="text_56">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="515.767958" y="722.595135" transform="rotate(-0 515.767958 722.595135)">16</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="553.364903" y="628.376953" transform="rotate(-0 553.364903 628.376953)">17</text>
    </g>
    <g id="text_57">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="550.931183" y="722.595135" transform="rotate(-0 550.931183 722.595135)">17</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="89.151437" y="699.112247" transform="rotate(-0 89.151437 699.112247)">10</text>
+   </g>
+   <g id="text_58">
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="175.137822" y="769.847541" transform="rotate(-0 175.137822 769.847541)">14</text>
    </g>
   </g>
   <g id="axes_3">
-   <g id="line2d_57">
+   <g id="line2d_73">
     <defs>
-     <path id="m32910fdc98" d="M 0 9 
+     <path id="m71e8708e46" d="M 0 9 
 C 2.386828 9 4.676219 8.051703 6.363961 6.363961 
 C 8.051703 4.676219 9 2.386828 9 0 
 C 9 -2.386828 8.051703 -4.676219 6.363961 -6.363961 
@@ -656,206 +748,206 @@ z
 " style="stroke: #0b0c0c"/>
     </defs>
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="881.44" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="942.924" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_58">
+   <g id="line2d_74">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="909.93" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="976.3434" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_59">
+   <g id="line2d_75">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="938.42" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1009.7628" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_60">
+   <g id="line2d_76">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="966.91" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1043.1822" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_61">
+   <g id="line2d_77">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="995.4" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1076.6016" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_62">
+   <g id="line2d_78">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1023.89" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1110.021" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_63">
+   <g id="line2d_79">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1052.38" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1143.4404" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_64">
+   <g id="line2d_80">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1080.87" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1176.8598" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_65">
+   <g id="line2d_81">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1109.36" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1210.2792" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_66">
+   <g id="line2d_82">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1137.85" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1243.6986" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_67">
+   <g id="line2d_83">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1166.34" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1277.118" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_68">
+   <g id="line2d_84">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1194.83" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1310.5374" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_69">
+   <g id="line2d_85">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1223.32" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1343.9568" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_70">
+   <g id="line2d_86">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1251.81" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1377.3762" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_71">
+   <g id="line2d_87">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1280.3" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1410.7956" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_72">
+   <g id="line2d_88">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1308.79" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1444.215" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
    </g>
-   <g id="line2d_73">
+   <g id="line2d_89">
     <g>
-     <use xlink:href="#m32910fdc98" x="31.9056" y="1337.28" style="fill: #0b0c0c; stroke: #0b0c0c"/>
+     <use xlink:href="#m71e8708e46" x="31.9056" y="1477.6344" style="fill: #0b0c0c; stroke: #0b0c0c"/>
     </g>
-   </g>
-   <g id="text_58">
-    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="340" y="-3599.453097" transform="rotate(-0 340 -3599.453097)">Gates and milestones (numbered circles on the bars)</text>
    </g>
    <g id="text_59">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="884.816953" transform="rotate(-0 31.9056 884.816953)">1</text>
+    <text style="font-weight: 700; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="340" y="-4357.307642" transform="rotate(-0 340 -4357.307642)">Gates and milestones (numbered circles on the bars)</text>
    </g>
    <g id="text_60">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="884.817461" transform="rotate(-0 52.36 884.817461)">31 August 2027: Full PBO costing published</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="946.300953" transform="rotate(-0 31.9056 946.300953)">1</text>
    </g>
    <g id="text_61">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="913.306953" transform="rotate(-0 31.9056 913.306953)">2</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="946.301461" transform="rotate(-0 52.36 946.301461)">By 31 May 2027: First Nations delivery principles, before the exposure drafts</text>
    </g>
    <g id="text_62">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="913.307461" transform="rotate(-0 52.36 913.307461)">30 September 2027: Committee report and consultation report</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="979.720353" transform="rotate(-0 31.9056 979.720353)">2</text>
    </g>
    <g id="text_63">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="941.796953" transform="rotate(-0 31.9056 941.796953)">3</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="979.720861" transform="rotate(-0 52.36 979.720861)">By 31 August 2027: Full PBO costing of P* and the targeted package</text>
    </g>
    <g id="text_64">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="941.797461" transform="rotate(-0 52.36 941.797461)">31 December 2027: ABI, levy and revenue Acts passed (a Fund Act only with a fund option)</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1013.139753" transform="rotate(-0 31.9056 1013.139753)">3</text>
    </g>
    <g id="text_65">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="970.286953" transform="rotate(-0 31.9056 970.286953)">4</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1013.140261" transform="rotate(-0 52.36 1013.140261)">By 30 September 2027: Joint select committee reports</text>
    </g>
    <g id="text_66">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="970.287461" transform="rotate(-0 52.36 970.287461)">31 March 2028: Any dividend payment design published (if Part 2 is legislated)</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1046.559153" transform="rotate(-0 31.9056 1046.559153)">4</text>
    </g>
    <g id="text_67">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="998.776953" transform="rotate(-0 31.9056 998.776953)">5</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1046.559661" transform="rotate(-0 52.36 1046.559661)">By 31 December 2027: ABI Act, levy and revenue Acts passed; no universal rate, no dividend</text>
    </g>
    <g id="text_68">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="998.777461" transform="rotate(-0 52.36 998.777461)">31 May 2028: Systems audit passed</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1079.978553" transform="rotate(-0 31.9056 1079.978553)">5</text>
    </g>
    <g id="text_69">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1027.266953" transform="rotate(-0 31.9056 1027.266953)">6</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1079.979061" transform="rotate(-0 52.36 1079.979061)">By 31 March 2028: Random regional order for the Stage 1 start drawn</text>
    </g>
    <g id="text_70">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1027.267461" transform="rotate(-0 52.36 1027.267461)">30 June 2028: JSA publishes the AI-specific need-test series</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1113.397953" transform="rotate(-0 31.9056 1113.397953)">6</text>
    </g>
    <g id="text_71">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1055.756953" transform="rotate(-0 31.9056 1055.756953)">7</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1113.398461" transform="rotate(-0 52.36 1113.398461)">By 31 May 2028: Independent audit of the payment systems</text>
    </g>
    <g id="text_72">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1055.757461" transform="rotate(-0 52.36 1055.757461)">1 July 2028: Floor and child payment start; any fund opens (first dividend 2029-30)</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1146.817353" transform="rotate(-0 31.9056 1146.817353)">7</text>
    </g>
    <g id="text_73">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1084.246953" transform="rotate(-0 31.9056 1084.246953)">8</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1146.817861" transform="rotate(-0 52.36 1146.817861)">By 30 June 2028: JSA publishes the AI-specific need-test series</text>
    </g>
    <g id="text_74">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1084.247461" transform="rotate(-0 52.36 1084.247461)">30 June 2030: ANAO audit of delivery</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1180.236753" transform="rotate(-0 31.9056 1180.236753)">8</text>
    </g>
    <g id="text_75">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1112.736953" transform="rotate(-0 31.9056 1112.736953)">9</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1180.237261" transform="rotate(-0 52.36 1180.237261)">1 July 2028: Stage 1 (P*) starts, regions in random order to December, with arrears</text>
    </g>
    <g id="text_76">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1112.737461" transform="rotate(-0 52.36 1112.737461)">30 June 2031: Productivity Commission review</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1213.656153" transform="rotate(-0 31.9056 1213.656153)">9</text>
    </g>
    <g id="text_77">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1141.226953" transform="rotate(-0 31.9056 1141.226953)">10</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1213.656661" transform="rotate(-0 52.36 1213.656661)">By June 2029: Trial contract with a university consortium</text>
    </g>
    <g id="text_78">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1141.227461" transform="rotate(-0 52.36 1141.227461)">31 December 2031: Embedded trial results published</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1247.075553" transform="rotate(-0 31.9056 1247.075553)">10</text>
    </g>
    <g id="text_79">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1169.716953" transform="rotate(-0 31.9056 1169.716953)">11</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1247.076061" transform="rotate(-0 52.36 1247.076061)">2029-30: First yearly PBO certificate of the five taxes</text>
    </g>
    <g id="text_80">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1169.717461" transform="rotate(-0 52.36 1169.717461)">31 March 2032: Earliest Stage 2 vote: need test, PBO costing and certificate</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1280.494953" transform="rotate(-0 31.9056 1280.494953)">11</text>
    </g>
    <g id="text_81">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1198.206953" transform="rotate(-0 31.9056 1198.206953)">12</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1280.495461" transform="rotate(-0 52.36 1280.495461)">2029-30: ANAO audit of delivery, then every three years</text>
    </g>
    <g id="text_82">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1198.207461" transform="rotate(-0 52.36 1198.207461)">30 June 2033: PBO certifies durable account and any fund payout (annual)</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1313.914353" transform="rotate(-0 31.9056 1313.914353)">12</text>
    </g>
    <g id="text_83">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1226.696953" transform="rotate(-0 31.9056 1226.696953)">13</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1313.914861" transform="rotate(-0 52.36 1313.914861)">2031: Productivity Commission review</text>
    </g>
    <g id="text_84">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1226.697461" transform="rotate(-0 52.36 1226.697461)">30 June 2036: Productivity Commission review</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1347.333753" transform="rotate(-0 31.9056 1347.333753)">13</text>
    </g>
    <g id="text_85">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1255.186953" transform="rotate(-0 31.9056 1255.186953)">14</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1347.334261" transform="rotate(-0 52.36 1347.334261)">By December 2031: Trial results published</text>
    </g>
    <g id="text_86">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1255.187461" transform="rotate(-0 52.36 1255.187461)">31 March 2037: Earliest Stage 3 rate Act: need test and stress-tested certificate</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1380.753153" transform="rotate(-0 31.9056 1380.753153)">14</text>
    </g>
    <g id="text_87">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1283.676953" transform="rotate(-0 31.9056 1283.676953)">15</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1380.753661" transform="rotate(-0 52.36 1380.753661)">Not before 1 July 2032: Earliest a Bill setting a universal rate could follow, after all three tests</text>
    </g>
    <g id="text_88">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1283.677461" transform="rotate(-0 52.36 1283.677461)">30 June 2041: Productivity Commission review of the Act</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1414.172553" transform="rotate(-0 31.9056 1414.172553)">15</text>
    </g>
    <g id="text_89">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1312.166953" transform="rotate(-0 31.9056 1312.166953)">16</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1414.173061" transform="rotate(-0 52.36 1414.173061)">2036: Productivity Commission review</text>
    </g>
    <g id="text_90">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1312.167461" transform="rotate(-0 52.36 1312.167461)">30 June 2042: Stage 3 authority lapses if no rate Act has passed</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1447.591953" transform="rotate(-0 31.9056 1447.591953)">16</text>
    </g>
    <g id="text_91">
-    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1340.656953" transform="rotate(-0 31.9056 1340.656953)">17</text>
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1447.592461" transform="rotate(-0 52.36 1447.592461)">2041: Productivity Commission review of the Act</text>
    </g>
    <g id="text_92">
-    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1340.657461" transform="rotate(-0 52.36 1340.657461)">30 June 2043: Stage 2 and 3 authorities lapse unless renewed; Stage 1 continues</text>
+    <text style="font-weight: 700; font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle; fill: #ffffff" x="31.9056" y="1481.011353" transform="rotate(-0 31.9056 1481.011353)">17</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0c0c" x="52.36" y="1481.011861" transform="rotate(-0 52.36 1481.011861)">30 June 2043: The pathway's tests lapse unless renewed; Stage 1 continues</text>
    </g>
   </g>
-  <g id="text_93">
-   <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #505a5f" transform="translate(8.16 1371.572129)">Source: author's design [S5]. Owners are the responsible agencies; their abbreviations are expanded</text>
-   <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #505a5f" transform="translate(8.16 1387.175684)">at the top of this page.</text>
+  <g id="text_94">
+   <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #505a5f" transform="translate(8.16 1530.612129)">Source: author's proposal (Tables 7.1, 7.2, 9.1 and 9.6) [S5]. The dashed row is not scheduled: it needs</text>
+   <text style="font-size: 13px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #505a5f" transform="translate(8.16 1546.215684)">a later Act.</text>
   </g>
  </g>
  <defs>
-  <clipPath id="p1abdba53a7">
-   <rect x="20.4" y="35" width="639.2" height="301"/>
+  <clipPath id="p2de1139704">
+   <rect x="20.4" y="60" width="639.2" height="300"/>
   </clipPath>
-  <clipPath id="p6c095f13dc">
-   <rect x="20.4" y="462" width="639.2" height="301"/>
+  <clipPath id="pef7fea247f">
+   <rect x="20.4" y="440" width="639.2" height="370"/>
   </clipPath>
  </defs>
 </svg>

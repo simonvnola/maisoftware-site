@@ -100,6 +100,11 @@ main { display: block; padding: 32px 0 64px; }
 .bw-nav a:hover { text-decoration: underline; }
 .bw-nav a[aria-current="page"], .bw-nav a[aria-current="true"] { color: var(--bw-ink); border-bottom-color: var(--bw-accent); }
 
+/* Phase banner: the working-draft notice under the navigation on every page */
+.bw-phase { border-bottom: 1px solid var(--bw-rule); padding: 8px 0; font-size: 0.9rem; }
+.bw-phase p { margin: 0; max-width: none; }
+.bw-phase-tag { display: inline-block; margin-right: 8px; padding: 4px 8px; background: var(--bw-header); color: #fff; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+
 /* Breadcrumbs */
 .bw-crumbs { margin: 16px 0 0; font-size: 0.9rem; }
 .bw-crumbs ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
@@ -160,7 +165,7 @@ table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
 .bw-table-wrap { overflow-x: auto; margin: 0 0 24px; -webkit-overflow-scrolling: touch; }
 .bw-table-wrap table { margin: 0; min-width: 100%; }
 th, td { text-align: left; vertical-align: top; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--bw-rule); }
-@media (max-width: 640px) { th, td { padding: 8px 8px 8px 0; } thead th.num { white-space: normal; } tbody th[scope="row"] { overflow-wrap: anywhere; } .bw-fit { table-layout: fixed; } .bw-fit thead th:first-child { width: 40%; } thead th { font-size: 0.8rem; } }
+@media (max-width: 640px) { th, td { padding: 8px 8px 8px 0; } thead th.num { white-space: normal; } tbody th[scope="row"] { overflow-wrap: anywhere; } .bw-fit { table-layout: fixed; } .bw-fit thead th:first-child { width: 40%; } .bw-fit td.num, .bw-fit th.num { white-space: normal; overflow-wrap: anywhere; } thead th { font-size: 0.8rem; } }
 th { font-weight: 700; }
 thead th { border-bottom-color: var(--bw-ink); }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -245,6 +250,7 @@ figcaption.bw-figure-title { color: var(--bw-ink); font-size: 1rem; margin: 0 0 
 .bw-body p, .bw-body li, .bw-body figcaption, .bw-inset, .bw-sources { overflow-wrap: anywhere; }
 .bw-sources li { margin-bottom: 12px; }
 
+@page { size: A4 portrait; margin: 10mm; }
 @media print {
   .bw-skip, .bw-nav, .bw-pager, .bw-footer, .bw-crumbs, .bw-contents, .bw-cols > aside { display: none !important; }
   .bw-header { background: none; color: var(--bw-ink); border-bottom: 2px solid var(--bw-ink); }
@@ -257,4 +263,15 @@ figcaption.bw-figure-title { color: var(--bw-ink); font-size: 1rem; margin: 0 0 
   .bw-chart img { min-width: 0; }
   table { font-size: 9pt; page-break-inside: auto; }
   tr { page-break-inside: avoid; }
+  /* Wide paper tables fit A4 portrait: no minimum widths, small type, cells wrap */
+  .bw-table-wrap table, .bw-c4, .bw-c5, .bw-c6, .bw-c7, .bw-c8, .bw-c9, .bw-c10, .bw-c11, .bw-c12 { min-width: 0 !important; width: 100%; }
+  .bw-table-wrap table { font-size: 7.5pt; }
+  .bw-table-wrap th, .bw-table-wrap td { min-width: 0 !important; white-space: normal !important; overflow-wrap: normal; hyphens: auto; padding: 2pt 3pt 2pt 0; line-height: 1.25; }
+  .bw-table-wrap td.num, .bw-table-wrap th.num { hyphens: manual; }
+  .bw-table-wrap table.bw-c9, .bw-table-wrap table.bw-c10, .bw-table-wrap table.bw-c11 { font-size: 6.5pt; }
+  .bw-table-wrap table.bw-c12 { font-size: 6pt; }
+  .bw-table-wrap table.bw-c12 th, .bw-table-wrap table.bw-c12 td { padding-right: 2pt; }
+  .bw-table-wrap table.bw-c12 thead th { overflow-wrap: anywhere; }
+  .bw-wrap { padding-left: 0; padding-right: 0; max-width: none; }
+  .bw-figure-data { display: none; }
 }

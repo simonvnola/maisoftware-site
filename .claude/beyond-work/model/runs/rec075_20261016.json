@@ -1,0 +1,3566 @@
+{
+ "seed": 20261016,
+ "cal": "rec075",
+ "calv": {
+  "level": 1.1272949218750001,
+  "drift": 0.8359252929687498,
+  "tilt": 0.11435106578502989
+ },
+ "budget": 62.361515036869086,
+ "k": 1.0000073006787331,
+ "cra28": 4.732576463356192,
+ "ae28": 5.086769171088918,
+ "ae_cash": 5.0834517938822685,
+ "flows_p1": {
+  "S": 31.21906574304018,
+  "tm": 2.0681461917203245,
+  "bh": 4.255023603320127,
+  "inc": 1.7993673878585312
+ },
+ "flows_star_paper": {
+  "S": 27.64466157293277,
+  "tm": 1.9607566572073798,
+  "bh": 3.7779616772164317,
+  "inc": 1.589023558069979
+ },
+ "flows_m1": {
+  "S": 23.065793820192106,
+  "tm": 1.8380344219518365,
+  "bh": 3.29813133192776,
+  "inc": 1.3203693004015142
+ },
+ "flows_m2": {
+  "S": 27.33334958339085,
+  "tm": 1.9526840240928771,
+  "bh": 3.7523773481552842,
+  "inc": 1.570649941248479
+ },
+ "excess_paper": 5.450114275810931,
+ "excess_paper_noae": 0.3633451047220131,
+ "D": {
+  "paper": 6793.9440575719345,
+  "m1": 5710.211589932442,
+  "m2": 6721.16120159626,
+  "pkg_ie": 5692.360136745265
+ },
+ "design": {
+  "p1": {
+   "rel": 11.769,
+   "anch": 9.592,
+   "u15": 7.769423558897243,
+   "old": 13.45983133599645,
+   "opf": 18.014705882352942,
+   "u15_anch": 5.586187691450849,
+   "old_anch": 10.5248557478917,
+   "opf_anch": 12.851307189542483,
+   "n_rel": 3.0918448270174146,
+   "n_anch": 2.5199231524132077,
+   "lift_rel": 0.8496071179007834,
+   "new_rel": 0.21095686941073868,
+   "lift_anch": 1.2105719230942513,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 24.386462709993555,
+   "gap_anch": 20.036030744183012,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 45.07660162879406,
+   "gain_hh": 59.5325,
+   "gain_fam": 83.58735761270657,
+   "gain_rent": 67.62866333095067,
+   "dsp": 66.63409868099659,
+   "reliance": {
+    "JobSeeker": 85.62355658198614,
+    "Youth Allowance": 88.0,
+    "Parenting Payment": 53.494623655913976,
+    "Disability Support Pension": 66.63409868099659,
+    "Carer Payment": 78.83211678832117,
+    "Age Pension": 29.26713197969543,
+    "old_owners": 10.437753852104958,
+    "old_renters": 32.11301233585356
+   },
+   "own": {
+    "resp": 4.255023603320127,
+    "ie": 1.7993673878585312,
+    "tm": 2.0681461917203245,
+    "fe_resp": 4.344508974523513,
+    "fe_ie": 1.727920703329248
+   },
+   "D": 7452.482362499999
+  },
+  "pkg": {
+   "rel": 9.108,
+   "anch": 8.192,
+   "u15": 5.970481759955444,
+   "old": 10.341766533510874,
+   "opf": 13.872549019607844,
+   "u15_anch": 5.229741019214703,
+   "old_anch": 9.786950732356857,
+   "opf_anch": 12.083333333333334,
+   "n_rel": 2.3927710667409814,
+   "n_anch": 2.152127863278669,
+   "lift_rel": 1.3689866083429132,
+   "new_rel": 0.03126259957643575,
+   "lift_anch": 1.5783672122287897,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 18.63119147686474,
+   "gap_anch": 16.72620569976263,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 48.41251775971381,
+   "gain_hh": 63.2775,
+   "gain_fam": 79.13524787421787,
+   "gain_rent": 81.33488205861329,
+   "dsp": 50.561797752808985,
+   "reliance": {
+    "JobSeeker": 69.86143187066975,
+    "Youth Allowance": 67.33333333333333,
+    "Parenting Payment": 35.03584229390681,
+    "Disability Support Pension": 50.561797752808985,
+    "Carer Payment": 68.1265206812652,
+    "Age Pension": 22.414340101522843,
+    "old_owners": 7.510798787956934,
+    "old_renters": 27.815360127337843
+   },
+   "own": {
+    "resp": 8.845079188707508,
+    "ie": 0.0,
+    "tm": 0.0
+   },
+   "D": 5836.830520602234
+  },
+  "pkg_ie": {
+   "rel": 9.15,
+   "anch": 8.23,
+   "u15": 6.054023948760791,
+   "old": 10.341766533510874,
+   "opf": 14.06045751633987,
+   "u15_anch": 5.324422166527429,
+   "old_anch": 9.786950732356857,
+   "opf_anch": 12.254901960784315,
+   "n_rel": 2.4038049254150176,
+   "n_anch": 2.1621108782694636,
+   "lift_rel": 1.357952749668877,
+   "new_rel": 0.03126259957643575,
+   "lift_anch": 1.568384197237995,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 18.67366559215838,
+   "gap_anch": 16.77101960519774,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 48.016251649045834,
+   "gain_hh": 63.2575,
+   "gain_fam": 79.07107331942885,
+   "gain_rent": 81.29914224446033,
+   "dsp": 50.561797752808985,
+   "reliance": {
+    "JobSeeker": 69.86143187066975,
+    "Youth Allowance": 67.33333333333333,
+    "Parenting Payment": 36.37992831541219,
+    "Disability Support Pension": 50.561797752808985,
+    "Carer Payment": 68.1265206812652,
+    "Age Pension": 22.414340101522843,
+    "old_owners": 7.510798787956934,
+    "old_renters": 27.815360127337843
+   },
+   "own": {
+    "resp": 8.704583726746177,
+    "ie": 0.5320566693709031,
+    "tm": 0.0
+   },
+   "D": 5692.360136745265
+  },
+  "star": {
+   "rel": 10.383,
+   "anch": 8.605,
+   "u15": 6.499582289055973,
+   "old": 11.357079449622725,
+   "opf": 15.334967320261438,
+   "u15_anch": 5.129490392648288,
+   "old_anch": 10.21415889924545,
+   "opf_anch": 11.968954248366012,
+   "n_rel": 2.7277274907742215,
+   "n_anch": 2.2606274735733582,
+   "lift_rel": 1.1073265312157703,
+   "new_rel": 0.10455894648253301,
+   "lift_anch": 1.469867601934101,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 21.643345376854125,
+   "gap_anch": 17.86781384404891,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 51.24099380828793,
+   "gain_hh": 60.0575,
+   "gain_fam": 82.92154660677042,
+   "gain_rent": 78.86883488205861,
+   "dsp": 57.59648265754763,
+   "reliance": {
+    "JobSeeker": 81.52424942263279,
+    "Youth Allowance": 82.66666666666667,
+    "Parenting Payment": 37.27598566308244,
+    "Disability Support Pension": 57.59648265754763,
+    "Carer Payment": 71.04622871046229,
+    "Age Pension": 23.604060913705585,
+    "old_owners": 8.42627812520147,
+    "old_renters": 29.446876243533627
+   },
+   "own": {
+    "resp": 3.3943584910756357,
+    "ie": 1.5888345471990908,
+    "tm": 0.0,
+    "e_resp": 3.7779616772164317,
+    "e_ie": 1.589023558069979,
+    "e_tm": 1.9607566572073798
+   },
+   "D": 6793.9440575719345
+  },
+  "star_m1": {
+   "rel": 10.45,
+   "anch": 8.898,
+   "u15": 7.184628237259816,
+   "old": 11.240568131380382,
+   "opf": 16.797385620915033,
+   "u15_anch": 5.859092174881648,
+   "old_anch": 10.20861074123391,
+   "opf_anch": 13.529411764705882,
+   "n_rel": 2.745329122468517,
+   "n_anch": 2.3376017733708006,
+   "lift_rel": 1.0779029080850075,
+   "new_rel": 0.0927369550460657,
+   "lift_anch": 1.3928933021366583,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 21.546165370544347,
+   "gap_anch": 18.201974273672466,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 46.739357963183025,
+   "gain_hh": 62.5175,
+   "gain_fam": 81.95892828493503,
+   "gain_rent": 78.32380271622587,
+   "dsp": 51.636541279921836,
+   "reliance": {
+    "JobSeeker": 81.58198614318707,
+    "Youth Allowance": 80.0,
+    "Parenting Payment": 42.11469534050179,
+    "Disability Support Pension": 51.636541279921836,
+    "Carer Payment": 71.53284671532846,
+    "Age Pension": 23.445431472081218,
+    "old_owners": 8.329572561408034,
+    "old_renters": 29.208117787504975
+   },
+   "own": {
+    "resp": 3.29813133192776,
+    "ie": 1.3203693004015142,
+    "tm": 1.8380344219518365
+   },
+   "D": 5710.211589932442
+  },
+  "star_m2": {
+   "rel": 10.624,
+   "anch": 9.019,
+   "u15": 6.9562795878585355,
+   "old": 11.373723923657346,
+   "opf": 15.84967320261438,
+   "u15_anch": 5.602896129211919,
+   "old_anch": 10.280736795383932,
+   "opf_anch": 12.606209150326798,
+   "n_rel": 2.7910408226895242,
+   "n_anch": 2.3693897947888574,
+   "lift_rel": 1.0445386211420886,
+   "new_rel": 0.10508436832415378,
+   "lift_anch": 1.3611052807186017,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 22.85044831376108,
+   "gap_anch": 19.197006404791125,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 45.92346193249949,
+   "gain_hh": 62.16,
+   "gain_fam": 82.55254291673351,
+   "gain_rent": 77.82344531808435,
+   "dsp": 52.32046897899365,
+   "reliance": {
+    "JobSeeker": 82.3325635103926,
+    "Youth Allowance": 82.0,
+    "Parenting Payment": 38.35125448028674,
+    "Disability Support Pension": 52.32046897899365,
+    "Carer Payment": 73.96593673965937,
+    "Age Pension": 23.604060913705585,
+    "old_owners": 8.439172200373928,
+    "old_renters": 29.4866693195384
+   },
+   "own": {
+    "resp": 3.7523773481552842,
+    "ie": 1.570649941248479,
+    "tm": 1.9526840240928771
+   },
+   "D": 6721.16120159626
+  },
+  "star_p_noae": {
+   "rel": 10.592,
+   "anch": 9.012,
+   "u15": 6.878306878306878,
+   "old": 11.373723923657346,
+   "opf": 15.629084967320262,
+   "u15_anch": 5.591757170704539,
+   "old_anch": 10.280736795383932,
+   "opf_anch": 12.606209150326798,
+   "n_rel": 2.782634073223592,
+   "n_anch": 2.3675508183431844,
+   "lift_rel": 1.0534707924496416,
+   "new_rel": 0.10560979016577454,
+   "lift_anch": 1.3629442571642743,
+   "new_anch": 0.0,
+   "gap_base": 29.718573439513875,
+   "gap_rel": 22.856085398098536,
+   "gap_anch": 19.1732839525794,
+   "base_rel": 14.2,
+   "base": {
+    "all": 14.2,
+    "u15": 15.68922305764411,
+    "k017": 15.741679727113487,
+    "opf": 32.03431372549019,
+    "old": 10.741233910341766,
+    "LP": 34.18427230046948,
+    "CNC": 11.021090534979423,
+    "CWC": 7.910635364716377,
+    "OPF": 32.03431372549019,
+    "OTH": 6.3703400245800905
+   },
+   "cash": 46.23477392204318,
+   "gain_hh": 62.1775,
+   "gain_fam": 82.6086956521739,
+   "gain_rent": 77.83238027162258,
+   "dsp": 52.32046897899365,
+   "reliance": {
+    "JobSeeker": 82.3325635103926,
+    "Youth Allowance": 82.0,
+    "Parenting Payment": 37.007168458781365,
+    "Disability Support Pension": 52.32046897899365,
+    "Carer Payment": 73.96593673965937,
+    "Age Pension": 23.604060913705585,
+    "old_owners": 8.439172200373928,
+    "old_renters": 29.4866693195384
+   },
+   "own": {},
+   "D": 6793.9440575719345
+  }
+ },
+ "fe28": {
+  "caseload": 5.969939322870148,
+  "taper": 4.344508974523513,
+  "inc": 1.727920703329248,
+  "total": 12.042369000722909,
+  "net": 61.805415032064644
+ },
+ "fam": {
+  "star": 27.644661572934528,
+  "pkg_ie": 12.660869438783736
+ },
+ "pkg_fixed": 40.47461517230771,
+ "star_fixed": 29.733660554252115,
+ "pkg_parts": {
+  "floor": 19.914314919806984,
+  "ae": 5.086769171088918,
+  "cra": 4.732576463356213,
+  "credit": 10.740954618055595,
+  "ftb": 12.660869438783736,
+  "resp": 8.704583726746177,
+  "ie": 0.5320566693709031
+ },
+ "housing_losers": {
+  "p1": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.4815491178454347,
+     "worse_people_m": 1.1154705697608922,
+     "worse_share": 24.064592359196535,
+     "avg_loss": 927.8474395220386,
+     "worse_hi_share": 24.314034396744123,
+     "worse_hi_hh_m": 0.486540625340832,
+     "avg_gain_first_round": 607.7381548073764
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.26743971738497135,
+     "worse_people_m": 0.6512603726889431,
+     "worse_share": 15.214467194739202,
+     "avg_loss": 699.6999587471007,
+     "worse_hi_share": 15.423703482289643,
+     "worse_hi_hh_m": 0.2711176702763168,
+     "avg_gain_first_round": 492.35285908470195
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 1.1046994220076667,
+     "worse_people_m": 2.294254471437087,
+     "worse_share": 24.85224586288416,
+     "avg_loss": 937.6676449100426,
+     "worse_hi_share": 25.06501182033097,
+     "worse_hi_hh_m": 1.1141570151568405,
+     "avg_gain_first_round": 5201.240143746333
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 12822.61021300946
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.47787116495408927,
+     "worse_people_m": 0.8477681414551106,
+     "worse_share": 57.563291139240505,
+     "avg_loss": 945.2140500842603,
+     "worse_hi_share": 57.848101265822784,
+     "worse_hi_hh_m": 0.4802355632413828,
+     "avg_gain_first_round": 2265.553227092968
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.2141094004604633,
+     "worse_people_m": 0.4642101970719493,
+     "worse_share": 88.01295896328294,
+     "avg_loss": 1212.8218388212827,
+     "worse_hi_share": 88.55291576673866,
+     "worse_hi_hh_m": 0.21542295506451523,
+     "avg_gain_first_round": 1441.4779104017728
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.1452791392081426,
+     "worse_people_m": 0.3310157602210844,
+     "worse_share": 57.724425887265134,
+     "avg_loss": 945.3955390588822,
+     "worse_hi_share": 58.455114822546975,
+     "worse_hi_hh_m": 0.14711811565381527,
+     "avg_gain_first_round": 3322.927332599936
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 16618.059258764064
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.07077140835102619,
+     "worse_hi_hh_m": 0.0002627109208103844,
+     "avg_gain_first_round": 15949.89135643086
+    },
+    "All households": {
+     "worse_hh_m": 4.250925409632831,
+     "worse_share": 40.4525
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 9.821,
+     "u15": 5.920356446672236,
+     "opf": 13.848039215686274,
+     "gap": 20.529901743407958
+    },
+    "central": {
+     "rel_line_fixed_all": 10.118,
+     "u15": 6.421609579504317,
+     "opf": 15.212418300653594,
+     "gap": 21.253243129255097
+    },
+    "high": {
+     "rel_line_fixed_all": 10.446,
+     "u15": 6.895015316067948,
+     "opf": 16.495098039215687,
+     "gap": 22.135006143744427
+    }
+   }
+  },
+  "pkg": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.23381271952124213,
+     "worse_people_m": 0.5695572763169134,
+     "worse_share": 11.684390179860838,
+     "avg_loss": 795.6032924113896,
+     "worse_hi_share": 14.336352894840488,
+     "worse_hi_hh_m": 0.2868803255249398,
+     "avg_gain_first_round": 1471.0770111586867
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.19966029981589217,
+     "worse_people_m": 0.46342206430951816,
+     "worse_share": 11.358541324166792,
+     "avg_loss": 737.8728134140872,
+     "worse_hi_share": 12.001195635928859,
+     "worse_hi_hh_m": 0.21095686941073868,
+     "avg_gain_first_round": 939.5146805956565
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.5262099743832,
+     "worse_people_m": 1.2071566811237164,
+     "worse_share": 11.83806146572104,
+     "avg_loss": 762.0475967542554,
+     "worse_hi_share": 14.509456264775414,
+     "worse_hi_hh_m": 0.6449553105894938,
+     "avg_gain_first_round": 6633.370188290872
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 14679.32841702375
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.22382970453044754,
+     "worse_people_m": 0.4744559229835543,
+     "worse_share": 26.962025316455698,
+     "avg_loss": 713.1410606899359,
+     "worse_hi_share": 32.91139240506329,
+     "worse_hi_hh_m": 0.2732193576427998,
+     "avg_gain_first_round": 3825.180322384145
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.034152419705349976,
+     "worse_people_m": 0.10613521200739531,
+     "worse_share": 14.038876889848812,
+     "avg_loss": 1133.1045542417728,
+     "worse_hi_share": 31.20950323974082,
+     "worse_hi_hh_m": 0.07592345611420111,
+     "avg_gain_first_round": 5311.987976382474
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.06856755033151034,
+     "worse_people_m": 0.16314348182324873,
+     "worse_share": 27.244258872651358,
+     "avg_loss": 807.2728825471643,
+     "worse_hi_share": 33.7160751565762,
+     "worse_hi_hh_m": 0.08485562742175418,
+     "avg_gain_first_round": 5957.302753555021
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 19404.026915294995
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17845.563686273254
+    },
+    "All households": {
+     "worse_hh_m": 3.315674531547862,
+     "worse_share": 31.5525
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 8.435,
+     "u15": 5.558340295182401,
+     "opf": 12.90032679738562,
+     "gap": 17.299245912155456
+    },
+    "central": {
+     "rel_line_fixed_all": 9.002,
+     "u15": 6.0206070732386525,
+     "opf": 14.248366013071895,
+     "gap": 18.14779873589729
+    },
+    "high": {
+     "rel_line_fixed_all": 9.467,
+     "u15": 6.488443330548594,
+     "opf": 15.571895424836601,
+     "gap": 19.219825238386676
+    }
+   }
+  },
+  "pkg_ie": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.23381271952124213,
+     "worse_people_m": 0.5695572763169134,
+     "worse_share": 11.684390179860838,
+     "avg_loss": 794.1985586398317,
+     "worse_hi_share": 14.310095838256531,
+     "worse_hi_hh_m": 0.28635490368331906,
+     "avg_gain_first_round": 1467.8251796340942
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.19966029981589217,
+     "worse_people_m": 0.46342206430951816,
+     "worse_share": 11.358541324166792,
+     "avg_loss": 738.338215849626,
+     "worse_hi_share": 12.001195635928859,
+     "worse_hi_hh_m": 0.21095686941073868,
+     "avg_gain_first_round": 937.496968627043
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.5262099743832,
+     "worse_people_m": 1.2071566811237164,
+     "worse_share": 11.83806146572104,
+     "avg_loss": 761.3687157741747,
+     "worse_hi_share": 14.48581560283688,
+     "worse_hi_hh_m": 0.6439044669062522,
+     "avg_gain_first_round": 6592.173345682944
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 14634.132612530144
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.22382970453044754,
+     "worse_people_m": 0.4744559229835543,
+     "worse_share": 26.962025316455698,
+     "avg_loss": 713.3273921720962,
+     "worse_hi_share": 32.879746835443036,
+     "worse_hi_hh_m": 0.27295664672198944,
+     "avg_gain_first_round": 3792.623971598376
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.034152419705349976,
+     "worse_people_m": 0.10613521200739531,
+     "worse_share": 14.038876889848812,
+     "avg_loss": 1120.7667164902614,
+     "worse_hi_share": 30.99352051835853,
+     "worse_hi_hh_m": 0.07539803427258034,
+     "avg_gain_first_round": 5299.818764783291
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.06856755033151034,
+     "worse_people_m": 0.16314348182324873,
+     "worse_share": 27.244258872651358,
+     "avg_loss": 806.2447600597537,
+     "worse_hi_share": 33.61169102296451,
+     "worse_hi_hh_m": 0.08459291650094379,
+     "avg_gain_first_round": 5895.623852722559
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 19358.756238531078
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17605.08644435423
+    },
+    "All households": {
+     "worse_hh_m": 3.318564351676776,
+     "worse_share": 31.58
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 8.488,
+     "u15": 5.703146755778334,
+     "opf": 13.227124183006536,
+     "gap": 17.34369881802163
+    },
+    "central": {
+     "rel_line_fixed_all": 9.041,
+     "u15": 6.137566137566138,
+     "opf": 14.501633986928105,
+     "gap": 18.190931170654757
+    },
+    "high": {
+     "rel_line_fixed_all": 9.52,
+     "u15": 6.644388749651908,
+     "opf": 15.857843137254902,
+     "gap": 19.260509247695197
+    }
+   }
+  },
+  "star": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.3218208779927209,
+     "worse_people_m": 0.8151919872746229,
+     "worse_share": 16.082447157673624,
+     "avg_loss": 881.2400776169026,
+     "worse_hi_share": 16.71261651568859,
+     "worse_hi_hh_m": 0.33443100219161936,
+     "avg_gain_first_round": 1072.0976063159462
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.263761764493626,
+     "worse_people_m": 0.6394383812524757,
+     "worse_share": 15.00523090718876,
+     "avg_loss": 738.1944499859578,
+     "worse_hi_share": 15.18457629651771,
+     "worse_hi_hh_m": 0.26691429554335055,
+     "avg_gain_first_round": 603.2655427632753
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.6688620043832387,
+     "worse_people_m": 1.5870366726155323,
+     "worse_share": 15.047281323877069,
+     "avg_loss": 815.6458705175862,
+     "worse_hi_share": 15.738770685579196,
+     "worse_hi_hh_m": 0.6995991821180538,
+     "avg_gain_first_round": 6062.7094705558675
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 13759.431307056695
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.25404146042364173,
+     "worse_people_m": 0.5401336531861504,
+     "worse_share": 30.60126582278481,
+     "avg_loss": 734.5055278921218,
+     "worse_hi_share": 31.930379746835442,
+     "worse_hi_hh_m": 0.2650753190976779,
+     "avg_gain_first_round": 3626.2515202331715
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.058059113499094955,
+     "worse_people_m": 0.1757536060221472,
+     "worse_share": 23.86609071274298,
+     "avg_loss": 1531.0944221484278,
+     "worse_hi_share": 27.75377969762419,
+     "worse_hi_hh_m": 0.0675167066482688,
+     "avg_gain_first_round": 4459.738359265087
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.09299966596687609,
+     "worse_people_m": 0.23171103215475908,
+     "worse_share": 36.95198329853862,
+     "avg_loss": 810.3063440265184,
+     "worse_hi_share": 39.77035490605428,
+     "worse_hi_hh_m": 0.10009286082875647,
+     "avg_gain_first_round": 4872.199560014683
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17651.92893607882
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17129.574474143123
+    },
+    "All households": {
+     "worse_hh_m": 3.8731471055074977,
+     "worse_share": 36.8575
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 8.837,
+     "u15": 5.491506544138123,
+     "opf": 13.006535947712418,
+     "gap": 18.414164042672795
+    },
+    "central": {
+     "rel_line_fixed_all": 9.2,
+     "u15": 5.675299359509886,
+     "opf": 13.406862745098039,
+     "gap": 19.243154037611152
+    },
+    "high": {
+     "rel_line_fixed_all": 9.818,
+     "u15": 6.154274575327207,
+     "opf": 14.959150326797385,
+     "gap": 20.28253191438929
+    }
+   }
+  },
+  "star_m1": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.3207700343094794,
+     "worse_people_m": 0.8175563855619163,
+     "worse_share": 16.02993304450571,
+     "avg_loss": 816.039690929706,
+     "worse_hi_share": 16.54194564789287,
+     "worse_hi_hh_m": 0.3310157602210844,
+     "avg_gain_first_round": 1082.74961763328
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.26402447541443635,
+     "worse_people_m": 0.6441671778270627,
+     "worse_share": 15.020176356299507,
+     "avg_loss": 702.419834774067,
+     "worse_hi_share": 15.214467194739202,
+     "worse_hi_hh_m": 0.26743971738497135,
+     "avg_gain_first_round": 622.5308986885805
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.6693874262248596,
+     "worse_people_m": 1.5972823985271374,
+     "worse_share": 15.059101654846335,
+     "avg_loss": 778.1775886357947,
+     "worse_hi_share": 15.667848699763594,
+     "worse_hi_hh_m": 0.6964466510683291,
+     "avg_gain_first_round": 5750.17997571118
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 13359.99710526763
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.2548295931860729,
+     "worse_people_m": 0.5443370279191165,
+     "worse_share": 30.696202531645568,
+     "avg_loss": 721.7182813677955,
+     "worse_hi_share": 31.867088607594937,
+     "worse_hi_hh_m": 0.26454989725605715,
+     "avg_gain_first_round": 3350.181678007407
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.05674555889504304,
+     "worse_people_m": 0.17338920773485372,
+     "worse_share": 23.326133909287257,
+     "avg_loss": 1344.6876327649716,
+     "worse_hi_share": 26.13390928725702,
+     "worse_hi_hh_m": 0.06357604283611304,
+     "avg_gain_first_round": 4408.152909705612
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.09378779872930725,
+     "worse_people_m": 0.23538898504610448,
+     "worse_share": 37.265135699373694,
+     "avg_loss": 802.087675888159,
+     "worse_hi_share": 40.08350730688935,
+     "worse_hi_hh_m": 0.10088099359118763,
+     "avg_gain_first_round": 4427.36790008447
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17215.225742068025
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 15329.83471650804
+    },
+    "All households": {
+     "worse_hh_m": 3.923062180461471,
+     "worse_share": 37.3325
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 9.116,
+     "u15": 6.243386243386244,
+     "opf": 14.493464052287582,
+     "gap": 18.744058496683078
+    },
+    "central": {
+     "rel_line_fixed_all": 9.598,
+     "u15": 6.688944583681426,
+     "opf": 15.784313725490197,
+     "gap": 19.55441529848878
+    },
+    "high": {
+     "rel_line_fixed_all": 10.082,
+     "u15": 7.201336675020886,
+     "opf": 17.140522875816995,
+     "gap": 20.578789902378738
+    }
+   }
+  },
+  "star_m2": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.32812594009217017,
+     "worse_people_m": 0.8375224155435056,
+     "worse_share": 16.397531836681107,
+     "avg_loss": 823.92735342973,
+     "worse_hi_share": 16.948930024944204,
+     "worse_hi_hh_m": 0.33915979876620633,
+     "avg_gain_first_round": 903.4242257427536
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.26875327198902327,
+     "worse_people_m": 0.6567773020259611,
+     "worse_share": 15.289194440292931,
+     "avg_loss": 702.1445408307608,
+     "worse_hi_share": 15.498430727843372,
+     "worse_hi_hh_m": 0.2724312248803687,
+     "avg_gain_first_round": 470.52546874909007
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.679895863057275,
+     "worse_people_m": 1.6256551779746589,
+     "worse_share": 15.295508274231679,
+     "avg_loss": 784.5176339158738,
+     "worse_hi_share": 15.76241134751773,
+     "worse_hi_hh_m": 0.7006500258012953,
+     "avg_gain_first_round": 5765.419377690016
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 13424.73742700215
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.256931280552556,
+     "worse_people_m": 0.5506420900185658,
+     "worse_share": 30.949367088607595,
+     "avg_loss": 725.4041341667134,
+     "worse_hi_share": 31.582278481012658,
+     "worse_hi_hh_m": 0.2621854989687637,
+     "avg_gain_first_round": 3322.7061196635655
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.05937266810314688,
+     "worse_people_m": 0.1807451135175445,
+     "worse_share": 24.406047516198704,
+     "avg_loss": 1375.183182140987,
+     "worse_hi_share": 27.429805615550755,
+     "worse_hi_hh_m": 0.06672857388583764,
+     "avg_gain_first_round": 4031.4216156397124
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.09483864241254879,
+     "worse_people_m": 0.23749067241258753,
+     "worse_share": 37.68267223382046,
+     "avg_loss": 808.3133765249378,
+     "worse_hi_share": 39.45720250521921,
+     "worse_hi_hh_m": 0.09930472806632532,
+     "avg_gain_first_round": 4223.471487469454
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17018.007984968215
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 16609.8670645669
+    },
+    "All households": {
+     "worse_hh_m": 3.9474942960968367,
+     "worse_share": 37.565
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 9.255,
+     "u15": 5.998329156223893,
+     "opf": 13.766339869281046,
+     "gap": 19.70347400290335
+    },
+    "central": {
+     "rel_line_fixed_all": 9.589,
+     "u15": 6.148705096073517,
+     "opf": 14.076797385620916,
+     "gap": 20.4760816648957
+    },
+    "high": {
+     "rel_line_fixed_all": 10.045,
+     "u15": 6.58312447786132,
+     "opf": 15.473856209150327,
+     "gap": 21.442908159768784
+    }
+   }
+  },
+  "star_p_noae": {
+   "groups": {
+    "Age Pension": {
+     "hh_m": 2.0010690838126983,
+     "people_m": 3.9845365359311007,
+     "worse_hh_m": 0.3278632291713598,
+     "worse_people_m": 0.8362088609394537,
+     "worse_share": 16.38440330838913,
+     "avg_loss": 826.3688035702103,
+     "worse_hi_share": 16.975187081528162,
+     "worse_hi_hh_m": 0.3396852206078271,
+     "avg_gain_first_round": 905.9563849699507
+    },
+    "Age Pension (other tenure)": {
+     "hh_m": 1.7577987711422822,
+     "people_m": 3.4042081118609615,
+     "worse_hh_m": 0.2684905610682129,
+     "worse_people_m": 0.6554637474219092,
+     "worse_share": 15.274248991182185,
+     "avg_loss": 702.6893830279291,
+     "worse_hi_share": 15.498430727843372,
+     "worse_hi_hh_m": 0.2724312248803687,
+     "avg_gain_first_round": 472.3094156000858
+    },
+    "All recipient households": {
+     "hh_m": 4.445068780111705,
+     "people_m": 9.892905144956647,
+     "worse_hh_m": 0.6796331521364645,
+     "worse_people_m": 1.624341623370607,
+     "worse_share": 15.289598108747045,
+     "avg_loss": 786.0454008527146,
+     "worse_hi_share": 15.768321513002364,
+     "worse_hi_hh_m": 0.7009127367221056,
+     "avg_gain_first_round": 5787.918794585327
+    },
+    "JobSeeker, Youth Allowance (other), Special Benefit": {
+     "hh_m": 0.8435647667221444,
+     "people_m": 1.9385438846598269,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 13451.642830316872
+    },
+    "Disability Support Pension": {
+     "hh_m": 0.8301665097608149,
+     "people_m": 1.7021040559304808,
+     "worse_hh_m": 0.256931280552556,
+     "worse_people_m": 0.5506420900185658,
+     "worse_share": 30.949367088607595,
+     "avg_loss": 726.1760328938736,
+     "worse_hi_share": 31.582278481012658,
+     "worse_hi_hh_m": 0.2621854989687637,
+     "avg_gain_first_round": 3341.3287257358793
+    },
+    "Age Pension (private renter)": {
+     "hh_m": 0.243270312670416,
+     "people_m": 0.5803284240701392,
+     "worse_hh_m": 0.05937266810314688,
+     "worse_people_m": 0.1807451135175445,
+     "worse_share": 24.406047516198704,
+     "avg_loss": 1385.6624663764537,
+     "worse_hi_share": 27.645788336933045,
+     "worse_hi_hh_m": 0.06725399572745841,
+     "avg_gain_first_round": 4039.3601344880317
+    },
+    "Carer Payment": {
+     "hh_m": 0.2516770621363483,
+     "people_m": 0.6728026681953946,
+     "worse_hh_m": 0.09483864241254879,
+     "worse_people_m": 0.23749067241258753,
+     "worse_share": 37.68267223382046,
+     "avg_loss": 808.839404377123,
+     "worse_hi_share": 39.35281837160752,
+     "worse_hi_hh_m": 0.09904201714551494,
+     "avg_gain_first_round": 4253.477894212711
+    },
+    "Youth Allowance (student), Austudy, ABSTUDY": {
+     "hh_m": 0.14738082657462567,
+     "people_m": 0.4269052463168747,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 17047.588183118743
+    },
+    "Parenting Payment": {
+     "hh_m": 0.37121053110507324,
+     "people_m": 1.168012753922969,
+     "worse_hh_m": 0.0,
+     "worse_people_m": 0.0,
+     "worse_share": 0.0,
+     "avg_loss": 0.0,
+     "worse_hi_share": 0.0,
+     "worse_hi_hh_m": 0.0,
+     "avg_gain_first_round": 16730.759748908582
+    },
+    "All households": {
+     "worse_hh_m": 3.9446044759679224,
+     "worse_share": 37.5375
+    }
+   },
+   "ahc_pov": {
+    "low": {
+     "rel_line_fixed_all": 9.232,
+     "u15": 5.937064884433306,
+     "opf": 13.651960784313726,
+     "gap": 19.679866186205373
+    },
+    "central": {
+     "rel_line_fixed_all": 9.584,
+     "u15": 6.131996658312448,
+     "opf": 14.0359477124183,
+     "gap": 20.454505502108198
+    },
+    "high": {
+     "rel_line_fixed_all": 10.029,
+     "u15": 6.549707602339181,
+     "opf": 15.383986928104575,
+     "gap": 21.422583013012705
+    }
+   }
+  }
+ },
+ "tax_by_hdec": {
+  "fy": "2028-29",
+  "five_taxes_bn": 41.32361605575784,
+  "rows": [
+   {
+    "decile": 1,
+    "upper_equiv_disp_income": 32086.867254148274,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 1.49725,
+    "central": 296.06205886081904,
+    "low": 227.62884885571617,
+    "high": 501.5332038547933,
+    "low_var": "two_thirds",
+    "high_var": "fuel",
+    "variants": {
+     "central": 296.06205886081904,
+     "half_ept": 272.60950569049754,
+     "two_thirds": 227.62884885571617,
+     "fuel": 501.5332038547933,
+     "conc50": 295.8532027663711,
+     "conc25": 296.21091248386443
+    },
+    "per_adult_central": 197.7372241514904,
+    "share_central": 0.7528744434697814
+   },
+   {
+    "decile": 2,
+    "upper_equiv_disp_income": 38090.19183937562,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 1.40925,
+    "central": 253.62320038915894,
+    "low": 251.85924731631508,
+    "high": 545.4144740558424,
+    "low_var": "conc50",
+    "high_var": "fuel",
+    "variants": {
+     "central": 253.62320038915894,
+     "half_ept": 265.90456810808183,
+     "two_thirds": 289.4595296005347,
+     "fuel": 545.4144740558424,
+     "conc50": 251.85924731631508,
+     "conc25": 253.28237934477912
+    },
+    "per_adult_central": 179.97033910885858,
+    "share_central": 0.6449540565202183
+   },
+   {
+    "decile": 3,
+    "upper_equiv_disp_income": 45898.58418784102,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 1.64875,
+    "central": 321.94752884253876,
+    "low": 321.500721453791,
+    "high": 694.1457043026485,
+    "low_var": "conc50",
+    "high_var": "fuel",
+    "variants": {
+     "central": 321.94752884253876,
+     "half_ept": 382.6175862137863,
+     "two_thirds": 498.9792893914177,
+     "fuel": 694.1457043026485,
+     "conc50": 321.500721453791,
+     "conc25": 324.55861187905145
+    },
+    "per_adult_central": 195.26764448372327,
+    "share_central": 0.8187001993313343
+   },
+   {
+    "decile": 4,
+    "upper_equiv_disp_income": 56697.95829610148,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 1.95975,
+    "central": 437.97420891600865,
+    "low": 430.96224972677817,
+    "high": 1046.1574563217307,
+    "low_var": "conc25",
+    "high_var": "two_thirds",
+    "variants": {
+     "central": 437.97420891600865,
+     "half_ept": 646.4029812331036,
+     "two_thirds": 1046.1574563217307,
+     "fuel": 938.6991478515059,
+     "conc50": 432.1934293873338,
+     "conc25": 430.96224972677817
+    },
+    "per_adult_central": 223.48473474474227,
+    "share_central": 1.11375158998935
+   },
+   {
+    "decile": 5,
+    "upper_equiv_disp_income": 68116.70318599524,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.05825,
+    "central": 566.868757150335,
+    "low": 538.0372311694716,
+    "high": 1514.616927816838,
+    "low_var": "conc25",
+    "high_var": "two_thirds",
+    "variants": {
+     "central": 566.868757150335,
+     "half_ept": 891.6688704721233,
+     "two_thirds": 1514.616927816838,
+     "fuel": 1128.459545657586,
+     "conc50": 542.6049203098535,
+     "conc25": 538.0372311694716
+    },
+    "per_adult_central": 275.41297565909633,
+    "share_central": 1.4415254751051974
+   },
+   {
+    "decile": 6,
+    "upper_equiv_disp_income": 81814.32227452668,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.15,
+    "central": 947.2955518423233,
+    "low": 863.1190170175392,
+    "high": 2198.86550029633,
+    "low_var": "conc50",
+    "high_var": "two_thirds",
+    "variants": {
+     "central": 947.2955518423233,
+     "half_ept": 1376.2175731870109,
+     "two_thirds": 2198.86550029633,
+     "fuel": 1538.3600257326268,
+     "conc50": 863.1190170175392,
+     "conc25": 877.3279451990126
+    },
+    "per_adult_central": 440.60258225224345,
+    "share_central": 2.4089362012103237
+   },
+   {
+    "decile": 7,
+    "upper_equiv_disp_income": 98937.1172752687,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.2195,
+    "central": 1857.8166625951835,
+    "low": 1592.8174238148508,
+    "high": 3217.110090056199,
+    "low_var": "conc25",
+    "high_var": "two_thirds",
+    "variants": {
+     "central": 1857.8166625951835,
+     "half_ept": 2323.656294832528,
+     "two_thirds": 3217.110090056199,
+     "fuel": 2368.59481806883,
+     "conc50": 1625.4110685066075,
+     "conc25": 1592.8174238148508
+    },
+    "per_adult_central": 837.0428756905535,
+    "share_central": 4.724356411294754
+   },
+   {
+    "decile": 8,
+    "upper_equiv_disp_income": 121520.03980235316,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.2695,
+    "central": 4322.7041010249795,
+    "low": 3434.0031060442952,
+    "high": 5250.433746744644,
+    "low_var": "conc50",
+    "high_var": "two_thirds",
+    "variants": {
+     "central": 4322.7041010249795,
+     "half_ept": 4640.643721894753,
+     "two_thirds": 5250.433746744644,
+     "fuel": 4493.7098039625425,
+     "conc50": 3434.0031060442952,
+     "conc25": 3461.7270620369395
+    },
+    "per_adult_central": 1904.694470599242,
+    "share_central": 10.99247048698552
+   },
+   {
+    "decile": 9,
+    "upper_equiv_disp_income": 159049.82190132528,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.23925,
+    "central": 9573.705651347234,
+    "low": 7366.3986063822795,
+    "high": 9573.705651347234,
+    "low_var": "conc50",
+    "high_var": "central",
+    "variants": {
+     "central": 9573.705651347234,
+     "half_ept": 9354.867017546234,
+     "two_thirds": 8935.147022980707,
+     "fuel": 8906.255093701691,
+     "conc50": 7366.3986063822795,
+     "conc25": 7480.843626726583
+    },
+    "per_adult_central": 4275.40723516679,
+    "share_central": 24.345565730156558
+   },
+   {
+    "decile": 10,
+    "upper_equiv_disp_income": null,
+    "hh_m": 1.0508436832415378,
+    "adults_per_hh": 2.125,
+    "central": 20746.229768591875,
+    "low": 16145.82907749634,
+    "high": 24191.28417037607,
+    "low_var": "two_thirds",
+    "high_var": "conc50",
+    "variants": {
+     "central": 20746.229768591875,
+     "half_ept": 19169.639370382334,
+     "two_thirds": 16145.82907749634,
+     "fuel": 18209.05567237239,
+     "conc50": 24191.28417037607,
+     "conc25": 24068.460047179127
+    },
+    "per_adult_central": 9762.93165580794,
+    "share_central": 52.756865405936956
+   }
+  ],
+  "by_variant": {
+   "central": [
+    {
+     "per_hh": 296.06205886081904,
+     "per_adult": 197.7372241514904,
+     "share": 0.7528744434697814
+    },
+    {
+     "per_hh": 253.62320038915894,
+     "per_adult": 179.97033910885858,
+     "share": 0.6449540565202183
+    },
+    {
+     "per_hh": 321.94752884253876,
+     "per_adult": 195.26764448372327,
+     "share": 0.8187001993313343
+    },
+    {
+     "per_hh": 437.97420891600865,
+     "per_adult": 223.48473474474227,
+     "share": 1.11375158998935
+    },
+    {
+     "per_hh": 566.868757150335,
+     "per_adult": 275.41297565909633,
+     "share": 1.4415254751051974
+    },
+    {
+     "per_hh": 947.2955518423233,
+     "per_adult": 440.60258225224345,
+     "share": 2.4089362012103237
+    },
+    {
+     "per_hh": 1857.8166625951835,
+     "per_adult": 837.0428756905535,
+     "share": 4.724356411294754
+    },
+    {
+     "per_hh": 4322.7041010249795,
+     "per_adult": 1904.694470599242,
+     "share": 10.99247048698552
+    },
+    {
+     "per_hh": 9573.705651347234,
+     "per_adult": 4275.40723516679,
+     "share": 24.345565730156558
+    },
+    {
+     "per_hh": 20746.229768591875,
+     "per_adult": 9762.93165580794,
+     "share": 52.756865405936956
+    }
+   ],
+   "half_ept": [
+    {
+     "per_hh": 272.60950569049754,
+     "per_adult": 182.07347182534482,
+     "share": 0.6932355016074204
+    },
+    {
+     "per_hh": 265.90456810808183,
+     "per_adult": 188.68516452586965,
+     "share": 0.6761851028826248
+    },
+    {
+     "per_hh": 382.6175862137863,
+     "per_adult": 232.06525320017363,
+     "share": 0.9729818247932809
+    },
+    {
+     "per_hh": 646.4029812331036,
+     "per_adult": 329.8395107708144,
+     "share": 1.643777951911977
+    },
+    {
+     "per_hh": 891.6688704721233,
+     "per_adult": 433.21699039092596,
+     "share": 2.2674796871949687
+    },
+    {
+     "per_hh": 1376.2175731870109,
+     "per_adult": 640.1011968311678,
+     "share": 3.499668425914687
+    },
+    {
+     "per_hh": 2323.656294832528,
+     "per_adult": 1046.9278192532229,
+     "share": 5.908968702435153
+    },
+    {
+     "per_hh": 4640.643721894753,
+     "per_adult": 2044.7868349393052,
+     "share": 11.800978730292213
+    },
+    {
+     "per_hh": 9354.867017546234,
+     "per_adult": 4177.6786948961635,
+     "share": 23.789067490339647
+    },
+    {
+     "per_hh": 19169.639370382334,
+     "per_adult": 9021.006762532863,
+     "share": 48.747656582628025
+    }
+   ],
+   "two_thirds": [
+    {
+     "per_hh": 227.62884885571617,
+     "per_adult": 152.03128993535896,
+     "share": 0.5788514190549469
+    },
+    {
+     "per_hh": 289.4595296005347,
+     "per_adult": 205.39970168567302,
+     "share": 0.7360844651744998
+    },
+    {
+     "per_hh": 498.9792893914177,
+     "per_adult": 302.64096399782727,
+     "share": 1.2688851663364107
+    },
+    {
+     "per_hh": 1046.1574563217307,
+     "per_adult": 533.8218937730479,
+     "share": 2.660338226858895
+    },
+    {
+     "per_hh": 1514.616927816838,
+     "per_adult": 735.8760732743049,
+     "share": 3.851612668599603
+    },
+    {
+     "per_hh": 2198.86550029633,
+     "per_adult": 1022.7281396727117,
+     "share": 5.591630505341957
+    },
+    {
+     "per_hh": 3217.110090056199,
+     "per_adult": 1449.4751475810765,
+     "share": 8.180987384711516
+    },
+    {
+     "per_hh": 5250.433746744644,
+     "per_adult": 2313.4759844655846,
+     "share": 13.351651340483409
+    },
+    {
+     "per_hh": 8935.147022980707,
+     "per_adult": 3990.240939145119,
+     "share": 22.721735666270245
+    },
+    {
+     "per_hh": 16145.82907749634,
+     "per_adult": 7598.037212939455,
+     "share": 41.05822315716852
+    }
+   ],
+   "fuel": [
+    {
+     "per_hh": 501.5332038547933,
+     "per_adult": 334.9695801334402,
+     "share": 1.2753796727168694
+    },
+    {
+     "per_hh": 545.4144740558424,
+     "per_adult": 387.02464009639345,
+     "share": 1.3869680572889465
+    },
+    {
+     "per_hh": 694.1457043026485,
+     "per_adult": 421.0133157256397,
+     "share": 1.7651858628041093
+    },
+    {
+     "per_hh": 938.6991478515059,
+     "per_adult": 478.9892322242663,
+     "share": 2.387075876063187
+    },
+    {
+     "per_hh": 1128.459545657586,
+     "per_adult": 548.2616522082284,
+     "share": 2.8696292786861792
+    },
+    {
+     "per_hh": 1538.3600257326268,
+     "per_adult": 715.5162910384311,
+     "share": 3.9119904545894024
+    },
+    {
+     "per_hh": 2368.59481806883,
+     "per_adult": 1067.1749574538546,
+     "share": 6.023245640865112
+    },
+    {
+     "per_hh": 4493.7098039625425,
+     "per_adult": 1980.0439761897082,
+     "share": 11.427331420955449
+    },
+    {
+     "per_hh": 8906.255093701691,
+     "per_adult": 3977.33843639687,
+     "share": 22.648264599898535
+    },
+    {
+     "per_hh": 18209.05567237239,
+     "per_adult": 8568.967375234066,
+     "share": 46.3049291361322
+    }
+   ],
+   "conc50": [
+    {
+     "per_hh": 295.8532027663711,
+     "per_adult": 197.59773101778,
+     "share": 0.752343330444094
+    },
+    {
+     "per_hh": 251.85924731631508,
+     "per_adult": 178.71864276481466,
+     "share": 0.6404683916122117
+    },
+    {
+     "per_hh": 321.500721453791,
+     "per_adult": 194.99664682565034,
+     "share": 0.8175639853043293
+    },
+    {
+     "per_hh": 432.1934293873338,
+     "per_adult": 220.534981190118,
+     "share": 1.0990512896968407
+    },
+    {
+     "per_hh": 542.6049203098535,
+     "per_adult": 263.6243995189377,
+     "share": 1.3798234700323124
+    },
+    {
+     "per_hh": 863.1190170175392,
+     "per_adult": 401.45070558955314,
+     "share": 2.194878506505117
+    },
+    {
+     "per_hh": 1625.4110685066075,
+     "per_adult": 732.3320876353266,
+     "share": 4.133357912595006
+    },
+    {
+     "per_hh": 3434.0031060442952,
+     "per_adult": 1513.1099828351157,
+     "share": 8.732537993164476
+    },
+    {
+     "per_hh": 7366.3986063822795,
+     "per_adult": 3289.6722591860134,
+     "share": 18.73246870097541
+    },
+    {
+     "per_hh": 24191.28417037607,
+     "per_adult": 11384.133727235798,
+     "share": 61.5175064196702
+    }
+   ],
+   "conc25": [
+    {
+     "per_hh": 296.21091248386443,
+     "per_adult": 197.8366421665483,
+     "share": 0.753252972515482
+    },
+    {
+     "per_hh": 253.28237934477912,
+     "per_adult": 179.7284934147803,
+     "share": 0.6440873616958374
+    },
+    {
+     "per_hh": 324.55861187905145,
+     "per_adult": 196.8513188045801,
+     "share": 0.825340083197345
+    },
+    {
+     "per_hh": 430.96224972677817,
+     "per_adult": 219.90674817031672,
+     "share": 1.0959204471116117
+    },
+    {
+     "per_hh": 538.0372311694716,
+     "per_adult": 261.40518944223084,
+     "share": 1.368208012000506
+    },
+    {
+     "per_hh": 877.3279451990126,
+     "per_adult": 408.0595093948896,
+     "share": 2.2310112650831346
+    },
+    {
+     "per_hh": 1592.8174238148508,
+     "per_adult": 717.6469582405276,
+     "share": 4.05047352611746
+    },
+    {
+     "per_hh": 3461.7270620369395,
+     "per_adult": 1525.3258700316987,
+     "share": 8.803038948332645
+    },
+    {
+     "per_hh": 7480.843626726583,
+     "per_adult": 3340.7808983930254,
+     "share": 19.02349799169621
+    },
+    {
+     "per_hh": 24068.460047179127,
+     "per_adult": 11326.334139849,
+     "share": 61.20516939224977
+    }
+   ]
+  },
+  "note": "A$ a year per household, 2028-29, the five taxes (A$41.3bn) allocated to adults by Table 6.24a's rule and the variants of Table F4-104; households ranked by current-rules equivalised disposable income (h['cur']/h['e'], A$ a year); conc variants: mean of 5 draws"
+ },
+ "reach": {
+  "p1": {
+   "before": {
+    "hh": 59.5325,
+    "adults_in_hh": 63.62730825224121,
+    "hh_5pw": 37.8375,
+    "adults_in_hh_5pw": 40.34556738947207
+   },
+   "central": {
+    "a1": {
+     "hh_better": 33.06,
+     "hh_worse": 66.9375,
+     "adults_in_hh_better": 32.88509181927311,
+     "adults_individual_better": 34.70742982657779
+    },
+    "a5pw": {
+     "hh_better": 29.685,
+     "hh_worse": 53.042500000000004,
+     "adults_in_hh_better": 30.57492401603964,
+     "adults_individual_better": 31.36668965341098
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 31.9025,
+     "hh_worse": 68.0975,
+     "adults_in_hh_better": 31.793221464511024,
+     "adults_individual_better": 33.58491047940132
+    },
+    "a5pw": {
+     "hh_better": 29.275000000000002,
+     "hh_worse": 58.8875,
+     "adults_in_hh_better": 30.1420069981866,
+     "adults_individual_better": 30.9835772482313
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 30.252499999999998,
+     "hh_worse": 68.765,
+     "adults_in_hh_better": 30.553214313079458,
+     "adults_individual_better": 32.03330523842362
+    },
+    "a5pw": {
+     "hh_better": 28.625,
+     "hh_worse": 59.81999999999999,
+     "adults_in_hh_better": 29.543074604755702,
+     "adults_individual_better": 29.99642428421832
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 29.360000000000003,
+     "hh_worse": 70.6375,
+     "adults_in_hh_better": 30.19436569356116,
+     "adults_individual_better": 31.359027405307383
+    },
+    "a5pw": {
+     "hh_better": 28.847499999999997,
+     "hh_worse": 67.8425,
+     "adults_in_hh_better": 29.85722677700304,
+     "adults_individual_better": 30.784358797537863
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 38.8225,
+     "hh_worse": 48.095,
+     "adults_in_hh_better": 39.27029857226777,
+     "adults_individual_better": 47.356524404260206
+    },
+    "a5pw": {
+     "hh_better": 31.997500000000002,
+     "hh_worse": 43.84,
+     "adults_in_hh_better": 33.10729701427732,
+     "adults_individual_better": 32.66288662426889
+    }
+   }
+  },
+  "pkg": {
+   "before": {
+    "hh": 63.2775,
+    "adults_in_hh": 68.34980716675607,
+    "hh_5pw": 47.45,
+    "adults_in_hh_5pw": 51.30130513626031
+   },
+   "central": {
+    "a1": {
+     "hh_better": 42.03,
+     "hh_worse": 57.96750000000001,
+     "adults_in_hh_better": 43.60202283349935,
+     "adults_individual_better": 46.848261946721834
+    },
+    "a5pw": {
+     "hh_better": 41.1775,
+     "hh_worse": 47.075,
+     "adults_in_hh_better": 42.69404643322351,
+     "adults_individual_better": 44.35547723035272
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 40.7725,
+     "hh_worse": 59.22500000000001,
+     "adults_in_hh_better": 42.073404336832425,
+     "adults_individual_better": 44.78839424820576
+    },
+    "a5pw": {
+     "hh_better": 40.03,
+     "hh_worse": 51.7975,
+     "adults_in_hh_better": 41.28291574081169,
+     "adults_individual_better": 42.574004546267204
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 38.895,
+     "hh_worse": 61.1,
+     "adults_in_hh_better": 39.77472990575435,
+     "adults_individual_better": 41.42211324802697
+    },
+    "a5pw": {
+     "hh_better": 38.1475,
+     "hh_worse": 53.337500000000006,
+     "adults_in_hh_better": 38.94337598651445,
+     "adults_individual_better": 39.353306260056705
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 40.1525,
+     "hh_worse": 59.8475,
+     "adults_in_hh_better": 41.405511710469185,
+     "adults_individual_better": 43.88169488928052
+    },
+    "a5pw": {
+     "hh_better": 39.525,
+     "hh_worse": 59.099999999999994,
+     "adults_in_hh_better": 40.73889612545654,
+     "adults_individual_better": 41.89461854774857
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 47.839999999999996,
+     "hh_worse": 39.675,
+     "adults_in_hh_better": 49.84164687252573,
+     "adults_individual_better": 56.02763517482696
+    },
+    "a5pw": {
+     "hh_better": 42.964999999999996,
+     "hh_worse": 38.464999999999996,
+     "adults_in_hh_better": 45.2162031006564,
+     "adults_individual_better": 45.66189053201543
+    }
+   }
+  },
+  "pkg_ie": {
+   "before": {
+    "hh": 63.2575,
+    "adults_in_hh": 68.33448267054887,
+    "hh_5pw": 47.4125,
+    "adults_in_hh_5pw": 51.26171685439174
+   },
+   "central": {
+    "a1": {
+     "hh_better": 41.9975,
+     "hh_worse": 57.9975,
+     "adults_in_hh_better": 43.57009679973437,
+     "adults_individual_better": 46.80611958215207
+    },
+    "a5pw": {
+     "hh_better": 41.137499999999996,
+     "hh_worse": 47.1175,
+     "adults_in_hh_better": 42.65318111000434,
+     "adults_individual_better": 44.313334865782956
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 40.7125,
+     "hh_worse": 59.285,
+     "adults_in_hh_better": 42.01082931065308,
+     "adults_individual_better": 44.74242075958419
+    },
+    "a5pw": {
+     "hh_better": 39.9625,
+     "hh_worse": 51.845,
+     "adults_in_hh_better": 41.211401425178146,
+     "adults_individual_better": 42.51142952008786
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 38.8175,
+     "hh_worse": 61.177499999999995,
+     "adults_in_hh_better": 39.69683038336782,
+     "adults_individual_better": 41.35187597374403
+    },
+    "a5pw": {
+     "hh_better": 38.0725,
+     "hh_worse": 53.4175,
+     "adults_in_hh_better": 38.866753505478506,
+     "adults_individual_better": 39.28179194442316
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 40.0875,
+     "hh_worse": 59.9125,
+     "adults_in_hh_better": 41.33527443618624,
+     "adults_individual_better": 43.82422802850356
+    },
+    "a5pw": {
+     "hh_better": 39.4575,
+     "hh_worse": 59.160000000000004,
+     "adults_in_hh_better": 40.667381809823,
+     "adults_individual_better": 41.83076648021863
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 47.795,
+     "hh_worse": 39.7125,
+     "adults_in_hh_better": 49.79567338390417,
+     "adults_individual_better": 55.99570914106199
+    },
+    "a5pw": {
+     "hh_better": 42.92,
+     "hh_worse": 38.4775,
+     "adults_in_hh_better": 45.16512144663245,
+     "adults_individual_better": 45.59548438178428
+    }
+   }
+  },
+  "star": {
+   "before": {
+    "hh": 60.0575,
+    "adults_in_hh": 64.64894133272036,
+    "hh_5pw": 40.47,
+    "adults_in_hh_5pw": 42.75534441805225
+   },
+   "central": {
+    "a1": {
+     "hh_better": 34.9225,
+     "hh_worse": 65.0725,
+     "adults_in_hh_better": 35.09054223175747,
+     "adults_individual_better": 36.82987255127321
+    },
+    "a5pw": {
+     "hh_better": 33.5875,
+     "hh_worse": 51.725,
+     "adults_in_hh_better": 33.8518121216765,
+     "adults_individual_better": 34.50054912778076
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 33.71,
+     "hh_worse": 66.29,
+     "adults_in_hh_better": 33.902893775700456,
+     "adults_individual_better": 35.67159604627998
+    },
+    "a5pw": {
+     "hh_better": 33.08,
+     "hh_worse": 57.03,
+     "adults_in_hh_better": 33.23372410798662,
+     "adults_individual_better": 33.973131049983394
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 32.985,
+     "hh_worse": 67.0075,
+     "adults_in_hh_better": 33.10729701427732,
+     "adults_individual_better": 34.403493985135235
+    },
+    "a5pw": {
+     "hh_better": 32.335,
+     "hh_worse": 58.03,
+     "adults_in_hh_better": 32.55561515081858,
+     "adults_individual_better": 32.84550353740454
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 33.1575,
+     "hh_worse": 66.8425,
+     "adults_in_hh_better": 33.31545475442495,
+     "adults_individual_better": 34.41754143999183
+    },
+    "a5pw": {
+     "hh_better": 32.6725,
+     "hh_worse": 65.99000000000001,
+     "adults_in_hh_better": 32.93872755599826,
+     "adults_individual_better": 33.692181952851634
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 41.21,
+     "hh_worse": 45.535,
+     "adults_in_hh_better": 41.69540009705514,
+     "adults_individual_better": 49.43171659898348
+    },
+    "a5pw": {
+     "hh_better": 35.305,
+     "hh_worse": 42.585,
+     "adults_in_hh_better": 35.99085638392971,
+     "adults_individual_better": 35.527290373662304
+    }
+   }
+  },
+  "star_m1": {
+   "before": {
+    "hh": 62.5175,
+    "adults_in_hh": 65.9170433938651,
+    "hh_5pw": 41.0825,
+    "adults_in_hh_5pw": 42.88687967716395
+   },
+   "central": {
+    "a1": {
+     "hh_better": 36.207499999999996,
+     "hh_worse": 63.79,
+     "adults_in_hh_better": 35.37021428753863,
+     "adults_individual_better": 37.12742318596276
+    },
+    "a5pw": {
+     "hh_better": 33.0575,
+     "hh_worse": 52.0975,
+     "adults_in_hh_better": 33.187750619365055,
+     "adults_individual_better": 33.708783490409424
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 34.86,
+     "hh_worse": 65.14,
+     "adults_in_hh_better": 33.99994891834597,
+     "adults_individual_better": 35.86315224886982
+    },
+    "a5pw": {
+     "hh_better": 32.3575,
+     "hh_worse": 57.58,
+     "adults_in_hh_better": 32.34107220391797,
+     "adults_individual_better": 33.11112813832912
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 33.18,
+     "hh_worse": 65.9375,
+     "adults_in_hh_better": 32.68715040993027,
+     "adults_individual_better": 34.131484177457665
+    },
+    "a5pw": {
+     "hh_better": 31.580000000000002,
+     "hh_worse": 58.697500000000005,
+     "adults_in_hh_better": 31.628483130283758,
+     "adults_individual_better": 32.03585932112482
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 32.46,
+     "hh_worse": 67.535,
+     "adults_in_hh_better": 32.420248767655096,
+     "adults_individual_better": 33.63343805072409
+    },
+    "a5pw": {
+     "hh_better": 31.8525,
+     "hh_worse": 64.845,
+     "adults_in_hh_better": 31.950297550634687,
+     "adults_individual_better": 32.78803667662759
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 42.095,
+     "hh_worse": 45.9125,
+     "adults_in_hh_better": 41.832043521569226,
+     "adults_individual_better": 49.71011161341404
+    },
+    "a5pw": {
+     "hh_better": 35.302499999999995,
+     "hh_worse": 41.975,
+     "adults_in_hh_better": 35.6473322606186,
+     "adults_individual_better": 35.01647383342273
+    }
+   }
+  },
+  "star_m2": {
+   "before": {
+    "hh": 62.16,
+    "adults_in_hh": 65.44709217684469,
+    "hh_5pw": 40.6675,
+    "adults_in_hh_5pw": 42.271345746175264
+   },
+   "central": {
+    "a1": {
+     "hh_better": 35.7325,
+     "hh_worse": 64.265,
+     "adults_in_hh_better": 34.66401042065742,
+     "adults_individual_better": 36.51955150307767
+    },
+    "a5pw": {
+     "hh_better": 32.6,
+     "hh_worse": 52.42250000000001,
+     "adults_in_hh_better": 32.498148290041634,
+     "adults_individual_better": 33.18902766071565
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 34.5125,
+     "hh_worse": 65.4825,
+     "adults_in_hh_better": 33.44443593083544,
+     "adults_individual_better": 35.333180088371265
+    },
+    "a5pw": {
+     "hh_better": 32.09,
+     "hh_worse": 57.815000000000005,
+     "adults_in_hh_better": 31.869843945546954,
+     "adults_individual_better": 32.66799478967129
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 32.934999999999995,
+     "hh_worse": 66.1825,
+     "adults_in_hh_better": 32.21081398615687,
+     "adults_individual_better": 33.63343805072409
+    },
+    "a5pw": {
+     "hh_better": 31.3,
+     "hh_worse": 58.785,
+     "adults_in_hh_better": 31.120220672745386,
+     "adults_individual_better": 31.526319822235845
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 32.1725,
+     "hh_worse": 67.825,
+     "adults_in_hh_better": 31.9336960130769,
+     "adults_individual_better": 33.1392230480423
+    },
+    "a5pw": {
+     "hh_better": 31.632500000000004,
+     "hh_worse": 65.19500000000001,
+     "adults_in_hh_better": 31.54292135979363,
+     "adults_individual_better": 32.35511965877455
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 41.61,
+     "hh_worse": 46.32,
+     "adults_in_hh_better": 41.133501902791615,
+     "adults_individual_better": 49.187801701019076
+    },
+    "a5pw": {
+     "hh_better": 34.849999999999994,
+     "hh_worse": 42.32,
+     "adults_in_hh_better": 34.97433146885296,
+     "adults_individual_better": 34.39710877838225
+    }
+   }
+  },
+  "star_p_noae": {
+   "before": {
+    "hh": 62.1775,
+    "adults_in_hh": 65.46752483845427,
+    "hh_5pw": 40.6975,
+    "adults_in_hh_5pw": 42.30710290399203
+   },
+   "central": {
+    "a1": {
+     "hh_better": 35.77,
+     "hh_worse": 64.225,
+     "adults_in_hh_better": 34.70615278522718,
+     "adults_individual_better": 36.55020049549205
+    },
+    "a5pw": {
+     "hh_better": 32.6225,
+     "hh_worse": 52.395,
+     "adults_in_hh_better": 32.528797282456004,
+     "adults_individual_better": 33.243940438791405
+    }
+   },
+   "half_ept": {
+    "a1": {
+     "hh_better": 34.57,
+     "hh_worse": 65.42999999999999,
+     "adults_in_hh_better": 33.51722728781958,
+     "adults_individual_better": 35.38809286644701
+    },
+    "a5pw": {
+     "hh_better": 32.12,
+     "hh_worse": 57.78,
+     "adults_in_hh_better": 31.908155186064924,
+     "adults_individual_better": 32.71013715424105
+    }
+   },
+   "two_thirds": {
+    "a1": {
+     "hh_better": 32.98,
+     "hh_worse": 66.1375,
+     "adults_in_hh_better": 32.269557888284425,
+     "adults_individual_better": 33.68451970474804
+    },
+    "a5pw": {
+     "hh_better": 31.3475,
+     "hh_worse": 58.7375,
+     "adults_in_hh_better": 31.175133450821136,
+     "adults_individual_better": 31.574847393558603
+    }
+   },
+   "fuel": {
+    "a1": {
+     "hh_better": 32.22,
+     "hh_worse": 67.78,
+     "adults_in_hh_better": 31.996271039256253,
+     "adults_individual_better": 33.18647357801446
+    },
+    "a5pw": {
+     "hh_better": 31.665,
+     "hh_worse": 65.1625,
+     "adults_in_hh_better": 31.5825096416622,
+     "adults_individual_better": 32.40492427144791
+    }
+   },
+   "conc50": {
+    "a1": {
+     "hh_better": 41.635,
+     "hh_worse": 46.300000000000004,
+     "adults_in_hh_better": 41.164150895205985,
+     "adults_individual_better": 49.21206548668046
+    },
+    "a5pw": {
+     "hh_better": 34.885,
+     "hh_worse": 42.309999999999995,
+     "adults_in_hh_better": 35.01775087477333,
+     "adults_individual_better": 34.45202155645799
+    }
+   }
+  }
+ },
+ "gb_quintiles": {
+  "median": 74657.72757007902,
+  "means": [
+   32242.35868402016,
+   53741.71017189046,
+   74887.56414739526,
+   103821.59456323947,
+   175775.85262215344
+  ]
+ },
+ "gb_raw": {
+  "p1": {
+   "0.0": {
+    "G": 45.076601628798294,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 54.272796857239776,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 68.176618032383,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 79.618996276093,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 88.90802557372253,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 119.71608733129209,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "pkg": {
+   "0.0": {
+    "G": 48.41251775972177,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 60.10303226311141,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 78.11247484857778,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 93.0728728112613,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 105.27346966362529,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 145.96042398203136,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "pkg_ie": {
+   "0.0": {
+    "G": 48.016251649053594,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 59.59657788335236,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 77.44774716618812,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 92.2810425332242,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 104.37958741843228,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 144.73208936844864,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "star": {
+   "0.0": {
+    "G": 51.24099380829494,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 62.413880233605504,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 79.3052768591823,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 93.20963240666165,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 104.50014356557531,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 141.96364590418094,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "star_m1": {
+   "0.0": {
+    "G": 46.73935796318796,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 57.186609140739755,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 72.99140944036937,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 86.00760387053954,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 96.58011594888289,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 131.67653796119288,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "star_m2": {
+   "0.0": {
+    "G": 45.92346193250389,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 55.77115250233028,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 70.55510772944716,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 82.68075817384917,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 92.50949540659323,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 125.05405290932703,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  },
+  "star_p_noae": {
+   "0.0": {
+    "G": 46.23477392204821,
+    "T": 41.32361605575867,
+    "wbar": 1.0
+   },
+   "0.5": {
+    "G": 56.13321539765767,
+    "T": 30.002373602884177,
+    "wbar": 0.7260345648938722
+   },
+   "1.0": {
+    "G": 70.99357983967235,
+    "T": 22.874600284156976,
+    "wbar": 0.5535478853857291
+   },
+   "1.3": {
+    "G": 83.18188263260504,
+    "T": 20.076657118854655,
+    "wbar": 0.48583979416914713
+   },
+   "1.5": {
+    "G": 93.06135250492844,
+    "T": 18.713240975836225,
+    "wbar": 0.45284616308955455
+   },
+   "2.0": {
+    "G": 125.77350830525648,
+    "T": 16.81527516230059,
+    "wbar": 0.40691683756841246
+   }
+  }
+ },
+ "gb_raw_decile_ind": {
+  "p1": {
+   "1.3": {
+    "G": 86.6574925712823,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "pkg": {
+   "1.3": {
+    "G": 105.28410999192954,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "pkg_ie": {
+   "1.3": {
+    "G": 104.43228901619536,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "star": {
+   "1.3": {
+    "G": 104.40384643676258,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "star_m1": {
+   "1.3": {
+    "G": 96.70305561329127,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "star_m2": {
+   "1.3": {
+    "G": 89.41503144937488,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  },
+  "star_p_noae": {
+   "1.3": {
+    "G": 89.94717980325352,
+    "T": 19.898102038388046,
+    "wbar": 0.4815188973670454
+   }
+  }
+ },
+ "gb_pairs_rev": 41.32361605575784,
+ "years": {
+  "2028-29": {
+   "gross_hh": 42.47356544090622,
+   "cs": 7452.482362499999,
+   "p1": {
+    "S": 31.21906574304018,
+    "tm": 2.0681461917203245,
+    "bh": 4.255023603320127,
+    "inc": 1.7993673878585312
+   },
+   "table": {
+    "S": 30.396099999999997,
+    "tm": 2.0801,
+    "bh": 4.3872,
+    "inc": 1.7449
+   },
+   "star_paper": {
+    "S": 27.64466157293277,
+    "tm": 1.9607566572073798,
+    "bh": 3.7779616772164317,
+    "inc": 1.589023558069979
+   },
+   "star_m1": {
+    "S": 23.065793820192106,
+    "tm": 1.8380344219518365,
+    "bh": 3.29813133192776,
+    "inc": 1.3203693004015142
+   },
+   "star_m2": {
+    "S": 27.33334958339085,
+    "tm": 1.9526840240928767,
+    "bh": 3.7523773481552842,
+    "inc": 1.570649941248479
+   },
+   "cra75": 4.732576463356192,
+   "cra_total_hh": 8.170599034632511,
+   "cra_fiscal": 7.624639818061537,
+   "ae": 5.086769171088918,
+   "pkg": {
+    "ftb": 12.660869438783736,
+    "resp_ftb": 4.5505214046561475,
+    "resp_credit": 4.154062322090029,
+    "ie": 0.4205420214592163,
+    "credit": 10.740954618055595,
+    "D": 5692.360136745265,
+    "C": 5000.0
+   },
+   "floor_hh": 19.914314919806984
+  },
+  "2029-30": {
+   "gross_hh": 43.72273485011257,
+   "cs": 7638.794421562497,
+   "p1": {
+    "S": 31.27194265564967,
+    "tm": 2.084187639975643,
+    "bh": 4.51428599398012,
+    "inc": 1.7723407353497476
+   },
+   "table": {
+    "S": 31.0543,
+    "tm": 2.1065,
+    "bh": 4.4809,
+    "inc": 1.7728
+   },
+   "star_paper": {
+    "S": 27.555960169071277,
+    "tm": 1.9782688285847678,
+    "bh": 4.045042986282065,
+    "inc": 1.5559189018599677
+   },
+   "star_m1": {
+    "S": 22.946460950633146,
+    "tm": 1.840221398210429,
+    "bh": 3.488637539989663,
+    "inc": 1.2885856974896768
+   },
+   "star_m2": {
+    "S": 27.2414874058985,
+    "tm": 1.9696144132867077,
+    "bh": 4.0227598403368,
+    "inc": 1.5375378128084831
+   },
+   "cra75": 4.890926659786918,
+   "cra_total_hh": 8.413100564984145,
+   "cra_fiscal": 7.9090388832752305,
+   "ae": 5.31528599643748,
+   "pkg": {
+    "ftb": 12.977476603082273,
+    "resp_ftb": 4.291090373478833,
+    "resp_credit": 4.326535119716231,
+    "ie": 0.4199220538937681,
+    "credit": 11.203236103484072,
+    "D": 5834.6691401638955,
+    "C": 5175.0
+   },
+   "floor_hh": 21.408101528480884
+  },
+  "2030-31": {
+   "gross_hh": 45.008105878320634,
+   "cs": 7829.764282101559,
+   "p1": {
+    "S": 32.585674949598406,
+    "tm": 2.158487508240901,
+    "bh": 4.580293979648219,
+    "inc": 1.8626088734582127
+   },
+   "table": {
+    "S": 31.7879,
+    "tm": 2.1827,
+    "bh": 4.7578,
+    "inc": 1.8147
+   },
+   "star_paper": {
+    "S": 28.67564767585326,
+    "tm": 2.041561502968496,
+    "bh": 4.062069204735512,
+    "inc": 1.634763248317707
+   },
+   "star_m1": {
+    "S": 23.912745793058345,
+    "tm": 1.9059059781907928,
+    "bh": 3.458405712746242,
+    "inc": 1.3568796845010724
+   },
+   "star_m2": {
+    "S": 28.3513208494691,
+    "tm": 2.032937739661105,
+    "bh": 4.028611349809581,
+    "inc": 1.615706474850251
+   },
+   "cra75": 5.078077180949748,
+   "cra_total_hh": 8.814384249091795,
+   "cra_fiscal": 8.204046033621395,
+   "ae": 5.554036961450205,
+   "pkg": {
+    "ftb": 13.244781216170503,
+    "resp_ftb": 4.7786111109873275,
+    "resp_credit": 4.752154026927943,
+    "ie": 0.4245417654160178,
+    "credit": 11.684971550807468,
+    "D": 5980.535868667993,
+    "C": 5356.124999999999
+   },
+   "floor_hh": 22.9945833873469
+  },
+  "2031-32": {
+   "gross_hh": 46.32634937630415,
+   "cs": 8025.508389154096,
+   "p1": {
+    "S": 32.730210790270675,
+    "tm": 2.2446559999142046,
+    "bh": 5.098270916462159,
+    "inc": 1.8552844242127307
+   },
+   "table": {
+    "S": 32.3381,
+    "tm": 2.2096,
+    "bh": 4.8102,
+    "inc": 1.828
+   },
+   "star_paper": {
+    "S": 28.70688004338816,
+    "tm": 2.0971579136996077,
+    "bh": 4.446897331329708,
+    "inc": 1.6203971418182206
+   },
+   "star_m1": {
+    "S": 23.89089042474295,
+    "tm": 1.9471405464386167,
+    "bh": 3.8011204012777458,
+    "inc": 1.3406842202029194
+   },
+   "star_m2": {
+    "S": 28.37837953289839,
+    "tm": 2.0877674175945997,
+    "bh": 4.404063773926078,
+    "inc": 1.6011645098318936
+   },
+   "cra75": 5.4666634932064495,
+   "cra_total_hh": 9.090992182461683,
+   "cra_fiscal": 8.510056950675473,
+   "ae": 5.803478816111018,
+   "pkg": {
+    "ftb": 13.380017663953259,
+    "resp_ftb": 4.4131972452105375,
+    "resp_credit": 4.7753817647641075,
+    "ie": 0.4183520191001195,
+    "credit": 12.186882472883417,
+    "D": 6130.049265384691,
+    "C": 5543.589374999999
+   },
+   "floor_hh": 24.679010979646684
+  },
+  "2032-33": {
+   "gross_hh": 47.68031451160979,
+   "cs": 8226.146098882948,
+   "p1": {
+    "S": 33.395888707769394,
+    "tm": 2.2738676338415473,
+    "bh": 5.180509485779729,
+    "inc": 1.9179052700270245
+   },
+   "table": {
+    "S": 33.0935,
+    "tm": 2.2623,
+    "bh": 5.2331,
+    "inc": 1.8934
+   },
+   "star_paper": {
+    "S": 29.296042795632285,
+    "tm": 2.1256646657763065,
+    "bh": 4.45855769588412,
+    "inc": 1.675470340179696
+   },
+   "star_m1": {
+    "S": 24.397812872617518,
+    "tm": 1.9662279171301082,
+    "bh": 3.7852989184502612,
+    "inc": 1.3878311491564765
+   },
+   "star_m2": {
+    "S": 28.96202396277259,
+    "tm": 2.115277626758229,
+    "bh": 4.415188412190916,
+    "inc": 1.6557039717491495
+   },
+   "cra75": 5.790657652668343,
+   "cra_total_hh": 9.512439784854275,
+   "cra_fiscal": 8.827482074935668,
+   "ae": 6.064088615508663,
+   "pkg": {
+    "ftb": 13.579679880390954,
+    "resp_ftb": 4.303198145137928,
+    "resp_credit": 5.010149496945977,
+    "ie": 0.43432067844561084,
+    "credit": 12.709542402857231,
+    "D": 6283.300497019309,
+    "C": 5737.615003124998
+   },
+   "floor_hh": 27.15497422144539
+  },
+  "2033-34": {
+   "gross_hh": 49.070832059385474,
+   "cs": 8431.799751355022,
+   "p1": {
+    "S": 34.43403462114122,
+    "tm": 2.370246381828459,
+    "bh": 5.466339366365492,
+    "inc": 1.980707410306076
+   },
+   "table": {
+    "S": 33.6019,
+    "tm": 2.3224,
+    "bh": 5.3753,
+    "inc": 1.9388
+   },
+   "star_paper": {
+    "S": 30.112065612691318,
+    "tm": 2.236878951591773,
+    "bh": 4.771643333293037,
+    "inc": 1.7253753249932857
+   },
+   "star_m1": {
+    "S": 25.046641099024924,
+    "tm": 2.0814872587483286,
+    "bh": 4.165229198865967,
+    "inc": 1.4262946326595158
+   },
+   "star_m2": {
+    "S": 29.767332500815094,
+    "tm": 2.225838494937855,
+    "bh": 4.743926293371767,
+    "inc": 1.7048865041503043
+   },
+   "cra75": 5.909356087152131,
+   "cra_total_hh": 9.831394402484767,
+   "cra_fiscal": 9.15674715633077,
+   "ae": 6.336364618499068,
+   "pkg": {
+    "ftb": 13.923525954386204,
+    "resp_ftb": 4.731762283874798,
+    "resp_credit": 5.305848029798582,
+    "ie": 0.438721188494629,
+    "credit": 13.254253329382006,
+    "D": 6440.38300944479,
+    "C": 5938.431528234372
+   },
+   "floor_hh": 29.077585196360356
+  },
+  "2034-35": {
+   "gross_hh": 50.501184035228675,
+   "cs": 8642.594745138897,
+   "p1": {
+    "S": 34.70324545038753,
+    "tm": 2.3922561111740532,
+    "bh": 5.766173172155625,
+    "inc": 1.9788131271033254
+   },
+   "table": {
+    "S": 33.8938,
+    "tm": 2.3617,
+    "bh": 5.677,
+    "inc": 1.9269
+   },
+   "star_paper": {
+    "S": 30.210767124332637,
+    "tm": 2.2469431994903366,
+    "bh": 4.998812531662166,
+    "inc": 1.7150861590349264
+   },
+   "star_m1": {
+    "S": 25.12584797685654,
+    "tm": 2.0713363566266163,
+    "bh": 4.26686124385655,
+    "inc": 1.4173814039439192
+   },
+   "star_m2": {
+    "S": 29.863868494638968,
+    "tm": 2.2346969843621567,
+    "bh": 4.939640956039765,
+    "inc": 1.6946031681020066
+   },
+   "cra75": 6.291397881609357,
+   "cra_total_hh": 10.172808931570204,
+   "cra_fiscal": 9.498293825261905,
+   "ae": 6.62082722593765,
+   "pkg": {
+    "ftb": 13.961369224908779,
+    "resp_ftb": 4.46253033891782,
+    "resp_credit": 5.334583040492641,
+    "ie": 0.42573426160219624,
+    "credit": 13.821887187984364,
+    "D": 6601.39258468091,
+    "C": 6146.276631722575
+   },
+   "floor_hh": 31.116135635946847
+  },
+  "2035-36": {
+   "gross_hh": 51.96743857340456,
+   "cs": 8858.659613767368,
+   "p1": {
+    "S": 35.58898506690077,
+    "tm": 2.4870590348538526,
+    "bh": 6.123204168880905,
+    "inc": 2.029198624015939
+   },
+   "table": {
+    "S": 35.264,
+    "tm": 2.4529,
+    "bh": 5.7686,
+    "inc": 2.0254
+   },
+   "star_paper": {
+    "S": 30.935870414280362,
+    "tm": 2.304717165912596,
+    "bh": 5.2273128344044055,
+    "inc": 1.7544621394049889
+   },
+   "star_m1": {
+    "S": 25.71984385508221,
+    "tm": 2.1234794740109937,
+    "bh": 4.460048593044377,
+    "inc": 1.4490537632686418
+   },
+   "star_m2": {
+    "S": 30.579859437148905,
+    "tm": 2.293060593923488,
+    "bh": 5.159478384384702,
+    "inc": 1.7334366658312412
+   },
+   "cra75": 6.605339797859419,
+   "cra_total_hh": 10.582374301472681,
+   "cra_fiscal": 9.852580184944173,
+   "ae": 6.918019960213585,
+   "pkg": {
+    "ftb": 14.35121421929976,
+    "resp_ftb": 4.5363252472538935,
+    "resp_credit": 5.499786245614858,
+    "ie": 0.4326779755655059,
+    "credit": 14.412968567830092,
+    "D": 6766.427399297933,
+    "C": 6361.3963138328645
+   },
+   "floor_hh": 33.277108302649935
+  },
+  "2036-37": {
+   "gross_hh": 53.44638800357974,
+   "cs": 9080.12610411155,
+   "p1": {
+    "S": 36.01473217123117,
+    "tm": 2.5340630614583106,
+    "bh": 6.321326700360639,
+    "inc": 2.045622223246497
+   },
+   "table": {
+    "S": 35.0832,
+    "tm": 2.4786,
+    "bh": 6.1768,
+    "inc": 1.9967
+   },
+   "star_paper": {
+    "S": 31.243678130056782,
+    "tm": 2.333659810692395,
+    "bh": 5.3929605371393,
+    "inc": 1.7630928762653086
+   },
+   "star_m1": {
+    "S": 25.944968800426757,
+    "tm": 2.1496236938665043,
+    "bh": 4.586569250658762,
+    "inc": 1.4533125885522327
+   },
+   "star_m2": {
+    "S": 30.881874803109945,
+    "tm": 2.321481245220568,
+    "bh": 5.346899256005257,
+    "inc": 1.741744548873976
+   },
+   "cra75": 7.041843891859717,
+   "cra_total_hh": 11.067999877627445,
+   "cra_fiscal": 10.22008142584259,
+   "ae": 7.22493820673232,
+   "pkg": {
+    "ftb": 14.86081876373218,
+    "resp_ftb": 4.559880996191517,
+    "resp_credit": 5.844456419551986,
+    "ie": 0.4468798872195512,
+    "credit": 15.019827504336172,
+    "D": 6935.588084280379,
+    "C": 6584.045184817014
+   },
+   "floor_hh": 35.55225411024724
+  },
+  "2037-38": {
+   "gross_hh": 54.93937807138864,
+   "cs": 9307.12925671434,
+   "p1": {
+    "S": 36.731537580019555,
+    "tm": 2.5882056957729134,
+    "bh": 6.491866127350071,
+    "inc": 2.1156137669374067
+   },
+   "table": {
+    "S": 36.2703,
+    "tm": 2.5929,
+    "bh": 6.4058,
+    "inc": 2.0982
+   },
+   "star_paper": {
+    "S": 31.683968542934057,
+    "tm": 2.422359740720106,
+    "bh": 5.612261904487846,
+    "inc": 1.8148330219060227
+   },
+   "star_m1": {
+    "S": 26.293620376550493,
+    "tm": 2.243820082278668,
+    "bh": 4.878937838570094,
+    "inc": 1.4947470191076202
+   },
+   "star_m2": {
+    "S": 31.316501787184457,
+    "tm": 2.409637788119619,
+    "bh": 5.5520954190262035,
+    "inc": 1.7928421137880315
+   },
+   "cra75": 7.44391466059765,
+   "cra_total_hh": 11.5821949434602,
+   "cra_fiscal": 10.601290463026519,
+   "ae": 7.541699455817362,
+   "pkg": {
+    "ftb": 14.899323992221998,
+    "resp_ftb": 4.998651909134149,
+    "resp_credit": 6.006554394646396,
+    "ie": 0.4595311025465858,
+    "credit": 15.642276687794638,
+    "D": 7108.977786387389,
+    "C": 6814.48676628561
+   },
+   "floor_hh": 37.94964114990801
+  },
+  "2038-39": {
+   "gross_hh": 56.58302607221088,
+   "cs": 9539.807488132197,
+   "p1": {
+    "S": 37.35414729364103,
+    "tm": 2.653067293206564,
+    "bh": 6.7962127426694625,
+    "inc": 2.131147554938244
+   },
+   "table": {
+    "S": 37.2637,
+    "tm": 2.6673,
+    "bh": 6.9888,
+    "inc": 2.1529
+   },
+   "star_paper": {
+    "S": 32.08083473011372,
+    "tm": 2.434486217848846,
+    "bh": 5.636299386209267,
+    "inc": 1.817481280049638
+   },
+   "star_m1": {
+    "S": 26.59907986120526,
+    "tm": 2.2434883449763743,
+    "bh": 4.913234500662442,
+    "inc": 1.4944245777478646
+   },
+   "star_m2": {
+    "S": 31.707309088167698,
+    "tm": 2.4209299918452016,
+    "bh": 5.605856181786717,
+    "inc": 1.7952945260348105
+   },
+   "cra75": 7.733741978767019,
+   "cra_total_hh": 11.951372621754478,
+   "cra_fiscal": 10.996718597297406,
+   "ae": 7.877106570148981,
+   "pkg": {
+    "ftb": 15.544447702323165,
+    "resp_ftb": 4.783623118725228,
+    "resp_credit": 6.238530002951051,
+    "ie": 0.47488957424723005,
+    "credit": 16.308665517797607,
+    "D": 7286.702231047073,
+    "C": 7052.993803105605
+   },
+   "floor_hh": 40.511854236781616
+  },
+  "2039-40": {
+   "gross_hh": 58.39622263598488,
+   "cs": 9778.3026753355,
+   "p1": {
+    "S": 38.71663705853382,
+    "tm": 2.7043212065507936,
+    "bh": 7.134515535326065,
+    "inc": 2.2274932848030997
+   },
+   "table": {
+    "S": 37.759299999999996,
+    "tm": 2.7007,
+    "bh": 7.3113,
+    "inc": 2.1674
+   },
+   "star_paper": {
+    "S": 33.22553399075616,
+    "tm": 2.4703228768683267,
+    "bh": 5.99356403744081,
+    "inc": 1.8975046424951763
+   },
+   "star_m1": {
+    "S": 27.60734908575423,
+    "tm": 2.281662619194314,
+    "bh": 5.195064804286408,
+    "inc": 1.5652449438700624
+   },
+   "star_m2": {
+    "S": 32.842128521220864,
+    "tm": 2.458028058784531,
+    "bh": 5.957961142259623,
+    "inc": 1.8746289127364408
+   },
+   "cra75": 8.087196299576526,
+   "cra_total_hh": 12.389854394524427,
+   "cra_fiscal": 11.406896200976599,
+   "ae": 8.232430667178788,
+   "pkg": {
+    "ftb": 15.786304424549797,
+    "resp_ftb": 5.06492323955595,
+    "resp_credit": 6.5408094875185885,
+    "ie": 0.4788484417594448,
+    "credit": 17.023870521739894,
+    "D": 7468.869786823249,
+    "C": 7299.848586214302
+   },
+   "floor_hh": 43.2516412912911
+  },
+  "2040-41": {
+   "gross_hh": 60.23367429239156,
+   "cs": 10022.760242218888,
+   "p1": {
+    "S": 38.92788892517081,
+    "tm": 2.823763470315935,
+    "bh": 7.758083712545104,
+    "inc": 2.2298060061976566
+   },
+   "table": {
+    "S": 38.7934,
+    "tm": 2.8148,
+    "bh": 7.9479,
+    "inc": 2.2442
+   },
+   "star_paper": {
+    "S": 33.100908423561336,
+    "tm": 2.6039182368212477,
+    "bh": 6.576932948550251,
+    "inc": 1.8764305604861362
+   },
+   "star_m1": {
+    "S": 27.37639129216561,
+    "tm": 2.3769066078102576,
+    "bh": 5.5199934792731185,
+    "inc": 1.5358251807036767
+   },
+   "star_m2": {
+    "S": 32.708813606473605,
+    "tm": 2.5896265463938923,
+    "bh": 6.515993055324187,
+    "inc": 1.8528412907312108
+   },
+   "cra75": 8.494835964999035,
+   "cra_total_hh": 12.84680970468877,
+   "cra_fiscal": 11.832373429273025,
+   "ae": 8.599513916618893,
+   "pkg": {
+    "ftb": 16.0471557913403,
+    "resp_ftb": 4.64559769194623,
+    "resp_credit": 6.742876062252818,
+    "ie": 0.4813661653950597,
+    "credit": 17.759230527738627,
+    "D": 7655.59153149383,
+    "C": 7555.3432867318015
+   },
+   "floor_hh": 46.13171963993081
+  },
+  "2041-42": {
+   "gross_hh": 62.10025986676138,
+   "cs": 10273.32924827436,
+   "p1": {
+    "S": 40.28839561739066,
+    "tm": 2.8585870596736975,
+    "bh": 7.793079746254512,
+    "inc": 2.3258584609251693
+   },
+   "table": {
+    "S": 40.3775,
+    "tm": 2.9293,
+    "bh": 8.1006,
+    "inc": 2.3583
+   },
+   "star_paper": {
+    "S": 34.27479228212609,
+    "tm": 2.6009343126311237,
+    "bh": 6.471601524830463,
+    "inc": 1.9611127005009983
+   },
+   "star_m1": {
+    "S": 28.411423975977243,
+    "tm": 2.3967144713245765,
+    "bh": 5.511444805926121,
+    "inc": 1.611766664856101
+   },
+   "star_m2": {
+    "S": 33.87427588633428,
+    "tm": 2.587759856720979,
+    "bh": 6.426167775140171,
+    "inc": 1.9370164758882498
+   },
+   "cra75": 8.857990515050844,
+   "cra_total_hh": 13.317841843909495,
+   "cra_fiscal": 12.27372095818491,
+   "ae": 8.978508229747785,
+   "pkg": {
+    "ftb": 16.52293036404314,
+    "resp_ftb": 5.089651434380802,
+    "resp_credit": 6.961085064492559,
+    "ie": 0.49359516964319256,
+    "credit": 18.514807092631543,
+    "D": 7846.9813197811745,
+    "C": 7819.780301767414
+   },
+   "floor_hh": 49.156684905486216
+  },
+  "2042-43": {
+   "gross_hh": 64.0235956192113,
+   "cs": 10530.162479481218,
+   "p1": {
+    "S": 41.36742460432612,
+    "tm": 2.9384640937600843,
+    "bh": 8.098410348155817,
+    "inc": 2.4019340371522158
+   },
+   "table": {
+    "S": 41.1133,
+    "tm": 2.9456,
+    "bh": 8.2848,
+    "inc": 2.3886
+   },
+   "star_paper": {
+    "S": 35.150683232580356,
+    "tm": 2.7022110988575956,
+    "bh": 6.813589484183043,
+    "inc": 2.023603306315483
+   },
+   "star_m1": {
+    "S": 29.112936719416744,
+    "tm": 2.494619192997537,
+    "bh": 5.791596045567234,
+    "inc": 1.6608004779952608
+   },
+   "star_m2": {
+    "S": 34.73814428609965,
+    "tm": 2.6889954882474827,
+    "bh": 6.783486138467619,
+    "inc": 1.9985762939011442
+   },
+   "cra75": 9.34837280768792,
+   "cra_total_hh": 13.982522333608625,
+   "cra_fiscal": 12.731530749925204,
+   "ae": 9.374191373267482,
+   "pkg": {
+    "ftb": 16.862681706359133,
+    "resp_ftb": 5.007093527588698,
+    "resp_credit": 7.209650829273408,
+    "ie": 0.5027269586747313,
+    "credit": 19.302595813669093,
+    "D": 8043.155852775704,
+    "C": 8093.472612329272
+   },
+   "floor_hh": 52.37145642743816
+  },
+  "2043-44": {
+   "gross_hh": 66.00200864565912,
+   "cs": 10793.416541468247,
+   "p1": {
+    "S": 42.45789839985302,
+    "tm": 3.031450026043427,
+    "bh": 8.554525175653833,
+    "inc": 2.475369953982504
+   },
+   "table": {
+    "S": 41.28,
+    "tm": 3.0275,
+    "bh": 8.6137,
+    "inc": 2.4093
+   },
+   "star_paper": {
+    "S": 35.896145599009714,
+    "tm": 2.7226096900627645,
+    "bh": 7.10299734434097,
+    "inc": 2.0710402472453855
+   },
+   "star_m1": {
+    "S": 29.738504558120564,
+    "tm": 2.508317147882217,
+    "bh": 6.063707823979626,
+    "inc": 1.7005214907733774
+   },
+   "star_m2": {
+    "S": 35.47556023380117,
+    "tm": 2.70828021042413,
+    "bh": 7.05017864172037,
+    "inc": 2.0454927040306514
+   },
+   "cra75": 9.633908295703609,
+   "cra_total_hh": 14.419100248986648,
+   "cra_fiscal": 13.206416846897412,
+   "ae": 9.787297575862686,
+   "pkg": {
+    "ftb": 17.494756194300223,
+    "resp_ftb": 5.091226291487459,
+    "resp_credit": 7.650480978878298,
+    "ie": 0.5258471977700193,
+    "credit": 20.1226473095914,
+    "D": 8244.234749095096,
+    "C": 8376.744153760797
+   },
+   "floor_hh": 55.83462125636019
+  },
+  "2044-45": {
+   "gross_hh": 68.04381915793363,
+   "cs": 11063.251955004953,
+   "p1": {
+    "S": 43.12562367236182,
+    "tm": 3.0407968328473447,
+    "bh": 8.798918856348099,
+    "inc": 2.501363722685121
+   },
+   "table": {
+    "S": 42.764500000000005,
+    "tm": 3.1172,
+    "bh": 9.1962,
+    "inc": 2.4894
+   },
+   "star_paper": {
+    "S": 36.29981628772483,
+    "tm": 2.747471878774728,
+    "bh": 7.119098653482796,
+    "inc": 2.0782160428217806
+   },
+   "star_m1": {
+    "S": 30.097781028759968,
+    "tm": 2.512958173568644,
+    "bh": 6.047762399570828,
+    "inc": 1.7079583005128183
+   },
+   "star_m2": {
+    "S": 35.87517221618134,
+    "tm": 2.733078128941024,
+    "bh": 7.059667078133092,
+    "inc": 2.0525781013899222
+   },
+   "cra75": 10.103183456498362,
+   "cra_total_hh": 14.992026432971414,
+   "cra_fiscal": 13.699016195286685,
+   "ae": 10.218593338135713,
+   "pkg": {
+    "ftb": 17.65826692796229,
+    "resp_ftb": 4.8334548541633335,
+    "resp_credit": 7.976788094799451,
+    "ie": 0.5190774519660908,
+    "credit": 20.97745325015724,
+    "D": 8450.340617822472,
+    "C": 8669.930199142424
+   },
+   "floor_hh": 59.50033978105926
+  },
+  "2045-46": {
+   "gross_hh": 70.14397059176308,
+   "cs": 11339.833253880075,
+   "p1": {
+    "S": 44.28567451631268,
+    "tm": 3.2215512360224565,
+    "bh": 9.579225265921908,
+    "inc": 2.622363347913838
+   },
+   "table": {
+    "S": 43.805800000000005,
+    "tm": 3.2143,
+    "bh": 9.3036,
+    "inc": 2.5901
+   },
+   "star_paper": {
+    "S": 36.968868009146284,
+    "tm": 2.907082451243837,
+    "bh": 7.795612371111041,
+    "inc": 2.164073830115312
+   },
+   "star_m1": {
+    "S": 30.581933618261797,
+    "tm": 2.675919486220349,
+    "bh": 6.696834729072697,
+    "inc": 1.7730276178068909
+   },
+   "star_m2": {
+    "S": 36.53219049119635,
+    "tm": 2.892256674939165,
+    "bh": 7.727228616960845,
+    "inc": 2.1370733515438314
+   },
+   "cra75": 10.344060468531248,
+   "cra_total_hh": 15.288971762765048,
+   "cra_fiscal": 14.209989499370877,
+   "ae": 10.66887884963818,
+   "pkg": {
+    "ftb": 17.96239238259415,
+    "resp_ftb": 4.990279244439283,
+    "resp_credit": 8.29086778059202,
+    "ie": 0.5476483436258108,
+    "credit": 21.867944504299313,
+    "D": 8661.599133268033,
+    "C": 8973.377756112408
+   },
+   "floor_hh": 63.379693684188695
+  }
+ }
+}
