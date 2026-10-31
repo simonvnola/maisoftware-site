@@ -1,4 +1,4 @@
-# Rubric: Beyond Work (UBI) pages in the style of a government service
+# Rubric v3: Beyond Work (UBI) pages in the style of a government service
 
 Scope: every page under `/UBI/` (overview, the paper and its chapters, the calculator).
 Modelled on the GOV.UK Design System and its content guidance, the Australian
@@ -69,8 +69,8 @@ C4. Acronyms are expanded on first use on each page (ABI, PBO, AI, UBI, GDP,
 C5. Numbers in site copy are presented with units and a year or period ("A$62.0
     billion in 2028-29"), and dollar figures say A$ or US$.
 C6. Dates are written in full ("1 July 2028"), not numerically.
-C7. The paper's text is reproduced faithfully: no section of the paper is
-    missing, every table renders as a table, every figure is present with its
+C7. The paper's text is reproduced faithfully from the current revised paper
+    source: no section of the paper is missing, every table renders as a table, every figure is present with its
     caption and alt text, and every [S#] citation links to its entry in the
     sources list.
 C8. The overview page gives a reader who will not open the paper the proposal,
@@ -184,8 +184,9 @@ G10. The economy results show the main fiscal series as a chart and as a table
      (toggle or both) for the years modelled, with the year range stated.
 G11. The calculator works on a 375 px wide phone: controls are usable with a
      thumb, results are readable without zoom, and nothing is cut off.
-G12. The model is unchanged from the paper's model: a check against the paper's
-     central case passes and is reported on the page.
+G12. The calculator reproduces the paper's model on the paper's current central
+     case (the recommended design): a check against the paper's figures passes and
+     is reported on the page as reproducing the model, not validating it.
 G13. Error handling: out-of-range input is rejected with a plain message next
      to the control, and never produces NaN, "undefined" or a blank result.
 
@@ -205,3 +206,42 @@ H5. The files this work adds to the branch (everything under /UBI/ and
     archives, build scripts or node_modules; and .claude/ is excluded from
     deployment (.vercelignore). Files that were already in the repository
     before this work are out of scope.
+
+## I. Does the recommendation follow from the evidence (version 3 gate)
+
+Added after the October 2026 external critique. These criteria test substance,
+not presentation. Each applies to the overview, the paper and the calculator
+wherever the subject appears.
+
+I1. The recommended Stage 1 is the option the paper's own comparison supports on
+    its stated objectives; or the paper names the value judgement that overrides
+    that comparison, quantifies its price (people in poverty and A$ a year) and
+    shows why the price is worth paying.
+I2. Any claim that no one loses holds for income after housing costs, or is
+    stated as the narrower guarantee it is (payments under today's rules), with
+    the households worse off after housing costs counted.
+I3. The Budget advance is called borrowing, with its amount, in the paper's
+    summary and on the overview.
+I4. The risk to the funding is shown from a joint stress test (a probability or
+    range for the first levy year), not only the central date.
+I5. Household and population results lead with figures after the funding taxes,
+    with before-funding figures beside them; the calculator's household result
+    includes the household's share of the funding taxes, with the incidence
+    range, and counts "better off" only above a stated material amount.
+I6. Uncertain dates and rates are given as ranges, and every calculator readout
+    is labelled Live, Interpolated or Fixed, with what moves it.
+I7. Checks of the calculator against the paper are described as reproducing the
+    model, not validating its assumptions.
+I8. The decisive questions come first in any objections list (why not the
+    targeted package, why legislate any universal pathway, who pays), answered
+    with the paper's own figures; weak objections few serious critics make are
+    not featured.
+I9. The universal stages are a conditional pathway: the tests are legislated, no
+    rates are; Stage 3 is described, not authorised. Dividend options sit in
+    their own section, are described neutrally, and none is recommended; the
+    calculator defaults to the recommended design with no dividend.
+I10. Every figure from a provisional or unchecked model run is labelled
+     provisional; every external fact matches its source.
+I11. A red-team reader asking only "does the recommendation follow from the
+     results?" finds no place where the paper's own figures favour an option
+     the paper does not recommend without the price being stated.
