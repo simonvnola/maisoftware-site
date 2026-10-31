@@ -1,0 +1,25 @@
+[rec075_c 20261016 128s] calibrated {'level': 1.1202636718749999, 'drift': 0.8097778320312498, 'tilt': 0.19692297371303683}
+[rec075_c 20261016 177s] P1 rel 11.754; package(ie) rel 9.203 D 5910; P* (r13 method) rel 10.671 D 7047
+[rec075_c 20261016 178s] Part 1 flows (generic) {'S': 30.54615809581802, 'tm': 2.058856647945495, 'bh': 4.27933633953655, 'inc': 1.743986274163159}; rule table: S 30.3961 tm 2.0801 bh 4.3872 inc 1.7449; k 1.00001; CRA+75% 4.268 (r11 cache 4.268); enrolment 5.087
+[rec075_c 20261016 197s] P* (r13) fiscal-basis excess over Part 1: A$6.17bn (with enrolment); matched D: with enrolment 5815, without 6832
+[rec075_c 20261016 199s] enrolment cash in household gains A$5.08bn; P* m1 D 5815, m2 D 6832
+[rec075_c 20261016 203s] poverty rel: p1 11.75 (u15 7.31, 67+ 13.68, opf 16.73); pkg 9.14 (u15 5.60, 67+ 10.46, opf 12.62); pkg_ie 9.20 (u15 5.72, 67+ 10.46, opf 12.98); star 10.67 (u15 6.06, 67+ 13.28, opf 13.85); star_m1 10.61 (u15 7.22, 67+ 11.42, opf 16.04); star_m2 10.62 (u15 6.53, 67+ 11.57, opf 14.84); star_p_noae 10.56 (u15 6.38, 67+ 11.59, opf 14.46)
+[rec075_c 20261016 205s] 2028-29: P1 S 30.55 tm 2.06 bh 4.28 inc 1.74 (table S 30.40); P* m2 total 34.36 vs P1 38.63; CRA+75 4.27; pkg ftb 13.00 credit 10.74
+[rec075_c 20261016 208s] 2029-30: P1 S 31.50 tm 2.11 bh 4.52 inc 1.81 (table S 31.05); P* m2 total 35.52 vs P1 39.94; CRA+75 4.60; pkg ftb 13.35 credit 11.20
+[rec075_c 20261016 211s] 2030-31: P1 S 32.26 tm 2.15 bh 4.51 inc 1.85 (table S 31.79); P* m2 total 36.08 vs P1 40.77; CRA+75 4.79; pkg ftb 13.67 credit 11.68
+[rec075_c 20261016 215s] 2031-32: P1 S 32.55 tm 2.20 bh 4.87 inc 1.84 (table S 32.34); P* m2 total 36.74 vs P1 41.46; CRA+75 5.07; pkg ftb 13.97 credit 12.19
+[rec075_c 20261016 218s] 2032-33: P1 S 33.09 tm 2.27 bh 5.26 inc 1.90 (table S 33.09); P* m2 total 37.46 vs P1 42.52; CRA+75 5.30; pkg ftb 14.08 credit 12.71
+[rec075_c 20261016 221s] 2033-34: P1 S 33.65 tm 2.35 bh 5.46 inc 1.93 (table S 33.60); P* m2 total 38.22 vs P1 43.40; CRA+75 5.55; pkg ftb 14.43 credit 13.25
+[rec075_c 20261016 224s] 2034-35: P1 S 34.26 tm 2.39 bh 5.74 inc 1.95 (table S 33.89); P* m2 total 38.91 vs P1 44.34; CRA+75 5.80; pkg ftb 14.58 credit 13.82
+[rec075_c 20261016 228s] 2035-36: P1 S 35.26 tm 2.43 bh 5.85 inc 2.01 (table S 35.26); P* m2 total 39.88 vs P1 45.54; CRA+75 6.33; pkg ftb 15.34 credit 14.41
+[rec075_c 20261016 231s] 2036-37: P1 S 35.59 tm 2.52 bh 6.35 inc 2.02 (table S 35.08); P* m2 total 40.57 vs P1 46.47; CRA+75 6.60; pkg ftb 15.22 credit 15.02
+[rec075_c 20261016 234s] 2037-38: P1 S 36.41 tm 2.56 bh 6.49 inc 2.09 (table S 36.27); P* m2 total 41.38 vs P1 47.56; CRA+75 6.81; pkg ftb 15.52 credit 15.64
+[rec075_c 20261016 237s] 2038-39: P1 S 37.22 tm 2.67 bh 6.89 inc 2.14 (table S 37.26); P* m2 total 42.35 vs P1 48.92; CRA+75 7.32; pkg ftb 15.82 credit 16.31
+[rec075_c 20261016 241s] 2039-40: P1 S 38.15 tm 2.76 bh 7.46 inc 2.19 (table S 37.76); P* m2 total 43.60 vs P1 50.56; CRA+75 7.64; pkg ftb 16.15 credit 17.02
+[rec075_c 20261016 244s] 2040-41: P1 S 39.21 tm 2.78 bh 7.57 inc 2.27 (table S 38.79); P* m2 total 44.69 vs P1 51.83; CRA+75 8.02; pkg ftb 16.67 credit 17.76
+[rec075_c 20261016 247s] 2041-42: P1 S 40.33 tm 2.89 bh 7.98 inc 2.34 (table S 40.38); P* m2 total 45.90 vs P1 53.54; CRA+75 8.20; pkg ftb 17.21 credit 18.51
+[rec075_c 20261016 250s] 2042-43: P1 S 40.83 tm 2.94 bh 8.32 inc 2.36 (table S 41.11); P* m2 total 46.44 vs P1 54.45; CRA+75 8.82; pkg ftb 17.53 credit 19.30
+[rec075_c 20261016 253s] 2043-44: P1 S 42.20 tm 3.06 bh 8.82 inc 2.45 (table S 41.28); P* m2 total 47.98 vs P1 56.53; CRA+75 9.29; pkg ftb 18.15 credit 20.12
+[rec075_c 20261016 257s] 2044-45: P1 S 42.65 tm 3.13 bh 8.95 inc 2.49 (table S 42.76); P* m2 total 48.28 vs P1 57.22; CRA+75 9.70; pkg ftb 18.04 credit 20.98
+[rec075_c 20261016 260s] 2045-46: P1 S 44.44 tm 3.26 bh 9.70 inc 2.65 (table S 43.81); P* m2 total 50.31 vs P1 60.05; CRA+75 9.97; pkg ftb 18.52 credit 21.87
+[rec075_c 20261016 260s] wrote runs/noise/rec075c_20261016.json
