@@ -2371,7 +2371,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     });
     $('#me-pay').addEventListener('change', function (e) { state.me.pay = e.target.value; syncForm(); meChanged(); });
   }
-  // typed numbers: the error shows at once; the value is committed to the result 400 ms after typing stops, or on change, and only if valid
+  // typed numbers: error at once; value committed 400 ms after typing stops, or on change, if valid
   function typedNumber(inp, key, err, lo, hi, what, set) {
     var t = null;
     function valid() { var n = parseNum(inp.value); return (n === null || n < lo || n > hi) ? null : Math.round(n); }
@@ -2483,7 +2483,7 @@ if (typeof module !== 'undefined') module.exports = BW;
       var design = params.design || 'p1', phased = !!params.phased;
       if (!OB0 || (design === 'p1' && !phased)) { r.design = 'p1'; return r; }
       var M = model(params), rows = r.path.rows, levyMode = params.funding !== 'borrow';
-      // default: Rent Assistance on the household model's rents (Tables B1 and B3, the paper's central case); the alternative on the fiscal model's path (B4, B5)
+      // default: household-model rents (B1, B3); alternative: fiscal model's path (B4, B5)
       var f0 = fundRec(rows, rows.map(function (x) { return x.net; }), levyMode), net = designNet(rows, design, 'hh', phased), f1 = fundRec(rows, net, levyMode);
       var fh = fundRec(rows, designNet(rows, design, 'cf', phased), levyMode);
       var nrows = rows.map(function (x, i) {
@@ -2506,7 +2506,7 @@ if (typeof module !== 'undefined') module.exports = BW;
       out.design = design; out.phased = phased;
       return out;
     }
-    // the reproduction check for option B: this page's figures against Tables B1 to B5 and B13 (optionb_fiscal.py), at the central settings
+    // option B reproduction check: Tables B1 to B5 and B13 at the central settings
     function designChecks() {
       var p0 = Object.assign({}, BW.DEFAULTS, { part2: 'none' }), r = BW.compute(D0, p0, null, {}), M = model(p0), rows = r.path.rows, W = OB0.want, out = [];
       var add = function (l, g, w, tol) { out.push({ label: l, got: g, want: w, ok: Math.abs(g - w) <= tol + 1e-9 }); };
@@ -2566,7 +2566,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     } catch (err) { L.w = null; }
     LANES[name] = L; return L;
   }
-  // the stage lane's settings: the paper's way of costing Stages 2 and 3 (option (i), the fund at its settings) unless option (i) is chosen
+  // stage lane: the paper's costing of Stages 2 and 3 (option (i) at its settings)
   function laneParams(name) {
     var p = Object.assign({}, state.params);
     if (name === 'main') { p.pathway = 's1'; if (p.design !== 'p1') p.part2 = 'none'; return p; }
@@ -3579,7 +3579,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     var host = $('#stress-rise'), S = X4.stress; host.innerHTML = '';
     mk('h4', null, 'Stage 1’s levy under stress, with no dividend', host);
     var c = S[0], find = function (re) { return S.filter(function (x) { return re.test(x.case); })[0]; }, lo80 = find(/80%/), hi = S[1], sup = find(/^Superannuation measure/), lit = find(/^Safeguard read literally/);
-    mk('p', 'why', 'At the paper’s settings Stage 1 with no dividend needs a levy from ' + c.first + ' (' + bn(c.levies) + ' to 2045-46, peaking at ' + pct(c.peak_pct, 2) + ' of market income). If fuel and minerals revenue grew with GDP, it would start in ' + hi.first + ' (' + bn(hi.levies) + '). ' +
+    mk('p', 'why', 'At the paper’s settings, Stage 1 with no dividend needs a levy from ' + c.first + ' (' + bn(c.levies) + ' to 2045-46, peaking at ' + pct(c.peak_pct, 2) + ' of market income). If fuel and minerals revenue grew with GDP, it would start in ' + hi.first + ' (' + bn(hi.levies) + '). ' +
       'If the five taxes yield 80% of their costings the levy starts in ' + lo80.first + ' and reaches ' + pct(lo80.peak_pct, 2) + ' (' + bn(lo80.levies) + ' to 2045-46). The taxes must yield ' + pct(100 * X4.be_yield, 1) + ' of their costings for no levy before ' + c.first + '.' +
       (sup ? ' If the superannuation measure raised half its costing (a test of its overlap with Division 296), the levy would start in ' + sup.first + ' and peak at ' + pct(sup.peak_pct, 2) + ' (' + bn(sup.levies) + ').' : '') +
       (lit ? ' The model draws on the surpluses the other taxes have kept before any levy. If the safeguard were read literally, levying each year’s shortfall and leaving those surpluses untouched, the levy would start in ' + lit.first + ' (' + bn(lit.levies) + ', peaking at ' + pct(lit.peak_pct, 2) + ').' : '') +
@@ -3590,7 +3590,7 @@ if (typeof module !== 'undefined') module.exports = BW;
     table(w, ['Case', 'First levy', 'Levies to 2045-46 (A$bn)', 'Peak levy (% of market income)', 'First levy, borrowing repaid over five years', 'Levies, five-year rule (A$bn)'],
       S.map(function (x) { return [x.case.replace(/, round \d+\)/, ')').replace(/ \(round \d+\)$/, '').replace(/ \(a noise check\)$/, ', a check on the fit'), x.first || 'none', nf1.format(x.levies), x.peak_pct.toFixed(2), x.five_year_rule.first || 'none', nf1.format(x.five_year_rule.levies)]; }), { caption: 'Stage 1’s levy under stress, with no dividend', hideCaption: true, ro: 'eco-stress', roLabel: 'Stage 1’s levy under stress, with no dividend', roFixed: true });
   }
-  // Table B15: the chosen design under Table 6.14g's stress cases, with Part 1 alone beside it (provisional for P* and the package)
+  // Table B15: the chosen design under the stress cases, Part 1 beside it
   function renderStressDesign(r, des) {
     var host = $('#stress-rise'), S = OB.sens[des], S1 = OB.sens.p1; host.innerHTML = '';
     var nm = cap(DESIGN_SHORT[des]), f = function (x) { return x.first || 'none'; }, find = function (re) { return S.filter(function (x) { return re.test(x.case); })[0]; };
