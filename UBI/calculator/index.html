@@ -2077,7 +2077,7 @@ if (typeof module !== 'undefined') module.exports = BW;
         help: 'Option (i): a wealth tax builds a permanent fund and the fund’s payout is the dividend. Option (iv): the same dividend paid each year by the other taxes, with no wealth tax and no fund. Option (v): a fund built only from the other taxes’ surpluses, so a smaller dividend that starts later. Each adds a payment of a few hundred dollars a year at most by 2045-46 and machinery to run it. The Stage 1 figures change with this choice; Stages 2 and 3 are costed the same way whatever you choose here.' }
     ] },
     { group: 'Stage 1, a targeted floor: rates and protections', chapter: CH5, section: 'Rates and indexation; The no-worse-off rule', items: [
-      { id: 'floorPw', type: 'range', label: 'Working-age floor', min: 400, max: 750, step: 0.01, k: 1, toggle: 'floorOn', toggleLabel: 'Lift working-age payments to a floor', fmt: function (v) { return 'A$' + v.toFixed(2) + ' a week'; },
+      { id: 'floorPw', type: 'range', label: 'Working-age floor', min: 400, max: 750, step: 0.01, keyStep: 1, k: 1, toggle: 'floorOn', toggleLabel: 'Lift working-age payments to a floor', fmt: function (v) { return 'A$' + v.toFixed(2) + ' a week'; },
         unit: 'A$ a week, March quarter 2026, indexed to wages', ticks: [[416.85, 'JobSeeker single rate A$412 a week from 20 September 2026, A$416.85 with the Energy Supplement'], [569.81, 'poverty line A$569.81 a week, Melbourne Institute, March quarter 2026'], [600, 'ACOSS proposal A$600 a week']],
         hint: 'The rate JobSeeker, Youth Allowance, student and Parenting payments are lifted to.',
         help: 'The poverty line is the Melbourne Institute line for a single person not in the workforce. Switch the floor off to model Stage 1 without it.' },
@@ -2266,6 +2266,11 @@ if (typeof module !== 'undefined') module.exports = BW;
       inp.setAttribute('aria-describedby', hintId + ' ' + unitId);
       inp.addEventListener('input', function (e) { state.params[lv.id] = (+e.target.value) / (lv.k || 1); changed(true); });
       inp.addEventListener('change', function () { changed(); });
+      if (lv.keyStep) inp.addEventListener('keydown', function (e) {   // arrow keys move by a whole unit; the paper's value keeps its cents
+        var d = { ArrowUp: 1, ArrowRight: 1, ArrowDown: -1, ArrowLeft: -1, PageUp: 10, PageDown: -10 }[e.key], v;
+        if (e.key === 'Home') v = lv.min; else if (e.key === 'End') v = lv.max; else if (d) v = Math.round(100 * Math.max(lv.min, Math.min(lv.max, +inp.value + d * lv.keyStep))) / 100; else return;
+        e.preventDefault(); inp.value = v; inp.dispatchEvent(new Event('input', { bubbles: true })); inp.dispatchEvent(new Event('change', { bubbles: true }));
+      });
       var ref = 'Unit: ' + (lv.unit || '') + '. Recommended setting: ' + lv.fmt(leverDisplay(lv, D[lv.id])) + '.';
       var tk = (lv.ticks || []).map(function (t) { return t[1]; }); if (lv.band) tk.push(lv.band[2]);
       if (tk.length) ref += ' Reference points: ' + tk.join('; ') + '.';
