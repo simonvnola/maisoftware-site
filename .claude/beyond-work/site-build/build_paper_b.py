@@ -42,6 +42,34 @@ bp.CSV_DIR = os.path.join(SCRATCH, "charts-data-b")
 bp.ALT.update(json.load(open(os.path.join(bp.CSV_DIR, "alt.json"), encoding="utf-8")))
 bp.chapter_for_source = lambda n: f"/UBI/paper/{APPENDIX}/#s-{n}"
 bp.DATA_FILE_RE = re.compile(r"(?:charts/data/)?fig(\d)_(\d)_[A-Za-z0-9_]+\.csv")
+CSV_OUT = os.path.join(CHARTS_OUT, "data")
+
+
+def link_data_files_served(root, soup, page_fids):
+    """Link each 'charts/data/figX_Y_*.csv' mention to the CSV served at /UBI/paper/charts/data/; text unchanged."""
+    n = 0
+    for node in list(root.find_all(string=True)):
+        if node.parent.name == "a" or "fig" not in node or ".csv" not in node:
+            continue
+        text = str(node)
+        pieces, pos = [], 0
+        for m in bp.DATA_FILE_RE.finditer(text):
+            fname = m.group(0).split("/")[-1]
+            if not os.path.exists(os.path.join(CSV_OUT, fname)):
+                continue
+            pieces.append(text[pos:m.start()])
+            a = soup.new_tag("a", href="/UBI/paper/charts/data/" + fname)
+            a.string = m.group(0)
+            pieces.append(a)
+            pos = m.end()
+            n += 1
+        if pieces:
+            pieces.append(text[pos:])
+            node.replace_with(*[x if isinstance(x, Tag) else NavigableString(x) for x in pieces if x != ""])
+    return n
+
+
+bp.link_data_files = link_data_files_served
 bp.NOT_ACRONYMS.add("KMXT")          # a public radio station's call sign, in a source entry
 bp.NOT_ACRONYMS.update({"VI", "VII"})   # Roman numerals in a source title
 bp.GLOSSARY.update({
@@ -193,6 +221,10 @@ def main():
     for f in sorted(os.listdir(bp.CHARTS_SRC)):
         if f.endswith(".svg"):
             shutil.copyfile(os.path.join(bp.CHARTS_SRC, f), os.path.join(CHARTS_OUT, f))
+    os.makedirs(CSV_OUT, exist_ok=True)
+    for f in sorted(os.listdir(bp.CSV_DIR)):
+        if f.endswith(".csv"):
+            shutil.copyfile(os.path.join(bp.CSV_DIR, f), os.path.join(CSV_OUT, f))
 
     # ---- sources first, then every chapter
     last = len(chapters) - 1

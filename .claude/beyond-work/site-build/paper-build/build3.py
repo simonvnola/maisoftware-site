@@ -233,7 +233,7 @@ FILLS.update({
  'RENT_ABOVE30_FLOOR_SEVERE': '404', 'RENT_ABOVE50_FLOOR_SEVERE': '123', 'RENT_ABOVE30_PSTAR_SEVERE': '397', 'RENT_ABOVE50_PSTAR_SEVERE': '96',
 })
 FILLS.update({'SALES_SHARE_SQ_MODERATE': '15.1%', 'SALES_SHARE_FLOOR_MODERATE': '11.3%', 'SALES_SHARE_SQ_SEVERE': '39.8%', 'SALES_SHARE_FLOOR_SEVERE': '30.1%',
-              'SALES_SHARE5_SQ_MODERATE': '15.6%', 'SALES_SHARE5_FLOOR_MODERATE': '11.6%', 'SALES_SHARE5_SQ_SEVERE': '40.9%', 'SALES_SHARE5_FLOOR_SEVERE': '30.9%'})
+              'SALES_SHARE5_SQ_MODERATE': '15.5%', 'SALES_SHARE5_FLOOR_MODERATE': '11.6%', 'SALES_SHARE5_SQ_SEVERE': '40.9%', 'SALES_SHARE5_FLOOR_SEVERE': '30.9%'})
 for k_, v_ in FILLS.items():
     text = text.replace('{{' + k_ + '}}', v_)
 
@@ -300,7 +300,7 @@ NEW = {
  'S_ABS_HOC': "Australian Bureau of Statistics. *Housing Occupancy and Costs, 2019-20* ('Ownership of other residential property'; released 25 May 2022). 2022. https://www.abs.gov.au/statistics/people/housing/housing-occupancy-and-costs/2019-20",
  'S_SAUNDERS_TULIP': "Saunders and Tulip, Reserve Bank of Australia. *A Model of the Australian Housing Market* (Research Discussion Paper 2019-01, March 2019; section 5.3 and Figure 15). 2019. https://www.rba.gov.au/publications/rdp/2019/2019-01/model-responses.html",
  'S_CAMPBELL': "Campbell, Giglio and Pathak. *Forced Sales and House Prices*. American Economic Review 101(5), August 2011, pp. 2108-2131 (abstract, p. 2108). 2011. https://doi.org/10.1257/aer.101.5.2108",
- 'S_ANENBERG': "Anenberg and Kung. *Estimates of the Size and Source of Price Declines Due to Nearby Foreclosures*. American Economic Review 104(8), August 2014, pp. 2527-2551 (abstract; the coefficient is taken from the secondary review [S_COHEN], because the article's table could not be opened). 2014. https://doi.org/10.1257/aer.104.8.2527",
+ 'S_ANENBERG': "Anenberg and Kung. *Estimates of the Size and Source of Price Declines Due to Nearby Foreclosures*. American Economic Review 104(8), August 2014, pp. 2527-2551 (abstract; the coefficient is taken from the secondary review, source S_COHEN, because the article's table could not be opened). 2014. https://doi.org/10.1257/aer.104.8.2527",
  'S_COHEN': "Cohen, Coughlin and Yao. *Sales of Distressed Residential Property: What Have We Learned from Recent Research?* Federal Reserve Bank of St Louis Review 98(3), third quarter 2016 (Table 2, p. 176). 2016. https://files.stlouisfed.org/research/publications/review/2016-09-12//sales-of-distressed-residential-property-what-have-we-learned-from-recent-research.pdf",
  'S_SIJP_LI': "Sijp and Li. *The effect of nearby listings on house sale prices in Sydney: a spatio-temporal regularization approach*. Real Estate Economics, first published 29 March 2026 (section 3, Tables 5 and 6). 2026. https://onlinelibrary.wiley.com/doi/full/10.1111/1540-6229.70046",
  'S_MIAN': "Mian, Sufi and Trebbi. *Foreclosures, House Prices, and the Real Economy*. Journal of Finance 70(6), December 2015, pp. 2587-2634 (Table VI, pp. 2608-2610; interpretation p. 2611; listings analysis pp. 2612-2614; Table VII). 2015. https://doi.org/10.1111/jofi.12310",
