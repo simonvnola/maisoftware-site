@@ -43,7 +43,10 @@ bp.ALT.update(json.load(open(os.path.join(bp.CSV_DIR, "alt.json"), encoding="utf
 bp.chapter_for_source = lambda n: f"/UBI/paper/{APPENDIX}/#s-{n}"
 bp.DATA_FILE_RE = re.compile(r"(?:charts/data/)?fig(\d)_(\d)_[A-Za-z0-9_]+\.csv")
 bp.NOT_ACRONYMS.add("KMXT")          # a public radio station's call sign, in a source entry
+bp.NOT_ACRONYMS.update({"VI", "VII"})   # Roman numerals in a source title
 bp.GLOSSARY.update({
+    "APRA": "Australian Prudential Regulation Authority",
+    "ADI": "authorised deposit-taking institution", "NSW": "New South Wales",
     "PTR": "participation tax rate",
     "JSA": "Jobs and Skills Australia",
 })

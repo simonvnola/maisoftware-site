@@ -6,7 +6,7 @@ Five durable revenue measures pay for Stage 1, each with a PBO election commitme
 
 <<TABLE_6_4>>
 
-*Source: Parliamentary Budget Office election commitment costings (ECR) re-timed to start in 2028-29 and scaled by nominal GDP growth [S133, S145, S146, S147, S148, S149, S150]; author's modelling [S5]. Note: each year's total of the five taxes is rounded once (as in supplementary model_output.md, Table F4-103), so it can differ by A$0.1bn from the sum of the measures shown. The memo columns apply only to the wealth-tax fund option in Section 10, under which the wealth tax is paid into the fund net of the interaction line. Years after the PBO's last costing year (2035-36, re-timed to 2038-39) are the author's extension; the fuel-credit and coal-and-minerals measures are then held flat in real terms (Table 6.55, B7).*
+*Source: Parliamentary Budget Office election commitment costings (ECR) re-timed to start in 2028-29 and scaled by nominal GDP growth [S133, S145, S146, S147, S148, S149, S150]; author's modelling [S5]. Note: each year's total of the five taxes is rounded once (as in supplementary model_output.md, Table F4-103), so it can differ by A$0.1bn from the sum of the measures shown. The memo columns apply only to the wealth-tax fund option in Section 10, under which the wealth tax is paid into the fund net of the interaction line. Years after the PBO's last costing year (2035-36, re-timed to 2038-39) are the author's extension; the fuel-credit and coal-and-minerals measures are then held flat in real terms (Table 6.58, B7).*
 
 **Table 6.5. The five durable taxes: costing references and totals, 2028-29 to 2045-46 (A$ billion, nominal)**
 

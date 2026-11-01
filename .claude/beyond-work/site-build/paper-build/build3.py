@@ -34,9 +34,9 @@ add(seg(2500, 2540, [
   "| Leads the ABI Act and revenue measures; reports fiscal effects in each Budget, including the kept surpluses and any levy;"),
  ("| Owns ABI policy, the child supplement and the no-worse-off rule;", "| Owns Stage 1 policy, the child payment and the cash guarantee;"),
  ("| Pays the dividend once a year to people who do not lodge a return, once they enrol, and the child payment and top-ups; runs enrolment through myGov and reports take-up; applies the waiting periods | Systems live 1 July 2028; first dividends in 2029-30 |",
-  "| Pays the floor, the child payment and Rent Assistance; reports take-up; applies the waiting periods | Systems live 1 July 2028 |"),
+  "| Pays the floor, the child payment and Rent Assistance; reports take-up; applies the waiting periods; builds the payment system that can reach every adult and runs the surge protocol in a declared displacement, with a published surge plan and service standard | Systems live 1 July 2028; surge plan by 1 July 2028 |"),
  ("| Credits any dividend once a year as a refundable offset when returns are assessed; administers revenue measures; supplies income data | Offset in 2029-30 assessments; no new withholding schedules for Stage 1 |",
-  "| Administers the five durable taxes; supplies the assessed income on which the child payment is paid | No new withholding schedules for Stage 1 |"),
+  "| Administers the five durable taxes; supplies the assessed income on which the child payment is paid; in a declared displacement passes Single Touch Payroll records of workers whose pay has stopped to Services Australia | No new withholding schedules for Stage 1; surge data-sharing live by 1 July 2028 |"),
  ("| Full costing; certifies any fund's payout and the durable taxes against Stage 1's costs each year, and funding before each later stage, under a stress test for Stage 3 | Costing by 31 August 2027; first certificate in 2029-30, then each year; certificates before any Stage 2 vote or Stage 3 rate Act |",
   "| Full costing of P\\* and the targeted package; certifies the five durable taxes against Stage 1's costs each year, and the funding of any universal rate proposed after the tests, under a stress test for a payment at the Age Pension rate | Costing by 31 August 2027; first certificate in 2029-30, then each year; a certificate before any Bill setting a universal rate |"),
  ("| If a fund option is chosen, reports the fund in the Budget on the Future Fund's basis | Any fund opens 1 July 2028 |",
@@ -57,6 +57,7 @@ add(seg(2500, 2540, [
  ("need assisted enrolment designed with First Nations organisations (Table 7.2), and the Act excludes the dividend from income management.",
   "need assisted claims designed with First Nations organisations (Table 7.2)."),
 ]))
+add(F('07_surge.md'))
 
 # ======================= CHAPTER 8
 riskrows = {}
@@ -66,10 +67,10 @@ over = {}
 for i in range(2554, 2575):
     n = int(cells(L[i-1])[0]) if False else int(L[i-1].split('|')[1].strip())
     if n in riskrows: over[i] = riskrows[n]
-add(seg_lines(2542, 2576, over=over, reps=[
+add(seg_lines(2542, 2576, over=over, after={2575: F('08_risks_extra.md').rstrip('\n')}, reps=[
  ("Most risks are met by a test before each larger step and a binding safeguard after it. The fund's return is met only by a review, and for Stage 3 no rate rise would be enough.",
   "Most risks are met by a test before any universal step and a binding safeguard once Stage 1 starts. Two are not: the five taxes may fall short sooner than the central path shows, and no rate rise would fund a payment at the Age Pension rate."),
- ("the three that could most change the funding are a shortfall in the six taxes,", "the three that could most change the funding are a shortfall in the five taxes,"),
+ ("Of the 21 risks in Table 8.1, the three that could most change the funding are a shortfall in the six taxes,", "Of the 24 risks in Table 8.1, the three that could most change the funding are a shortfall in the five taxes,"),
  ("and set a second earner's participation tax rate at 38% at Stage 1 (Table 5.1b);",
   "and, on Part 1's run, whose taper P\\* keeps, set a second earner's participation tax rate at 38% (Table 5.4); under P\\* second earners' mean participation tax rate is 33.0% (Table 5.7);"),
  ("On the relative line, Stage 1's result for people aged 67 and over", "On the relative line, Stage 1's result for people aged 67 and over (11.6% under P\\*, Table 5.7)"),
@@ -105,7 +106,7 @@ over9 = {
 }
 after9 = {
  2754: "| 30 October 2026 | External critique of the 22 October paper and its website | Ten criticisms, led by a recommendation (Part 1) that the paper's own comparison did not support, a Budget advance not called borrowing, a narrow \"no one loses\" claim and a dividend illustrated throughout | Errors and claims corrected; the summary states the borrowing, the narrow appraisal, the cash-only guarantee, the households worse off after housing costs and the stress-test odds; objections reordered; Table 8.6 answers each criticism |\n| 31 October 2026 | The author's decision on the critique | Recommend the design the evidence favours now, and make the universal stages a tested, pre-committed pathway (option B of the revision plan) | P\\* recommended as Stage 1, the targeted package as the alternative and Part 1 rejected with its price (Section 5); the pathway's tests legislated with no rates and Stage 3 not authorised; the dividend options moved to Section 10, none recommended; the central path rebuilt on P\\* (Section 6) |",
- 2798: "| Recipient households worse off after housing costs, by payment and tenure | {{PSTAR_AHC_LOSER_HOUSEHOLDS}} modelled with P\\* (2028-29; Table 6.21) | Reported each year; Rent Assistance reviewed if the number rises | DSS; AIHW; ABS | Annual | Each Budget |",
+ 2798: "| Recipient households worse off after housing costs, by payment and tenure | {{PSTAR_AHC_LOSER_HOUSEHOLDS}} modelled with P\\* (2028-29; Table 6.21) | Reported each year; Rent Assistance reviewed if the number rises | DSS; AIHW; ABS | Annual | Each Budget |\n| Claims decided within the service standard (surge protocol) | Services Australia's standard, published before 1 July 2028 | The standard held in every quarter; in a declared displacement, provisional payment of claims that pass it and a report to Parliament each quarter | Services Australia | Quarterly; monthly in a declared displacement | ANAO audits |\n| Forced-sale share of annual dwelling sales | Set before 1 July 2028 from lenders' hardship and mortgagee-sale reports against the ABS count of dwelling transfers (560,005 in 2025-26) [S_ABS_TVD] | Reported; in a declared displacement, forced sales above 5% of annual dwelling sales, a placeholder threshold for the author to set, prompt a Treasury and APRA report within three months (Table 6.56) | Treasury; APRA; ABS; state revenue offices | Quarterly | Each Budget; any displacement report |",
 }
 add(seg_lines(2716, 2850, over=over9, after=after9, reps=[
  ("| Advice on adequacy and the no-worse-off rule |", "| Advice on adequacy and the cash guarantee |"),
@@ -188,6 +189,8 @@ app = seg(2852, 3174, [
  ("| 2. Gross cost | Eligible adults × take-up × the dividend, from 2029-30 (100% of lodgers and 80% of non-lodgers), plus eligible children × the child supplement | Table 6.1a |",
   "| 2. Gross cost | Eligible children × the child supplement, less the FTB it replaces, under the child payment's rule; under a dividend option (Section 10), also eligible adults × take-up × the dividend, from 2029-30 (100% of lodgers and 80% of non-lodgers) | Tables 6.1 and 10.9 |"),
  ("| Tables 6.7a to 6.7f and 6.14a to 6.18b |", "| Tables 6.6 to 6.10 and 6.34 to 6.53 |"),
+ ("Sources are numbered in order of first citation. Each entry gives the author or organisation, title, year of publication and web address or file path.",
+  "Sources are numbered in order of first citation. Each entry gives the author or organisation, title, year of publication and web address or file path. Sources S233, S234 and S236 onward were verified in the author's evidence review of 1 November 2026, which records the page, table or cell each figure comes from; its summary is lodged with the supplementary files. S225 to S232 and S235 could not be opened from the drafting environment and carry descriptive titles in square brackets; they need checking before submission."),
  ("| Tables 6.20 to 6.24b; F4-48 |", "| Tables 6.14 to 6.27; F4-48 |"),
  ("and the household scripts (household.py to household_r13.py) regenerate every model table,",
   "the household scripts (household.py to household_r13.py) and the scripts for this revision ({{OPTIONB_MODEL_SCRIPTS}}) regenerate every model table,"),
@@ -199,6 +202,7 @@ add(app)
 text = ''.join(out)
 # ---------------- fill tokens from the model's option B results
 FILLS = {
+ 'REVISION_DATE': 'Revised 1 November 2026', 'REVISION_VERSION_DATE': '1 November 2026',
  'WORK_CAP_ODDS_AT_3_9': '0.79 to 0.84', 'PSTAR_FIRST_LEVY_CENTRAL': '2043-44', 'PSTAR_ADVANCE_REPAID_YEAR': '2031-32',
  'PSTAR_ADVANCE_2028_29': 'A$20.7bn', 'PHASED_ADVANCE_2028_29': 'nil',
  'PSTAR_HH_BETTER_AFTER_FUNDING_2028_29': '35.4%', 'PSTAR_HH_WORSE_AFTER_FUNDING_2028_29': '64.6%', 'PSTAR_HH_WORSE_INCIDENCE_RANGE': 'about 59% to 67%',
@@ -210,6 +214,26 @@ FILLS = {
  'PSTAR_MODEL_TABLE_REF': 'option B model results, Tables B1 to B16', 'OPTIONB_MODEL_SCRIPTS': 'optionb_hh.py, optionb_fiscal.py, optionb_report.py and optionb_check.py',
  'TRIAL_COST_2029_30': '120', 'TRIAL_COST_2030_31': '124', 'IMPL_TOTAL_2029_30': '286', 'IMPL_TOTAL_2030_31': '293',
 }
+
+# ---- second-round effects: current B18-B21 values, TO BE UPDATED from the model's re-run
+FILLS.update({
+ 'MED_INC_SQ': '118,396', 'MED_INC_FLOOR': '124,234', 'MED_INC_SQ_SEVERE': '116,393', 'MED_INC_FLOOR_SEVERE': '122,409',
+ 'PARTNER_TEST_EXCLUDED_SHARE': '31.2',
+ 'EXTRA_PAY_SQ_MODERATE': '23.2', 'EXTRA_PAY_SQ_SEVERE': '61.7', 'EXTRA_PAY_FLOOR_MODERATE': '36.3', 'EXTRA_PAY_FLOOR_SEVERE': '96.8',
+ 'ENROL_COST_MODERATE': '4.3', 'ENROL_COST_SEVERE': '11.4', 'ENROL_SUM_MODERATE': '67.2', 'ENROL_SUM_SEVERE': '179.2',
+ 'ENROL_COST_SQ_MODERATE': '2.7', 'ENROL_COST_SQ_SEVERE': '7.3', 'ENROL_SUM_SQ_MODERATE': '40.9', 'ENROL_SUM_SQ_SEVERE': '109.1',
+ 'WAIVER_COST_MODERATE': '1.6', 'WAIVER_COST_SEVERE': '4.2', 'WAIVER_SUM_MODERATE': '7.6', 'WAIVER_SUM_SEVERE': '20.3',
+ 'DEBT_MEDIAN_REPAYMENT_MODERATE': '42,970', 'DEBT_MEDIAN_REPAYMENT_SEVERE': '42,727',
+ 'DEBT_SHARE_SQ_MODERATE': '36%', 'DEBT_SHARE_FLOOR_MODERATE': '34%', 'DEBT_SHARE_SQ_SEVERE': '36%', 'DEBT_SHARE_FLOOR_SEVERE': '35%',
+ 'DEBT_ABOVE30_SQ_MODERATE': '222', 'DEBT_ABOVE50_SQ_MODERATE': '85', 'DEBT_ABOVE30_FLOOR_MODERATE': '210', 'DEBT_ABOVE50_FLOOR_MODERATE': '63',
+ 'DEBT_ABOVE30_SQ_SEVERE': '576', 'DEBT_ABOVE50_SQ_SEVERE': '223', 'DEBT_ABOVE30_FLOOR_SEVERE': '546', 'DEBT_ABOVE50_FLOOR_SEVERE': '168',
+ 'BUFFER_MONTHS_SQ_MODERATE': '9.5', 'BUFFER_MONTHS_FLOOR_MODERATE': '11.0', 'BUFFER_MONTHS_SQ_SEVERE': '9.4', 'BUFFER_MONTHS_FLOOR_SEVERE': '10.9',
+ 'RENT_ABOVE30_SQ_MODERATE': '168', 'RENT_ABOVE50_SQ_MODERATE': '71', 'RENT_ABOVE30_FLOOR_MODERATE': '159', 'RENT_ABOVE50_FLOOR_MODERATE': '49',
+ 'RENT_ABOVE30_PSTAR_MODERATE': '156', 'RENT_ABOVE50_PSTAR_MODERATE': '38', 'RENT_ABOVE30_SQ_SEVERE': '425', 'RENT_ABOVE50_SQ_SEVERE': '181',
+ 'RENT_ABOVE30_FLOOR_SEVERE': '404', 'RENT_ABOVE50_FLOOR_SEVERE': '123', 'RENT_ABOVE30_PSTAR_SEVERE': '397', 'RENT_ABOVE50_PSTAR_SEVERE': '96',
+})
+FILLS.update({'SALES_SHARE_SQ_MODERATE': '15.1%', 'SALES_SHARE_FLOOR_MODERATE': '11.3%', 'SALES_SHARE_SQ_SEVERE': '39.8%', 'SALES_SHARE_FLOOR_SEVERE': '30.1%',
+              'SALES_SHARE5_SQ_MODERATE': '15.6%', 'SALES_SHARE5_FLOOR_MODERATE': '11.6%', 'SALES_SHARE5_SQ_SEVERE': '40.9%', 'SALES_SHARE5_FLOOR_SEVERE': '30.9%'})
 for k_, v_ in FILLS.items():
     text = text.replace('{{' + k_ + '}}', v_)
 
@@ -253,15 +277,49 @@ NEW = {
  'S_IMF17': "International Monetary Fund. [Fiscal Monitor, October 2017]. 2017. https://www.astrid-online.it/static/upload/imf_/imf_fiscal-monitor-10_2017.pdf",
  'S_NYFED': "Federal Reserve Bank of New York. [Staff report on wage insurance]. n.d. https://www.newyorkfed.org/research/staff_reports/sr1105",
  'S_ANUJS': "Australian National University. [Article on the cost of increasing JobSeeker]. n.d. https://research.anu.edu.au/research-innovation-news/increasing-jobseeker-is-long-overdue-heres-how-we-could-do-it-without",
+ 'S_LAWP': "Services Australia. *Liquid assets waiting period* (duration table; updated 30 July 2026). 2026. https://www.servicesaustralia.gov.au/liquid-assets-waiting-period?context=51411",
+ 'S_RBA_FSR': "Reserve Bank of Australia. *Financial Stability Review, October 2026: Resilience of Australian households and businesses* (Graph 2.4 and adjacent text; released 1 October 2026). 2026. https://www.rba.gov.au/publications/fsr/2026/oct/resilience-of-australian-households-and-businesses.html",
+ 'S_STP': "Australian Taxation Office. [Single Touch Payroll: what employers report]. n.d. https://www.ato.gov.au/businesses-and-organisations/hiring-and-paying-your-workers/single-touch-payroll",
+ 'S_SA_AR2324': "Services Australia. *Annual Report 2023-24* (Table 2, pp. 58-59: claims finalised and granted; p. 40: processing standards). 2024. https://www.servicesaustralia.gov.au/sites/default/files/2024-10/annual-report-2023-24.pdf",
+ 'S_SA_AR2425': "Services Australia. *Annual Report 2024-25* (Table 2, pp. 54-55). 2025. https://www.servicesaustralia.gov.au/sites/default/files/2025-10/annual-report-2024-25.pdf",
+ 'S_SA_AR2526': "Services Australia. *Annual Report 2025-26* (Table 1, pp. 58-59; published 16 October 2026). 2026. https://www.servicesaustralia.gov.au/sites/default/files/2026-10/annual-report-2025-26.pdf",
+ 'S_DSS_PROC': "Department of Social Services ministers. *Services Australia delivers 900,000 claims, reduces call wait times* (media release, 30 July 2024; average processing time table). 2024. https://ministers.dss.gov.au/media-releases/15451",
+ 'S_SA_SENATE': "Services Australia. *Answer to question on notice IQ20-000047, Senate Select Committee on COVID-19, hearing of 30 April 2020* (answer as at 8 May 2020, p. 1). 2020. https://www.aph.gov.au/DocumentStore.ashx?id=01c991a6-b503-493a-8dc1-b52669d1d381",
+ 'S_ANAO_COVID': "Australian National Audit Office. *Services Australia COVID-19 Measures and Enterprise Risk Management* (Report 23 of 2020-21, 10 December 2020; paragraphs 2.54, 2.65, 2.68 and 4.15, Figures 2.6 and 4.1). 2020. https://www.anao.gov.au/work/performance-audit/services-australia-covid-19-measures-and-enterprise-risk-management",
+ 'S_SA_PARTNER': "Services Australia. *Income test for JobSeeker Payment* ('Maximum income per fortnight if you're partnered'; updated 29 October 2026). 2026. https://www.servicesaustralia.gov.au/income-test-for-jobseeker-payment?context=51411",
+ 'S_SA_ASSETS': "Services Australia. *Income and assets tests for JobSeeker Payment; Assets test for allowances* (cut-off table, updated 1 July 2026). 2026. https://www.servicesaustralia.gov.au/income-and-assets-tests-for-jobseeker-payment?context=51411; https://www.servicesaustralia.gov.au/assets-test-for-allowances?context=22281",
+ 'S_DSS_GUIDE': "Department of Social Services. *Social Security Guide, version 1.344* (section 1.1.L.50, Liquid assets; released 26 October 2026). 2026. https://guides.dss.gov.au/social-security-guide/1/1/l/50",
+ 'S_ABS_HIW': "Australian Bureau of Statistics. *Household Income and Wealth, Australia, 2019-20* (data cubes 7, 8 and 10; released 28 April 2022). 2022. https://www.abs.gov.au/statistics/economy/finance/household-income-and-wealth-australia/2019-20",
+ 'S_RBA_FSR2022': "Reserve Bank of Australia. *Financial Stability Review, October 2022: Household and business finances in Australia* (Graph 2.4 and surrounding paragraphs). 2022. https://www.rba.gov.au/publications/fsr/2022/oct/household-business-finances-in-australia.html",
+ 'S_RBA_FSR2023': "Reserve Bank of Australia. *Financial Stability Review, April 2023* (chapter 3, Graph 3.4, pp. 39-40). 2023. https://www.rba.gov.au/publications/fsr/2023/apr/pdf/financial-stability-review-2023-04.pdf",
+ 'S_RBA_FSR2024': "Reserve Bank of Australia. *Financial Stability Review, March 2024: Resilience of Australian households and businesses* (Graph 2.8). 2024. https://www.rba.gov.au/publications/fsr/2024/mar/resilience-of-australian-households-and-businesses.html",
+ 'S_APRA': "Australian Prudential Regulation Authority. *Quarterly ADI Property Exposures Statistics, June 2026* (Tab 1b, rows 16 and 69, and highlights; released 17 September 2026). 2026. https://www.apra.gov.au/quarterly-authorised-deposit-taking-institution-property-exposure-statistics-june-2026-highlights",
+ 'S_ASIC782': "Australian Securities and Investments Commission. *Report 782: Hardship, hard to get help* (p. 83, Figure 15; Appendix 2, Table 28; 20 May 2024). 2024. https://download.asic.gov.au/media/w35baapb/rep782-published-20-may-2024-20240809.pdf",
+ 'S_BERGMANN': "Bergmann, Reserve Bank of Australia. *The Determinants of Mortgage Defaults in Australia: Evidence for the Double-trigger Hypothesis* (Research Discussion Paper 2020-03, July 2020; sections 3-4, Figures 5-6). 2020. https://www.rba.gov.au/publications/rdp/2020/2020-03/full.html",
+ 'S_ABS_TVD': "Australian Bureau of Statistics. *Total Value of Dwellings, June Quarter 2026* (Table 2, Data1; released 8 September 2026; transfers summed from cells AF89:BI108). 2026. https://www.abs.gov.au/statistics/economy/price-indexes-and-inflation/total-value-dwellings/jun-quarter-2026/643202.xlsx",
+ 'S_ABS_HOC': "Australian Bureau of Statistics. *Housing Occupancy and Costs, 2019-20* ('Ownership of other residential property'; released 25 May 2022). 2022. https://www.abs.gov.au/statistics/people/housing/housing-occupancy-and-costs/2019-20",
+ 'S_SAUNDERS_TULIP': "Saunders and Tulip, Reserve Bank of Australia. *A Model of the Australian Housing Market* (Research Discussion Paper 2019-01, March 2019; section 5.3 and Figure 15). 2019. https://www.rba.gov.au/publications/rdp/2019/2019-01/model-responses.html",
+ 'S_CAMPBELL': "Campbell, Giglio and Pathak. *Forced Sales and House Prices*. American Economic Review 101(5), August 2011, pp. 2108-2131 (abstract, p. 2108). 2011. https://doi.org/10.1257/aer.101.5.2108",
+ 'S_ANENBERG': "Anenberg and Kung. *Estimates of the Size and Source of Price Declines Due to Nearby Foreclosures*. American Economic Review 104(8), August 2014, pp. 2527-2551 (abstract; the coefficient is taken from the secondary review [S_COHEN], because the article's table could not be opened). 2014. https://doi.org/10.1257/aer.104.8.2527",
+ 'S_COHEN': "Cohen, Coughlin and Yao. *Sales of Distressed Residential Property: What Have We Learned from Recent Research?* Federal Reserve Bank of St Louis Review 98(3), third quarter 2016 (Table 2, p. 176). 2016. https://files.stlouisfed.org/research/publications/review/2016-09-12//sales-of-distressed-residential-property-what-have-we-learned-from-recent-research.pdf",
+ 'S_SIJP_LI': "Sijp and Li. *The effect of nearby listings on house sale prices in Sydney: a spatio-temporal regularization approach*. Real Estate Economics, first published 29 March 2026 (section 3, Tables 5 and 6). 2026. https://onlinelibrary.wiley.com/doi/full/10.1111/1540-6229.70046",
+ 'S_MIAN': "Mian, Sufi and Trebbi. *Foreclosures, House Prices, and the Real Economy*. Journal of Finance 70(6), December 2015, pp. 2587-2634 (Table VI, pp. 2608-2610; interpretation p. 2611; listings analysis pp. 2612-2614; Table VII). 2015. https://doi.org/10.1111/jofi.12310",
+ 'S_ABS_TAXREV': "Australian Bureau of Statistics. *Taxation Revenue, Australia, 2024-25* (Tables 2-10; stamp duties on conveyances, cell K35, and land taxes, cell K11, in each state table; released 21 April 2026). 2026. https://www.abs.gov.au/statistics/economy/government/taxation-revenue-australia/2024-25/55060DO001_202425.xlsx",
+ 'S_NSW_BP1': "NSW Treasury. *2026-27 Budget Paper No. 1: Budget Statement* (Appendix E, Table E.3, p. E-4; June 2026). 2026. https://www.parliament.nsw.gov.au/tp/files/211353/2026-27%20Budget%20Paper%20No.01%20-%20Budget%20Statement.pdf",
+ 'S_PBO_EPT': "Parliamentary Budget Office. *40% excess profits tax on corporations with over $100 million in turnover* (ECR-2025-3194, 2025 Election Commitments Report, June 2025; pp. 1-6, Table 1 and Attachment A, Table A1: no sector or bank share disclosed). 2025. https://www.pbo.gov.au/elections/2025-general-election/2025-election-commitments-costings/40%25%20excess%20profits%20tax%20on%20corporations%20with%20over%20%24100%20million%20in%20turnover",
+ 'S_AHURI291': "Eccleston, Warren, Verdouw and Flanagan. *Pathways to state property tax reform* (AHURI Final Report 291, November 2017; Box 4, p. 36). 2017. https://www.ahuri.edu.au/sites/default/files/migration/documents/AHURI_Final_Report_No_291_-_Pathways_to_state_property_tax_reform.pdf",
+ 'S_RBA_RENTS': "Reserve Bank of Australia. *Do Housing Investors Pass-through Changes in Their Interest Costs to Rents?* (Bulletin, 17 October 2024; abstract, results and conclusion). 2024. https://www.rba.gov.au/publications/bulletin/2024/oct/do-housing-investors-pass-through-changes-in-their-interest-costs-to-rents.html",
 }
-order = []
-for m in re.finditer(r'S_[A-Z0-9]+', text):
+order = ['S_CANARIES', 'S_YALE26', 'S_DANISH', 'S_OECD17', 'S_ALASKA25', 'S_IMF17', 'S_NYFED', 'S_ANUJS', 'S_LAWP', 'S_RBA_FSR', 'S_STP']  # fixed: S225 to S235 as first published
+for m in re.finditer(r'S_[A-Z0-9_]+', text):
     if m.group(0) in NEW and m.group(0) not in order: order.append(m.group(0))
 missing = set(NEW) - set(order)
 if missing: print('new sources never cited:', missing, file=sys.stderr)
 num = {key: f'S{225 + i}' for i, key in enumerate(order)}
 for key, s in num.items():
     text = re.sub(r'\b' + key + r'\b', s, text)
+for key in order:
+    for k2, s2 in num.items(): NEW[key] = re.sub(r'\b' + k2 + r'\b', s2, NEW[key])
 srcs = '\n'.join(f"{225 + i}. **[S{225 + i}]** {NEW[key]}" for i, key in enumerate(order))
 text = text.rstrip('\n') + '\n' + srcs + '\n'
 

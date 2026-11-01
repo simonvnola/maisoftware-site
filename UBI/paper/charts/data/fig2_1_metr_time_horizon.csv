@@ -1,0 +1,9 @@
+model,release_date,minutes_50pct,note
+GPT-4 (0314),2023-03-14,3.5,METR TH1.1
+GPT-4 Turbo (1106),2023-11-06,3.6,METR TH1.1
+Claude 3.7 Sonnet,2025-02-24,60,METR TH1.1
+o3,2025-04-16,121,METR TH1.1
+Claude Opus 4,2025-05-22,101,METR TH1.1
+GPT-5,2025-08-07,214,METR TH1.1
+Claude Opus 4.5,2025-11-24,320,METR TH1.1
+"Claude Mythos Preview (announced 7 April 2026; METR lower bound from its March 2026 evaluation, secondary report)",2026-04-07,960,METR lower bound via The Decoder

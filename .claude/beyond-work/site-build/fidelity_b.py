@@ -4,7 +4,7 @@ import difflib
 import re
 from bs4 import BeautifulSoup
 
-S = "/tmp/claude-0/-home-user-maisoftware-site/0002bdc0-746f-580b-b8b8-664940bff637/scratchpad"
+S = "<SCRATCHPAD>"
 SITE = "/home/user/maisoftware-site/UBI/paper/"
 orig = BeautifulSoup(open(S + "/build-b/paper-body.html", encoding="utf-8"), "html.parser")
 SLUGS = ["1-executive-summary", "2-the-case-for-change", "3-a-picture-of-2045", "4-what-the-evidence-says", "5-the-proposal",
