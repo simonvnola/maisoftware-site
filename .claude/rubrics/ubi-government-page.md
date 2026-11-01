@@ -250,3 +250,17 @@ I10. Every figure from a provisional or unchecked model run is labelled
 I11. A red-team reader asking only "does the recommendation follow from the
      results?" finds no place where the paper's own figures favour an option
      the paper does not recommend without the price being stated.
+I12. The paper deals with the second-round effects of an AI displacement
+     shock and the site reflects them: (a) the surge of claims on a
+     means-tested system (processing capacity, waiting periods, the assets
+     test and the liquid-assets waiting period as barriers for displaced
+     workers) with a quantified estimate of claim volumes in the paper's
+     displacement scenarios and a stated surge response; (b) displaced
+     workers' ability to service existing debt on the safety-net rate, with
+     the share of displaced households holding mortgages or investment
+     property and the gap between the payment and typical repayments; (c) the
+     effect of forced sales of investment properties and other assets on
+     property prices, the Budget and the paper's own rent scenario, with a
+     bounded, provisional estimate and its sources, or a plain statement of
+     what cannot be estimated. Policy options are priced where the model can
+     price them, and the overview summarises the finding in plain words.
