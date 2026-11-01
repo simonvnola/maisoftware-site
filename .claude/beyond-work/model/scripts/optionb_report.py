@@ -3,7 +3,7 @@ optionb_results.md (tables in the paper's style) from runs/*.json (optionb_hh.py
 (optionb_fiscal.py). Also computes the trial work-effort cap at OpenResearch's revised 3.9-point participation fall with the paper's own
 trial design (partF_r8.py L1: 3,000 treated, 6,000 controls, the cap binds if the estimated fall exceeds 3 points and the lower end of its 90%
 interval exceeds 1 point; normal approximation). Run: python3 -I optionb_report.py. Stdlib only."""
-import glob, json, os
+import glob, json, os, statistics
 from statistics import NormalDist
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -521,6 +521,250 @@ if os.path.exists(_ex):
                                       omitted_benefit=("Valued: Part 1 as Stage 2's base, A$0.09bn to A$0.37bn once at 3.9 points against the package, smaller against P* (not separately "
                                                        "valued; ASSUMPTION close to nil). Not valued: universality's reach and payment channel (a value judgement; see break-even weights).")),
          "%; thousand; A$bn; probability", "2028-29", "optionb_extra.py; optionb_report.py", provisional=True)
+
+# ======================================================================================================================
+# 11. Second-round effects of a displacement (optionb_shock.py): Tables B18 to B21, revised 1 November 2026 on the housing evidence report
+# ======================================================================================================================
+_sh = os.path.join(ROOT, "runs", "shock.json")
+SHOCK_PARA = []
+if os.path.exists(_sh):
+    SH = json.load(open(_sh))
+    SU, HHR, FSR, EPS_, EV = SH["surge"], SH["household"], SH["forced_sales"], SH["ept_sensitivity"], SH["evidence_inputs"]
+    mo, se = HHR["moderate_2035-36"]["pro_rata"], HHR["severe_2035-36"]["pro_rata"]
+    RB = HHR["moderate_2035-36"]["rates"]["retrench_baseline"]
+    INF = {nm: dict(central=SU[nm]["2033-34"]["new_displaced"], lo=min(SU[nm][fy]["new_displaced"] for fy in ("2032-33", "2033-34", "2034-35", "2035-36")),
+                    hi=max(SU[nm][fy]["new_displaced"] for fy in ("2032-33", "2033-34", "2034-35", "2035-36"))) for nm in ("moderate", "severe")}
+    for nm in INF:
+        INF[nm]["x_retrench"] = (INF[nm]["lo"] / RB, INF[nm]["hi"] / RB)
+        INF[nm]["x_js_grants"] = (INF[nm]["central"] / 510_000, INF[nm]["central"] / 462_000)
+        INF[nm]["x_all_grants"] = INF[nm]["central"] / (462_000 + 77_600)
+    PSH = {nm: dict(partnered=100 * r["partnered"] / r["displaced_households"], partner_earns=100 * r["partner_earns"] / r["displaced_households"],
+                    cut_floor=100 * r["partner_above_cutout"] / r["displaced_households"], cut_sq=100 * r["partner_above_cutout_sq"] / r["displaced_households"],
+                    cut_floor_of_partnered=100 * r["partner_above_cutout"] / r["partnered"], cut_sq_of_partnered=100 * r["partner_above_cutout_sq"] / r["partnered"])
+           for nm, r in (("moderate", mo), ("severe", se))}
+    A("## 11. Second-round effects of an AI displacement shock (all PROVISIONAL; revised 1 November 2026 on the housing evidence report)\n")
+    A("The paper's displacement scenarios (Tables 6.18 to 6.18d; partc.DISP) are a fall in the employment-to-population ratio of 3 points (moderate) or 8 "
+      "points (severe), phased in over 2032-33 to 2035-36 and held, with 15% or 40% more recipients of replaced payments. The paper's model prices their fiscal "
+      "cost. It does not model claims processing, assets tests, debt service or asset prices. What follows uses the model where it reaches, the external evidence "
+      "report (optionb/housing_evidence_report_2026-11-01.md; its item codes A1 to G are cited) where it has sourced an input, and says where neither reaches.\n")
+    # ---- B18 claims surge
+    rows = []
+    for nm in ("moderate", "severe"):
+        for fy in ("2032-33", "2033-34", "2034-35", "2035-36", "2040-41", "2045-46"):
+            r = SU[nm][fy]
+            rows.append([nm.capitalize(), fy, f2(r["displaced"] / 1e6), f0(r["new_displaced"] / 1e3), f2(r["extra_recipients"] / 1e6), f2(r["js_stock"] / 1e6), f"{100 * r['extra_over_js_stock']:.0f}%",
+                         (f"{r['new_displaced'] / RB:.1f}" if r["new_displaced"] > 1e3 else "–"), (f"{r['new_over_js_grants'][0]:.2f} to {r['new_over_js_grants'][1]:.2f}" if r["new_displaced"] > 1e3 else "–"),
+                         f1(r["status_quo_spend"]), f1(r["floor_spend"])])
+    table("Table B18 (revised). The claims surge: displaced workers, extra recipients, the JobSeeker group's stock and the system's annual grants, the paper's displacement scenarios, selected years, 2032-33 to 2045-46 (million; thousand; per cent; A$ billion)",
+          ["Scenario", "Year", "Displaced workers (million, cumulative)", "Newly displaced that year (thousand)", "Extra recipients (million)", "JobSeeker group's stock, no shock (million)",
+           "Extra recipients as a share of the stock", "Newly displaced as a multiple of baseline annual retrenchments", "Newly displaced as a multiple of JobSeeker claims granted a year (E1: 510,000 to 462,000)",
+           "Extra payments, status quo (A$bn)", "Extra payments on the floor (A$bn)"], rows,
+          "Source: optionb_shock.py from partc.scn_vals (the paper's scenarios; the shock phases in by quarters over four years, so the model's inflow is a quarter of the shock each "
+          "year to 2035-36 and nil after). Displaced = ep x eligible adults; extra recipients = rec x replaced-payment recipients (the paper's 15% / 40%, a stock, which exceeds the displaced "
+          "count because the paper also raises claims among people already out of work). JobSeeker group = AIHW's 821,000 JobSeeker and 98,500 Youth Allowance (other) recipients "
+          "scaled with the working-age population. Baseline retrenchments = the ABS annual retrenchment rate (1.8%, household.S1_RETRENCH) on the household model's earners "
+          f"({HHR['moderate_2035-36']['rates']['employed_model'] / 1e6:.1f} million; {RB / 1e3:.0f} thousand a year). System throughput (evidence report E1a-c, Services Australia annual "
+          "reports): JobSeeker claims granted 510,000 (2023-24), 471,000 (2024-25) and 462,000 (2025-26), finalised 606,000, 541,000 and 528,000; Youth Allowance (jobseeker) granted "
+          "80,000, 78,400 and 77,600. These are finalised decisions, not lodgements. Processing (E2a, E3a): mean 22 days (JobSeeker) and 26 (Youth Allowance) in 2023-24; at the 2020 "
+          "surge 1,073,850 JobSeeker claims were finalised between 16 March and 8 May 2020 at a mean of 10 days, with claims on hand peaking at 443,507 on 9 April and agency headcount up 7,595, "
+          "using Single Touch Payroll-based straight-through processing (E3b, E3c): the precedent for a surge protocol. Extra payments = extra recipients x the average payment "
+          "(JobSeeker's base rate or the floor, at the model's part-rate distribution). PROVISIONAL.")
+    fact("claims_surge", {nm: {fy: {k: v for k, v in SU[nm][fy].items()} for fy in SU[nm]} for nm in SU}, "persons; A$bn", "2032-33 to 2045-46", "optionb_shock.py (partc.scn_vals)", provisional=True)
+    fact("claims_surge_inflow", {nm: dict(central_2033_34=INF[nm]["central"], range_2032_33_to_2035_36=[INF[nm]["lo"], INF[nm]["hi"]], x_retrenchments=INF[nm]["x_retrench"],
+                                          x_jobseeker_grants=INF[nm]["x_js_grants"], x_jobseeker_and_ya_grants=INF[nm]["x_all_grants"]) for nm in INF},
+         "newly displaced workers a year; multiples", "2032-33 to 2035-36", "optionb_shock.py; evidence report E1 (grants 462,000 to 510,000; YA 77,600)",
+         "quote the 2033-34 figure with the four-year range: moderate about %.0f thousand (%.0f to %.0f), severe about %.0f thousand (%.0f to %.0f)" % (INF["moderate"]["central"] / 1e3, INF["moderate"]["lo"] / 1e3, INF["moderate"]["hi"] / 1e3, INF["severe"]["central"] / 1e3, INF["severe"]["lo"] / 1e3, INF["severe"]["hi"] / 1e3), provisional=True)
+    fact("claims_surge_baseline_flows", dict(employed_model=HHR["moderate_2035-36"]["rates"]["employed_model"], retrench_rate=0.018, retrench_baseline=RB,
+                                             jobseeker_granted=EV["E1"]["jobseeker_granted"], jobseeker_finalised=EV["E1"]["jobseeker_finalised"], ya_jobseeker_granted=EV["E1"]["ya_jobseeker_granted"],
+                                             processing=dict(mean_days_2023_24=EV["E2"]["mean_days_2023_24"], surge_2020=EV["E3"])),
+         "persons a year; days", "2023-24 to 2025-26; 2020", "evidence report E1a-c, E2a, E3a-c (Services Australia annual reports; DSS ministers 30 July 2024; Senate COVID-19 committee answer 8 May 2020; ANAO 2020-21 No. 23)", provisional=True)
+    # barriers and the partner test
+    A("**Barriers in current rules (sourced thresholds; share caught not computable).** JobSeeker's assets test cancels payment when assessable assets exceed A$333,000 for a "
+      "single homeowner, A$600,000 for a single non-homeowner, and A$499,000 / A$766,000 for a couple (1 July 2026; evidence report D1). The liquid-assets waiting period starts at "
+      "A$5,500 of liquid assets (single) or A$11,000 (partnered or with dependants) and reaches its 13-week maximum at A$11,500 / A$23,000 (D2); liquid assets include mortgage "
+      "offset accounts but not redraw balances (D2b). The household model carries tenure and mortgage debt but no other assets, and the paper's worked households assume no assets "
+      "test (Table 6.58, C36), so the share of displaced workers caught by either rule cannot be computed; the published ABS wealth tables do not identify it either (D4), and a "
+      "weighted Survey of Income and Housing or HILDA wealth-module tabulation of employed adults' assessable assets is needed. An upper bound on investor exposure: 2.02 million "
+      "households, 21%, owned another residential property in 2019-20, including holiday homes (C2a). What the model does give is the partner income test. With the JobSeeker "
+      f"partner cut-out of A$2,711.67 a fortnight (D3), {PSH['moderate']['partnered']:.1f}% of displaced households in the moderate scenario are couples and "
+      f"{PSH['moderate']['partner_earns']:.1f}% have a partner with income; the partner test removes {PSH['moderate']['cut_floor']:.1f}% of displaced households from any payment on "
+      f"the floor (cut-out A${EV['D3'].get('cutout_floor_2028_29', 87_724):,.0f} a year in 2028-29, Table F4-71's shifted for the higher free area) and {PSH['moderate']['cut_sq']:.1f}% under the status quo (JobSeeker's own "
+      f"cut-out, A${EV['D3'].get('cutout_js_2028_29', 70_500):,.0f} a year); severe: {PSH['severe']['cut_floor']:.1f}% and {PSH['severe']['cut_sq']:.1f}%. The earlier 42% was Table F4-71's 49% of partnered earners applied by "
+      "hand; the computed figures above replace it.\n")
+    fact("partner_income_test_displaced", dict(PSH, cutout_js_pf=EV["D3"]["partner_cutout_pf"], cutout_floor_2028_29=EV["D3"].get("cutout_floor_2028_29"), cutout_js_2028_29=EV["D3"].get("cutout_js_2028_29"),
+                                              note="shares of displaced households (mean of 10 draws); 'cut' = partner income above the cut-out so no payment"),
+         "% of displaced households", "2035-36", "optionb_shock.py; evidence report D3", provisional=True)
+    fact("means_test_thresholds", dict(assets_test=EV["D1"], liquid_assets_waiting_period=EV["D2"], share_of_displaced_caught="NOT COMPUTABLE: no asset microdata (D4)", other_property_households=EV["C2"]),
+         "A$; households", "1 July 2026; 2019-20", "evidence report D1, D2, D2b, D4, C2a", provisional=True)
+    # ---- B19 debt service
+    for key_fy in ("2035-36",):
+        rows = []
+        for nm in ("moderate", "severe"):
+            r = HHR[f"{nm}_{key_fy}"]["pro_rata"]
+            for basis, lab in (("sq", "Status quo: JobSeeker at today's rate"), ("floor", "Part 1 / P*'s floor"), ("star", "P*: the floor with Rent Assistance +75%")):
+                b = r[basis]
+                n50 = b["mortgage"]["over50"]
+                rows.append([nm.capitalize(), lab, f2(r["displaced_households"] / 1e6), f2(r["by_tenure"]["mortgage"] / 1e6), f0(b["mortgage"]["median_hc"]), f0(b["mortgage"]["median_inc"]),
+                             f"{100 * b['mortgage']['median_ratio']:.0f}%", f0(b["mortgage"]["over30"] / 1e3), f0(n50 / 1e3), f0(0.4 * n50 / 1e3), f0(0.6 * n50 / 1e3),
+                             (f1(b["mortgage"]["months_per_10k"]) if b["mortgage"]["months_per_10k"] else "–"),
+                             f2(r["by_tenure"]["private"] / 1e6), f0(b["private"]["median_hc"]), f0(b["private"]["mean_cra"]), f"{100 * b['private']['median_ratio']:.0f}%",
+                             f0(b["private"]["over30"] / 1e3), f0(b["private"]["over50"] / 1e3)])
+        table(f"Table B19 (revised). Debt service and rent on the floor: displaced households by tenure, their housing costs against income on each basis, and buffers, {key_fy} (million; thousand; A$ a year; per cent; months)",
+              ["Scenario", "Income basis after displacement", "Displaced households (million)", "With a mortgage (million)", "Mortgage: median repayments (A$ a year)", "Median household income on this basis",
+               "Median repayments / income", "Repayments above 30% of income (thousand)", "Above 50% (thousand)", "of which likely to exhaust buffers within three months (40%, C1; thousand)", "rest (thousand)",
+               "Months a A$10,000 buffer covers the excess over 30% (median)",
+               "Private renters (million)", "Median rent (A$ a year)", "Mean Rent Assistance paid", "Median rent / income", "Rent above 30% of income (thousand)", "Above 50% (thousand)"], rows,
+              "Source: optionb_shock.py (household model, Part F4 calibration, population of " + key_fy + "; mean of 10 random draws). Method: displaced workers drawn pro rata from "
+              "working-age earners not on a payment (3% or 8% of adults, as partc._clawback_x); the displaced worker's earnings go to nil and the household gets JobSeeker at "
+              "today's rate (status quo) or the floor (A$" + f"{HHR['moderate_' + key_fy]['rates']['floor_single']:,.0f}" + " single, A$" + f"{HHR['moderate_' + key_fy]['rates']['floor_partnered']:,.0f}" +
+              " each partnered, " + key_fy + "), with the partner income test (linear taper to the cut-out: JobSeeker A$2,711.67 a fortnight, D3; the floor's A$87,700 a year in 2028-29), "
+              "the payment taxed, other members' incomes and current FTB unchanged, and Rent Assistance paid to private renters as income support (maximum A$" + f"{HHR['moderate_' + key_fy]['rates']['cra_single_max']:,.0f}" +
+              " single; +75% under P*). Housing costs are the model's (mortgage repayments calibrated to ABS 2019-20 by quintile; rents). Buffers (evidence report C1a, C1b): about 40% of loans "
+              "had under three months of repayments in offset and redraw in 2022 (all loans, over half of them fixed-rate or investor loans, so not an owner-occupier share), and the median "
+              "buffer was over a year of repayments in October 2026 (C1c); the 40% is applied to the above-50% group as the share likely to exhaust buffers within three months, the rest "
+              "carrying the loan for longer. Arrears context (C3, B6, C4a): residential non-performing loans 1.01% of credit in June 2026 (series peak 1.11%, June 2020); hardship "
+              "arrangements usually up to three months; after serious arrears the median is three months to repayment and six to cure or foreclosure, with about half of deeply "
+              "negative-equity loans ending in foreclosure. The A$10,000 column is kept as the model's own measure: how long A$10,000 of buffer meets the part of repayments above 30% "
+              "of income. PROVISIONAL: the draw, the partner test's linear form, the 30% / 50% thresholds and the application of an all-loan buffer share to displaced owner-occupiers are choices made here.")
+    fact("debt_service_displaced", HHR, "persons / households (x W); A$ a year; ratios", "2028-29 and 2035-36", "optionb_shock.py (household model)", provisional=True)
+    fact("buffers_and_arrears_inputs", dict(C1=EV["C1"], C3=EV["C3"], C4=EV["C4"], applied="40% of the above-50% group taken as likely to exhaust buffers within three months"),
+         "shares; months", "2022 to October 2026", "evidence report C1a-c, C3, C4a, B6", provisional=True)
+    rows = []
+    r = mo
+    for q in range(5):
+        row = [["Lowest", "Second", "Third", "Fourth", "Highest"][q]]
+        for basis in ("sq", "floor", "star"):
+            bq = r[basis]["mortgage"]["by_q"][q]
+            row += [f0(bq["n"] / 1e3), (f0(bq["median_hc"]) if bq["median_hc"] else "–"), (f"{100 * bq['median_ratio']:.0f}%" if bq["median_ratio"] else "–"), f0(bq["over30"] / 1e3), f0(bq["over50"] / 1e3)]
+        rq = r["star"]["private"]["by_q"][q]
+        row += [f0(rq["n"] / 1e3), (f0(rq["median_hc"]) if rq["median_hc"] else "–"), (f"{100 * r['floor']['private']['by_q'][q]['median_ratio']:.0f}%" if r['floor']['private']['by_q'][q]['median_ratio'] else "–"),
+                (f"{100 * rq['median_ratio']:.0f}%" if rq["median_ratio"] else "–")]
+        rows.append(row)
+    table("Table B19a (revised). Displaced mortgage holders and private renters by income quintile (pre-shock household income), moderate scenario, 2035-36 (thousand; A$ a year; per cent)",
+          ["Quintile"] + sum([[f"{lab}: mortgage households (thousand)", "median repayments (A$)", "median repayments / income", "above 30% (thousand)", "above 50% (thousand)"]
+                             for lab in ("Status quo", "Floor", "P*")], []) + ["Private renters (thousand)", "median rent (A$)", "median rent / income, floor", "median rent / income, P*"], rows,
+          "Source: as Table B19. Quintiles are the household model's equivalised income quintiles before the shock. PROVISIONAL.")
+    # ---- B20 forced sales
+    rows = []
+    for nm in ("moderate", "severe"):
+        for basis, lab in (("sq", "Status quo"), ("floor", "Part 1 (floor)"), ("star", "P* (floor and Rent Assistance +75%)")):
+            f_ = FSR["by"][f"{nm}_2035-36"][basis]
+            rows.append([nm.capitalize(), lab, f0(f_["over30"] / 1e3), f0(f_["cannot_service"] / 1e3), f0(f_["low_buffer_within_3_months"] / 1e3),
+                         f"{100 * f_['share_of_transfers_2025_26']:.1f}%", f"{100 * f_['share_of_transfers_5yr']:.1f}%", "not quantified", f"{f_['us_benchmark_price_points']:.1f} points"])
+    table("Table B20 (revised). Forced sales as all-sell-within-a-year stress tests: displaced mortgage holders above 50% of income on each basis, against a year's recorded dwelling transfers; the national price effect not quantified, 2035-36 (thousand; per cent)",
+          ["Scenario", "Income basis", "Repayments above 30% of income (thousand)", "Above 50% ('cannot service'; thousand)", "of which low-buffer (40%, C1; thousand)",
+           "Share of 2025-26 recorded transfers (560,005, A1) if all sold within a year", "Share of the five-year average (545,540, A1)", "National price effect", "Imported US crisis benchmark only, NOT TRANSFERABLE (B2: 10% more homes on the market ≈ 4 points)"], rows,
+          "Source: optionb_shock.py; evidence report A1 (ABS Total Value of Dwellings, June quarter 2026: 560,005 recorded transfers in 2025-26, provisional; mean 545,540 over 2021-22 to "
+          "2025-26; contract-exchange records, not settlements). STRESS TESTS, NOT A MODEL RESULT: the counts are households whose repayments exceed half of their income on that basis; the "
+          "repayment-to-income threshold alone does not establish a sale, some would draw buffers (median over a year, C1c), some be carried by lenders (hardship usually up to three months, "
+          "C4a; after serious arrears a median six months to cure or foreclosure, B6), and the 2020 deferral experience ended with 3% of exiting loans non-performing (C4b). The national price "
+          "effect is NOT QUANTIFIED: the evidence report finds no defensible Australian conversion from extra forced sales to a national price fall (B; the stock elasticity of Saunders and "
+          "Tulip 2019, B5, does not apply to resales), so the earlier 0.25 to 1.0 elasticity and its 2.9% to 31% range are withdrawn pending a spatial housing model. The one imported "
+          "sensitivity is the US crisis benchmark of Mian, Sufi and Trebbi (2015, B2: 10% more homes on the market about 4 points lower prices; listings in a judicial-foreclosure "
+          "setting, roughly 0.53 net listings per foreclosure), applied here to recorded transfers, which changes its denominator and meaning: it is not transferable to Australia. The "
+          "character of the effect from the local evidence: a 27% foreclosure sale discount and about 1% lower nearby prices within 0.05 miles (Campbell, Giglio and Pathak 2011, B1); "
+          "−0.87% [−1.48, −0.26] per extra concurrent listing within 250 m in Blacktown, with other Sydney regions' intervals including zero (Sijp and Li 2026, B4): local, concentrated "
+          "where displaced workers live and sell at the same time, not a national index. The model has no investor households, so investor forced sales are not counted (upper bound on "
+          "exposure: 21% of households own another residential property, C2a). The design matters only through the household's income: the floor cuts the status quo's count by about a "
+          "quarter; Rent Assistance does nothing for mortgage holders.")
+    fact("forced_sales_stress_test", dict(by=FSR["by"], sales=FSR["sales"], low_buffer_share=FSR["low_buffer_share"], price_effect=FSR["price_effect"],
+                                          imported_benchmark="Mian, Sufi and Trebbi 2015 (B2): 10% more homes on the market ~ 4 points; NOT TRANSFERABLE",
+                                          local_character=EV["B"]), "households; share of a year's transfers; points", "2035-36", "optionb_shock.py; evidence report A1, B1, B2, B4, C1", provisional=True)
+    rows = []
+    for d, lab in (("p1", "Part 1 alone"), ("star_m2", "P*"), ("pkg", "Targeted package")):
+        e = EPS_[d]
+        rows.append([lab] + sum([[e[k]["first"] or "none", f1(e[k]["total"])] for k in ("1.0", "0.9", "0.8", "0.5")], []) + [f1(e["0.9"]["ept_loss_2035_36"])])
+    table("Table B20a (revised). A sensitivity, not a consequence: the excess profits tax at 90%, 80% and 50% of its costing, Part 1, P* and the package, 2028-29 to 2045-46 (financial year; A$ billion)",
+          ["Design", "Central: first levy", "levies to 2045-46", "EPT at 90%: first levy", "levies", "EPT at 80%: first levy", "levies", "EPT at 50%: first levy", "levies", "EPT lost in 2035-36 at 90% (A$bn)"], rows,
+          "Source: optionb_shock.py, optionb_fiscal.fund's rule on the central net cost paths (no displacement). The excess profits tax's bank share is not disclosed in the PBO costing "
+          "ECR-2025-3194 (evidence report F1: no sector contribution; A$89.6bn net over 2025-26 to 2028-29), so a fall in bank profits cannot be mapped to the yield: this is a sensitivity "
+          "to the yield, whatever its cause, not a priced consequence of a price fall. State property taxes are outside the five taxes and the model: transfer duty raised A$34.4bn and land "
+          "tax A$20.0bn across the states in 2024-25 (ABS, F2; NSW A$12.2bn and A$8.3bn, Victoria A$9.4bn and A$7.2bn). NSW's 2026-27 Budget puts one point of residential prices at "
+          "A$122m of duty and one point of transaction volumes at A$98m (F3): forced sales raise volumes while any price fall cuts receipts, so the net sign for state budgets depends "
+          "on the price effect, which is unquantified. Land tax follows statutory valuations, not transaction prices.")
+    fact("ept_sensitivity_bank_profits", dict(EPS_, bank_share="NOT DISCLOSED in ECR-2025-3194 (evidence report F1); sensitivity to the yield only"), "financial year; A$bn", "2028-29 to 2045-46", "optionb_shock.py", provisional=True)
+    fact("state_property_taxes", dict(F2=EV["F2"], F3=EV["F3"], net_sign="depends on the unquantified price effect: forced sales raise volumes (+A$98m a point, NSW), a price fall cuts receipts (−A$122m a point)"),
+         "A$bn; A$m per point", "2024-25; 2026-27", "evidence report F2 (ABS Taxation Revenue 2024-25), F3 (NSW Budget 2026-27, Table E.3)", provisional=True)
+    A("**Rents and the after-housing losers: not established.** Table 6.31's scenario raises rents by 6.6% to 32.4% of renters' gains; it is a demand effect of Stage 1's cash, not a "
+      "displacement scenario. The evidence report finds no causal Australian evidence on the rent response to forced investor sales or an asset-price fall and says not to assume rents "
+      "rise (G). The mechanisms run both ways: displaced owners who lose a mortgaged home become renters and investor sales to owner-occupiers withdraw rental stock, which raise rental "
+      "demand relative to supply; renters who buy, and falling household incomes, lower it, and a landlord-to-owner sale removes both a rental dwelling and a renting household (G2). "
+      "Investor interest costs pass through to rents only weakly (G1). Which dominates is not identified, so the direction of rents in a displacement, and its effect on the after-housing "
+      "losers of Table B8, is not estimated. What the design changes is only renters' incomes: Rent Assistance +75% lifts displaced private renters' incomes by about "
+      f"A${mo['star']['private']['mean_cra'] - mo['floor']['private']['mean_cra']:,.0f} a year and cuts the number paying more than half their income in rent from "
+      f"{mo['floor']['private']['over50'] / 1e3:.0f} thousand to {mo['star']['private']['over50'] / 1e3:.0f} thousand (moderate); it does nothing for mortgage holders. The universal pathway changes nothing before a Stage 2 vote.\n")
+    fact("rents_after_displacement", dict(direction="NOT ESTABLISHED (evidence report G)", mechanisms_up=["dispossessed owners become renters", "investor sales to owner-occupiers withdraw rental stock"],
+                                          mechanisms_down=["renters who buy leave the rental market", "falling household incomes", "a landlord-to-owner sale removes a renting household as well as a dwelling (G2)"],
+                                          after_housing_losers_effect="NOT ESTIMATED"), "text", "2032-33 onwards", "evidence report G1-G3", provisional=True)
+    # ---- B21 policy responses
+    rows = []
+    for nm in ("moderate", "severe"):
+        s36 = SU[nm]["2035-36"]
+        tot_en = sum(SU[nm][fy]["enrol_surge_floor"] for fy in Y)
+        tot_en_sq = sum(SU[nm][fy]["enrol_surge_sq"] for fy in Y)
+        lawp = sum(SU[nm][fy]["lawp_waiver_upper"] for fy in Y)
+        rows.append([nm.capitalize(), f2(s36["enrol_surge_floor"]), f1(tot_en), f2(s36["enrol_surge_sq"]), f1(tot_en_sq), f2(SU[nm]["2033-34"]["lawp_waiver_upper"]), f1(lawp)])
+    table("Table B21 (revised). Policy responses the model can price: automatic enrolment of displaced workers from Single Touch Payroll data, and a liquid-assets waiting period waiver (upper bound), 2032-33 to 2045-46 (A$ billion)",
+          ["Scenario", "(a) Enrolment surge cost, 2035-36, floor basis", "(a) Sum 2032-33 to 2045-46, floor basis", "(a) 2035-36, status quo basis", "(a) Sum, status quo basis",
+           "(b) Liquid-assets waiting period waiver, upper bound, 2033-34", "(b) Sum of the four inflow years"], rows,
+          "Source: optionb_shock.py. (a) Automatic enrolment: the paper's A$5.1bn is the lift in take-up of the lifted payments from 85% to 95% (partc.targeted_package); applied "
+          "to the extra recipients of the displacement scenario only (which the paper's scenario costs at current take-up: ASSUMPTION), the surge-only cost is the extra 10 points "
+          "of take-up times the average payment (the floor, or JobSeeker's rate under the status quo). It is a cost of reaching people, not an offset. The precedent is 2020 (E3): "
+          "Single Touch Payroll-based straight-through processing finalised 1.07 million claims in eight weeks at a mean of 10 days. (b) Waiver: an UPPER BOUND, every newly "
+          "displaced worker paid 13 weeks sooner at the floor; the waiting period starts at A$5,500 / A$11,000 of liquid assets and reaches 13 weeks at A$11,500 / A$23,000 (D2), "
+          "and the share of the displaced actually subject to it cannot be computed (no asset microdata, D4): each 10% subject to the full 13 weeks costs a tenth of the figure shown. "
+          "Deferring the assets test (cut-offs A$333,000 / A$600,000 single, A$499,000 / A$766,000 couple, D1) on investment property for displaced workers for a stated period: "
+          "CANNOT BE PRICED (no asset data; at most the 21% of households with another residential property, C2a, times the period's payments). (c) A mortgage deferral or hardship "
+          "protocol: CANNOT BE PRICED by the model; it is a lender and APRA matter (hardship arrangements usually up to three months, C4a; 8% of mortgage holders held deferrals in "
+          "June 2020, C4b) whose cost falls on banks' net interest and provisions, with a Budget effect only through company tax and the excess profits tax (Table B20a).")
+    fact("policy_responses_displacement", {nm: dict(enrol_surge_floor_by_year={fy: SU[nm][fy]["enrol_surge_floor"] for fy in Y}, enrol_surge_sq_by_year={fy: SU[nm][fy]["enrol_surge_sq"] for fy in Y},
+                                                     lawp_waiver_upper_by_year={fy: SU[nm][fy]["lawp_waiver_upper"] for fy in Y},
+                                                     assets_test_deferral="CANNOT BE PRICED: no asset data in the model (D4); upper bound 21% of households (C2a)", mortgage_protocol="CANNOT BE PRICED by the model: lender / APRA cost (C4a, C4b)")
+                                           for nm in SU}, "A$bn", "2032-33 to 2045-46", "optionb_shock.py; evidence report D1, D2, D4, C2a, C4, E3", provisional=True)
+    fact("housing_evidence_inputs", EV, "as stated", "various", "optionb/housing_evidence_report_2026-11-01.md (item codes)", provisional=True)
+    SHOCK_PARA = [
+        ("The claims surge", f"In the moderate scenario {SU['moderate']['2035-36']['displaced'] / 1e6:.2f} million workers are displaced by 2035-36 and recipients of replaced payments rise by "
+         f"{SU['moderate']['2035-36']['extra_recipients'] / 1e6:.2f} million, {100 * SU['moderate']['2035-36']['extra_over_js_stock']:.0f}% of the JobSeeker group's stock; in the severe scenario "
+         f"{SU['severe']['2035-36']['displaced'] / 1e6:.2f} million and {SU['severe']['2035-36']['extra_recipients'] / 1e6:.2f} million ({100 * SU['severe']['2035-36']['extra_over_js_stock']:.0f}%). "
+         f"The model's inflow is about {INF['moderate']['central'] / 1e3:.0f},000 newly displaced workers a year over 2032-33 to 2035-36 in the moderate scenario ({INF['moderate']['lo'] / 1e3:.0f},000 to "
+         f"{INF['moderate']['hi'] / 1e3:.0f},000) and {INF['severe']['central'] / 1e3:.0f},000 in the severe ({INF['severe']['lo'] / 1e3:.0f},000 to {INF['severe']['hi'] / 1e3:.0f},000): "
+         f"{INF['moderate']['x_retrench'][0]:.1f} to {INF['moderate']['x_retrench'][1]:.1f} and {INF['severe']['x_retrench'][0]:.1f} to {INF['severe']['x_retrench'][1]:.1f} times the baseline flow of "
+         f"retrenchments, and about {INF['moderate']['x_js_grants'][0]:.2f} to {INF['moderate']['x_js_grants'][1]:.2f} and {INF['severe']['x_js_grants'][0]:.2f} to {INF['severe']['x_js_grants'][1]:.2f} times the "
+         "JobSeeker claims Services Australia granted a year in 2023-24 to 2025-26 (510,000 to 462,000; a further 77,600 to 80,000 Youth Allowance jobseekers). Claims took a mean of 22 days "
+         "(JobSeeker) and 26 (Youth Allowance) in 2023-24; in the 2020 surge 1.07 million claims were finalised in eight weeks at a mean of 10 days with payroll-data automation, the precedent "
+         "for a surge protocol. Under current rules the liquid-assets waiting period (from A$5,500 single or A$11,000 partnered, up to 13 weeks) and the assets test (A$333,000 single homeowner "
+         "to A$766,000 non-homeowner couple) would delay or deny payment to displaced workers with savings or non-home property; no asset microdata is available to count them. The partner "
+         f"income test removes {PSH['moderate']['cut_floor']:.0f}% of displaced households from any payment on the floor and {PSH['moderate']['cut_sq']:.0f}% under the status quo; "
+         f"{PSH['moderate']['partnered']:.0f}% are couples."),
+        ("Debt service on the floor", f"Of the {mo['displaced_households'] / 1e6:.2f} million households with a displaced worker in the moderate scenario, {mo['by_tenure']['mortgage'] / 1e6:.2f} million "
+         f"have a mortgage and {mo['by_tenure']['private'] / 1e6:.2f} million rent privately. On the floor, {mo['floor']['mortgage']['over30'] / 1e3:.0f} thousand mortgage holders "
+         f"pay more than 30% of their remaining household income in repayments and {mo['floor']['mortgage']['over50'] / 1e3:.0f} thousand more than half (status quo: "
+         f"{mo['sq']['mortgage']['over30'] / 1e3:.0f} and {mo['sq']['mortgage']['over50'] / 1e3:.0f} thousand); among private renters {mo['floor']['private']['over30'] / 1e3:.0f} thousand pay more than "
+         f"30% in rent on the floor and {mo['star']['private']['over30'] / 1e3:.0f} thousand with P*'s Rent Assistance (status quo {mo['sq']['private']['over30'] / 1e3:.0f} thousand). "
+         f"In the severe scenario the mortgage counts are {se['floor']['mortgage']['over30'] / 1e3:.0f} and {se['floor']['mortgage']['over50'] / 1e3:.0f} thousand on the floor. About 40% of loans had "
+         f"under three months of repayments in buffers in 2022 (over half of them fixed-rate or investor loans) and the median buffer was over a year in October 2026; on that share about "
+         f"{0.4 * mo['floor']['mortgage']['over50'] / 1e3:.0f} thousand of the moderate scenario's {mo['floor']['mortgage']['over50'] / 1e3:.0f} thousand would exhaust their buffers within three months. "
+         "Mortgage non-performing loans were 1.01% of credit in June 2026 (peak 1.11% in June 2020); hardship arrangements usually run up to three months, and after serious arrears the "
+         "median is three months to repayment and six to cure or foreclosure."),
+        ("Forced sales and asset prices", f"As a stress test, if the {mo['floor']['mortgage']['over50'] / 1e3:.0f} thousand displaced mortgage holders above half their income on the floor "
+         f"(status quo {mo['sq']['mortgage']['over50'] / 1e3:.0f} thousand; severe scenario {se['floor']['mortgage']['over50'] / 1e3:.0f} thousand) all sold within a year, they would add "
+         f"{100 * FSR['by']['moderate_2035-36']['floor']['share_of_transfers_2025_26']:.1f}% (moderate) or {100 * FSR['by']['severe_2035-36']['floor']['share_of_transfers_2025_26']:.1f}% (severe) to the "
+         "560,005 dwelling transfers recorded in 2025-26 (11.7% and 31.2% of the five-year average). The national price effect is not quantified: no Australian evidence converts extra "
+         "forced sales into a national price fall, and the local evidence (a 27% foreclosure discount and about 1% lower nearby prices in Massachusetts; −0.9% per extra concurrent listing "
+         "within 250 m in Blacktown) describes an effect that is local and concentrated where displaced workers live, not a national index; the only imported benchmark, the United States "
+         "crisis finding that 10% more homes on the market went with prices about 4 points lower, is not transferable. The model has no asset-price feedback: stamp duty and land tax are "
+         "state taxes outside it (A$34.4bn and A$20.0bn in 2024-25; in NSW a point of prices is worth A$122m of duty and a point of volumes A$98m, so forced sales and a price fall pull "
+         "state receipts in opposite directions), and the five taxes feel a price fall only through the excess profits tax, whose bank share the PBO costing does not disclose; at 90% of "
+         f"its yield P*'s first levy moves to {EPS_['star_m2']['0.9']['first']} and its levies to A${EPS_['star_m2']['0.9']['total']:.0f}bn. Whether rents rise or fall is not established. "
+         f"The floor cuts the status quo's count of mortgage holders above the 50% line by about {100 * (1 - mo['floor']['mortgage']['over50'] / mo['sq']['mortgage']['over50']):.0f}%, because most "
+         "displaced mortgage holders have a working partner whose earnings matter more than the payment; Rent Assistance helps only renters."),
+        ("Policy responses", f"Automatically enrolling displaced workers from Single Touch Payroll data would cost A${SU['moderate']['2035-36']['enrol_surge_floor']:.1f}bn a year in the moderate scenario "
+         f"and A${SU['severe']['2035-36']['enrol_surge_floor']:.1f}bn in the severe, by 2035-36 (the extra take-up on the surge only, at the floor); the 2020 surge shows the machinery exists. Waiving the "
+         f"liquid-assets waiting period for displaced workers would cost at most A${SU['moderate']['2033-34']['lawp_waiver_upper']:.1f}bn to A${SU['severe']['2033-34']['lawp_waiver_upper']:.1f}bn a year during the inflow, less in "
+         "proportion to the share actually subject to it. Deferring the assets test on investment property, and a mortgage hardship protocol, cannot be priced by the model.")]
+    for t_, p_ in SHOCK_PARA:
+        A(f"**{t_}.** {p_}\n")
+    fact("quotable_paragraphs_displacement", {t_: p_ for t_, p_ in SHOCK_PARA}, "text", "2032-33 to 2045-46", "optionb_report.py from optionb_shock.py and the evidence report", provisional=True)
 
 # ======================================================================================================================
 # 8. Summary

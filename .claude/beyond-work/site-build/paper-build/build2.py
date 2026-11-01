@@ -119,6 +119,7 @@ add(seg(1743, 1838, [
  ("With no Stage 2 vote the severe levy then reaches 2.88% to 6.01% of market income by 2045-46 and the moderate levy 1.15% to 2.22%.",
   "With no universal payment, Part 1's levy then reaches 3.21% to 6.30% of market income by 2045-46 in the severe case and 1.43% to 2.41% in the moderate case (Table 6.52)."),
 ]))
+add(F('06g_ch6_second_round.md'))
 add(seg(1840, 1875))
 add(seg(2318, 2454, [
  ("which moves the levy and the dividend, and the taxpayer response", "which moves the levy, and the taxpayer response"),
