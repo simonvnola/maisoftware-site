@@ -2454,8 +2454,8 @@ if (typeof module !== 'undefined') module.exports = BW;
       var s0 = r.stages.a; sh.a2829 = s0 ? shareOf(M.distUnits(s0.fy, s0.U, s0.F, 0, 0, s0.reg, 0), MATERIAL) : null;
       return { sh: sh, dec: dec, all: all };
     }
-    // ---- option B: P* and the targeted package (optionb_fiscal.py). Their net cost is Part 1's (this model, live) plus the script's
-    // difference from Part 1 in each year; the five taxes fund it under Part 1 alone's rule (partF_r11.C3's recursion: the balance
+    // ---- option B: P* and the package: Part 1's net cost (live) plus the script's fixed deltas (optionb_fiscal.py)
+    // the five taxes fund the difference under Part 1 alone's rule (partF_r11.C3's recursion: the balance
     // carried at the debt rate, a negative balance after 2031-32 levied). basis 'cf': Rent Assistance on the fiscal model's path
     // (CPI and population, the default); 'hh': on the household model's rents (Tables B1 and B3).
     var IR = 43.4 / 1051.0, REPAY = '2031-32';
@@ -2934,8 +2934,7 @@ if (typeof module !== 'undefined') module.exports = BW;
   // better or worse off only by more than A$5 a week
   function wordFor(total) { return Math.abs(total) / 52 < 5 ? 'about the same' : total > 0 ? 'better off' : 'worse off'; }
   function netWords(total) { var w = Math.abs(total) / 52; return w < 5 ? 'About the same: ' + wk(total) + ' a week (' + yr(total) + ' a year), within A$5 a week' : wk(total) + ' a week ' + (total > 0 ? 'better off' : 'worse off') + ' (' + yr(total) + ' a year)'; }
-  // ---------- the household's share of the five funding taxes (Table B11: by decile of equivalised current-rules disposable income,
-  // the paper's central allocation with its low and high incidence variants, 2028-29; scaled to a later year by that year's five taxes)
+  // household's share of the five funding taxes (Table B11 by decile; low and high incidence variants; scaled by that year's taxes)
   function taxShare(r, fy) {
     var me = state.me, a = r.personal.a, kids = me.kids.slice(0, me.nkids);
     var scale = 1 + (me.hh === 'couple' ? 0.5 : 0) + kids.reduce(function (t, k) { return t + (k >= 14 ? 0.5 : 0.3); }, 0);   // modified OECD scale
