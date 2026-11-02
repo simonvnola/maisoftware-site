@@ -264,3 +264,14 @@ I12. The paper deals with the second-round effects of an AI displacement
      bounded, provisional estimate and its sources, or a plain statement of
      what cannot be estimated. Policy options are priced where the model can
      price them, and the overview summarises the finding in plain words.
+I13. The paper and the overview are organised as one argument: where Australia
+     is now (current state and problems, with today's poverty rates, their
+     sources and years, and the paper's targets); what is likely to happen in
+     the near future (stated as ranges with honest uncertainty, including the
+     lesson of the industrial revolution, with sources); one or two solutions
+     (the paper's recommendation, each tied to the problems it fixes); and
+     whether the model could work beyond Australia (what transfers, what
+     depends on Australian institutions, with no unsourced claims about other
+     countries). The thesis (a good life, not jobs) is stated plainly, and the
+     paper is consistent with it: employment is monitored, not targeted, and
+     any place the design falls short of the thesis is named.
