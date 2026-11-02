@@ -60,10 +60,8 @@ add(F('01_front_ch1.md'))
 # ======================= CHAPTER 2
 ch2a = seg(52, 72, [
  ("Government should prepare now, because AI is advancing quickly and the safety net already leaves millions in poverty, though the evidence on AI's first job effects is mixed. The evidence of mass job loss is not yet in, which is why the paper proposes a staged and tested response.",
-  "Government should act now on the safety net, which already leaves millions in poverty, and prepare for AI, which is advancing quickly but has not yet displaced workers across the economy. That difference is why the paper proposes a targeted floor now and only tests for anything universal."),
+  "Government should act now on the safety net, which already leaves millions in poverty, and prepare for AI, which is advancing quickly but has not yet displaced workers across the economy. This chapter sets out where Australia is now, what is likely to happen next and the lesson of the industrial revolution. It then states the policy problem and the paper's thesis: that government's aim should be a good life for citizens, not jobs for their own sake. The difference between a problem that exists now and one that may come is why the paper proposes a targeted floor now and only tests for anything universal."),
 ])
-add(ch2a)
-add(F('02_ch2_young.md'))
 ch2b = seg(80, 191, [
  ("| Stanford Digital Economy Lab (2026) [S26] | Young workers in exposed jobs 19% behind peers, mainly through less hiring | Observational (payroll data); working paper | **Moderate.** Descriptive, not causal; United States only |",
   "| Stanford Digital Economy Lab (2026) [S26, S_CANARIES] | Young workers in exposed jobs 19% behind peers, mainly through less hiring | Observational (payroll data); working paper | **Moderate.** Descriptive, not causal; United States only |\n| Yale Budget Lab (n.d.) [S_YALE26] | Occupational mix not yet changing with AI | Observational | **Moderate.** United States only |\n| Danish data (n.d.) [S_DANISH] | Effects above 2% ruled out | Observational | **Moderate.** One country |"),
@@ -91,7 +89,49 @@ ch2b = seg(80, 191, [
  ("| Sections 5, 6 and 7 (Tables 5.3, 6.7a, 7.1 and 7.2; Figure 7.1) | Staged ABI with a floor and a child payment, Stage 1 continuing unless a stage is triggered, and Part 2's dividend left to Parliament as options; dated roadmap, legislation and agencies |",
   "| Sections 5, 6 and 7 (Tables 5.7, 5.9, 5.15, 7.1 and 7.2; Figure 7.1) | P\\* as Stage 1; the targeted package as the alternative if Parliament weights poverty above work incentives; Part 1 rejected, with its price; the universal pathway's tests legislated, no rates; no dividend now; dated roadmap, legislation and agencies |"),
 ])
-add(ch2b)
+def cut(s, a, b=None):
+    i = s.index(a); j = s.index(b) if b else len(s)
+    assert i < j; return s[i:j].rstrip('\n') + '\n'
+ch2_head = cut(ch2a, '## 2. The case for change', '### AI capability is rising quickly')
+ch2_ai = cut(ch2a, '### AI capability is rising quickly')
+ch2_prod = cut(ch2b, '### Productivity and pay', '### The safety net already leaves millions in poverty')
+ch2_now = cut(ch2b, '### The safety net already leaves millions in poverty', '**Table 2.1.')
+ch2_t21 = cut(ch2b, '**Table 2.1.', '### The policy problem')
+ch2_rest = cut(ch2b, '### Objectives')
+assert ch2b.index('### The policy problem') < ch2b.index('### Objectives')
+ch2_now = ch2_now.replace('### The safety net already leaves millions in poverty', '### Where Australia is now: a safety net that leaves millions in poverty', 1)
+pa = ch2_now.index('Public support for a response is conditional.')
+ch2_now = ch2_now[:pa] + F('02a_ch2_now_extra.md') + '\n' + ch2_now[pa:]
+for a_, b_ in [
+ ("| 5 | Keep Australians in work | (a) Employment-to-population ratio; (b)",
+  "| 5 | Work stays a choice that pays (a guardrail, not a target) | (a) Employment-to-population ratio, reported against Treasury's projection as a risk indicator; (b)"),
+ ("| (a) Within 1 point of Treasury's projection each year; (b) no larger than a 3-point fall,",
+  "| (a) No target: a shortfall of more than 1 point against Treasury's projection is reported to Parliament with its causes, and changes no payment by itself; (b) no larger than a 3-point fall,"),
+ ("| 7 | Share AI gains and support contribution | (a) If legislated, the dividend paid and published each year, with any fund's balance and the taxes that fund it; (b) rise in the dividend when the excess profits tax grows faster than the Budget baseline; (c) formal volunteering rate | (a) and (b) nil (2026); (c) 23% (2025) [S62] |",
+  "| 7 | Share AI gains and support contribution and wellbeing | (a) If legislated, the dividend paid and published each year, with any fund's balance and the taxes that fund it; (b) rise in the dividend when the excess profits tax grows faster than the Budget baseline; (c) formal volunteering rate; (d) weekly face-to-face contact with family or friends, a measure of wellbeing | (a) and (b) nil (2026); (c) 23% (2025) [S62]; (d) 53% (2025) [S62] |"),
+ ("(c) 26% by 2032 and 30% by 2040 |", "(c) 26% by 2032 and 30% by 2040; (d) reported each survey, with no target until the trial and the Productivity Commission's 2031 review show how far income support moves it |"),
+ ("Objective 2's targets are what the model supports,",
+  "Objective 5 is a guardrail, not a target ('A good life, not jobs', above): nothing in the design aims to raise employment for its own sake. Objective 7(d) adds a wellbeing measure from the ABS General Social Survey. Objective 2's targets are what the model supports,"),
+ ("| Section 2 ('The policy problem'; Table 2.1; Figures 2.1 and 2.2) | Income security depends on work and means tests while AI changes hiring; 14.2% live in poverty after housing costs; data limits stated |",
+  "| Section 2 ('Where Australia is now', 'What is likely to happen next', 'The lesson of the industrial revolution' and 'The policy problem'; Table 2.1; Figures 2.1 and 2.2) | Three parts: 14.2% in poverty after housing costs, with security tied to work and means tests; AI's likely effects over ten years, from little net change to 1.77 million workers displaced by 2035-36 in the paper's scenarios; the industrial revolution's lesson that gains in output reach most people late; data limits stated |"),
+ ("| Section 2 (Table 2.2 and 'Why government must act') | Seven objectives with indicators, baselines and targets the model supports; five reasons markets will not act |",
+  "| Section 2 ('A good life, not jobs', Table 2.2 and 'Why government must act') | The thesis: a good life, not jobs for their own sake; seven objectives with indicators, baselines and targets the model supports, with employment a monitored guardrail; five reasons markets will not act |"),
+ ("Stage 1 removes estimate debts from most family payments but keeps the activity test at the floor, so this failure is reduced, not removed.",
+  "Stage 1 removes estimate debts from most family payments but keeps the activity test at the floor, so this failure is reduced, not removed ('A good life, not jobs', above)."),
+]:
+    assert ch2_rest.count(a_) == 1, a_[:60]
+    ch2_rest = ch2_rest.replace(a_, b_)
+add(ch2_head)
+add(ch2_now)
+add(F('02b_ch2_next.md'))
+add(ch2_ai)
+add(F('02_ch2_young.md'))
+add(ch2_prod)
+add("### The evidence at a glance\n\nTable 2.1 sets out the evidence for this chapter, with the type and strength of each source.\n\n" + ch2_t21)
+add(F('02c_ch2_industrial.md'))
+add(F('02d_ch2_problem.md'))
+add(F('02e_ch2_thesis.md'))
+add(ch2_rest)
 
 # ======================= CHAPTER 3
 add(F('03_ch3_intro.md'))
