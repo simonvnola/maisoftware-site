@@ -1,8 +1,8 @@
 ## 5. The proposal
 
-Stage 1 is a targeted floor, recommended because the paper's own comparison favours it. The universal stages are a pathway whose tests are legislated now and whose rates are not. No dividend is recommended.
+The proposal is two solutions. The first is a targeted floor now, Stage 1, recommended in the form called P\* because the paper's own comparison favours it when poverty is weighed against work incentives and fiscal sustainability. The second is a tested pathway to a universal payment, built before it is needed: its tests are legislated now and its rates are not, and the payment system and surge protocol it would rely on are built in advance (Section 7). Stages 2 and 3 are the universal payments the second solution could lead to. No dividend is recommended; it is an option for later (Section 10).
 
-### Stage 1: a targeted floor (P\*)
+### Solution 1: a targeted floor now (Stage 1, P\*)
 
 P\* has three parts, all from 1 July 2028 (Table 5.1). It lifts working-age payments to a floor at the poverty line. It replaces Family Tax Benefit with a child payment that has no cliffs and no supplement for middle-income families. And it raises the maximum rates of Commonwealth Rent Assistance by 75%. It costs the same as Part 1 in 2028-29 on the fiscal model's basis, A$62.0bn, because the money Part 1 spent on the middle-income supplement pays for the Rent Assistance rise and a slightly smaller supplement. Its full fiscal path is in Section 6.
 
@@ -18,6 +18,8 @@ The variant the 22 October paper reported (A$6,973 a child, with automatic enrol
 | **All three, with implementation** | | **62.1% of households gain before the five taxes; 35.4% are better off after them** | **62.0** |
 
 *Source: author's household model and fiscal model [S5]; Tables 5.7, 5.10, 6.1, 6.14 and 6.20. Note: recipient counts are Part 1's (Table 6.20); P\*'s floor is the same. The floor's cost includes its caseload response (Table 5.10). The child payment is net of the FTB it replaces. The child supplement is A$6,750 rather than Part 1's A$7,452 so that the designs cost the same. The three parts and implementation sum to the total within rounding; the floor and implementation are the remainder in Table 6.1. Provisional.*
+
+The floor keeps JobSeeker's activity test, and with it suspensions and cancellations [S60]. That is the main place where Stage 1 falls short of the paper's thesis that government should secure a good life rather than press people into work (Section 2, 'A good life, not jobs'). The paper keeps the test because removing or easing it is a reform in its own right: its effects on claims, cost and employment are not modelled here, and none of the figures in Sections 5 and 6 assume a change. Recommendation 16 asks for a costed review of mutual obligation before the Bill is introduced.
 
 ### Who is eligible
 

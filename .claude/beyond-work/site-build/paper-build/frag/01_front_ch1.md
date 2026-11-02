@@ -33,7 +33,32 @@ Three corrections were made while answering the critique.
 
 The paper also adds newer evidence on AI and jobs (Section 2), and a new section on three second-round effects of a displacement that earlier versions ignored: a surge of claims, debt service on the floor and forced sales (Section 6), checked against an external evidence review of 1 November 2026, with a surge protocol (Section 7), three new risks and an objection (Section 8) and recommendations and options with their prices where the model can give them (Section 9). The review found no defensible way to turn forced sales into a national price fall, so the paper gives none. Table 8.6 gives each criticism, the answer and where the paper changed.
 
+The paper is also restructured around one argument: where Australia is now, what is likely to happen next, two solutions (a targeted floor now and a tested, pre-built pathway to a universal payment), and what in the design could serve other countries (Sections 1, 2, 5 and 9). It states its thesis, that government's aim should be a good life for citizens, not jobs for their own sake, adds the lesson of the industrial revolution, turns the employment objective into a guardrail that is monitored, not targeted, and says plainly where Stage 1 falls short of the thesis: it keeps the activity test (Sections 2, 5 and 9).
+
 ## 1. Executive summary
+
+This paper argues that government's aim in the AI transition should be a good life for Australians, not jobs for their own sake. Paid work is one route to a good life, and for most people the main one, but it is a route, not the goal. A government that targets job growth for its own sake treats citizens as resources to be used and, at worst, presses them into whatever work is left. In Britain's industrial revolution the only floor was the Poor Law, and after 1834 the workhouse, which made relief deliberately harsh so that people would take any work instead; for decades many took dangerous and degrading work [S_HUMPHRIES, S_POORLAW]. The paper therefore measures success by poverty, security and wellbeing, and monitors employment rather than targeting it (Section 2). Its argument has four parts.
+
+### Where Australia is now
+
+The safety net already leaves millions in poverty. In 2022-23, 3.7 million people, 14.2%, lived below the poverty line after housing costs, including 757,000 children, 15.6% of children under 15 [S37]. In households relying on JobSeeker the rate was 76% [S39]: JobSeeker pays a single adult A$412.45 a week against a poverty line of A$569.81 [S3, S4, S40]. The system ties security to paid work through means tests and an activity test, which bring errors, suspensions and debts; Robodebt raised about A$1.76bn in alleged debts against about 526,000 people [S56]. Carers give about 2.2 billion hours of unpaid care a year, worth A$77.9bn, and the market pays nothing for it [S55]. The paper's targets are poverty after housing costs of 12.0% or lower for all persons and 7.0% or lower for children by 2030-31, and 55.5% or lower in JobSeeker-reliant households (Table 2.2).
+
+### What is likely to happen next
+
+AI capability is rising quickly, and many jobs are exposed to it. The International Monetary Fund (IMF) estimates that about 60% of jobs in advanced economies are exposed, half of them likely to face lower demand [S23]; the International Labour Organization puts 34% of employment in high-income countries in exposed occupations [S24]; and Jobs and Skills Australia finds 4% of Australian workers in occupations highly exposed to automation and 31% to augmentation [S25]. There is no aggregate displacement yet, but the first warning is in entry-level hiring in the United States, and the Australian evidence is mixed [S2, S26, S_CANARIES]. Over the next ten years the plausible range runs from no net loss of jobs, which most forecasts the Productivity Commission reviewed expect [S32], to 0.67 million (moderate) or 1.77 million (severe) workers displaced by 2035-36 in the paper's scenarios (Table 6.54). The paper cannot say which is more likely, and on current evidence no one can. The industrial revolution shows what is at stake if displacement comes: output rose for decades before most people's living standards did; relief under the Poor Law was made deliberately harsh, so many people, children among them, took dangerous and degrading work; and the protections came late and had to be fought for [S_ALLEN, S_FEINSTEIN, S_HUMPHRIES, S_FACTORY1833, S_POORLAW].
+
+### Two solutions
+
+1. **A targeted floor now (Stage 1, P\*).** From 1 July 2028, lift working-age payments to a floor at the poverty line, pay a child payment without cliffs in place of Family Tax Benefit, and raise Rent Assistance by 75%. In the model it cuts poverty after housing costs from 14.2% to 10.5% and child poverty from 15.6% to 6.6% (Table 5.7). Among the designs of equal cost the paper compares, it is the paper's choice when poverty is weighed against work incentives and fiscal sustainability. The targeted package cuts poverty further and is Parliament's alternative if it weights poverty more heavily.
+2. **A tested pathway to a universal payment, built before it is needed.** Legislate now the tests a universal payment would have to pass (an AI need test, a randomised trial with a work-effort cap and a Parliamentary Budget Office certificate) but no rate, and build the payment system that can reach every adult and a surge protocol that enrols displaced workers from payroll data. If displacement comes, Parliament can move quickly on evidence it has already agreed to accept; if it does not, the tests cost little: the trial, the largest part the paper can price, costs about A$120m a year for two years (Sections 5 and 7).
+
+A dividend paid to every adult is an option for later, not a third solution: Section 10 sets out four options and the tests any of them should pass.
+
+### A model beyond Australia
+
+The design is Australian, but most of its logic is not. The second solution transfers most widely: any country with real-time payroll data, an independent fiscal institution that can certify costings and a broad revenue base can legislate its tests before a shock and build the means to pay quickly. The first transfers most directly to countries whose income support, like Australia's, is flat-rate, means-tested and paid from general revenue, such as New Zealand [S_NZJS], and needs adapting where contributory unemployment insurance dominates. The taxes that fund it are specific to Australia. Section 9 sets out what transfers and what does not, and recommends sharing the design through the OECD (Recommendation 17).
+
+### What the paper recommends
 
 Australia should fix the adequacy of income support now with a targeted floor. Among the designs of equal cost it compares, the paper chooses P\*, weighing poverty against work incentives and fiscal sustainability. It should also legislate the tests a universal basic income would have to pass, so the country can move quickly if AI displaces work at scale. It should not legislate a universal rate or a dividend yet, because on current evidence neither pays its way. The case for a basic income is insurance against a shock whose probability no one can yet estimate.
 
@@ -76,10 +101,6 @@ The universal stages therefore become a tested, pre-committed pathway. The Act w
 - In the model P\* cuts child poverty from 15.6% to 6.6% and poverty in sole-parent households from 31.9% to 14.8%. Poverty in households relying on the Disability Support Pension falls from 63.6% to 52.6%, but at 67 and over it rises slightly on the relative line, from 11.1% to 11.6%, because the line rises with the median (Table 5.7).
 - Second earners keep less under P\*'s taper than today: their mean participation tax rate is 33.0%, against 28.9% under the package, 32.9% under Part 1 and 27.3% under current rules, but none faces 60% or more (Tables 5.7 and 5.8).
 - The paper's earlier choice, Part 1, would have kept 0.20 million more people in poverty than P\* and 0.56 million to 0.61 million more than the package, to save at most A$0.09bn to A$0.37bn once, in expectation, if a universal Stage 2 ever starts.
-
-### The problem
-
-AI's early effects on jobs are uncertain: there is no aggregate displacement yet, but hiring of young workers into the most exposed jobs has slowed in the United States [S2, S26, S_CANARIES, S_YALE26]. JobSeeker pays a single adult A$412 a week against a A$570 poverty line [S3, S4].
 
 ### Key risks
 
