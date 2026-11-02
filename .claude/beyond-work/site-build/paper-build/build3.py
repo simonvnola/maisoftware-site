@@ -125,6 +125,8 @@ add(seg_lines(2716, 2850, over=over9, after=after9, reps=[
  ("the stack, and with it the levy and any dividend, would change.", "the stack, and with it the levy, would change."),
  ("5. If public submissions show low support for even a Stage 2 tax rise, the Stage 2 authority could lapse with Stage 3's, leaving Stage 1 and any fund.",
   "5. If public submissions show low support for any universal payment, Parliament could drop the pathway's tests, leaving Stage 1.\n6. If the committee weights poverty above work incentives, it could recommend the targeted package as Stage 1."),
+ ("Note: HILDA = Household, Income and Labour Dynamics in Australia survey.*", "Note: HILDA = Household, Income and Labour Dynamics in Australia survey. Formal volunteering keeps targets because the National Contribution Register and Community Contribution Fund pilot aims at it (Recommendation 10); weekly contact has none, because no measure aims at it directly (Table 2.2). Neither is a condition on any payment.*"),
+ ("including permanent programs such as Alaska's dividend |", "including permanent programs such as Alaska's dividend [S94] |"),
  ("with poverty after housing costs on the relative line as the headline.", "with poverty after housing costs on the relative line as the headline. Following the paper's thesis (Section 2), the indicators of success are poverty, security and wellbeing; employment is reported as a risk indicator, with no target, and the activity test's suspensions are reported until Parliament decides on Recommendation 16."),
  ("Parliament will have post-reform poverty figures, trial results and a Productivity Commission review before any Stage 2 vote.",
   "Parliament will have post-reform poverty figures, trial results and a Productivity Commission review before any Bill setting a universal rate."),
@@ -194,7 +196,7 @@ app = seg(2852, 3174, [
   "| 2. Gross cost | Eligible children × the child supplement, less the FTB it replaces, under the child payment's rule; under a dividend option (Section 10), also eligible adults × take-up × the dividend, from 2029-30 (100% of lodgers and 80% of non-lodgers) | Tables 6.1 and 10.9 |"),
  ("| Tables 6.7a to 6.7f and 6.14a to 6.18b |", "| Tables 6.6 to 6.10 and 6.34 to 6.53 |"),
  ("Sources are numbered in order of first citation. Each entry gives the author or organisation, title, year of publication and web address or file path.",
-  "Sources S1 to S224 are numbered in order of first citation, and later sources in the order they were added. Each entry gives the author or organisation, title, year of publication and web address or file path. Sources S233, S234 and S236 to S264 were verified in the author's evidence review of 1 November 2026, which records the page, table or cell each figure comes from; its summary is lodged with the supplementary files. S225 to S232, S235 and S265 to S273 could not be opened from the drafting environment and carry descriptive titles in square brackets; they need checking before submission. S265 to S268 support the paper's account of the industrial revolution, which uses no figures from them, and S269 to S273 its comparison with other countries' institutions (Section 9)."),
+  "Sources S1 to S224 are numbered in order of first citation, and later sources in the order they were added. Each entry gives the author or organisation, title, year of publication and web address or file path. Sources S233, S234 and S236 to S264 were verified in the author's evidence review of 1 November 2026, which records the page, table or cell each figure comes from; its summary is lodged with the supplementary files. S225 to S232, S235 and S265 to S274 could not be opened from the drafting environment and carry descriptive titles in square brackets; they need checking before submission. S265 to S268 and S274 support the paper's account of the industrial revolution, which uses no figures from them, and S269 to S273 its comparison with other countries' institutions (Section 9)."),
  ("| Tables 6.20 to 6.24b; F4-48 |", "| Tables 6.14 to 6.27; F4-48 |"),
  ("and the household scripts (household.py to household_r13.py) regenerate every model table,",
   "the household scripts (household.py to household_r13.py) and the scripts for this revision ({{OPTIONB_MODEL_SCRIPTS}}) regenerate every model table,"),
@@ -322,10 +324,11 @@ NEW = {
  'S_NZJS': "Work and Income, New Zealand Ministry of Social Development. [Jobseeker Support: rates, income test and eligibility]. n.d. https://www.workandincome.govt.nz/products/a-z-benefits/jobseeker-support.html",
  'S_RTI': "HM Revenue and Customs. [Running payroll: reporting pay to HMRC in real time (Real Time Information)]. n.d. https://www.gov.uk/running-payroll",
  'S_OBR': "Office for Budget Responsibility. [About the Office for Budget Responsibility and its forecasts and costings]. n.d. https://obr.uk/",
+ 'S_POORLAW': "UK Parliament. [Living Heritage: the Poor Law Amendment Act 1834 and the workhouse]. n.d. https://www.parliament.uk/about/living-heritage/transformingsociety/livinglearning/19thcentury/overview/poorlaw/",
  'S_CBO': "Congressional Budget Office. [An overview of CBO's work: budget projections and cost estimates for the Congress]. n.d. https://www.cbo.gov/about/overview",
 }
 order = ['S_CANARIES', 'S_YALE26', 'S_DANISH', 'S_OECD17', 'S_ALASKA25', 'S_IMF17', 'S_NYFED', 'S_ANUJS', 'S_LAWP', 'S_RBA_FSR', 'S_STP']  # fixed: S225 to S235 as first published
-LATE = ['S_ALLEN', 'S_FEINSTEIN', 'S_HUMPHRIES', 'S_FACTORY1833', 'S_HENRY', 'S_NZJS', 'S_RTI', 'S_OBR', 'S_CBO']  # added 1 November 2026 (thesis and international sections): numbered after S264
+LATE = ['S_ALLEN', 'S_FEINSTEIN', 'S_HUMPHRIES', 'S_FACTORY1833', 'S_HENRY', 'S_NZJS', 'S_RTI', 'S_OBR', 'S_CBO', 'S_POORLAW']  # added 1 November 2026 (thesis and international sections): numbered after S264
 for m in re.finditer(r'S_[A-Z0-9_]+', text):
     if m.group(0) in NEW and m.group(0) not in order and m.group(0) not in LATE: order.append(m.group(0))
 order += LATE
