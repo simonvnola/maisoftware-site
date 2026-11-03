@@ -499,6 +499,41 @@ The paper's displacement scenarios (Tables 6.18 to 6.18d; partc.DISP) are a fall
 
 **Policy responses.** Automatically enrolling displaced workers from Single Touch Payroll data would cost A$4.3bn a year in the moderate scenario and A$11.4bn in the severe, by 2035-36 (the extra take-up on the surge only, at the floor); the 2020 surge shows the machinery exists. Waiving the liquid-assets waiting period for displaced workers would cost at most A$1.6bn to A$4.2bn a year during the inflow, less in proportion to the share actually subject to it. Deferring the assets test on investment property, and a mortgage hardship protocol, cannot be priced by the model.
 
+## 8b. An illustrative costing of zero poverty, and the cost of poverty to society
+
+Baseline (central calibration, seed 20261016, 2028-29): 14.2% of people in poverty after housing costs on the relative line (3.73 million; children under 15 15.6%, 0.74 million); household poverty gap A$29.6bn; line A$590 a week for a single adult after housing costs. With P*: 10.5% (2.77 million; children 6.6%, 0.31 million), gap A$22.8bn on its own relative line (A$625 a week). GDP A$3,335bn.
+
+**Table B22. Illustrative costings of zero poverty after housing costs: each design sized to the relative line it produces, 2028-29 (million; A$ billion; per cent)**
+
+| Design | People in households paid (million) | Static cost (A$bn) | Work response, low to high (A$bn) | Total, central (A$bn) | Total, low to high (% of GDP) | Total across the three calibrations, central (A$bn) | Poverty after, relative line (%) | Children under 15 in poverty after (%) | Relative line after (A$ a week, single adult) |
+|---|---|---|---|---|---|---|---|---|---|
+| Exact top-up to the line, from current rules | 3.73 | 29.6 | 8.9 to 23.9 | 44.7 | 1.15 to 1.61 | 44.2 to 50.4 | 0.00 | 0.00 | 590 |
+| Exact top-up to the line, on top of P* | 2.77 | 22.8 | 6.3 to 17.0 | 33.5 | 0.87 to 1.20 | 33.0 to 39.7 | 0.00 | 0.00 | 625 |
+| Exact top-up for families with children under 15, from current rules | 1.60 | 8.1 | 3.7 to 9.8 | 14.4 | 0.35 to 0.54 | 11.5 to 14.6 | 8.10 | 0.00 | 590 |
+| Exact top-up for families with children under 15, on top of P* | 0.75 | 3.6 | 1.3 to 3.7 | 5.9 | 0.15 to 0.22 | 3.6 to 6.2 | 7.67 | 0.00 | 625 |
+| Tapered top-up (50-cent withdrawal), from current rules | 13.14 | 108.9 | 23.4 to 77.4 | 152.8 | 3.97 to 5.59 | 152.5 to 155.7 | 0.00 | 0.00 | 590 |
+| Tapered top-up (50-cent withdrawal), on top of P* | 13.14 | 107.4 | 23.4 to 77.5 | 151.3 | 3.92 to 5.54 | 151.1 to 154.1 | 0.00 | 0.00 | 625 |
+| Universal payment large enough to end relative poverty, from current rules | 26.27 | 1,074.7 | not modelled | 1,074.7 | 32.23 | 1,035.0 to 1,077.0 | 0.67 | 0.04 | 1,181 |
+
+*Source: optionb_zero.py (runs/zero_<cal>_20261016.json), on optionb_hh.py's 2028-29 population and P* (matched, no automatic enrolment). Method: each design pays households enough to reach the relative line (half the median equivalised income after housing costs) that holds after the payment, solved as a fixed point. The exact top-up withdraws a dollar for each dollar of other income below the line; the tapered top-up pays the line less half of income after housing costs, so it phases out at about the median; the universal payment is paid to every household whatever its income, so it raises the median by its own amount and must equal the whole median before relative poverty ends. Static costs are exact on the model's population. Work response: working-age adults in the households paid, in the paper's taper-response form (elasticity 0.1 low, 0.2 central, 0.4 high for the tapered top-up); for the exact top-ups the high case assumes every working-age adult paid stops earning, which costs their whole private income. The universal payment's income effect and any tax on it are not modelled. Households whose housing costs exceed their income (negative income after housing costs) remain below the line under the universal payment. ILLUSTRATIVE AND PROVISIONAL: no design here is recommended.*
+
+**Table B23. The annual cost to society of poverty in Australia: an illustrative estimate, 2028-29 dollars (A$; A$ billion; per cent of GDP)**
+
+| Component | Low | Central | High | Basis |
+|---|---|---|---|---|
+| Cost for each child in poverty (A$ a year) | 51,597 | 103,195 | 247,667 | NCOSS (NSW, 2024): low, half the direct costs; central, the direct costs (services and lost productivity); high, all costs including health and life expectancy; uprated to 2028-29 by wages |
+| Extra health-system cost for each adult in poverty (A$ a year) | 2,436 | 3,654 | 7,308 | 20%, 30% and 60% above average health spending of A$12,180 a person (AIHW 2024-25, uprated); about 70% falls on governments |
+| Children under 15 in poverty (million) | 0.74 | 0.74 | 0.74 | Household model, current rules, 2028-29 |
+| People 15 and over in poverty (million) | 2.99 | 2.99 | 2.99 | Household model, current rules, 2028-29 |
+| Cost of child poverty (A$bn a year) | 38.3 | 76.5 | 183.7 | Cost per child × children in poverty |
+| Adults' extra health-system cost (A$bn a year) | 7.3 | 10.9 | 21.8 | Premium × people 15 and over in poverty |
+| **Total (A$bn a year)** | **45.5** | **87.5** | **205.5** | |
+| Total (% of GDP) | 1.37 | 2.62 | 6.16 | GDP A$3,335bn |
+| **For each person in poverty (A$ a year)** | **12,209** | **23,441** | **55,089** | Total ÷ 3.73 million |
+| Associated with the children P* lifts above the line (A$bn a year, long run) | 22.1 | 44.2 | 106.0 | 0.43 million fewer children in poverty × cost per child |
+
+*Source: cost_of_poverty_inputs.json; optionb_zero.py. Method: the NCOSS cost per child is a steady-state ratio (a year's cost of child poverty across the population, divided by the children now in poverty), close to the lifetime cost of one child-year of poverty; it is not cash spent on each child each year. The adult premium is an assumption bounded by AIHW's ratios of the lowest to the highest socioeconomic group. The central and high cases may count some health costs twice, where adults in poverty now were poor as children. The line for P* is association, not a forecast saving: lifting a child just above the line does not remove the disadvantage, and the costs fall over decades. ILLUSTRATIVE; every external figure needs checking against its source.*
+
 ## 9. Findings the author can quote, and the figures for the summary (option B)
 
 **P* re-costed.** P* as first printed was not at Part 1 alone's budget: on the fiscal model's own basis it cost A$6.2bn more in 2028-29, because its child payment was costed against the household model's higher current FTB and was not charged its prior-year timing cost. Re-costed at Part 1's cost, P* pays A$6,750 a child a year (Part 1's supplement is A$7,452) and keeps the floor and Rent Assistance +75%.

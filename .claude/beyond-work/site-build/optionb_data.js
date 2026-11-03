@@ -38,6 +38,19 @@ const OB = {
   losers: { p1: los('p1'), pstar: los('star_m2'), pkg: los('pkg_ie') },
   stress: { p1: stress('p1'), pstar: stress('star_m2'), pkg: stress('pkg') },
   appraisal: Object.fromEntries([['p1', 'p1'], ['pstar', 'star_m2'], ['pkg', 'pkg']].map(([k, d]) => [k, { nb: F.appraisal[d].nb_complete, vsP1: F.appraisal[d].nb_vs_p1_complete, w: F.appraisal[d].w_breakeven_complete, gb: F.appraisal[d].gb13 }])),
+  // Tables B22 and B23 (3 November 2026): the illustrative zero-poverty costing and the cost of poverty, as the paper prints them (Table 6.58 and 2.3)
+  zero: (function () {
+    const z = v('zero_poverty'), D = z.designs, pick = k => ({ paid: D[k].persons_paid, stat: D[k].static, total: D[k].total, gdp: D[k].total_pct_gdp, poor: D[k].poor_rel, u15: D[k].u15_rel });
+    const o = { line: z.line_pw, lineC: D.C_cur.line_pw, neg: D.A_cur.negative_ahc_persons, d: {} };
+    ['A_cur', 'A_star', 'K_cur', 'K_star', 'B_cur', 'C_cur'].forEach(k => { o.d[k] = pick(k); });
+    const bnr = a => 'A$' + a[0].toFixed(1) + 'bn to A$' + a[2].toFixed(1) + 'bn';
+    o.paperFigures = { A_cur: bnr(D.A_cur.total), K_cur: bnr(D.K_cur.total), K_star: bnr(D.K_star.total) };
+    return o;
+  })(),
+  costOfPoverty: (function () {
+    const c = v('cost_of_poverty');
+    return { perChild: c.per_child, total: c.total, pct: c.total_pct_gdp, perPerson: c.per_person, child: c.total_child, nAll: c.n_all, nChild: c.n_child };
+  })(),
   // the figures the reproduction check compares with (Tables B1 to B5 and B13)
   want: {
     p1: { net: F.paths.p1, rev: Object.fromEntries(YEARS.map(fy => [fy, F.rev[fy].total])), hh: fundSummary(F.funds.p1) },

@@ -22,7 +22,7 @@ The paper makes no claim about how well the floor would work elsewhere; that dep
 
 ### Recommendations
 
-Twenty-eight recommendations, each with an owner and a date, would put Stage 1 in place by 1 July 2028, build the pathway and share the design (Table 9.1).
+Twenty-nine recommendations, each with an owner and a date, would put Stage 1 in place by 1 July 2028, build the pathway, measure what poverty costs and share the design (Table 9.1).
 
 **Table 9.1. Recommendations, with responsible actors and dates, 2027 to 2041**
 
@@ -56,6 +56,7 @@ Twenty-eight recommendations, each with an owner and a date, would put Stage 1 i
 | 14 | Assess family payments on the latest assessed taxable income from 1 July 2028, re-assess the resident parent on their own income after a separation, and allow a review after a birth or job loss reconciled only up to what it adds, so that families whose circumstances do not change face no debt from an income estimate | Minister for Social Services; Services Australia; ATO | From 1 July 2028 | Section 5 (Table 5.4) |
 | 16 | Commission a costed review of mutual obligation and the activity test before the Bill is introduced: what removing or easing the test, or barring suspensions that take a recipient below the floor, would do to claims, cost, employment and wellbeing, so Parliament can decide whether Stage 1 keeps it. Not priced in this paper | Minister for Employment and Workplace Relations; DSS; Treasury, with a PBO costing | Report to the joint select committee by 30 September 2027 | Sections 2 and 5; Table 9.5 |
 | 17 | Share the design and its evidence internationally: publish the models, the need test, the trial protocol and the surge protocol, and offer them through the OECD and to countries whose income support is like Australia's, such as New Zealand [S_NZJS], so others can adapt the parts that transfer | Treasury; DSS | From 2028-29 | Section 9 ('A model beyond Australia') |
+| 18 | Measure what poverty costs: commission the Productivity Commission to estimate the national cost of poverty and of late intervention, with low, central and high cases and the share that falls on budgets, by 30 June 2028 and every five years after; and add children's health, schooling and child-protection outcomes, linked from administrative data, to the evaluation of Stage 1, so that its effect on the cost of poverty is measured, not assumed | Treasurer; Productivity Commission; DSS; AIHW | First estimate by 30 June 2028; evaluation from 2028-29 | Section 2 ('What poverty costs Australia'; Tables 2.3 and 2.4); Section 6 (Table 6.ZP) |
 
 *Source: author's recommendations. Note: the trial cost is the author's estimate: about 5,000 people × a payment at the JobSeeker rate, July 2029 to June 2031 (Table 6.2).*
 

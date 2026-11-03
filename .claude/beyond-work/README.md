@@ -1,9 +1,10 @@
-# Beyond Work: option B revision bundle (1 November 2026)
+# Beyond Work: option B revision bundle (revised 3 November 2026)
 
 Sources behind the pages under /UBI/. This folder is excluded from the
 deployed site by .vercelignore.
 
-- paper_2026-11-01.md: the revised paper, "Beyond Work: Preparing a Basic
+- paper_2026-11-03.md: the revised paper (3 November 2026: the cost of poverty,
+  Tables 2.3 and 2.4, and an illustrative zero-poverty costing, Table 6.58), "Beyond Work: Preparing a Basic
   Income for Australia's AI Transition", a working draft. The chapter pages
   are built from it word for word.
 - plan_2026-10-31.md: the author's plan to answer the October critique;
@@ -12,9 +13,19 @@ deployed site by .vercelignore.
   optionb_results.md (Tables B1 to B21 and quotable paragraphs; B18 to B21
   are the displacement second-round effects, re-run on the evidence review),
   optionb_facts.json (every figure with units, years, source and a
-  provisional flag), scripts/ (stdlib Python; run against a copy of the
+  provisional flag; zero_poverty and cost_of_poverty feed Tables 2.3 and
+  6.58 and the calculator), cost_of_poverty_inputs.json (the external
+  inputs to Table B23, each marked as needing checking), scripts/ (stdlib Python; run against a copy of the
   paper's supplementary folder, which is not in this repository) and
   runs/ (per-configuration outputs; fiscal.json holds the fiscal paths).
+- model/scripts/optionb_zero.py: the zero-poverty costing (Table B22): an
+  exact top-up, a top-up for families with children, a tapered top-up and a
+  universal payment, each sized to the relative line it produces. Run
+  runs/run_zero.sh, then optionb_report.py.
+- calculator-src/: the calculator's source (template.html, ui-1.js to
+  ui-5.js, model.js, data.json, optionb_data.js, build.js) and calc_sync.js.
+  These are the scripts/ folder of the build layout, which expects
+  ../optionb/model/ and ../optionb/paper_optionb.md beside it.
 - site-build/: the scripts that turn the paper into pages and redraw the
   charts (build_paper_b.py, make_charts_b.py, prep_b.py), the paper build
   pieces (paper-build/), the calculator's option B data step
@@ -35,3 +46,22 @@ stress-test figures are provisional; sources S225 to S232 and S235 and the
 OpenResearch revision could not be opened from the build environment and
 need checking before submission; the national house-price effect of forced
 sales is reported as not quantified.
+
+## Keeping the calculator in step with the paper
+
+The calculator is outside the rubric's review loop (rubric v3.3, section G).
+Whenever a metric or measure in the paper changes, rebuild it from the same
+model outputs the paper is written from:
+
+    node calc_sync.js --apply   # rebuild, reproduction check, then compare
+    node calc_sync.js           # check only; exits 1 and lists differences
+
+A paper change is not finished while the check reports the calculator out of
+sync.
+
+## Cost of poverty evidence
+
+evidence_cost_of_poverty_2026-11-03.md is the research note behind Section
+2's estimate of what poverty costs (sources S275 to S295). No source could be
+opened from the build environment, so every figure in it comes from search
+results or published summaries and needs checking before submission.

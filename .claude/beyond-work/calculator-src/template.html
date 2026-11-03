@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator - Beyond Work - Mai Software</title>
+<meta name="description" content="See what Stage 1, a targeted floor, would mean for your household and the Commonwealth budget, and what the conditional pathway to a basic income would cost, using the paper's own model in your browser.">
+<link rel="canonical" href="https://maisoftware.app/UBI/calculator/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calculator - Beyond Work">
+<meta property="og:description" content="See what Stage 1, a targeted floor, would mean for your household and the Commonwealth budget, and what the conditional pathway to a basic income would cost, using the paper's own model in your browser.">
+<meta property="og:url" content="https://maisoftware.app/UBI/calculator/">
+<link rel="icon" href="/UBI/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/UBI/assets/gov.css">
+<style>
+/* Calculator styles, built on the gov.css tokens. Chart colours are the only additions to the palette. */
+:root {
+  --s1: #1d4ea0; --s2: #b35900; --s3: #4c2c92; --ai: #0b6d75; --ai-wash: #d9ecee; --fund: #6f777b;
+  --gain: #00703c; --loss: #a4280d; --accent: #b35900;
+  --ink: var(--bw-ink); --ink-2: var(--bw-ink-2); --muted: var(--bw-ink-2); --rule: var(--bw-rule);
+  --grid: #e8e7e6; --band: #f3f2f1; --panel: #ffffff;
+}
+[hidden] { display: none; }
+section:focus, section:focus-visible, main:focus { outline: none; box-shadow: none; background: transparent; }
+html:not(.js) #economy:target { display: block; }
+html:not(.js) #me:has(~ #economy:target) { display: none; }
+body[data-mode="simple"] .detailed-only { display: none; }
+body[data-mode="detailed"] .simple-only { display: none; }
+
+/* Question tabs (GOV.UK tabs pattern) */
+.calc-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin: 32px 0 0; padding: 0; list-style: none; border-bottom: 1px solid var(--bw-rule); }
+.calc-tabs li { margin: 0; }
+.calc-tabs a[role="tab"] { display: block; min-height: 44px; padding: 12px 24px; margin-bottom: -1px; border: 1px solid transparent; border-bottom: 0; background: var(--bw-wash); color: var(--bw-link); font-weight: 400; text-decoration: underline; }
+.calc-tabs a[role="tab"]:visited { color: var(--bw-link); }
+.calc-tabs a[aria-selected="true"] { background: var(--bw-paper); border-color: var(--bw-rule); border-bottom-color: var(--bw-paper); border-top: 4px solid var(--bw-ink); padding-top: 8px; color: var(--bw-ink); font-weight: 700; text-decoration: none; }
+.calc-tabs a[role="tab"]:focus-visible { background: var(--bw-focus); color: var(--bw-ink); }
+
+/* Toolbar: level of detail, reset, copy link */
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: flex-end; margin: 24px 0 8px; }
+.toolbar .bw-button { margin: 0 0 8px; }
+.mode { border: 0; padding: 0; margin: 0 0 8px; min-width: 0; }
+.mode legend { font-weight: 700; padding: 0; margin: 0 0 4px; }
+.mode .radio { display: inline-block; margin-right: 24px; margin-bottom: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 0 8px; }
+.copy-fallback { margin: 8px 0 0; }
+.copy-fallback input { width: 100%; max-width: 40em; }
+#copy-msg, #diff { max-width: 60em; }
+#diff { margin: 0 0 8px; }
+.status { font-weight: 700; }
+
+/* Two columns: controls beside results from 900px */
+.desk { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px 40px; margin-top: 8px; }
+@media (min-width: 900px) { .desk { grid-template-columns: 340px minmax(0, 1fr); align-items: start; } .desk > .controls { position: sticky; top: 16px; max-height: calc(100vh - 32px); overflow: auto; padding-right: 8px; } }
+.controls, .results { min-width: 0; }
+.controls h3:first-child, .results h3:first-child { margin-top: 0; }
+.controls h3 { font-size: 1.1rem; margin-top: 32px; }
+.rail-host { margin-top: 24px; }
+.goto { margin: 0 0 16px; }
+@media (min-width: 900px) { .goto { display: none; } }
+
+/* Example chips and scenario buttons */
+.examples { display: flex; flex-wrap: wrap; gap: 0 8px; margin: 0 0 4px; }
+.examples .bw-button { min-height: 44px; text-align: left; }
+.examples .bw-button[aria-pressed="true"] { background: var(--bw-ink); color: #fff; box-shadow: 0 2px 0 var(--bw-ink); }
+.examples .bw-button[aria-pressed="true"]::before { content: "Loaded: "; }
+.bw-button { min-height: 44px; }
+.examples .bw-button[aria-pressed="true"]:focus-visible, .scenarios .bw-button[aria-pressed="true"]:focus-visible { background: var(--bw-focus); color: var(--bw-ink); box-shadow: 0 2px 0 var(--bw-ink); }
+.goto a, .grp-link a, #about a { display: inline-block; padding: 4px 0; }
+.bw-button--small { min-height: 32px; padding: 4px 12px; font-size: 0.9rem; }
+
+/* Form controls (GOV.UK style) */
+.fld { margin: 0 0 24px; }
+.fld > label, .fld > .lab, .ch-head label, .ch-head .lab, fieldset.radios > legend { display: block; font-weight: 700; margin: 0 0 4px; padding: 0; }
+.hint { color: var(--bw-ink-2); font-size: max(16px, 0.9rem); line-height: 1.4; margin: 0 0 8px; }
+.hint.ref { margin-top: 8px; }
+.input { box-sizing: border-box; height: 44px; padding: 8px 12px; border: 2px solid var(--bw-ink); border-radius: 0; width: 100%; max-width: 14em; font: inherit; font-size: 1rem; color: var(--bw-ink); background: #fff; }
+select.input { max-width: 100%; }
+.input--error { border-color: var(--bw-bad); border-width: 3px; }
+.prefix { display: flex; max-width: 14em; }
+.prefix > span { display: inline-flex; align-items: center; padding: 0 12px; border: 2px solid var(--bw-ink); border-right: 0; background: var(--bw-wash); font-weight: 700; white-space: nowrap; }
+.prefix .input { max-width: none; min-width: 0; flex: 1 1 auto; }
+.error-msg { color: var(--bw-bad); font-weight: 700; font-size: max(16px, 0.9rem); margin: 8px 0 4px; }
+.error-msg:empty { display: none; }
+.bw-publisher { display: inline-block; padding: 4px 0; }
+.ro-badge { display: inline-block; margin: 0 0 0 8px; padding: 0 4px; border: 1px solid currentColor; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.5; vertical-align: middle; white-space: nowrap; }
+.ro-provisional { color: var(--bw-bad); }
+.ro-live { color: var(--bw-good); } .ro-interpolated { color: var(--bw-link); } .ro-fixed { color: var(--bw-ink-2); }
+.bw-figure > .ro-badge, .ro > .ro-badge { margin: 8px 0 0; }
+.bw-table-wrap + .ro-badge, .ro-badge + .bw-table-wrap { margin-top: 8px; }
+.is-fixed .bw-figure-value, .is-fixed .rv, td.is-fixed { color: var(--bw-ink-2); }
+details.moves { margin: 24px 0; }
+.moves-list { margin: 0; padding-left: 16px; }
+.moves-list li { margin: 0; }
+.busy { margin-left: 12px; text-transform: none; letter-spacing: 0; font-weight: 400; }
+.bw-button:disabled { background: var(--bw-wash); color: var(--bw-ink-2); box-shadow: none; cursor: not-allowed; }
+.fld-error { border-left: 4px solid var(--bw-bad); padding-left: 12px; }
+.kid-ages { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.kid-ages .input { width: 5em; }
+.kid-ages label { display: block; font-weight: 400; margin: 0 0 4px; }
+fieldset.radios { border: 0; padding: 0; margin: 0 0 24px; min-width: 0; }
+.radio, .checkbox { position: relative; min-height: 40px; padding-left: 44px; margin: 0 0 8px; display: block; }
+.radio input, .checkbox input { position: absolute; left: 0; top: 0; width: 40px; height: 40px; margin: 0; opacity: 0; cursor: pointer; z-index: 1; }
+.radio label, .checkbox label { display: inline-block; padding: 8px 12px 8px 0; cursor: pointer; font-weight: 400; margin: 0; }
+.radio label::before, .checkbox label::before { content: ""; position: absolute; left: 0; top: 2px; width: 36px; height: 36px; border: 2px solid var(--bw-ink); background: #fff; box-sizing: border-box; }
+.radio label::before { border-radius: 50%; }
+.radio label::after { content: ""; position: absolute; top: 10px; left: 8px; width: 0; height: 0; border: 10px solid var(--bw-ink); border-radius: 50%; opacity: 0; }
+.radio input:checked + label::after { opacity: 1; }
+.checkbox label::after { content: ""; position: absolute; top: 12px; left: 9px; width: 18px; height: 9px; border: solid var(--bw-ink); border-width: 0 0 4px 4px; transform: rotate(-45deg); opacity: 0; box-sizing: border-box; }
+.checkbox input:checked + label::after { opacity: 1; }
+.radio input:focus-visible + label::before, .checkbox input:focus-visible + label::before { box-shadow: 0 0 0 4px var(--bw-focus), 0 0 0 7px var(--bw-ink); }
+.radio input:disabled + label, .checkbox input:disabled + label { color: var(--bw-ink-2); }
+.radios--inline .radio { display: inline-block; margin-right: 16px; }
+
+/* Sliders */
+.ch { margin: 0 0 32px; }
+.ch-head { display: flex; flex-wrap: wrap; gap: 0 12px; align-items: baseline; justify-content: space-between; }
+.ch-head label, .ch-head .lab { flex: 1 1 12em; }
+.ch-val { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ch-reset { margin: 8px 0 0; }
+.range { margin: 4px 0 0; }
+input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 44px; margin: 0; padding: 0; background: transparent; cursor: pointer; }
+input[type="range"]::-webkit-slider-runnable-track { height: 8px; background: var(--bw-rule); border-radius: 4px; }
+input[type="range"]::-moz-range-track { height: 8px; background: var(--bw-rule); border-radius: 4px; }
+input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; margin-top: -8px; border-radius: 50%; background: var(--bw-ink); border: 3px solid #fff; box-sizing: border-box; }
+input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--bw-ink); border: 3px solid #fff; box-sizing: border-box; }
+input[type="range"]:focus-visible { outline: none; box-shadow: none; }
+input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--bw-focus), 0 0 0 7px var(--bw-ink); }
+input[type="range"]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 4px var(--bw-focus), 0 0 0 7px var(--bw-ink); }
+input[type="range"]:disabled { opacity: 0.5; cursor: not-allowed; }
+details.help { margin: 8px 0 0; font-size: max(16px, 0.9rem); }
+details.help > p { margin: 8px 0 0; color: var(--bw-ink-2); max-width: var(--bw-measure); }
+details.help b { color: var(--bw-ink); }
+
+/* Lever rail (detailed mode) */
+.rail > h3 { margin-top: 0; }
+.rail-intro { font-size: max(16px, 0.9rem); color: var(--bw-ink-2); }
+details.grp { border-top: 1px solid var(--bw-rule); margin: 0; padding: 8px 0 4px; }
+details.grp:last-child { border-bottom: 1px solid var(--bw-rule); }
+details.grp > summary { font-weight: 700; color: var(--bw-link); }
+details.grp > summary h4 { display: inline; font-size: 1.05rem; margin: 0; color: inherit; font-weight: 700; }
+details.grp .grp-body { padding: 12px 0 4px; }
+details.grp .grp-link { font-size: max(16px, 0.9rem); margin: 0 0 16px; color: var(--bw-ink-2); }
+.scenarios { display: flex; flex-wrap: wrap; gap: 0 8px; margin: 0 0 16px; }
+.scenarios .bw-button[aria-pressed="true"] { background: var(--bw-ink); color: #fff; box-shadow: 0 2px 0 var(--bw-ink); }
+.scenarios .bw-button[aria-pressed="true"]::before { content: "Loaded: "; }
+
+/* Results */
+.tag { display: inline-block; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--bw-ink-2); margin-left: 8px; vertical-align: middle; }
+.headline { background: var(--bw-wash); padding: 24px; margin: 0 0 24px; }
+.result-h { margin-bottom: 8px; }
+.headline .hl-tag { display: block; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--bw-ink-2); margin: 0 0 8px; }
+.hl-big { font-size: 1.5rem; line-height: 1.25; font-weight: 700; margin: 0 0 12px; max-width: 24em; }
+@media (max-width: 640px) { .headline { padding: 12px 16px; margin-bottom: 12px; } #me-result .hl-big { font-size: 1.2rem; margin-bottom: 8px; } #me-result .hl-tag { margin-bottom: 4px; } #h-me-bd { font-size: 1.1rem; margin-top: 12px; margin-bottom: 4px; } #me-result .simple-only > .hint { margin-bottom: 4px; } table.simple-bd th, table.simple-bd td { padding-top: 4px; padding-bottom: 4px; } }
+@media (max-width: 640px) { .hl-big { font-size: 1.3rem; } .headline { padding: 16px; } }
+.hl-big .pos { color: var(--bw-good); }
+.hl-big .neg { color: var(--bw-bad); }
+.hl-sub { margin: 0; }
+.hl-sub + .hl-sub { margin-top: 8px; }
+.bw-figures { margin: 0 0 24px; }
+.bw-figure .bw-figure-paper { display: block; font-size: 0.9rem; color: var(--bw-ink-2); margin-top: 4px; }
+.bw-figure .bw-figure-value.pos { color: var(--bw-good); }
+.bw-figure .bw-figure-value.neg { color: var(--bw-bad); }
+.readouts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px 32px; margin: 0 0 24px; }
+.ro { border-top: 2px solid var(--bw-ink); padding-top: 8px; }
+.ro .rl { font-weight: 700; margin: 0; }
+.ro .rv { font-size: 1.6rem; font-weight: 700; line-height: 1.15; margin: 4px 0; }
+.ro .rs { color: var(--bw-ink-2); font-size: 0.9rem; margin: 0; }
+.chip { display: inline-block; font-weight: 700; margin-left: 4px; }
+.chip.good { color: var(--bw-good); } .chip.bad { color: var(--bw-bad); }
+.findings { margin: 0 0 24px; }
+.findings .bw-inset, .findings .bw-warning { margin: 16px 0; }
+.findings p { margin: 0; }
+.trig-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.trig-list > li { margin: 0; }
+.note { color: var(--bw-ink-2); font-size: max(16px, 0.9rem); max-width: var(--bw-measure); }
+.why, .hl-sub, .findings p, .proscons p, .bw-prose p, .bw-prose li, .ro .rs { max-width: var(--bw-measure); }
+.why .lossword { color: var(--bw-bad); font-weight: 700; }
+table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+table .pos { color: var(--bw-good); } table .neg { color: var(--bw-bad); }
+table tr.total th, table tr.total td { font-weight: 700; border-top: 2px solid var(--bw-ink); border-bottom: 2px solid var(--bw-ink); }
+table tr.sub th { padding-left: 16px; font-weight: 400; }
+table tr.range th.full { font-weight: 400; color: var(--bw-ink-2); }
+.bw-stages th { white-space: normal; }
+@media (min-width: 641px) { .bw-stages td.text { min-width: 9em; } }
+@media (max-width: 640px) { .bw-stages td.num, .bw-stages td.text { text-align: left; white-space: normal; min-width: 0; } .bw-stages td[data-label=""]::before { display: none; } }
+/* the seven-column economy stage table always uses the stacked block layout gov.css gives .bw-stages below 640px */
+@media (min-width: 641px) {
+  .bw-stages--wide, .bw-stages--wide tbody, .bw-stages--wide tr, .bw-stages--wide th, .bw-stages--wide td { display: block; }
+  .bw-stages--wide thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .bw-stages--wide tr { border-bottom: 2px solid var(--bw-ink); padding: 8px 0 4px; }
+  .bw-stages--wide th[scope="row"] { width: auto; border: 0; padding: 0 0 4px; font-size: 1.05rem; }
+  .bw-stages--wide td { border: 0; padding: 4px 0 8px 0; text-align: left; white-space: normal; min-width: 0; }
+  .bw-stages--wide td::before { content: attr(data-label); display: block; font-weight: 700; color: var(--bw-ink-2); font-size: 0.85rem; }
+  .bw-stages--wide td[data-label=""]::before { display: none; }
+}
+table td.text { text-align: left; white-space: normal; }
+.bw-table-wrap:focus-visible { outline: 3px solid var(--bw-focus); outline-offset: 2px; }
+.cellbar { display: inline-block; }
+.cellbar .b { display: none; }
+#eco-opts table thead th, #eco-disp table thead th { white-space: normal; vertical-align: bottom; min-width: 7em; }
+#eco-opts table tbody th, #eco-disp table tbody th { min-width: 14em; }
+#eco-opts table.opts-tbl td { white-space: normal; min-width: 11em; vertical-align: top; text-align: left; }
+#eco-opts table.opts-tbl th.sel, #eco-opts table.opts-tbl td.sel { background: var(--bw-wash); }
+.proscons h4 { margin-top: 24px; }
+.yearsel { display: inline-flex; align-items: center; gap: 8px; font-weight: 400; margin-top: 4px; }
+.bal-panel { display: inline-block; width: 50%; padding-right: 12px; vertical-align: top; }
+.bal-panel.narrow { display: block; width: 100%; padding-right: 0; }
+.yearsel select { height: 40px; }
+
+/* Charts */
+figure.fig { margin: 32px 0; }
+figure.fig h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.fig-unit { color: var(--bw-ink-2); font-size: max(16px, 0.9rem); margin: 0 0 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: max(16px, 0.9rem); margin: 0 0 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { display: inline-block; flex: none; background: currentColor; }
+.c-s1 { color: var(--s1); } .c-s2 { color: var(--s2); } .c-s3 { color: var(--s3); } .c-ai { color: var(--ai); } .c-fund { color: var(--fund); } .c-gain { color: var(--gain); } .c-loss { color: var(--loss); } .c-accent { color: var(--accent); } .c-ink { color: var(--ink); } .c-ink2 { color: var(--ink-2); } .c-none { color: transparent; }
+.legend i.dash { background: repeating-linear-gradient(90deg, currentColor 0 5px, transparent 5px 8px); }
+.legend .k-rect { width: 14px; height: 12px; }
+.legend .k-line { width: 18px; height: 3px; }
+.legend .k-dot { width: 11px; height: 11px; border-radius: 50%; }
+.legend .k-ring { width: 11px; height: 11px; border-radius: 50%; border: 2px solid currentColor; background: none; }
+.legend .k-hatch { width: 14px; height: 12px; border: 1px solid var(--ai); background: repeating-linear-gradient(135deg, var(--ai) 0 2px, #fff 2px 5px); }
+.legend .k-hatch.top { border-color: var(--s3); background: repeating-linear-gradient(135deg, var(--s3) 0 2px, #fff 2px 5px); }
+.legend .k-hatch.neg { border-color: var(--loss); background: repeating-linear-gradient(135deg, var(--loss) 0 2px, #fff 2px 5px); }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+html:not(.js) .chart { overflow-x: auto; }
+html:not(.js) .chart svg { width: auto; max-width: none; }
+.chart svg:focus-visible { outline: 3px solid var(--bw-focus); outline-offset: 3px; }
+.chart text { font-family: var(--bw-font); font-size: 12px; fill: var(--bw-ink-2); }
+.chart text.lab { fill: var(--bw-ink); font-weight: 700; }
+.chart text.blab { fill: var(--bw-ink-2); }
+.chart text.unit { fill: var(--bw-ink); font-weight: 700; }
+.chart .gridl { stroke: var(--grid); stroke-width: 1; }
+.chart .axis { stroke: var(--bw-rule); stroke-width: 1; }
+.chart .zero { stroke: var(--bw-ink); stroke-width: 1; }
+.tip { position: absolute; z-index: 5; pointer-events: none; background: #fff; border: 2px solid var(--bw-ink); padding: 8px 12px; font-size: max(14px, 0.8rem); min-width: 152px; }
+.tip .th { font-weight: 700; margin-bottom: 4px; }
+.tip .tr { display: grid; grid-template-columns: 12px auto 1fr; gap: 8px; align-items: center; }
+.tip .tr b { font-variant-numeric: tabular-nums; text-align: right; font-weight: 700; }
+.tip .kl { width: 12px; height: 4px; background: currentColor; }
+.tip .kl.rect { height: 8px; }
+figcaption.source { font-size: 0.9rem; color: var(--bw-ink-2); margin-top: 8px; }
+details.tview { margin: 8px 0 0; }
+.chart-table { margin-top: 8px; }
+
+/* About and the check */
+.about-grid h3 { margin-top: 32px; }
+.check { margin: 16px 0; }
+.check .status { display: block; }
+.check.fail .status { color: var(--bw-bad); }
+.check.ok .status { color: var(--bw-good); }
+html.js .nojs-submit { display: none; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+@media print { .toolbar, .goto, .calc-tabs, .tip { display: none !important; } .desk { display: block; } .desk > .controls { position: static; max-height: none; } }
+</style>
+</head>
+<body data-mode="simple">
+<a class="bw-skip" href="#main">Skip to main content</a>
+<header class="bw-header">
+  <div class="bw-wrap">
+    <a class="bw-service" href="/UBI/">Beyond Work</a>
+    <a class="bw-publisher" href="https://maisoftware.app/">Published by Mai Software</a>
+  </div>
+</header>
+<nav class="bw-nav" aria-label="Beyond Work sections">
+  <div class="bw-wrap">
+    <ul>
+      <li><a href="/UBI/">Overview</a></li>
+      <li><a href="/UBI/paper/">The paper</a></li>
+      <li><a href="/UBI/calculator/" aria-current="page">Calculator</a></li>
+    </ul>
+  </div>
+</nav>
+<!--PHASE-BANNER-->
+<main id="main" class="bw-wrap">
+  <nav class="bw-crumbs" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/UBI/">Beyond Work</a></li>
+      <li><span aria-current="page">Calculator</span></li>
+    </ol>
+  </nav>
+  <p class="bw-caption">Beyond Work: Preparing a Basic Income for Australia's AI Transition</p>
+  <h1>Calculator</h1>
+  <p class="bw-lead">Use this calculator to see what the paper's proposal would mean for your household and for the Commonwealth budget: Stage 1, a targeted floor, and a conditional pathway to a basic income if artificial intelligence (AI) displaces work. Every result is a modelled estimate from the paper's own model, run in your browser; it is not advice or a forecast.</p>
+  <p class="bw-meta">Model of 31 October 2026 (option B re-costing; Part F4 for the 22 October design). Dollar figures are A$ nominal; years are financial years, so 2028-29 runs from 1 July 2028 to 30 June 2029. Nothing you enter is stored or sent anywhere.</p>
+  <noscript><div class="bw-warning"><span class="bw-warning-mark" aria-hidden="true">!</span><p><strong>JavaScript is needed to change the settings.</strong> The results below are for the paper's recommended settings and the example household, computed when this page was built. The "Reload the page with these entries" button only reloads the page with your entries in the address: the results stay at the recommended settings and the example household until JavaScript is available.</p></div></noscript>
+  <details class="bw-abbr">
+    <summary>Abbreviations used on this page</summary>
+    <dl>
+      <dt>ABS</dt><dd>Australian Bureau of Statistics</dd>
+      <dt>ACOSS</dt><dd>Australian Council of Social Service</dd>
+      <dt>AHURI</dt><dd>Australian Housing and Urban Research Institute</dd>
+      <dt>AI</dt><dd>artificial intelligence</dd>
+      <dt>AIHW</dt><dd>Australian Institute of Health and Welfare</dd>
+      <dt>ATO</dt><dd>Australian Taxation Office</dd>
+      <dt>CPI</dt><dd>consumer price index</dd>
+      <dt>DSP</dt><dd>Disability Support Pension</dd>
+      <dt>DSS</dt><dd>Department of Social Services</dd>
+      <dt>ECR</dt><dd>election commitment costing (a Parliamentary Budget Office costing reference)</dd>
+      <dt>FTB</dt><dd>Family Tax Benefit</dd>
+      <dt>GDP</dt><dd>gross domestic product</dd>
+      <dt>GST</dt><dd>goods and services tax</dd>
+      <dt>IGR</dt><dd>Intergenerational Report</dd>
+      <dt>LITO</dt><dd>low income tax offset</dd>
+      <dt>PBO</dt><dd>Parliamentary Budget Office</dd>
+      <dt>PC</dt><dd>Productivity Commission</dd>
+      <dt>PRRT</dt><dd>petroleum resource rent tax</dd>
+      <dt>UNSW</dt><dd>University of New South Wales</dd>
+      <dt>WPI</dt><dd>Wage Price Index</dd>
+    </dl>
+  </details>
+  <nav class="bw-contents" aria-label="On this page">
+    <h2>On this page</h2>
+    <ul>
+      <li><a href="#me">What happens to me</a></li>
+      <li><a href="#economy">What happens to the economy</a></li>
+      <li><a href="#about">About this model and the check against the paper</a></li>
+    </ul>
+  </nav>
+
+  <ul class="calc-tabs" role="tablist" aria-label="Choose a question">
+    <li role="presentation"><a role="tab" id="tab-me" href="#me" aria-selected="true" aria-controls="me">What happens to me</a></li>
+    <li role="presentation"><a role="tab" id="tab-economy" href="#economy" aria-selected="false" aria-controls="economy" tabindex="-1">What happens to the economy</a></li>
+  </ul>
+
+  <div class="toolbar">
+    <fieldset class="mode">
+      <legend>Level of detail</legend>
+      <div class="radio"><input type="radio" name="mode" id="mode-simple" value="simple" checked><label for="mode-simple">Simple</label></div>
+      <div class="radio"><input type="radio" name="mode" id="mode-detailed" value="detailed"><label for="mode-detailed">Detailed</label></div>
+    </fieldset>
+    <div class="actions">
+      <button type="button" class="bw-button bw-button--secondary" id="reset-all">Reset to the paper's recommended settings</button>
+      <button type="button" class="bw-button bw-button--secondary" id="copy-link">Copy a link to these settings</button>
+    </div>
+  </div>
+  <p id="copy-msg" class="status" role="status"></p>
+  <div class="copy-fallback" id="copy-fallback" hidden><label for="copy-url">The link could not be copied automatically. Select and copy it from here:</label><input type="text" class="input" id="copy-url" readonly></div>
+  <p id="diff" class="note">All levers are at the paper's recommended settings.</p>
+
+  <section id="me" role="tabpanel" aria-labelledby="h-me">
+    <h2 id="h-me">What happens to me</h2>
+    <p class="bw-measure">Enter your household's details to see the change to its income in the first year of Stage 1, 2028-29. Simple mode uses eight questions; Detailed mode adds your age, each child's age and every lever in the model.</p>
+    <p class="bw-measure note" id="me-design">Stage 1 is modelled as P*, the recommended design, unless you choose another under “What happens to the economy”. P*’s figures are provisional: they rest on a re-costing at Part 1’s budget, checked on three random seeds and three calibrations.</p>
+    <div class="desk">
+      <div class="controls">
+        <h3>Try an example</h3>
+        <p class="hint">Load a household with one click, then change any field.</p>
+        <div class="examples" id="examples"></div>
+        <p class="hint" id="ex-text"></p>
+        <p class="goto"><a href="#me-result">Go to your result</a></p>
+        <h3>Your household</h3>
+        <form id="me-form" method="get" action="/UBI/calculator/#me-result" novalidate>
+          <fieldset class="radios radios--inline">
+            <legend>Household</legend>
+            <p class="hint" id="hint-hh">Whether you live with a partner.</p>
+            <div class="radio"><input type="radio" name="hh" id="me-hh-single" value="single" aria-describedby="hint-hh"><label for="me-hh-single">Single</label></div>
+            <div class="radio"><input type="radio" name="hh" id="me-hh-couple" value="couple" aria-describedby="hint-hh"><label for="me-hh-couple">Couple</label></div>
+          </fieldset>
+          <div class="fld" id="fld-y1"><label for="me-y1">Your income (A$ a year)</label><p class="hint" id="hint-y1">Your taxable income before tax, this year. Paper's example: A$78,000.</p>
+            <div class="prefix"><span aria-hidden="true">A$</span><input class="input" type="text" inputmode="numeric" id="me-y1" name="y1" aria-describedby="hint-y1 err-y1"></div><p class="error-msg" id="err-y1"></p></div>
+          <div class="fld" id="fld-y2"><label for="me-y2">Partner's income (A$ a year)</label><p class="hint" id="hint-y2">Your partner's taxable income before tax. Paper's example: A$32,000.</p>
+            <div class="prefix"><span aria-hidden="true">A$</span><input class="input" type="text" inputmode="numeric" id="me-y2" name="y2" aria-describedby="hint-y2 err-y2"></div><p class="error-msg" id="err-y2"></p></div>
+          <div class="fld"><label for="me-nkids">Number of children</label><p class="hint" id="hint-nkids">Children under 18 in your care. Paper's example: 2.</p>
+            <select class="input" id="me-nkids" name="nkids" aria-describedby="hint-nkids"><option value="0">None</option><option value="1">1 child</option><option value="2">2 children</option><option value="3">3 children</option><option value="4">4 children</option></select></div>
+          <div class="fld simple-only" id="fld-kidband"><label for="me-kidband">Children's ages</label><p class="hint" id="hint-kidband">Their ages set the child payment and Family Tax Benefit. Paper's example: 6 and 11.</p>
+            <select class="input" id="me-kidband" aria-describedby="hint-kidband"><option value="u5">All under 5</option><option value="5to12">All aged 5 to 12</option><option value="13to17">All aged 13 to 17</option><option value="mixed">A mix of ages</option></select></div>
+          <div class="fld detailed-only" id="fld-kids"><span class="lab" id="lab-kids">Age of each child (years)</span><p class="hint" id="hint-kids">Whole years, 0 to 17. Paper's example: 6 and 11.</p>
+            <div class="kid-ages" id="kid-ages"></div><p class="error-msg" id="err-kids"></p></div>
+          <div class="fld detailed-only" id="fld-age"><label for="me-age">Your age (years)</label><p class="hint" id="hint-age">Used for the Age Pension and Youth Allowance rules. Paper's example: 38.</p>
+            <input class="input" type="text" inputmode="numeric" id="me-age" name="age" aria-describedby="hint-age err-age"><p class="error-msg" id="err-age"></p></div>
+          <fieldset class="radios">
+            <legend>Housing</legend>
+            <p class="hint" id="hint-housing">Sets whether a rent or mortgage effect applies. Paper's example: renting.</p>
+            <div class="radio"><input type="radio" name="housing" id="me-housing-rent" value="rent" aria-describedby="hint-housing"><label for="me-housing-rent">Renting</label></div>
+            <div class="radio"><input type="radio" name="housing" id="me-housing-mortgage" value="mortgage" aria-describedby="hint-housing"><label for="me-housing-mortgage">Paying a mortgage</label></div>
+            <div class="radio"><input type="radio" name="housing" id="me-housing-own" value="own" aria-describedby="hint-housing"><label for="me-housing-own">Own outright</label></div>
+          </fieldset>
+          <div class="fld" id="fld-rent"><label for="me-rent">Rent (A$ a week)</label><p class="hint" id="hint-rent">What your household pays each week. Paper's example: A$600.</p>
+            <div class="prefix"><span aria-hidden="true">A$</span><input class="input" type="text" inputmode="numeric" id="me-rent" name="rentPw" aria-describedby="hint-rent err-rent"></div><p class="error-msg" id="err-rent"></p></div>
+          <div class="fld" id="fld-mort"><label for="me-mort">Mortgage owing (A$)</label><p class="hint" id="hint-mort">The balance still owing on your home loan. Paper's example: A$550,000.</p>
+            <div class="prefix"><span aria-hidden="true">A$</span><input class="input" type="text" inputmode="numeric" id="me-mort" name="mortgage" aria-describedby="hint-mort err-mort"></div><p class="error-msg" id="err-mort"></p></div>
+          <div class="fld"><label for="me-pay">Current payment</label><p class="hint" id="hint-pay">The Centrelink payment you receive now, if any. Paper's example: none.</p>
+            <select class="input" id="me-pay" name="pay" aria-describedby="hint-pay pay-hint">
+              <option value="none">None</option><option value="js">JobSeeker Payment</option><option value="ya">Youth Allowance</option>
+              <option value="ap">Age Pension (full or part rate)</option><option value="dsp">Disability Support Pension</option>
+              <option value="pp">Parenting Payment</option><option value="ca">Carer Payment</option></select>
+            <p class="hint" id="pay-hint"></p></div>
+          <button type="submit" class="bw-button nojs-submit">Reload the page with these entries</button>
+          <noscript><p class="hint">This button reloads the page with your entries in the address. The results stay at the recommended settings and the example household until JavaScript is available.</p></noscript>
+        </form>
+        <div class="rail-host"></div>
+      </div>
+
+      <div class="results" id="me-result">
+        <h3 class="result-h bw-visually-hidden">Your result</h3>
+        <p class="error-msg" id="me-error" role="alert" hidden></p>
+        <div class="headline">
+          <span class="hl-tag" id="me-hl-tag">Modelled estimate, Stage 1, 2028-29<span class="busy" id="me-busy"></span></span>
+          <p class="hl-big" id="me-hl" aria-live="polite" aria-atomic="true"></p>
+          <p class="hl-sub error-msg" id="me-stale" hidden>Showing the result for the last valid entries. Fix the field marked above to update it.</p>
+          <p class="hl-sub" id="me-sub"></p>
+        </div>
+        <div class="simple-only">
+          <h3 id="h-me-bd">Where the change comes from</h3>
+          <div id="me-simple-table"></div>
+          <p class="note" id="me-opt"></p>
+          <h3>At each stage <span class="tag">Modelled estimate</span></h3>
+          <p class="hint">Stages 2 and 3 start only if AI job losses reach the legislated trigger, the Parliamentary Budget Office certifies the funding and Parliament votes for them. A$ a year, whole household, first year of each stage.</p>
+          <div id="me-stages"></div>
+          <p class="note" id="me-stages-note"></p>
+        </div>
+        <div class="detailed-only">
+          <h3>Each stage, first year</h3>
+          <p class="hint">Modelled estimates. Stage 1 starts in 2028-29; Stages 2 and 3 are shown at the dates they could start.</p>
+          <div class="bw-figures" id="me-strip"></div>
+
+          <figure class="fig" data-ro="fig-your-household-s-dividend-by-year" data-ro-label="Your household's dividend, by year" data-ro-target=">.fig-unit">
+            <h3>Your household's dividend, by year</h3>
+            <p class="fig-unit">A$ a year, whole household, 2028-29 to 2045-46. Modelled estimate.</p>
+            <div class="legend" id="lg-hdiv"></div>
+            <div class="chart" id="ch-hdiv"></div>
+            <p class="why" id="why-hdiv"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-hdiv"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+
+          <h3>Where the change comes from, by stage</h3>
+          <p class="hint">A$ a year, whole household, first year of each stage. Modelled estimates.</p>
+          <div id="me-breakdown"></div>
+          <p class="note" id="me-bd-note"></p>
+
+          <h3>Your effective marginal tax rate</h3>
+          <p class="hint">The share of your next A$1,000 of income lost to tax and withdrawn payments. Modelled estimate.</p>
+          <div id="me-emtr"></div>
+
+          <figure class="fig" data-ro="fig-your-gain-at-other-incomes" data-ro-label="Your gain at other incomes" data-ro-target=">.fig-unit">
+            <h3>Your gain at other incomes</h3>
+            <p class="fig-unit">A$ a year, payments and tax only; your partner's income held fixed. Modelled estimate.</p>
+            <div class="legend" id="lg-curve"></div>
+            <div class="chart" id="ch-curve"></div>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-curve"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+        </div>
+        <details class="moves" id="moves-me"><summary>What moves these figures</summary><p class="hint">Live: recalculated in your browser. Interpolated: estimated between runs of the paper’s household model. Fixed: the paper’s figure, which no lever moves. The levers listed were found by moving each lever alone, for the example household, when this page was built; for another household other levers can matter too, such as the floor for anyone on a payment.</p><div id="moves-me-body"></div></details>
+        <p class="note">This is an illustration of the paper's model, not financial advice. It applies the paper's rules to the figures you enter, in the first year of each stage, at today's settings indexed forward. The child payment is assessed on income about 1.5 years earlier, taken here to equal this year's. It leaves out Rent Assistance, other supplements and concessions, and treats your partner as having no payment of their own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="economy" role="tabpanel" aria-labelledby="h-eco" hidden>
+    <h2 id="h-eco">What happens to the economy</h2>
+    <p class="bw-measure">Change the main assumptions to see what Stage 1 costs the Commonwealth budget, the taxes and borrowing that pay for it and its effect on poverty, year by year from 2028-29 to 2045-46. You can also see what the conditional pathway to Stages 2 and 3 would cost if triggered. Detailed mode adds every lever in the model and the paper's full set of tables and charts.</p>
+    <p class="bw-measure note">Stage 1 is P*, the recommended design, by default; you can switch to the targeted package (Parliament’s alternative) or Part 1 as printed on 22 October. Each figure is marked Live, Interpolated or Fixed, and Provisional where it rests on the option B re-costing; open “What moves these figures” for the levers behind each one.</p>
+    <div class="desk">
+      <div class="controls">
+        <h3>Try a scenario</h3>
+        <p class="hint">Load a set of lever values with one click.</p>
+        <div class="scenarios" id="scenarios"></div>
+        <p class="goto"><a href="#eco-result">Go to the results</a></p>
+        <div class="simple-only">
+          <h3>Main levers</h3>
+          <p class="hint">Eight settings that move the figures most. Each shows its recommended setting.</p>
+          <div id="simple-levers"></div>
+        </div>
+        <div class="rail-host"></div>
+      </div>
+
+      <div class="results" id="eco-result">
+        <h3>Headline figures <span class="tag">Modelled estimates</span></h3>
+        <p class="error-msg" id="eco-error" role="alert" hidden></p>
+        <div class="headline">
+          <span class="hl-tag" id="eco-hl-tag">Modelled estimate, A$ nominal<span class="busy" id="eco-busy"></span></span>
+          <p class="hl-big" id="eco-hl" aria-live="polite" aria-atomic="true"></p>
+          <p class="hl-sub" id="eco-sub"></p>
+        </div>
+        <div class="bw-figures" id="eco-figs"></div>
+        <div class="simple-only">
+          <h3>At each stage <span class="tag">Modelled estimates</span></h3>
+          <p class="hint">Stages 2 and 3 start only if AI job losses reach the legislated trigger, the Parliamentary Budget Office certifies the funding and Parliament votes for them. Figures for the first year of each stage.</p>
+          <div id="eco-stages"></div>
+          <p class="note" id="eco-stages-note"></p>
+        </div>
+
+        <figure class="fig" data-ro="fig-net-cost-and-how-it-is-funded-to" data-ro-label="Net cost and how it is funded, 2028-29 to 2045-46" data-ro-target=">.fig-unit">
+          <h3>Net cost and how it is funded, 2028-29 to 2045-46</h3>
+          <p class="note" id="path-note" hidden></p>
+          <p class="fig-unit">A$ billion a year, nominal. Columns show the funding; the line is the net cost including set-up. Modelled estimate.</p>
+          <div class="legend" id="lg-cost"></div>
+          <div class="chart" id="ch-cost"></div>
+          <p class="why" id="why-cost"></p>
+          <details class="tview" id="tv-cost"><summary>Show as a table</summary><div class="chart-table" id="tb-cost"></div></details>
+          <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+        </figure>
+
+        <details class="moves" id="moves-economy"><summary>What moves these figures</summary><p class="hint">Live: recalculated in your browser. Interpolated: estimated between runs of the paper’s household model. Fixed: the paper’s figure, which no lever moves. Found by moving each lever alone to a sourced value when this page was built.</p><div id="moves-economy-body"></div></details>
+
+        <div class="detailed-only">
+          <h3>Pathway and funding</h3>
+          <p class="why" id="eco-path"></p>
+          <h3>All readouts</h3>
+          <p class="hint">Modelled estimates at these settings.</p>
+          <div class="readouts" id="eco-readouts"></div>
+          <div class="findings" id="eco-findings"></div>
+
+          <h3>Part 2: the four options side by side</h3>
+          <p class="hint">Paper's settings; for Parliament to choose. Modelled estimates.</p>
+          <div id="eco-opts"></div>
+
+          <h3>The conditional pathway: if Stages 2 and 3 are triggered</h3>
+          <ul class="trig-list" id="eco-trig"></ul>
+
+          <h3>If AI displaces work: the loan rule and the macro feedback</h3>
+          <div class="findings" id="eco-disp"></div>
+
+          <figure class="fig" data-ro="fig-dividend-per-adult-by-year" data-ro-label="Dividend per adult, by year" data-ro-target=">.fig-unit">
+            <h3>Dividend per adult, by year</h3>
+            <p class="fig-unit">A$ a year, 2028-29 to 2045-46. Modelled estimate.</p>
+            <div class="legend" id="lg-div"></div>
+            <div class="chart" id="ch-div"></div>
+            <p class="why" id="why-div"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-div"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+          <figure class="fig" data-ro="fig-permanent-ai-dividend-fund-under-three-r" data-ro-label="Permanent AI Dividend Fund, under three returns" data-ro-target=">.fig-unit">
+            <h3>Permanent AI Dividend Fund, under three returns</h3>
+            <p class="fig-unit">A$ billion at 30 June, 2028-29 to 2045-46. Modelled estimate.</p>
+            <div class="legend" id="lg-fund"></div>
+            <div class="chart" id="ch-fund"></div>
+            <p class="why" id="why-fund"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-fund"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+          <figure class="fig" data-ro="fig-the-wealth-tax-over-its-life-and-the-top" data-ro-label="The wealth tax over its life, and the top-ups the never-cut rule needs" data-ro-target=">.fig-unit">
+            <h3>The wealth tax over its life, and the top-ups the never-cut rule needs</h3>
+            <p class="fig-unit">A$ billion a year, nominal, 2028-29 to 2085-86. Modelled estimate.</p>
+            <div class="legend" id="lg-wt"></div>
+            <div class="chart" id="ch-wt"></div>
+            <p class="why" id="why-wt"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-wt"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+          <figure class="fig" data-ro="fig-budget-against-the-budget-baseline" data-ro-label="Budget against the Budget baseline" data-ro-target=">.fig-unit">
+            <h3>Budget against the Budget baseline</h3>
+            <p class="fig-unit">Future Fund basis, 2028-29 to 2045-46. Modelled estimate.</p>
+            <div class="legend" id="lg-bal"></div>
+            <div class="chart" id="ch-bal"></div>
+            <p class="why" id="why-bal"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-bal"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+          <figure class="fig" data-ro="fig-tax-change-by-year" data-ro-label="Tax change by year" data-ro-target=">.fig-unit">
+            <h3 id="h-rise">Tax change by year</h3>
+            <p class="fig-unit" id="u-rise">Percentage points on income-tax rates, and the levy as a share of market income, 2028-29 to 2045-46. Modelled estimate.</p>
+            <div class="legend" id="lg-rise"></div>
+            <div class="chart" id="ch-rise"></div>
+            <p class="why" id="why-rise"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-rise"></div></details>
+            <div class="stress" id="stress-rise"></div>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+          <figure class="fig" data-ro="fig-household-poverty-by-stage" data-ro-label="Household poverty by stage" data-ro-target=">.fig-unit" data-ro-kind="interp">
+            <h3>Household poverty by stage</h3>
+            <p class="fig-unit">Per cent of people in poverty after housing costs, before and with each stage. Modelled estimate.</p>
+            <div class="legend" id="lg-pov"></div>
+            <div class="chart" id="ch-pov"></div>
+            <p class="why" id="why-pov"></p>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-pov"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+
+          <h3>Three designs for Stage 1 at the same cost</h3>
+          <p class="hint">The option B model’s figures at the recommended settings: fiscal paths to 2045-46, poverty, reach and losers in 2028-29. Provisional for P* and the package.</p>
+          <div id="tb-designs"></div>
+          <p class="why" id="why-designs"></p>
+          <h3>The 22 October comparison of the three designs</h3>
+          <p class="hint">Stage 1, 2028-29, the 22 October paper's settings, with P* as first printed (before its re-costing). Modelled estimates from the household model.</p>
+          <p class="why" id="why-alt-intro"></p>
+          <div id="tb-alt"></div>
+          <p class="why" id="why-alt"></p>
+
+          <h3 id="h-zero">Ending poverty: an illustration</h3>
+          <p class="hint">What it would cost to take measured poverty after housing costs to zero in 2028-29, on the paper’s household model (Table 6.58). Illustrative, not recommended; provisional. These figures do not move with the levers.</p>
+          <div id="tb-zero"></div>
+          <p class="why" id="why-zero"></p>
+          <div id="tb-cop"></div>
+          <p class="why" id="why-cop"></p>
+
+          <figure class="fig" data-ro="fig-gains-and-losses-by-income-decile" data-ro-label="Gains and losses by income decile" data-ro-target=">.fig-unit">
+            <h3>Gains and losses by income decile</h3>
+            <p class="fig-unit">Average change per adult, A$ a year, before the funding taxes are allocated. Modelled estimate.</p>
+            <label class="yearsel">Year <select class="input" id="dec-year"></select></label>
+            <p class="note" id="dec-sub"></p>
+            <div class="legend" id="lg-dec"></div>
+            <div class="chart" id="ch-dec"></div>
+            <details class="tview"><summary>Show as a table</summary><div class="chart-table" id="tb-dec"></div></details>
+            <figcaption class="source">Source: Beyond Work model, Part F4.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="h-about" class="about-grid bw-prose">
+    <h2 id="h-about">About this model</h2>
+    <h3>Reproducing the paper's model</h3>
+    <div class="check" id="check"><span class="status" id="check-text">Checking that the calculator reproduces the paper's model…</span></div>
+    <h3>What it is</h3>
+    <p>The paper's fiscal model, rewritten in JavaScript and run in your browser. The source files are the paper's supplementary files ubi_model.py, partc.py, partd.py, partE.py, partF.py and partF_r8.py to partF_r13b.py (model of 21 October 2026, Part F4).</p>
+    <p>Each year it costs the payment, the payments it replaces, the tax changes, the floor and its caseload response, the protections and the child payment over 2,001 points of the ATO income distribution. It runs the Permanent AI Dividend Fund year by year. It tracks the cash balance, net debt and net financial worth against the Budget baseline, with the fund treated as the Future Fund is.</p>
+    <h3>How Part 2 (the dividend) works in each option</h3>
+    <p>The paper describes four Part 2 options and recommends none of them now; the calculator's default is no dividend. In option (i) the fund receives the wealth tax net of the income tax it costs, which the PBO's interaction costing (ECR-2025-3901) gives year by year. That loss keeps growing with GDP after the tax's last year, 2038-39, and the fund bears it. The fund also receives any share of the excess profits tax the Act sets, and the surpluses the other taxes leave after the floor, the child payment and the protections.</p>
+    <p>Each year the fund pays out 4% of its average balance over the last three years, a year in arrears; 10% goes to a reserve. The dividend is not cut in cash terms while a levied top-up can keep it whole. In the first year that top-up would pass a quarter of the dividend, the guarantee lapses: the dividend follows the payout and the loss is charged to the fund's capital until the fund runs out.</p>
+    <p>Option (iv) pays the same dividend from the other taxes, with no wealth tax and no fund. Option (v) builds a fund from the other taxes' surpluses alone, under the same rules. With no option, Stage 1 stands alone. The dividend is paid once a year, at tax assessment, or after enrolment for adults who lodge no return (80% of them assumed to enrol). No income test counts it.</p>
+    <p>When the other taxes fall short, a levy on market income sized to the gap meets it. A displacement is declared once the need test has been met for eight quarters. From then the reserve, then a loan from the fund at the bond rate (up to a quarter of its balance), bridge the gap until the first year Stage 2 could start. The levy then repays the loan over ten years, whether or not a vote is held. With no fund there is no loan: the surpluses the other taxes have kept meet a gap first, then the levy. Stages 2 and 3 are a conditional pathway: the tests are legislated, no rates are, and Stage 3 is described, not authorised. The model costs each with one rate rise, large enough under both forms of the taxpayer response, and only with the wealth-tax fund of option (i), so the calculator costs them that way whatever dividend you choose. Household poverty is not recomputed live: Stage 1 is interpolated between runs of the paper's household model, and Stages 2 and 3 use the paper's figures.</p>
+    <h3>Sources</h3>
+    <ul>
+      <li>Parliamentary Budget Office election costings ECR-2025-3128 (super), 3194 (excess profits tax), 3518 (coal and minerals), 3123 (PRRT and royalty), 3001 (fossil-fuel subsidies), 3463 (wealth tax) and the 3901 interaction.</li>
+      <li>Budget 2026-27, Budget Paper No. 1 (receipts, payments, net debt, economic parameters); PBO 2026-27 Medium-Term Budget Outlook.</li>
+      <li>ATO Taxation Statistics 2023-24 (income distribution); ABS population, labour force and projections; AIHW recipient counts; DSS rates from 20 September 2026; Melbourne Institute poverty lines.</li>
+      <li>ACOSS and UNSW poverty measure (household model calibration); e61 Research Note 17 (caseload response); OpenResearch trial (labour response); AHURI (rent pass-through).</li>
+    </ul>
+    <h3>Main limits</h3>
+    <ul>
+      <li>First-round effects only. Prices, wages and company profits do not respond to the payment or the taxes, apart from the labour and taxpayer responses.</li>
+      <li>Productivity raises GDP and the excess profits tax in proportion. It does not change wages, payment rates or the income distribution. The return on government AI investment is your assumption, as no Australian estimate exists.</li>
+      <li>Migration adds people with the same age and visa mix as the population (the paper's assumption). The five taxes (six with the wealth tax, which only the wealth-tax dividend adds) stay at their PBO costings unless you change their yield.</li>
+      <li>The unemployment lever moves JobSeeker numbers in proportion and takes the same number of people out of work. It does not move the youth-unemployment trigger.</li>
+      <li>The child payment is modelled at the paper's 18 cent taper only. The cost of assessing it on earlier income, the response to its taper and parents' 16 cent work response come from the household model.</li>
+      <li>Students and Parenting Payment recipients respond to the floor at e61's job-finding elasticity (0.21) whatever the JobSeeker setting. The share of non-lodgers who enrol is an assumption, as no figure exists for an Australian payment that needs enrolment.</li>
+      <li>On the Stage 2 and 3 paths the fund keeps receiving the wealth tax and paying the dividend as on the central path. The stages' own surpluses are held at the debt rate.</li>
+      <li>In a displacement, the macro variants move the six taxes with GDP and profits. GST, dividends and franking and any second-round demand effects are not modelled.</li>
+    </ul>
+    <p><a href="/UBI/paper/">Read the paper</a>, or go straight to <a href="/UBI/paper/5-the-proposal/">chapter 5, The proposal</a> and <a href="/UBI/paper/6-making-the-dollars-work/">chapter 6, Making the dollars work</a>.</p>
+  </section>
+</main>
+<footer class="bw-footer">
+  <div class="bw-wrap">
+    <ul>
+      <li><a href="/UBI/">Beyond Work overview</a></li>
+      <li><a href="/UBI/paper/">The paper</a></li>
+      <li><a href="/UBI/calculator/">Calculator</a></li>
+      <li><a href="https://maisoftware.app/">Mai Software</a></li>
+      <li><a href="/privacy/">Privacy</a></li>
+      <li><a href="mailto:support@maisoftware.app">Contact</a></li>
+    </ul>
+    <p>Beyond Work is a policy paper and model prepared by Mai Software, an independent Australian software studio. This is not a government website and nothing here is government policy. Figures are modelled estimates from the paper's model.</p>
+    <p>&copy; 2026 Mai Software</p>
+  </div>
+</footer>
+<script id="bw-data" type="application/json">/*DATA*/</script>
+<script id="bw-initial" type="application/json">/*INITIAL*/</script>
+<script id="bw-model">
+/*MODEL*/
+</script>
+<script>
+/*UI*/
+</script>
+</body>
+</html>

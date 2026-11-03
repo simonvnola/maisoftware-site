@@ -131,6 +131,15 @@ add("### The evidence at a glance\n\nTable 2.1 sets out the evidence for this ch
 add(F('02c_ch2_industrial.md'))
 add(F('02d_ch2_problem.md'))
 add(F('02e_ch2_thesis.md'))
+# 3 November 2026: what poverty costs Australia (Tables 2.3 and 2.4); the Impact Analysis table becomes Table 2.5
+assert ch2_rest.count('Table 2.3') == 2, ch2_rest.count('Table 2.3')
+ch2_rest = ch2_rest.replace('Table 2.3', 'Table 2.5')
+_ia4 = "| Section 6 (Tables 6.1 to 6.58) |"
+assert ch2_rest.count(_ia4) == 1
+ch2_rest = ch2_rest.replace(_ia4, "| Sections 2 ('What poverty costs Australia'; Tables 2.3 and 2.4) and 6 (Tables 6.1 to 6.59) |")
+_hq = '### How the paper answers the questions a committee will ask'
+assert ch2_rest.count(_hq) == 1
+ch2_rest = ch2_rest.replace(_hq, F('02f_ch2_cost_of_poverty.md') + '\n' + _hq)
 add(ch2_rest)
 
 # ======================= CHAPTER 3

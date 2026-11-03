@@ -121,6 +121,7 @@ add(seg(1743, 1838, [
 ]))
 add(F('06g_ch6_second_round.md'))
 add(seg(1840, 1875))
+add(F('06h_ch6_zero.md'))   # 3 November 2026: an illustrative costing of zero poverty (Table 6.58; the register becomes Table 6.59)
 add(seg(2318, 2454, [
  ("which moves the levy and the dividend, and the taxpayer response", "which moves the levy, and the taxpayer response"),
  ("| B1 | Stage designs and dates |", "| P1 | Recommended Stage 1 (P\\*) | The payment floor (C1); the child payment rule E14 without its supplement-only schedule, with a supplement of A$6,750 a child in 2028-29, re-costed at Part 1's fiscal cost; Rent Assistance maximum rates +75% (C19); no dividend, wealth tax or fund; the five durable taxes, with kept surpluses drawn before any levy | Round 13 household model (model Table F4-117); P\\* full fiscal path ({{PSTAR_MODEL_TABLE_REF}}) |\n| P2 | Joint stress test | Five taxes' yield, labour, caseload and taxpayer responses, AI path and cost overruns drawn together from {{STRESS_TEST_DISTRIBUTION_SOURCES}}; {{STRESS_TEST_PATHS}} paths | Model review |\n| B1 | Stage designs and dates (22 October design) |"),

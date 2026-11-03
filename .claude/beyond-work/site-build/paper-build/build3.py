@@ -196,7 +196,7 @@ app = seg(2852, 3174, [
   "| 2. Gross cost | Eligible children × the child supplement, less the FTB it replaces, under the child payment's rule; under a dividend option (Section 10), also eligible adults × take-up × the dividend, from 2029-30 (100% of lodgers and 80% of non-lodgers) | Tables 6.1 and 10.9 |"),
  ("| Tables 6.7a to 6.7f and 6.14a to 6.18b |", "| Tables 6.6 to 6.10 and 6.34 to 6.53 |"),
  ("Sources are numbered in order of first citation. Each entry gives the author or organisation, title, year of publication and web address or file path.",
-  "Sources S1 to S224 are numbered in order of first citation, and later sources in the order they were added. Each entry gives the author or organisation, title, year of publication and web address or file path. Sources S233, S234 and S236 to S264 were verified in the author's evidence review of 1 November 2026, which records the page, table or cell each figure comes from; its summary is lodged with the supplementary files. S225 to S232, S235 and S265 to S274 could not be opened from the drafting environment and carry descriptive titles in square brackets; they need checking before submission. S265 to S268 and S274 support the paper's account of the industrial revolution, which uses no figures from them, and S269 to S273 its comparison with other countries' institutions (Section 9)."),
+  "Sources S1 to S224 are numbered in order of first citation, and later sources in the order they were added. Each entry gives the author or organisation, title, year of publication and web address or file path. Sources S233, S234 and S236 to S264 were verified in the author's evidence review of 1 November 2026, which records the page, table or cell each figure comes from; its summary is lodged with the supplementary files. S225 to S232, S235 and S265 to S295 could not be opened from the drafting environment and carry descriptive titles in square brackets; they need checking before submission. S265 to S268 and S274 support the paper's account of the industrial revolution, which uses no figures from them, S269 to S273 its comparison with other countries' institutions (Section 9), and S275 to S295 its estimate of what poverty costs (Section 2), whose figures were taken from published summaries of each source."),
  ("| Tables 6.20 to 6.24b; F4-48 |", "| Tables 6.14 to 6.27; F4-48 |"),
  ("and the household scripts (household.py to household_r13.py) regenerate every model table,",
   "the household scripts (household.py to household_r13.py) and the scripts for this revision ({{OPTIONB_MODEL_SCRIPTS}}) regenerate every model table,"),
@@ -208,7 +208,7 @@ add(app)
 text = ''.join(out)
 # ---------------- fill tokens from the model's option B results
 FILLS = {
- 'REVISION_DATE': 'Revised 1 November 2026', 'REVISION_VERSION_DATE': '1 November 2026',
+ 'REVISION_DATE': 'Revised 3 November 2026', 'REVISION_VERSION_DATE': '3 November 2026',
  'WORK_CAP_ODDS_AT_3_9': '0.79 to 0.84', 'PSTAR_FIRST_LEVY_CENTRAL': '2043-44', 'PSTAR_ADVANCE_REPAID_YEAR': '2031-32',
  'PSTAR_ADVANCE_2028_29': 'A$20.7bn', 'PHASED_ADVANCE_2028_29': 'nil',
  'PSTAR_HH_BETTER_AFTER_FUNDING_2028_29': '35.4%', 'PSTAR_HH_WORSE_AFTER_FUNDING_2028_29': '64.6%', 'PSTAR_HH_WORSE_INCIDENCE_RANGE': 'about 59% to 67%',
@@ -217,7 +217,7 @@ FILLS = {
  'PSTAR_COMBINED_DOWNSIDE_LEVY_PEAK': '7.64% (A$570.1bn to 2045-46)', 'PSTAR_AHC_LOSER_HOUSEHOLDS': '0.70 million', 'PSTAR_AHC_LOSER_SHARE': '16%',
  'PSTAR_UCB_YEARS_WORSE': '7', 'PSTAR_LARGEST_LEVY_TO_2045_46': 'A$16.6bn (0.62% of market income)',
  'STRESS_TEST_PATHS': '4,000', 'STRESS_TEST_DISTRIBUTION_SOURCES': "triangular distributions over the paper's tested ranges, with AI displacement in 15% of draws (an assumption)",
- 'PSTAR_MODEL_TABLE_REF': 'option B model results, Tables B1 to B16', 'OPTIONB_MODEL_SCRIPTS': 'optionb_hh.py, optionb_fiscal.py, optionb_report.py and optionb_check.py',
+ 'PSTAR_MODEL_TABLE_REF': 'option B model results, Tables B1 to B16', 'OPTIONB_MODEL_SCRIPTS': 'optionb_hh.py, optionb_fiscal.py, optionb_zero.py, optionb_report.py and optionb_check.py',
  'TRIAL_COST_2029_30': '120', 'TRIAL_COST_2030_31': '124', 'IMPL_TOTAL_2029_30': '286', 'IMPL_TOTAL_2030_31': '293',
 }
 
@@ -240,8 +240,66 @@ FILLS.update({
 })
 FILLS.update({'SALES_SHARE_SQ_MODERATE': '15.1%', 'SALES_SHARE_FLOOR_MODERATE': '11.3%', 'SALES_SHARE_SQ_SEVERE': '39.8%', 'SALES_SHARE_FLOOR_SEVERE': '30.1%',
               'SALES_SHARE5_SQ_MODERATE': '15.5%', 'SALES_SHARE5_FLOOR_MODERATE': '11.6%', 'SALES_SHARE5_SQ_SEVERE': '40.9%', 'SALES_SHARE5_FLOOR_SEVERE': '30.9%'})
+# ---- 3 November 2026: the zero-poverty costing and the cost of poverty, filled from the model's facts (optionb_report.py, Tables B22 and B23)
+import json as _json
+_FA = _json.load(open(os.path.join(OPT, 'model', 'optionb_facts.json')))['facts']
+_Z, _CP = _FA['zero_poverty']['value'], _FA['cost_of_poverty']['value']
+_bn = lambda x: f"A${x:,.1f}bn"
+_bnr = lambda a: f"A${a[0]:,.1f}bn to A${a[-1]:,.1f}bn"
+_pc = lambda x, d=2: f"{x:.{d}f}%"
+_rd = lambda x, n=1000: f"A${round(x / n) * n:,.0f}"
+_D = _Z['designs']
+for _k in ('A_CUR', 'A_STAR', 'K_CUR', 'K_STAR', 'B_CUR', 'B_STAR'):
+    _d = _D[_k.replace('_CUR', '_cur').replace('_STAR', '_star')]
+    FILLS[f'ZP_{_k}_STATIC'] = _bn(_d['static'])
+    FILLS[f'ZP_{_k}_STATIC_GDP'] = _pc(100 * _d['static'] / _Z['gdp'])
+    FILLS[f'ZP_{_k}_TOTAL'] = f"{_bn(_d['total'][0])} to {_bn(_d['total'][2])}"
+    FILLS[f'ZP_{_k}_TOTAL_GDP'] = f"{_pc(_d['total_pct_gdp'][0])} to {_pc(_d['total_pct_gdp'][2])}"
+    FILLS[f'ZP_{_k}_CENTRAL'] = _bn(_d['total'][1])
+    FILLS[f'ZP_{_k}_PAID'] = f"{_d['persons_paid']:.2f} million"
+    FILLS[f'ZP_{_k}_POOR'] = _pc(_d['poor_rel'], 1)
+_c = _D['C_cur']
+FILLS.update({'ZP_C_LINE': f"A${_c['line_pw']:,.0f}", 'ZP_C_COST': f"A${_c['static']:,.0f}bn", 'ZP_C_GDP': f"{_c['total_pct_gdp'][1]:.0f}%", 'ZP_C_POOR': _pc(_c['poor_rel'], 1),
+              'ZP_NEG_PERSONS': f"{_D['A_cur']['negative_ahc_persons']:.2f} million", 'ZP_NEG_PAID': _bn(_D['A_cur']['paid_to_negative_ahc'])})
+_ZROWS = [('A_cur', 'Exact top-up to the line, from current rules'), ('A_star', 'Exact top-up to the line, on top of P\\*'),
+          ('K_cur', 'Exact top-up for families with children under 15, from current rules'), ('K_star', 'Exact top-up for families with children under 15, on top of P\\*'),
+          ('B_cur', 'Tapered top-up (50 cents withdrawn a dollar), from current rules'), ('C_cur', 'Universal payment equal to the median, from current rules')]
+_t = ["**Table 6.ZP. What it would cost to end poverty after housing costs: four illustrative designs, each sized to the relative line it produces, 2028-29 (million; A$ billion; per cent)**", "",
+      "| Design | People in households paid (million) | Cost before the work response (A$bn) | Cost with the work response, low to high (A$bn) | Share of GDP, low to high (%) | Poverty after, all people (%) | Poverty after, children under 15 (%) |",
+      "|---|---|---|---|---|---|---|"]
+for _k, _lab in _ZROWS:
+    _d = _D[_k]
+    _w = 'not modelled' if _k == 'C_cur' else f"{_d['total'][0]:,.1f} to {_d['total'][2]:,.1f}"
+    _g = f"{_d['total_pct_gdp'][1]:.1f}" if _k == 'C_cur' else f"{_d['total_pct_gdp'][0]:.2f} to {_d['total_pct_gdp'][2]:.2f}"
+    _t.append(f"| {_lab} | {_d['persons_paid']:.2f} | {_d['static']:,.1f} | {_w} | {_g} | {_d['poor_rel']:.1f} | {_d['u15_rel']:.1f} |")
+_t += ["", f"*Source: author's modelling, option B household model (model results Table B22; optionb_zero.py) [S5]. Note: on top of P\\*, the costs are in addition to P\\*'s A$62.0bn. Each design pays enough to reach the relative line that holds after it is paid (A${_Z['line_pw']:,.0f} a week for a single adult after housing costs from current rules, A${_Z['star']['line_pa'] / 52.18:,.0f} on top of P\\*, A${_c['line_pw']:,.0f} with the universal payment). The work response counts working-age adults in the households paid, at the paper's taper elasticities; in the high case for the exact top-ups every working-age adult paid stops earning. The universal payment's tax and work effects are not modelled. Across the household model's three calibrations the central cost of the exact top-up from current rules is A${_D['A_cur']['total_central_across'][0]:,.1f}bn to A${_D['A_cur']['total_central_across'][1]:,.1f}bn, and of ending child poverty A${_D['K_cur']['total_central_across'][0]:,.1f}bn to A${_D['K_cur']['total_central_across'][1]:,.1f}bn. ILLUSTRATIVE AND PROVISIONAL: no design here is recommended.*"]
+FILLS['TABLE_ZERO'] = '\n'.join(_t)
+_pcd, _pr, _tc, _ta, _tt, _tg, _pp = _CP['per_child'], _CP['adult_premium'], _CP['total_child'], _CP['total_adult'], _CP['total'], _CP['total_pct_gdp'], _CP['per_person']
+FILLS.update({'COP_CHILD_LOW': _rd(_pcd[0]), 'COP_CHILD_CENTRAL': _rd(_pcd[1]), 'COP_CHILD_HIGH': _rd(_pcd[2]),
+              'COP_CHILD_TOTAL': f"A${_tc[0]:,.0f}bn to A${_tc[2]:,.0f}bn", 'COP_TOTAL': f"A${_tt[0]:,.0f}bn to A${_tt[2]:,.0f}bn", 'COP_TOTAL_CENTRAL': f"A${_tt[1]:,.0f}bn",
+              'COP_GDP': f"{_tg[0]:.1f}% to {_tg[2]:.1f}%", 'COP_PER_PERSON': f"{_rd(_pp[0])} to {_rd(_pp[2])}", 'COP_PER_PERSON_CENTRAL': _rd(_pp[1]),
+              'COP_N_ALL': f"{_CP['n_all']:.2f} million", 'COP_ASSOC_PSTAR': f"A${_CP['assoc_pstar'][0]:,.0f}bn to A${_CP['assoc_pstar'][2]:,.0f}bn",
+              'COP_LIFTED_CHILDREN': f"{_CP['lifted_children_pstar']:.2f} million"})
+_r = lambda v, f: ' | '.join(f(x) for x in v)
+_t = ["**Table 2.3. The annual cost to society of poverty in Australia, an illustrative estimate: low, central and high cases, 2028-29 (A$ a year; A$ billion; per cent of GDP)**", "",
+      "| Component | Low | Central | High | Basis |", "|---|---|---|---|---|",
+      f"| Cost for each child in poverty (A$ a year) | {_r(_pcd, _rd)} | The New South Wales estimate [S_NCOSS]: low, half its direct costs (an assumption: the share income alone can avoid); central, its direct costs (government services and lower earnings and productivity); high, all its costs, including poorer health and shorter lives; uprated from 2024 by wages |",
+      f"| Extra public health-system cost for each person aged 15 and over in poverty (A$ a year) | {_r(_pr, lambda x: _rd(x, 100))} | 20%, 30% and 60% above average health spending of A$10,614 a person in 2024-25 [S_AIHW_HEA], uprated (an assumption bounded by the 1.6 and 1.7 ratios in Table 2.4); about 70% falls on governments |",
+      f"| Children under 15 in poverty (million) | {_CP['n_child']:.2f} | {_CP['n_child']:.2f} | {_CP['n_child']:.2f} | Household model, current rules |",
+      f"| People aged 15 and over in poverty (million) | {_CP['n_adult']:.2f} | {_CP['n_adult']:.2f} | {_CP['n_adult']:.2f} | Household model, current rules |",
+      f"| Cost of child poverty (A$bn a year) | {_r(_tc, lambda x: f'{x:,.1f}')} | Cost for each child × children in poverty |",
+      f"| Extra health-system cost of poverty at 15 and over (A$bn a year) | {_r(_ta, lambda x: f'{x:,.1f}')} | Cost for each person × people in poverty |",
+      f"| **Total (A$bn a year)** | {_r(_tt, lambda x: f'**{x:,.1f}**')} | |",
+      f"| Total (% of GDP) | {_r(_tg, lambda x: f'{x:.1f}')} | GDP A${_Z['gdp']:,.0f}bn |",
+      f"| **For each person in poverty (A$ a year)** | {_r(_pp, lambda x: '**' + _rd(x) + '**')} | Total ÷ {_CP['n_all']:.2f} million people in poverty |",
+      "", "*Source: author's calculations (model results Table B23) from [S_NCOSS, S_AIHW_HEA] and the household model [S5]. Note: the cost for each child is a year's cost of child poverty across the population divided by the children now in poverty, so it is close to the lifetime cost of one year of a child's poverty; it is not spent on each child each year. The central and high cases may count some health costs twice, where adults now in poverty were poor as children. The New South Wales study's method is in its appendix, which could not be opened; its figures need checking. ILLUSTRATIVE: no Budget saving is assumed from these costs.*"]
+FILLS['TABLE_COP'] = '\n'.join(_t)
 for k_, v_ in FILLS.items():
     text = text.replace('{{' + k_ + '}}', v_)
+# the register moves from Table 6.58 to 6.59; the zero-poverty table takes 6.58
+_n658 = len(re.findall(r'(?<![\d.$])6\.58(?!\d)', text))
+text = re.sub(r'(?<![\d.$])6\.58(?!\d)', '6.59', text).replace('Table 6.ZP', 'Table 6.58')
+print('6.58 references moved to 6.59:', _n658, file=sys.stderr)
 
 FINAL = [
  ("At the OpenResearch trial's earlier estimate of a 4.2-point fall in participation, the work-effort cap would bind with probability 0.86 to 0.91; at its latest estimate of 3.9 points,",
@@ -326,12 +384,36 @@ NEW = {
  'S_OBR': "Office for Budget Responsibility. [About the Office for Budget Responsibility and its forecasts and costings]. n.d. https://obr.uk/",
  'S_POORLAW': "UK Parliament. [Living Heritage: the Poor Law Amendment Act 1834 and the workhouse]. n.d. https://www.parliament.uk/about/living-heritage/transformingsociety/livinglearning/19thcentury/overview/poorlaw/",
  'S_CBO': "Congressional Budget Office. [An overview of CBO's work: budget projections and cost estimates for the Congress]. n.d. https://www.cbo.gov/about/overview",
+ 'S_NCOSS': "NSW Council of Social Service and Impact Economics and Policy. [Lasting Impacts: the economic costs of child poverty in NSW, November 2024; direct costs A$25bn on the NCOSS page and A$26bn in its media release, the lower used here]. n.d. https://ncoss.org.au/wp-content/uploads/2025/03/Cost-Child-Poverty-NSW_V8_WEB_SINGLES.pdf",
+ 'S_MCLRANK': "McLaughlin and Rank. [Estimating the economic cost of childhood poverty in the United States; Social Work Research 42(2), 2018, pp. 73-83]. n.d. https://doi.org/10.1093/swr/svy007",
+ 'S_HOLZER': "Holzer, Schanzenbach, Duncan and Ludwig. [The economic costs of poverty in the United States: subsequent effects of children growing up poor; Center for American Progress, 2007]. n.d. https://www.americanprogress.org/article/the-economic-costs-of-poverty/",
+ 'S_HIRSCH': "Hirsch, for the Child Poverty Action Group. [The cost of child poverty in 2023]. n.d. https://cpag.org.uk/sites/default/files/2023-10/Cost_of_child_poverty_2023.pdf",
+ 'S_BRAMLEY': "Bramley, Hirsch, Littlewood and Watkins, for the Joseph Rowntree Foundation. [Counting the cost of UK poverty, 2016]. n.d. https://www.jrf.org.uk/counting-the-cost-of-uk-poverty",
+ 'S_DEUTSCHER': "Deutscher and Mazumder. [Intergenerational mobility across Australia and the stability of regional estimates; Labour Economics 66, 2020, 101861]. n.d. https://doi.org/10.1016/j.labeco.2020.101861",
+ 'S_COBBCLARK': "Cobb-Clark, Dahmann, Salamanca and Zhu. [Intergenerational disadvantage: learning about equal opportunity from social assistance receipt; Labour Economics 79, 2022, 102276; figures from IZA Discussion Paper 11070, 2017]. n.d. https://ses.library.usyd.edu.au/handle/2123/29614",
+ 'S_COOPER': "Cooper and Stewart. [Does household income affect children's outcomes? A systematic review of the evidence; Child Indicators Research 14, 2021]. n.d. https://eprints.lse.ac.uk/107029/",
+ 'S_DUNCAN': "Duncan, Morris and Rodrigues. [Does money really matter? Estimating impacts of family income on young children's achievement with data from random-assignment experiments; Developmental Psychology 47(5), 2011]. n.d. https://doi.org/10.1037/a0023875",
+ 'S_DAHL': "Dahl and Lochner. [The impact of family income on child achievement: evidence from the earned income tax credit; American Economic Review 102(5), 2012, pp. 1927-1956]. n.d. https://doi.org/10.1257/aer.102.5.1927",
+ 'S_BABYBONUS': "Deutscher and Breunig. [Baby Bonuses: natural experiments in cash transfers, birth timing and child outcomes; Life Course Centre Working Paper 2016-25]. n.d. https://www.lifecoursecentre.org.au/wp-content/uploads/2018/06/2016-25-LCC-Working-Paper-Deutscher-and-Breunig-amended-2.pdf",
+ 'S_AIHW_BOD': "Australian Institute of Health and Welfare. [Australian Burden of Disease Study 2018: key findings, burden by socioeconomic group]. n.d. https://www.aihw.gov.au/reports/burden-of-disease/burden-of-disease-study-2018-key-findings/contents/key-findings",
+ 'S_AIHW_PPH': "Australian Institute of Health and Welfare. [Potentially preventable hospitalisations in Australia, 2017-18 to 2023-24: rates by socioeconomic area, 2022-23]. n.d. https://www.aihw.gov.au/reports/primary-health-care/potentially-preventable-hospitalisations-2017-2024/contents/potentially-preventable-hospitalisations",
+ 'S_AIHW_SES': "Australian Institute of Health and Welfare. [Health system spending on disease and injury in Australia 2024-25: spending by socioeconomic status]. n.d. https://www.aihw.gov.au/reports/health-welfare-expenditure/health-system-spending-disease-injury-2024-25/contents/spending-by-socioeconomic-status",
+ 'S_AIHW_HEA': "Australian Institute of Health and Welfare. [Health expenditure Australia 2024-25: summary]. n.d. https://www.aihw.gov.au/reports/health-welfare-expenditure/health-expenditure-australia-2024-25/contents/summary",
+ 'S_NATSEM': "Brown, Thurecht and Nepal, NATSEM, for Catholic Health Australia. [The cost of inaction on the social determinants of health, Report 2/2012, June 2012]. n.d. https://health.vic.gov.au/publications/the-cost-of-inaction-on-the-social-determinants-of-health",
+ 'S_COLI': "Teager, Fox and Stafford, for CoLab (Telethon Kids Institute) and the Minderoo Foundation. [How Australia can invest in children and return more: a new look at the $15b cost of late action, October 2019; 2018-19 prices]. n.d. https://cdn.minderoo.org/content/uploads/2019/10/15174253/20191016-COLI-Report.pdf",
+ 'S_FRONT': "PwC, for The Front Project. [A smart investment for a smarter Australia: economic analysis of universal early childhood education in the year before school, June 2019; figures from secondary coverage]. n.d. https://thesector.com.au/2019/06/20/pwc-report-shows-for-every-dollar-invested-in-ecec-two-are-returned/",
+ 'S_HECKMAN10': "Heckman, Moon, Pinto, Savelyev and Yavitz. [The rate of return to the HighScope Perry Preschool Program; Journal of Public Economics 94, 2010, pp. 114-128]. n.d. https://www.nber.org/papers/w16180",
+ 'S_GARCIA': "García, Heckman, Leaf and Prados. [Quantifying the life-cycle benefits of an influential early-childhood program; Journal of Political Economy 128(7), 2020, pp. 2502-2541]. n.d. https://doi.org/10.1086/705718",
+ 'S_RIGHTHOME': "Bohingamu Mudiyanselage and others. [Economic evaluation of an Australian nurse home visiting programme for mothers experiencing adversity (right@home); BMJ Open 11, 2021, e052156]. n.d. https://bmjopen.bmj.com/content/11/12/e052156",
 }
 order = ['S_CANARIES', 'S_YALE26', 'S_DANISH', 'S_OECD17', 'S_ALASKA25', 'S_IMF17', 'S_NYFED', 'S_ANUJS', 'S_LAWP', 'S_RBA_FSR', 'S_STP']  # fixed: S225 to S235 as first published
 LATE = ['S_ALLEN', 'S_FEINSTEIN', 'S_HUMPHRIES', 'S_FACTORY1833', 'S_HENRY', 'S_NZJS', 'S_RTI', 'S_OBR', 'S_CBO', 'S_POORLAW']  # added 1 November 2026 (thesis and international sections): numbered after S264
+LATE2 = ['S_NCOSS', 'S_MCLRANK', 'S_HOLZER', 'S_HIRSCH', 'S_BRAMLEY', 'S_DEUTSCHER', 'S_COBBCLARK', 'S_COOPER', 'S_DUNCAN', 'S_DAHL', 'S_BABYBONUS',
+         'S_AIHW_BOD', 'S_AIHW_PPH', 'S_AIHW_SES', 'S_AIHW_HEA', 'S_NATSEM', 'S_COLI', 'S_FRONT', 'S_HECKMAN10', 'S_GARCIA', 'S_RIGHTHOME']  # added 3 November 2026 (the cost of poverty): numbered after S274
 for m in re.finditer(r'S_[A-Z0-9_]+', text):
-    if m.group(0) in NEW and m.group(0) not in order and m.group(0) not in LATE: order.append(m.group(0))
-order += LATE
+    if m.group(0) in NEW and m.group(0) not in order and m.group(0) not in LATE and m.group(0) not in LATE2: order.append(m.group(0))
+order = [k for k in order if k not in LATE2]
+order += LATE + LATE2
 missing = set(NEW) - set(order)
 if missing: print('new sources never cited:', missing, file=sys.stderr)
 num = {key: f'S{225 + i}' for i, key in enumerate(order)}
