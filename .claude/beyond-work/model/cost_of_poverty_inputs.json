@@ -1,0 +1,74 @@
+{
+ "note": "Inputs to the cost-of-poverty estimate (optionb_report.py, section 8b). Every external figure was seen only in search results or secondary coverage: the primary sources could not be opened from the drafting environment, so each needs checking before submission. 'assumption' marks a value chosen here.",
+ "ncoss": {
+  "total_bn": 60.0,
+  "direct_bn": 25.0,
+  "direct_bn_alt": 26.0,
+  "health_life_bn": 34.0,
+  "dalys": 150000,
+  "children_in_poverty": 278000,
+  "child_poverty_rate": 15.5,
+  "gsp_share": [
+   7.6,
+   7.8
+  ],
+  "price_year": "2024 (not confirmed)",
+  "domains_bn": {
+   "education": 19.0,
+   "health": 5.3,
+   "child maltreatment": 3.0,
+   "homelessness": 1.1,
+   "crime": 0.855
+  },
+  "source": "NCOSS and Impact Economics and Policy, Lasting Impacts: the economic costs of child poverty in NSW, November 2024; the lower of the two direct-cost figures published (A$25bn and A$26bn) is used"
+ },
+ "causal_share_low": {
+  "value": 0.5,
+  "basis": "assumption: half of the direct costs avoidable by income alone (quasi-experimental effects of US$1,000 a year of 2 to 6% of a standard deviation in test scores; no study gives a single share)"
+ },
+ "health": {
+  "spend_per_person": 10614,
+  "year": "2024-25",
+  "government_share": 0.7,
+  "source": "AIHW, Health expenditure Australia 2024-25"
+ },
+ "adult_health_premium": {
+  "low": 0.2,
+  "central": 0.3,
+  "high": 0.6,
+  "basis": "assumption, bounded by the AIHW ratios of the lowest to the highest socioeconomic group: disease burden 1.6 times (2018), potentially preventable hospitalisations 1.7 times (2022-23)"
+ },
+ "uprate": {
+  "rate": 0.035,
+  "years": 4,
+  "from": "2024-25",
+  "to": "2028-29",
+  "basis": "wage growth in the 2026-27 Budget parameters (the paper's 3.5% a year)"
+ },
+ "benchmarks": [
+  {
+   "study": "McLaughlin and Rank (2018), United States",
+   "scope": "child poverty: lost earnings, health, crime, homelessness, maltreatment",
+   "cost": "US$1,029.8bn a year (2015)",
+   "pct_gdp": "5.4%"
+  },
+  {
+   "study": "Holzer, Schanzenbach, Duncan and Ludwig (2007), United States",
+   "scope": "child poverty: lost output, crime, health",
+   "cost": "about US$500bn a year (2007)",
+   "pct_gdp": "nearly 4%"
+  },
+  {
+   "study": "Hirsch (2023), United Kingdom",
+   "scope": "child poverty: public services, lost earnings and taxes; no health loss valued",
+   "cost": "£39.5bn a year (2023)",
+   "pct_gdp": null
+  },
+  {
+   "study": "Bramley, Hirsch, Littlewood and Watkins (2016), United Kingdom",
+   "scope": "poverty at all ages: public services (£69bn, about £1 in every £5 of public service spending) and lost taxes and extra benefits (£9bn)",
+   "cost": "about £78bn a year (2016)",
+   "pct_gdp": null
+  }
+ ]
+}

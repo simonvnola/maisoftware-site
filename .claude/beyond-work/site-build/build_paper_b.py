@@ -75,6 +75,8 @@ bp.NOT_ACRONYMS.update({"VI", "VII"})   # Roman numerals in a source title
 bp.GLOSSARY.update({
     "APRA": "Australian Prudential Regulation Authority",
     "ADI": "authorised deposit-taking institution", "NSW": "New South Wales",
+    "ILO": "International Labour Organization", "CBO": "Congressional Budget Office (United States)",
+    "HMRC": "His Majesty's Revenue and Customs (United Kingdom)", "HM": "His Majesty's (in UK government names)",
     "PTR": "participation tax rate",
     "JSA": "Jobs and Skills Australia",
 })

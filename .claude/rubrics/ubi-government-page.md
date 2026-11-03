@@ -1,6 +1,8 @@
-# Rubric v3: Beyond Work (UBI) pages in the style of a government service
+# Rubric v3.3: Beyond Work (UBI) pages in the style of a government service
 
-Scope: every page under `/UBI/` (overview, the paper and its chapters, the calculator).
+Scope: the overview (`/UBI/`) and the paper (`/UBI/paper/` and its chapters).
+The calculator (`/UBI/calculator/`) is outside the review loop: it is kept in
+step with the paper by the sync step in section G, not scored.
 Modelled on the GOV.UK Design System and its content guidance, the Australian
 Government GOLD Design System, the Australian Digital Service Standard, the US
 Web Design System (USWDS) and WCAG 2.2 AA.
@@ -19,7 +21,7 @@ A2. No Commonwealth or state coat of arms, crest, government logo or wording
     that claims or implies the pages are published by a government.
 A3. The paper's author, status (a submission prepared by Mai Software), date and
     revision are stated on the overview and at the top of the paper.
-A4. Every figure on the overview and calculator that is an estimate or model
+A4. Every figure on the overview that is an estimate or model
     output is labelled as an estimate or modelled figure on screen, close to the
     number, not only in a footnote.
 A5. Nothing confirms an action that did not happen and no empty state implies
@@ -28,7 +30,7 @@ A6. Contact route: a working way to write to the publisher (a mailto link or
     a contact page) in the footer of every page.
 A7. No secrets, tokens, local file paths or build-machine paths in any served
     file.
-A8. Every page carries the working-draft banner directly below the primary
+A8. Every page in scope carries the working-draft banner directly below the primary
     navigation (the same markup on every page), saying the paper and calculator
     are updated regularly and may change, with a link to what changed in the
     latest revision; the paper's own front matter states its working-draft
@@ -58,7 +60,7 @@ B8. The footer is the same on every page: links back to the overview, to
 B9. The browser title of every page is "<page name> - Beyond Work - Mai
     Software" (or the same pattern), unique per page.
 B10. No page needs more than two clicks from the overview to reach any chapter
-     or either calculator mode.
+     or the calculator.
 
 ## C. Content and plain language
 
@@ -150,56 +152,43 @@ F1. Layout works at 320, 375, 768, 1024 and 1440 px wide with no overlap,
 F2. No external requests other than fonts from the site's own domain; no
     third-party scripts, trackers or CDNs.
 F3. The overview is under 150 KB uncompressed; every other page (with inline
-    CSS and JS) is under 600 KB, except the calculator (under 800 KB) and a
-    paper chapter whose tables need more (under 1 MB).
+    CSS and JS) is under 600 KB, except a paper chapter whose tables need more
+    (under 1 MB).
 F4. Images are SVG or appropriately sized; no image over 300 KB.
-F5. The pages render correctly with JavaScript disabled (the calculator shows
-    its default result and a notice that JavaScript is needed to change
-    settings).
+F5. The pages render correctly with JavaScript disabled.
 F6. Print styles: the paper chapters print without navigation and with
     readable tables.
 F7. HTML validates with no errors (duplicate ids, unclosed elements, invalid
     nesting), checked with a validator or a parser that reports errors.
 
-## G. Calculator usability
+## G. Calculator sync (outside the review loop; not scored)
 
-G1. Two levels of use, clearly offered on the calculator page: a simple mode
-    with a small number of controls (no more than 8) that answers "what happens
-    to me" and "what happens to the economy", and a detailed mode that exposes
-    the full set of levers. Switching keeps the values already set.
-G2. The page explains in two sentences at the top what the calculator does and
-    that results are modelled estimates from the paper's model.
-G3. Simple mode: the result for a household is shown as a headline figure in
-    plain words ("Your household would be A$X a week better off in 2028-29")
-    with a short breakdown, within one screen on mobile.
-G4. At least three worked example households can be loaded with one click
-    ("Try an example"), and the example is named in plain words.
-G5. Every control has a label, a unit, a default, and a one-line explanation
-    available without leaving the page (a "What is this?" disclosure or inline
-    hint). Help text does not repeat the label.
-G6. Results update within 500 ms of a change on a mid-range laptop and the page
-    stays responsive; no change requires a page reload.
-G7. A "Reset to the paper's settings" control exists and works, and the current
-    settings can be shared or saved (URL, copy or download).
-G8. Results that are worse for the household or the budget are stated plainly,
-    with the word "worse off" or "shortfall", not softened or hidden.
-G9. The detailed mode groups levers under headings that match the paper's
-    sections, in a logical order, and shows each lever's paper value.
-G10. The economy results show the main fiscal series as a chart and as a table
-     (toggle or both) for the years modelled, with the year range stated.
-G11. The calculator works on a 375 px wide phone: controls are usable with a
-     thumb, results are readable without zoom, and nothing is cut off.
-G12. The calculator reproduces the paper's model on the paper's current central
-     case (the recommended design): a check against the paper's figures passes and
-     is reported on the page as reproducing the model, not validating it.
-G13. Error handling: out-of-range input is rejected with a plain message next
-     to the control, and never produces NaN, "undefined" or a blank result.
+The calculator is not reviewed against this rubric. The reviewer does not score
+it and does not open it except to confirm that the navigation link resolves
+(H1). It is kept correct by a sync step instead. Whenever a metric or measure
+in the paper changes (a model re-run, an edited facts file, a new scenario or
+a corrected figure), the builder, in the same change:
+
+1. updates the model outputs the paper is written from (optionb/model/runs/
+   and optionb_facts.json) and any paper value typed into the calculator's
+   data step (optionb_data.js);
+2. runs `node calc_sync.js --apply`, which rebuilds UBI/calculator/index.html
+   from those outputs, runs the page's own reproduction check (every figure
+   must match) and then compares every figure embedded in the page with the
+   model outputs and the paper;
+3. commits the rebuilt calculator with the paper change, and names it in the
+   paper's change note when a calculator figure moves.
+
+`node calc_sync.js` (without `--apply`) only checks. It exits with an error and
+lists each figure that differs. A change to the paper is not finished while it
+reports the calculator out of sync.
 
 ## H. Technical correctness
 
 H1. All three page types load with HTTP 200 from the deployed site (or a local
     static server that mirrors the Vercel layout), including `/UBI/`,
-    `/UBI/paper/`, each chapter, `/UBI/calculator/` and every chart file.
+    `/UBI/paper/`, each chapter and every chart file; the calculator link
+    (`/UBI/calculator/`) resolves.
 H2. Lowercase `/ubi/` paths reach the same pages (by rewrite or redirect), with
     no redirect loop, verified on a deployment where possible.
 H3. No console errors or warnings on load or on interaction in Chromium.
@@ -209,14 +198,16 @@ H5. The files this work adds to the branch (everything under /UBI/ and
     .claude/) contain nothing that does not belong on a published site:
     no templates with placeholder text, test screenshots, backups, zip
     archives, build scripts or node_modules; and .claude/ is excluded from
-    deployment (.vercelignore). Files that were already in the repository
+    deployment (.vercelignore); the source bundle in .claude/beyond-work/
+    (the paper source, model, site-build and calculator source) is allowed
+    there because it is never deployed. Files that were already in the repository
     before this work are out of scope.
 
 ## I. Does the recommendation follow from the evidence (version 3 gate)
 
 Added after the October 2026 external critique. These criteria test substance,
-not presentation. Each applies to the overview, the paper and the calculator
-wherever the subject appears.
+not presentation. Each applies to the overview and the paper wherever the
+subject appears.
 
 I1. The recommended Stage 1 is the option the paper's own comparison supports on
     its stated objectives; or the paper names the value judgement that overrides
@@ -230,21 +221,19 @@ I3. The Budget advance is called borrowing, with its amount, in the paper's
 I4. The risk to the funding is shown from a joint stress test (a probability or
     range for the first levy year), not only the central date.
 I5. Household and population results lead with figures after the funding taxes,
-    with before-funding figures beside them; the calculator's household result
-    includes the household's share of the funding taxes, with the incidence
-    range, and counts "better off" only above a stated material amount.
-I6. Uncertain dates and rates are given as ranges, and every calculator readout
-    is labelled Live, Interpolated or Fixed, with what moves it.
-I7. Checks of the calculator against the paper are described as reproducing the
-    model, not validating its assumptions.
+    with before-funding figures beside them, and count "better off" only above
+    a stated material amount.
+I6. Uncertain dates and rates are given as ranges.
+I7. Wherever the overview or the paper mentions the calculator's check against
+    the paper, it is described as reproducing the model, not validating its
+    assumptions.
 I8. The decisive questions come first in any objections list (why not the
     targeted package, why legislate any universal pathway, who pays), answered
     with the paper's own figures; weak objections few serious critics make are
     not featured.
 I9. The universal stages are a conditional pathway: the tests are legislated, no
     rates are; Stage 3 is described, not authorised. Dividend options sit in
-    their own section, are described neutrally, and none is recommended; the
-    calculator defaults to the recommended design with no dividend.
+    their own section, are described neutrally, and none is recommended.
 I10. Every figure from a provisional or unchecked model run is labelled
      provisional; every external fact matches its source.
 I11. A red-team reader asking only "does the recommendation follow from the
@@ -275,3 +264,26 @@ I13. The paper and the overview are organised as one argument: where Australia
      countries). The thesis (a good life, not jobs) is stated plainly, and the
      paper is consistent with it: employment is monitored, not targeted, and
      any place the design falls short of the thesis is named.
+I14. The paper includes an illustrative costing of zero poverty after housing
+     costs, and the model produces it: (a) it is labelled illustrative and not
+     recommended; (b) at least two designs are costed on the paper's household
+     model (an exact top-up and at least one design with a lower withdrawal
+     rate or a universal payment), each with its static cost, a range for the
+     work response and its share of GDP, both from current rules and on top
+     of the recommendation; (c) it says plainly why measured poverty would not
+     reach zero, or stay there, in practice (the relative line moves with the
+     median, incomes below zero after housing costs, take-up, measurement);
+     (d) the overview summarises it in plain words with the paper's figures.
+I15. The paper estimates the cost of poverty to society: (a) an annual cost
+     for each person in poverty and each child in poverty, as a low, central
+     and high range, with its components, method, price year and sources, and
+     the cost to government budgets kept apart from the wider cost; (b) the
+     poverty trap for children raised in poverty, with Australian evidence on
+     how disadvantage persists and a stated share of the outcome gap that
+     income itself can close (association is not presented as cause); (c)
+     the health costs linked to poverty that fall on the public health
+     system, with sourced evidence that early intervention costs less than
+     later treatment; (d) the estimate is set beside the cost of the
+     recommendation and of the zero-poverty scenario without double counting,
+     and the paper claims no more than its figures show (for example, that a
+     payment pays for itself); (e) the overview summarises it in plain words.

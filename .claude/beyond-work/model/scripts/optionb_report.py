@@ -583,7 +583,7 @@ if os.path.exists(_sh):
       "single homeowner, A$600,000 for a single non-homeowner, and A$499,000 / A$766,000 for a couple (1 July 2026; evidence report D1). The liquid-assets waiting period starts at "
       "A$5,500 of liquid assets (single) or A$11,000 (partnered or with dependants) and reaches its 13-week maximum at A$11,500 / A$23,000 (D2); liquid assets include mortgage "
       "offset accounts but not redraw balances (D2b). The household model carries tenure and mortgage debt but no other assets, and the paper's worked households assume no assets "
-      "test (Table 6.58, C36), so the share of displaced workers caught by either rule cannot be computed; the published ABS wealth tables do not identify it either (D4), and a "
+      "test (Table 6.59, C36), so the share of displaced workers caught by either rule cannot be computed; the published ABS wealth tables do not identify it either (D4), and a "
       "weighted Survey of Income and Housing or HILDA wealth-module tabulation of employed adults' assessable assets is needed. An upper bound on investor exposure: 2.02 million "
       "households, 21%, owned another residential property in 2019-20, including holiday homes (C2a). What the model does give is the partner income test. With the JobSeeker "
       f"partner cut-out of A$2,711.67 a fortnight (D3), {PSH['moderate']['partnered']:.1f}% of displaced households in the moderate scenario are couples and "
@@ -795,6 +795,92 @@ SUM = dict(
     robust_all_configs=all(r["all_groups"] for r in ROB.values()), robust_nb_positive_all=all(r["nb_star_vs_p1"][0] > 0 for r in ROB.values()),
     trial_cap_at_3_9=[round(min(t["p39"] for t in TR), 2), round(max(t["p39"] for t in TR), 2)])
 fact("summary", SUM, "mixed: % of persons; million; A$bn; financial year; probability", "2028-29 to 2045-46", SRC_HH + "; " + SRC_F, provisional=True)
+
+# ======================================================================================================================
+# 8b. An illustrative costing of zero poverty (optionb_zero.py) and the cost of poverty to society (cost_of_poverty_inputs.json)
+# ======================================================================================================================
+ZCAL = ["central", "rec075", "tilt17"]
+Z = {c: json.load(open(os.path.join(ROOT, "runs", f"zero_{c}_20261016.json"))) for c in ZCAL}
+ZC = Z["central"]
+ZLAB = [("A_cur", "Exact top-up to the line, from current rules"), ("A_star", "Exact top-up to the line, on top of P*"),
+        ("K_cur", "Exact top-up for families with children under 15, from current rules"), ("K_star", "Exact top-up for families with children under 15, on top of P*"),
+        ("B_cur", "Tapered top-up (50-cent withdrawal), from current rules"), ("B_star", "Tapered top-up (50-cent withdrawal), on top of P*"),
+        ("C_cur", "Universal payment large enough to end relative poverty, from current rules")]
+A("## 8b. An illustrative costing of zero poverty, and the cost of poverty to society\n")
+A(f"Baseline (central calibration, seed 20261016, 2028-29): {ZC['base']['rate']:.1f}% of people in poverty after housing costs on the relative line "
+  f"({ZC['base']['n_poor']:.2f} million; children under 15 {ZC['base']['u15']:.1f}%, {ZC['base']['n_u15_poor']:.2f} million); household poverty gap A${ZC['base']['gap']:.1f}bn; "
+  f"line A${ZC['line_pw']:.0f} a week for a single adult after housing costs. With P*: {ZC['star']['rate']:.1f}% ({ZC['star']['n_poor']:.2f} million; children "
+  f"{ZC['star']['u15']:.1f}%, {ZC['star']['n_u15_poor']:.2f} million), gap A${ZC['star']['gap']:.1f}bn on its own relative line (A${ZC['star']['line_pa'] / 52.18:.0f} a week). "
+  f"GDP A${ZC['gdp']:,.0f}bn.\n")
+A("**Table B22. Illustrative costings of zero poverty after housing costs: each design sized to the relative line it produces, 2028-29 (million; A$ billion; per cent)**\n")
+A("| Design | People in households paid (million) | Static cost (A$bn) | Work response, low to high (A$bn) | Total, central (A$bn) | Total, low to high (% of GDP) | Total across the three calibrations, central (A$bn) | Poverty after, relative line (%) | Children under 15 in poverty after (%) | Relative line after (A$ a week, single adult) |")
+A("|---|---|---|---|---|---|---|---|---|---|")
+ZF = {}
+for k, lab in ZLAB:
+    d = ZC["designs"][k]
+    acr = [Z[c]["designs"][k]["total_central"] for c in ZCAL]
+    A(f"| {lab} | {f2(d['persons_paid'])} | {f1(d['cost'])} | {(f1(d['resp']['low']) + ' to ' + f1(d['resp']['high'])) if k != 'C_cur' else 'not modelled'} | {f1(d['total_central'])} | "
+      f"{(f2(d['total_low_pct_gdp']) + ' to ' + f2(d['total_high_pct_gdp'])) if k != 'C_cur' else f2(d['total_central_pct_gdp'])} | {f1(min(acr))} to {f1(max(acr))} | {f2(d['poor_rel'])} | {f2(d['u15_rel'])} | {f0(d['line_pw'])} |")
+    ZF[k] = dict(persons_paid=d["persons_paid"], static=d["cost"], resp=d["resp"], total=[d["total_low"], d["total_central"], d["total_high"]],
+                 total_pct_gdp=[d["total_low_pct_gdp"], d["total_central_pct_gdp"], d["total_high_pct_gdp"]], total_central_across=[min(acr), max(acr)],
+                 total_range_across=[min(Z[c]["designs"][k]["total_low"] for c in ZCAL), max(Z[c]["designs"][k]["total_high"] for c in ZCAL)],
+                 poor_rel=d["poor_rel"], u15_rel=d["u15_rel"], line_pw=d["line_pw"], negative_ahc_persons=d["negative_ahc_persons"],
+                 paid_to_negative_ahc=d["paid_to_negative_ahc"])
+A("")
+A("*Source: optionb_zero.py (runs/zero_<cal>_20261016.json), on optionb_hh.py's 2028-29 population and P* (matched, no automatic enrolment). Method: each design pays "
+  "households enough to reach the relative line (half the median equivalised income after housing costs) that holds after the payment, solved as a fixed point. "
+  "The exact top-up withdraws a dollar for each dollar of other income below the line; the tapered top-up pays the line less half of income after housing costs, "
+  "so it phases out at about the median; the universal payment is paid to every household whatever its income, so it raises the median by its own amount and must "
+  "equal the whole median before relative poverty ends. Static costs are exact on the model's population. Work response: working-age adults in the households paid, "
+  "in the paper's taper-response form (elasticity 0.1 low, 0.2 central, 0.4 high for the tapered top-up); for the exact top-ups the high case assumes every "
+  "working-age adult paid stops earning, which costs their whole private income. The universal payment's income effect and any tax on it are not modelled. "
+  "Households whose housing costs exceed their income (negative income after housing costs) remain below the line under the universal payment. ILLUSTRATIVE AND PROVISIONAL: "
+  "no design here is recommended.*\n")
+fact("zero_poverty", dict(designs=ZF, base=ZC["base"], star=ZC["star"], line_pw=ZC["line_pw"], gdp=ZC["gdp"], u15_persons=ZC["u15_persons"]), "A$ billion a year; million; per cent",
+     "2028-29", "optionb_zero.py (runs/zero_<cal>_20261016.json)", note="illustrative; not recommended", provisional=True)
+
+CP = json.load(open(os.path.join(ROOT, "cost_of_poverty_inputs.json")))
+N_ = CP["ncoss"]
+up = (1 + CP["uprate"]["rate"]) ** CP["uprate"]["years"]
+pc_child = [N_["direct_bn"] * 1e9 * CP["causal_share_low"]["value"] / N_["children_in_poverty"] * up, N_["direct_bn"] * 1e9 / N_["children_in_poverty"] * up,
+            N_["total_bn"] * 1e9 / N_["children_in_poverty"] * up]
+hs = CP["health"]["spend_per_person"] * up
+prem = [CP["adult_health_premium"][k] * hs for k in ("low", "central", "high")]
+n_child, n_all = ZC["base"]["n_u15_poor"], ZC["base"]["n_poor"]
+n_adult = n_all - n_child
+tot_child = [x * n_child / 1e3 for x in pc_child]
+tot_adult = [x * n_adult / 1e3 for x in prem]
+tot = [a + b for a, b in zip(tot_child, tot_adult)]
+gov_health = [CP['health']['government_share'] * x for x in tot_adult]
+per_person = [t * 1e3 / n_all for t in tot]
+lifted_children = ZC["base"]["n_u15_poor"] - ZC["star"]["n_u15_poor"]
+assoc_star = [x * lifted_children / 1e3 for x in pc_child]
+gdp = ZC["gdp"]
+A("**Table B23. The annual cost to society of poverty in Australia: an illustrative estimate, 2028-29 dollars (A$; A$ billion; per cent of GDP)**\n")
+A("| Component | Low | Central | High | Basis |")
+A("|---|---|---|---|---|")
+A(f"| Cost for each child in poverty (A$ a year) | {f0(pc_child[0])} | {f0(pc_child[1])} | {f0(pc_child[2])} | NCOSS (NSW, 2024): low, half the direct costs; central, the direct costs (services and lost productivity); high, all costs including health and life expectancy; uprated to 2028-29 by wages |")
+A(f"| Extra health-system cost for each adult in poverty (A$ a year) | {f0(prem[0])} | {f0(prem[1])} | {f0(prem[2])} | {pc_(CP['adult_health_premium']['low'])}, {pc_(CP['adult_health_premium']['central'])} and {pc_(CP['adult_health_premium']['high'])} above average health spending of A${f0(hs)} a person (AIHW 2024-25, uprated); about 70% falls on governments |")
+A(f"| Children under 15 in poverty (million) | {f2(n_child)} | {f2(n_child)} | {f2(n_child)} | Household model, current rules, 2028-29 |")
+A(f"| People 15 and over in poverty (million) | {f2(n_adult)} | {f2(n_adult)} | {f2(n_adult)} | Household model, current rules, 2028-29 |")
+A(f"| Cost of child poverty (A$bn a year) | {f1(tot_child[0])} | {f1(tot_child[1])} | {f1(tot_child[2])} | Cost per child × children in poverty |")
+A(f"| Adults' extra health-system cost (A$bn a year) | {f1(tot_adult[0])} | {f1(tot_adult[1])} | {f1(tot_adult[2])} | Premium × people 15 and over in poverty |")
+A(f"| Of which: governments' share of adults' extra health-system cost (A$bn a year) | {f1(gov_health[0])} | {f1(gov_health[1])} | {f1(gov_health[2])} | About 70% of health spending is public; the child-poverty costs cannot be split between budgets and the wider economy from the NCOSS figures |")
+A(f"| **Total (A$bn a year)** | **{f1(tot[0])}** | **{f1(tot[1])}** | **{f1(tot[2])}** | |")
+A(f"| Total (% of GDP) | {f2(100 * tot[0] / gdp)} | {f2(100 * tot[1] / gdp)} | {f2(100 * tot[2] / gdp)} | GDP A${gdp:,.0f}bn |")
+A(f"| **For each person in poverty (A$ a year)** | **{f0(per_person[0])}** | **{f0(per_person[1])}** | **{f0(per_person[2])}** | Total ÷ {f2(n_all)} million |")
+A(f"| Associated with the children P* lifts above the line (A$bn a year, long run) | {f1(assoc_star[0])} | {f1(assoc_star[1])} | {f1(assoc_star[2])} | {f2(lifted_children)} million fewer children in poverty × cost per child |")
+A("")
+A("*Source: cost_of_poverty_inputs.json; optionb_zero.py. Method: the NCOSS cost per child is a steady-state ratio (a year's cost of child poverty across the population, divided "
+  "by the children now in poverty), close to the lifetime cost of one child-year of poverty; it is not cash spent on each child each year. The adult premium is an assumption "
+  "bounded by AIHW's ratios of the lowest to the highest socioeconomic group. The central and high cases may count some health costs twice, where adults in poverty now were poor "
+  "as children. The line for P* is association, not a forecast saving: lifting a child just above the line does not remove the disadvantage, and the costs fall over decades. "
+  "ILLUSTRATIVE; every external figure needs checking against its source.*\n")
+fact("cost_of_poverty", dict(per_child=pc_child, adult_premium=prem, n_child=n_child, n_adult=n_adult, n_all=n_all, total_child=tot_child, total_adult=tot_adult,
+                             total=tot, total_pct_gdp=[100 * t / gdp for t in tot], per_person=per_person, lifted_children_pstar=lifted_children,
+                             assoc_pstar=assoc_star, uprate=up, health_spend_2028=hs, gov_health=gov_health), "A$ a year; A$ billion a year; million; per cent of GDP", "2028-29",
+     "cost_of_poverty_inputs.json; optionb_zero.py", note="illustrative; external inputs need checking", provisional=True)
+
 A("## 9. Findings the author can quote, and the figures for the summary (option B)\n")
 S_, M_ = SUM, MC["main"]
 nconf = len(ROB)
@@ -855,6 +941,6 @@ A("")
 if WEAK:
     A("**Configurations where P* does not beat Part 1 in every group or on net benefit:** " + "; ".join(f"{n} ({', '.join(g) or 'net benefit'})" for n, g, _ in WEAK) + "\n")
 open(os.path.join(ROOT, "optionb_results.md"), "w").write("\n".join(L) + "\n")
-json.dump(dict(generated="2026-10-31", model="supplementary/ of 22 October 2026 (unchanged copy)", scripts=["optionb_hh.py", "optionb_fiscal.py", "optionb_report.py", "optionb_check.py"],
+json.dump(dict(generated="2026-11-03", model="supplementary/ of 22 October 2026 (unchanged copy)", scripts=["optionb_hh.py", "optionb_fiscal.py", "optionb_zero.py", "optionb_report.py", "optionb_check.py"],
                facts=FACTS), open(os.path.join(ROOT, "optionb_facts.json"), "w"), indent=1, default=float)
 print("wrote optionb_results.md and optionb_facts.json;", len(FACTS), "facts; weak configs:", WEAK)
