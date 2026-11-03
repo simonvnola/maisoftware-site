@@ -553,14 +553,14 @@
     var rg = function (a) { return bn(a[0]) + ' to ' + bn(a[2]); }, pg = function (a) { return nf2.format(a[0]) + '% to ' + nf2.format(a[2]) + '%'; };
     var rows = [['Pay each household in poverty exactly its gap to the line', 'A_cur', ''], ['The same, on top of P*', 'A_star', ' more than P*'],
       ['The same, for families with children under 15 only', 'K_cur', ''], ['The same for families with children, on top of P*', 'K_star', ' more than P*'],
-      ['A top-up that withdraws 50 cents for each dollar of income', 'B_cur', '']];
+      ['A top-up that withdraws 50 cents for each dollar of income', 'B_cur', ''], ['The same 50-cent top-up, on top of P*', 'B_star', ' more than P*']];
     var body = rows.map(function (x) { var d = Z.d[x[1]]; return [x[0], nf2.format(d.paid), rg(d.total) + x[2], pg(d.gdp), nf1.format(d.poor)]; });
     var c = Z.d.C_cur;
     body.push(['A universal payment equal to the median income', nf2.format(c.paid), 'about A$' + nf0.format(Math.round(c.stat)) + 'bn, before tax and work effects', 'about ' + nf0.format(c.gdp[1]) + '%', nf1.format(c.poor)]);
     table($('#tb-zero'), ['Design', 'People in the households paid (million)', 'Cost a year, with the fall in work', 'Share of GDP', 'Poverty after (%)'], body,
       { stacked: 'wide', text: true, caption: 'Ending poverty: an illustration', hideCaption: true, ro: 'eco-zero', roLabel: 'Ending poverty: an illustration', roFixed: true });
     var w = $('#tb-zero .bw-table-wrap'); if (w) prov(w);
-    $('#why-zero').textContent = 'Each design pays households enough to reach the poverty line that holds after the payment. Paying each household its exact gap costs less than P*, because it pays only people below the line. But it takes back a dollar for each dollar earned below the line, so work there pays nothing. A universal payment raises the median, and so the line, by half its own amount. It must equal the whole median (A$' + nf0.format(Math.round(Z.lineC)) + ' a week for a single adult) before relative poverty ends. In practice measured poverty would not stay at zero: the line moves, ' + nf2.format(Z.neg) + ' million people have incomes below zero after housing costs, not everyone claims, and incomes are measured with error.';
+    $('#why-zero').textContent = 'Each design pays households enough to reach the poverty line that holds after the payment. Paying each household its exact gap costs less than P*, because it pays only people below the line. But it takes back a dollar for each dollar earned below the line, so work there pays nothing. A universal payment raises the median by its own amount, and so the line by half of it. It must equal the whole median (A$' + nf0.format(Math.round(Z.lineC)) + ' a week for a single adult) before relative poverty ends. In practice measured poverty would not stay at zero: the line moves, ' + nf2.format(Z.neg) + ' million people have incomes below zero after housing costs, not everyone claims, and incomes are measured with error.';
     var k0 = function (x) { return 'A$' + nf0.format(Math.round(x / 1000) * 1000); };
     table($('#tb-cop'), ['The annual cost of poverty to Australia, 2028-29', 'Low', 'Central', 'High'], [
       ['Cost of each child in poverty, a year'].concat(C.perChild.map(k0)),

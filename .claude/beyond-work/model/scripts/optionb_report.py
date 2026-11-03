@@ -583,7 +583,7 @@ if os.path.exists(_sh):
       "single homeowner, A$600,000 for a single non-homeowner, and A$499,000 / A$766,000 for a couple (1 July 2026; evidence report D1). The liquid-assets waiting period starts at "
       "A$5,500 of liquid assets (single) or A$11,000 (partnered or with dependants) and reaches its 13-week maximum at A$11,500 / A$23,000 (D2); liquid assets include mortgage "
       "offset accounts but not redraw balances (D2b). The household model carries tenure and mortgage debt but no other assets, and the paper's worked households assume no assets "
-      "test (Table 6.58, C36), so the share of displaced workers caught by either rule cannot be computed; the published ABS wealth tables do not identify it either (D4), and a "
+      "test (Table 6.59, C36), so the share of displaced workers caught by either rule cannot be computed; the published ABS wealth tables do not identify it either (D4), and a "
       "weighted Survey of Income and Housing or HILDA wealth-module tabulation of employed adults' assessable assets is needed. An upper bound on investor exposure: 2.02 million "
       "households, 21%, owned another residential property in 2019-20, including holiday homes (C2a). What the model does give is the partner income test. With the JobSeeker "
       f"partner cut-out of A$2,711.67 a fortnight (D3), {PSH['moderate']['partnered']:.1f}% of displaced households in the moderate scenario are couples and "
@@ -851,6 +851,7 @@ n_adult = n_all - n_child
 tot_child = [x * n_child / 1e3 for x in pc_child]
 tot_adult = [x * n_adult / 1e3 for x in prem]
 tot = [a + b for a, b in zip(tot_child, tot_adult)]
+gov_health = [CP['health']['government_share'] * x for x in tot_adult]
 per_person = [t * 1e3 / n_all for t in tot]
 lifted_children = ZC["base"]["n_u15_poor"] - ZC["star"]["n_u15_poor"]
 assoc_star = [x * lifted_children / 1e3 for x in pc_child]
@@ -864,6 +865,7 @@ A(f"| Children under 15 in poverty (million) | {f2(n_child)} | {f2(n_child)} | {
 A(f"| People 15 and over in poverty (million) | {f2(n_adult)} | {f2(n_adult)} | {f2(n_adult)} | Household model, current rules, 2028-29 |")
 A(f"| Cost of child poverty (A$bn a year) | {f1(tot_child[0])} | {f1(tot_child[1])} | {f1(tot_child[2])} | Cost per child × children in poverty |")
 A(f"| Adults' extra health-system cost (A$bn a year) | {f1(tot_adult[0])} | {f1(tot_adult[1])} | {f1(tot_adult[2])} | Premium × people 15 and over in poverty |")
+A(f"| Of which: governments' share of adults' extra health-system cost (A$bn a year) | {f1(gov_health[0])} | {f1(gov_health[1])} | {f1(gov_health[2])} | About 70% of health spending is public; the child-poverty costs cannot be split between budgets and the wider economy from the NCOSS figures |")
 A(f"| **Total (A$bn a year)** | **{f1(tot[0])}** | **{f1(tot[1])}** | **{f1(tot[2])}** | |")
 A(f"| Total (% of GDP) | {f2(100 * tot[0] / gdp)} | {f2(100 * tot[1] / gdp)} | {f2(100 * tot[2] / gdp)} | GDP A${gdp:,.0f}bn |")
 A(f"| **For each person in poverty (A$ a year)** | **{f0(per_person[0])}** | **{f0(per_person[1])}** | **{f0(per_person[2])}** | Total ÷ {f2(n_all)} million |")
@@ -876,7 +878,7 @@ A("*Source: cost_of_poverty_inputs.json; optionb_zero.py. Method: the NCOSS cost
   "ILLUSTRATIVE; every external figure needs checking against its source.*\n")
 fact("cost_of_poverty", dict(per_child=pc_child, adult_premium=prem, n_child=n_child, n_adult=n_adult, n_all=n_all, total_child=tot_child, total_adult=tot_adult,
                              total=tot, total_pct_gdp=[100 * t / gdp for t in tot], per_person=per_person, lifted_children_pstar=lifted_children,
-                             assoc_pstar=assoc_star, uprate=up, health_spend_2028=hs), "A$ a year; A$ billion a year; million; per cent of GDP", "2028-29",
+                             assoc_pstar=assoc_star, uprate=up, health_spend_2028=hs, gov_health=gov_health), "A$ a year; A$ billion a year; million; per cent of GDP", "2028-29",
      "cost_of_poverty_inputs.json; optionb_zero.py", note="illustrative; external inputs need checking", provisional=True)
 
 A("## 9. Findings the author can quote, and the figures for the summary (option B)\n")

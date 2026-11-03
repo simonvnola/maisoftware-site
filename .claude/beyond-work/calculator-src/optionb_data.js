@@ -42,7 +42,7 @@ const OB = {
   zero: (function () {
     const z = v('zero_poverty'), D = z.designs, pick = k => ({ paid: D[k].persons_paid, stat: D[k].static, total: D[k].total, gdp: D[k].total_pct_gdp, poor: D[k].poor_rel, u15: D[k].u15_rel });
     const o = { line: z.line_pw, lineC: D.C_cur.line_pw, neg: D.A_cur.negative_ahc_persons, d: {} };
-    ['A_cur', 'A_star', 'K_cur', 'K_star', 'B_cur', 'C_cur'].forEach(k => { o.d[k] = pick(k); });
+    ['A_cur', 'A_star', 'K_cur', 'K_star', 'B_cur', 'B_star', 'C_cur'].forEach(k => { o.d[k] = pick(k); });
     const bnr = a => 'A$' + a[0].toFixed(1) + 'bn to A$' + a[2].toFixed(1) + 'bn';
     o.paperFigures = { A_cur: bnr(D.A_cur.total), K_cur: bnr(D.K_cur.total), K_star: bnr(D.K_star.total) };
     return o;
