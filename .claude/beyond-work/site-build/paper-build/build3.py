@@ -208,7 +208,7 @@ add(app)
 text = ''.join(out)
 # ---------------- fill tokens from the model's option B results
 FILLS = {
- 'REVISION_DATE': 'Revised 3 November 2026', 'REVISION_VERSION_DATE': '3 November 2026',
+ 'REVISION_DATE': 'Revised 10 November 2026', 'REVISION_VERSION_DATE': '10 November 2026',
  'WORK_CAP_ODDS_AT_3_9': '0.79 to 0.84', 'PSTAR_FIRST_LEVY_CENTRAL': '2043-44', 'PSTAR_ADVANCE_REPAID_YEAR': '2031-32',
  'PSTAR_ADVANCE_2028_29': 'A$20.7bn', 'PHASED_ADVANCE_2028_29': 'nil',
  'PSTAR_HH_BETTER_AFTER_FUNDING_2028_29': '35.4%', 'PSTAR_HH_WORSE_AFTER_FUNDING_2028_29': '64.6%', 'PSTAR_HH_WORSE_INCIDENCE_RANGE': 'about 59% to 67%',

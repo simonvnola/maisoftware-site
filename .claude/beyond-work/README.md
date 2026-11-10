@@ -1,10 +1,12 @@
-# Beyond Work: option B revision bundle (revised 3 November 2026)
+# Beyond Work: option B revision bundle (revised 10 November 2026)
 
 Sources behind the pages under /UBI/. This folder is excluded from the
 deployed site by .vercelignore.
 
-- paper_2026-11-03.md: the revised paper (3 November 2026: the cost of poverty,
-  Tables 2.3 and 2.4, and an illustrative zero-poverty costing, Table 6.58), "Beyond Work: Preparing a Basic
+- paper_2026-11-10.md: the revised paper (10 November 2026: an illustration
+  of funding beyond the five taxes, Tables 6.60 to 6.62; 3 November 2026: the
+  cost of poverty, Tables 2.3 and 2.4, and an illustrative zero-poverty
+  costing, Table 6.58), "Beyond Work: Preparing a Basic
   Income for Australia's AI Transition", a working draft. The chapter pages
   are built from it word for word.
 - plan_2026-10-31.md: the author's plan to answer the October critique;
@@ -74,5 +76,19 @@ top-up and a resource fund on P*'s funding rule. It reads runs/fiscal.json and
 model/affordability_inputs.json and needs no supplementary folder. It writes
 model/affordability_results.md and runs/affordability.json. The added measures
 are the author's arithmetic on Treasury, ABS and Productivity Commission
-figures, not PBO costings, and nothing in the paper uses them yet. The estate
+figures, not PBO costings. The paper presents them as an illustration in
+Section 6 (Tables 6.60 to 6.62) and recommends none of them. The estate
 duty rests on a 2018 total taken from press coverage, which needs checking.
+
+## The 10 November 2026 revision of the pages
+
+build_paper.py, which build_paper_b.py imports, is not in this bundle, so this
+revision was carried onto the pages by site-build/apply_2026-11-10.py. It
+renders each new passage of the paper with site-build/patch_pages.py, which
+applies the page builder's markup and tests itself against a section the
+builder made (python3 -I patch_pages.py --selftest ../paper_2026-11-10.md).
+fidelity_b.py then reports every chapter identical to the paper. The new
+section's text is also in paper-build/frag/06i_ch6_funding_options.md; the
+other fragments and build.py to build3.py were not updated for this revision,
+so the paper source, not a rebuild from the fragments, is the record. calc_sync.js reports the
+calculator in sync; no calculator figure changed.
