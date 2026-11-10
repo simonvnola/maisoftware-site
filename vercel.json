@@ -35,6 +35,10 @@
     {
       "source": "/guide",
       "destination": "/api/guide"
+    },
+    {
+      "source": "/garden",
+      "destination": "/api/garden"
     }
   ],
   "headers": [
