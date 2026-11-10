@@ -1,0 +1,113 @@
+{
+  "note": "External inputs to affordability_options.py. Figures marked primary were read from the publisher's own file on 10 November 2026. Figures marked secondary came from search results and need checking before submission. Every rate, haircut and start date under 'assumptions' is the author's, not a costing.",
+  "sources": {
+    "T1": {
+      "title": "Treasury, 2025-26 Tax Expenditures and Insights Statement, December 2025",
+      "url": "https://treasury.gov.au/publication/p2025-721342",
+      "status": "primary",
+      "figures": {
+        "E15_cgt_discount_individuals_trusts_revenue_forgone_bn": {
+          "2026-27": 19.05,
+          "2027-28": 19.67,
+          "2028-29": 20.38
+        },
+        "E15_reliability": "Medium - Low",
+        "rental_deductions_tax_reduction_bn": {
+          "2022-23": 21.0,
+          "2028-29": 34.2
+        },
+        "rental_loss_tax_benefit_2022_23_bn": 3.9
+      },
+      "caveat": "Revenue forgone, not revenue gain: the statement says the revenue gain approach 'attempts to account for expected changes in taxpayer behaviour' and is a different measure."
+    },
+    "A1": {
+      "title": "ABS, Australian System of National Accounts 2025-26, Table 10 National Balance Sheet (released 23 October 2026)",
+      "url": "https://www.abs.gov.au/statistics/economy/national-accounts/australian-system-national-accounts/latest-release",
+      "status": "primary",
+      "figures": {
+        "land_current_prices_30_june_2026_bn": 11396.7
+      }
+    },
+    "P1": {
+      "title": "Productivity Commission, Wealth transfers and their economic effects, December 2021",
+      "url": "https://www.pc.gov.au/inquiries-and-research/wealth-transfers",
+      "status": "mixed: the inheritance share and the fourfold projection were read on the Commission's own page; the 2018 total (A$120bn), which the estate duty rests on, is from press coverage and needs checking",
+      "figures": {
+        "inheritance_share": 0.9,
+        "real_multiple_to_2050": 4,
+        "transfers_2018_bn": 120
+      }
+    },
+    "S260": {
+      "title": "ABS, Taxation Revenue, Australia, 2024-25 (the paper's source S260)",
+      "status": "as cited in the paper; used only as a scale check on the land levy",
+      "figures": {
+        "state_land_tax_2024_25_bn": 20.0
+      }
+    }
+  },
+  "not_obtained": [
+    "PBO costings of negative gearing and capital gains tax options: the PBO site refused automated downloads, so no PBO figure is used.",
+    "OECD and OBR figures on inheritance tax receipts, which would test the estate duty's assumed effective rate.",
+    "Future Fund returns: the fund return used is the paper's own central assumption (CPI plus 4%, source S132)."
+  ],
+  "assumptions": {
+    "cgt": {
+      "design": "Halve the capital gains discount for individuals and trusts, from 50% to 25%, for gains realised from 1 July 2028",
+      "share_of_E15": 0.5,
+      "behaviour_haircut": {
+        "low": 0.5,
+        "central": 0.75,
+        "high": 1.0
+      },
+      "growth": "nominal GDP after 2028-29"
+    },
+    "negative_gearing": {
+      "design": "From 1 July 2028, rental losses no longer deductible against other income; carried forward against later rental income and gains",
+      "base_2028_29": "2022-23 tax benefit of rental losses (A$3.9bn) scaled by Treasury's rental deductions series to 2028-29",
+      "recovered_share": {
+        "low": 0.25,
+        "central": 0.5,
+        "high": 0.75
+      },
+      "growth": "nominal GDP after 2028-29"
+    },
+    "land": {
+      "design": "A flat Commonwealth levy on the unimproved value of all land, no exemptions, collected with state land tax or council rates",
+      "rate": {
+        "low": 0.0005,
+        "central": 0.001,
+        "high": 0.002
+      },
+      "base_growth": "nominal GDP from 30 June 2026",
+      "collection": 0.9
+    },
+    "estate": {
+      "design": "A duty on large estates and gifts, from 1 July 2029",
+      "flow_growth": "the Commission's fourfold real rise from 2018 to 2050 spread evenly, plus 2.5% inflation; inheritances are 90% of transfers",
+      "effective_rate_on_inheritance_flow": {
+        "low": 0.02,
+        "central": 0.04,
+        "high": 0.06
+      }
+    },
+    "child_top_up": {
+      "design": "Table 6.58's exact top-up for families with children under 15, on top of P*",
+      "cost_2028_29_bn": {
+        "low": 4.9,
+        "central": 6.1,
+        "high": 7.3
+      },
+      "growth": "nominal GDP"
+    },
+    "fund": {
+      "design": "The minerals and gas measures are paid into a fund in full; Stage 1 draws 4% of the opening balance each year",
+      "nominal_return": 0.065,
+      "draw": 0.04
+    },
+    "stage2_points": {
+      "basis": "Table 6.40, 2032-33, static: a gap of A$249.0bn needs 12.0 points on every income-tax rate",
+      "bn_per_point": 20.75
+    }
+  }
+}

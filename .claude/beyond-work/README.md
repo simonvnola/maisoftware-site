@@ -65,3 +65,14 @@ evidence_cost_of_poverty_2026-11-03.md is the research note behind Section
 2's estimate of what poverty costs (sources S275 to S295). No source could be
 opened from the build environment, so every figure in it comes from search
 results or published summaries and needs checking before submission.
+
+## Funding options beyond the five taxes
+
+model/scripts/affordability_options.py costs four added revenue measures (the
+capital gains discount, rental losses, a land levy and an estate duty), a child
+top-up and a resource fund on P*'s funding rule. It reads runs/fiscal.json and
+model/affordability_inputs.json and needs no supplementary folder. It writes
+model/affordability_results.md and runs/affordability.json. The added measures
+are the author's arithmetic on Treasury, ABS and Productivity Commission
+figures, not PBO costings, and nothing in the paper uses them yet. The estate
+duty rests on a 2018 total taken from press coverage, which needs checking.
