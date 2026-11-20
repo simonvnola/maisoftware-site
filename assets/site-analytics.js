@@ -8,8 +8,9 @@
 //   "MaiCation start"  { target, page }  a tap through to the MaiCation app
 //
 // It is loaded on marketing pages only. Pages that can carry something
-// private in their address (the partner portal, the App Clip page, the
-// ProBono employer link) do not load it. The apps themselves load nothing.
+// private in their address (the pricing page, which the app opens with an
+// account id and email; the partner portal; the App Clip page; the ProBono
+// employer link) do not load it. The apps themselves load nothing.
 (function () {
   // The queue Vercel's script drains once it has loaded. Defining it here
   // means a click made before then is still counted.
