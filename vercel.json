@@ -39,6 +39,10 @@
     {
       "source": "/garden",
       "destination": "/api/garden"
+    },
+    {
+      "source": "/wishlist",
+      "destination": "/api/wishlist"
     }
   ],
   "headers": [
