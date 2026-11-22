@@ -3,6 +3,10 @@
     "apps": [],
     "details": [
       {
+        "appID": "MYHX852Q3C.com.maisoftware.probono",
+        "paths": ["/probono/employer"]
+      },
+      {
         "appID": "MYHX852Q3C.com.maicasa.homemanager",
         "paths": ["*"]
       },
