@@ -28,7 +28,7 @@
     --white: #FFFFFF;
     --ink: #1F1447;
     --ink-soft: #5E557F;
-    --ink-muted: #7A7299;
+    --ink-muted: #6A6289;
     --line: rgba(45,27,105,0.12);
     --line-soft: rgba(45,27,105,0.07);
     --shadow-sm: 0 1px 2px rgba(30,17,72,0.04), 0 2px 6px rgba(30,17,72,0.05);
@@ -93,7 +93,7 @@
   .foot-links { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
   .foot-links a { font-size: 13px; color: rgba(217,200,242,0.75); text-decoration: none; font-weight: 500; transition: color 0.2s; }
   .foot-links a:hover { color: var(--cream); }
-  .foot-copy { font-size: 11.5px; color: rgba(217,200,242,0.5); margin: 0; }
+  .foot-copy { font-size: 11.5px; color: rgba(217,200,242,0.7); margin: 0; }
 </style>
 </head>
 <body>
@@ -147,8 +147,8 @@
   <section>
     <h2>3. What we collect</h2>
     <ul>
-      <li><strong>Account information</strong> &mdash; your email address, an account ID and sign-in tokens. If you use Sign in with Apple, we receive the email address Apple passes on, which may be a private relay address</li>
-      <li><strong>Your collections</strong> &mdash; the collections you create and their descriptions, and the items in them: names, details, condition, notes, quantities, purchase prices and dates, where you bought them, and value estimates</li>
+      <li><strong>Account information</strong> &mdash; your email address, an account ID and sign-in tokens. You can sign in with an email address and password (the password is stored only in hashed form by our sign-in provider) or with Sign in with Apple. If you use Sign in with Apple, we receive the email address Apple passes on, which may be a private relay address</li>
+      <li><strong>Your collections</strong> &mdash; the collections you create and their descriptions, and the items in them: names, details, condition, notes, quantities, purchase prices and dates, where you bought them, and value estimates. An item added from a receipt also keeps the retailer and invoice number, so the same receipt is not added twice</li>
       <li><strong>Your wishlist</strong> &mdash; the items you are hoping for, their priority, your notes and any target price, plus deals found for them (retailer, link, price and the date found)</li>
       <li><strong>Photos</strong> &mdash; the photos of items you choose to add, stored privately in your account</li>
       <li><strong>Settings</strong> &mdash; your currency, and whether you have turned on the Maicasa link or a shared wishlist link</li>
@@ -178,8 +178,11 @@
     <ul>
       <li><strong>Setting up a collection</strong> &mdash; the description you type</li>
       <li><strong>Adding or identifying from a photo</strong> &mdash; the photos you choose, and the collection's name and fields so the answer fits</li>
-      <li><strong>Adding from a receipt</strong> &mdash; the photo or PDF of the receipt or invoice. A receipt can show personal details such as a name or address; the AI is instructed not to return card numbers, account numbers, addresses, phone numbers or email addresses, and the app removes anything shaped like a card number from what comes back</li>
-      <li><strong>Value estimates, deals and wishlist suggestions</strong> &mdash; the names and details of the items concerned. For these, Anthropic also runs web searches based on those details</li>
+      <li><strong>Adding from a receipt</strong> &mdash; the photo or PDF of the receipt or invoice, and the collection's name and fields. A receipt can show personal details such as a name or address; the AI is instructed not to return card numbers, account numbers, addresses, phone numbers or email addresses, and the app removes anything shaped like a card number from what comes back</li>
+      <li><strong>Value estimates</strong> &mdash; the item's name, details and condition, and the collection's name and fields</li>
+      <li><strong>Deals</strong> &mdash; the names and details of the wishlist items you are searching for, any target price you have set, and the collection's name and fields</li>
+      <li><strong>Wishlist suggestions</strong> &mdash; the names and details of the items you own and the items on your wishlist in that collection, so the AI can see what is missing, plus the names of suggestions you have already had</li>
+      <li>For value estimates, deals and suggestions, Anthropic also runs web searches based on those details</li>
     </ul>
     <p>Your email address and account ID are not included in what is sent to Anthropic.</p>
     <p>Anthropic's data handling is governed by their <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Privacy Policy</a>. We use the API under terms that restrict Anthropic from using your inputs to train their models.</p>
@@ -191,9 +194,9 @@
     <p>You can create a link to a collection's wishlist and send it to family or friends. Anyone who has the link can open the page, without an account, so share it only with people you want to see it.</p>
     <ul>
       <li>The page shows the collection's name and its wishlist items: name, details, priority, your wishlist note and the first photo</li>
-      <li>It never shows prices, target prices, values, or anything you already own</li>
-      <li>We record when a link was created and when it was last opened, and show you this in the app. We do not record who opened it</li>
-      <li>You can turn a link off at any time in the app, and it stops working straight away</li>
+      <li>It never shows purchase prices, target prices, value estimates, any field you have set up as a money amount, or anything you already own</li>
+      <li>We record when a link was created and when it was last opened, and show you this in the app. We do not record who opened it, apart from the standard server logs our hosting providers keep (Section 3)</li>
+      <li>You can turn a link off at any time in the app, and the page stops working straight away. Deleting the collection turns its link off too. Photo addresses from a page someone already had open can keep working for up to a day</li>
     </ul>
   </section>
 
@@ -204,6 +207,7 @@
       <li>What is shared is the layout only: a general title (such as "Fountain pens"), an icon, and the field names with their choices and units</li>
       <li>Never shared: your collection's name or description, your items, photos, notes or values, or your name or email address</li>
       <li>Other collectors cannot see who a layout came from. We keep a private link between a layout and the account that offered it, so that limits can apply; that link is removed if you delete your account</li>
+      <li>If you report a layout, we keep a record that your account reported it, so that limits can apply. It is deleted with your account</li>
       <li>Layouts are checked before anyone else sees them. This check is automated and uses AI: only the layout text is sent, never your account details</li>
       <li>A shared layout stays available after you delete your collection or your account, because it holds no personal information. The app has no button to withdraw one; to have a layout you shared removed, email us and we will remove it</li>
     </ul>
@@ -223,10 +227,10 @@
       <li><strong>Supabase, Inc.</strong> &mdash; database, photo storage and sign-in, in Australia</li>
       <li><strong>Anthropic PBC</strong> &mdash; to process AI requests, in the United States (Section 5)</li>
       <li><strong>Apple</strong> &mdash; if you use Sign in with Apple, and for distributing the app through the App Store. If sign-in with Google is offered and you choose it, Google confirms your identity to us in the same way</li>
-      <li><strong>Vercel Inc.</strong> &mdash; hosts this website and delivers shared wishlist pages; requests pass through its servers, which may be outside Australia</li>
+      <li><strong>Vercel Inc.</strong> &mdash; hosts this website and delivers shared wishlist pages; requests pass through its servers, which may be outside Australia, including in the United States. Our website's marketing pages count visits with Vercel Web Analytics, which uses no cookies and does not identify visitors. The app, this page and shared wishlist pages do not use it</li>
       <li><strong>Law enforcement or regulators</strong> &mdash; where required by applicable law</li>
     </ul>
-    <p>This means some information is handled outside Australia, mainly in the United States when you use an AI feature.</p>
+    <p>This means some information is handled outside Australia, mainly in the United States when you use an AI feature, and possibly when someone opens a shared wishlist page.</p>
     <p>We do not sell, rent or trade your personal information.</p>
     <p>If you believe your data has been compromised, contact us immediately at <a href="mailto:info@maisoftware.app">info@maisoftware.app</a>.</p>
   </section>
